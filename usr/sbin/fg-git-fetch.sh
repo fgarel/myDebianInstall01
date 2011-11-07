@@ -29,3 +29,4 @@ rm -f /etc/apt/sources.list~
 # chainage avec les scripts de configuration et les mises à jour
 fgaptitudedoall.sh
 
+# comments
