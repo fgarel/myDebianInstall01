@@ -1,8 +1,30 @@
-Installation automatisée et personnalisée de Debian Gnu/Linux
+Installation automatisée et personnalisée de Debian GNU/Linux
 =============================================================
 
 Ce projet a pour objectif d'offrir les moyens (scripts et documentations)
 à tout utilisateur souhaitant procéder à une installation entièrement
-automatisée de la distribution Debian Gnu/Linux sur son matériel.
+automatisée de la distribution Debian GNU/Linux sur son matériel.
 
+Utilisation de ce projet
+------------------------
+1 se munir d'un cd netinstall http://www.debian.org/distrib/netinst
+2 inserer le cd dans le lecteur de votre machine à installer
+3 au lancement de la machine, si le Cd est le media de boot, appuyer sur la touche Echap
+4 si la machine est virtuelle et se trouve derrière un pare-feu :
+  auto interface=eth0 mirror/http/proxy=http://10.5.10.13:3128/ url=fgarel.ovh.org
+5 patientez pendant l'installation de votre machine
+6 au redémarrage, vous pouvez vous logguer en tant que xxx, avec le mot de passe yyy
 
+Les détails de l'installation
+-----------------------------
+Formatage complet et rapartitionnement de votre disque dur
+Installation et configuration de Debian GNU/Linux en français
+Création d'un utilisateur xxx
+Installation et paramétrage de d'un certain nombre d'application
+
+Les prérequis pour que ça puisse fonctionner
+--------------------------------------------
+Avoir acces à l'url http://fgarel.ovh.org/d-i/squeeze/preseed.cfg
+si la machine est virtuelle, avoir créer deux connections réseaux adéquates
+  (une vers internet, une autre vers le reseau interne)
+si la machine est derrière un proxy, avoir installé et configuré squid
