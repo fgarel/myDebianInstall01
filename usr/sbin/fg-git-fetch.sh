@@ -19,7 +19,7 @@
 echo "Récupération des fichiers depuis la machine distante - clefUsb"
 #scp -q -r root@10.5.10.23:/media/clefUsb/\* /
 #scp -r root@10.5.10.23:/media/disk/* /
-cp -r myDebianInstall01/* /
+cp -r /root/myDebianInstall01/* /
 
 # suppression du fichier sources de depart
 rm -f /etc/apt/sources.list
