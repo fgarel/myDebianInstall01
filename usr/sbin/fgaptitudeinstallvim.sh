@@ -60,7 +60,8 @@ echo "  Récupération du gestionnaire d'extension vundle"
 #git clone http://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 #git clone http://github.com/gmarik/vundle.git /etc/vim/bundle/vundle
 #git clone git://github.com/gmarik/vundle.git /etc/vim/bundle/vundle
-git clone --progress --verbose https://github.com/gmarik/vundle.git /etc/vim/bundle/vundle
+#git clone --progress --verbose https://github.com/gmarik/vundle.git /etc/vim/bundle/vundle
+git clone --progress --verbose http://github.com/gmarik/vundle.git /etc/vim/bundle/vundle
 cd /etc/vim/bundle/vundle
 git fetch --progress --verbose
 cd $OLDPWD
