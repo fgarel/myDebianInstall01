@@ -1,0 +1,64 @@
+" codes de terminal
+" -----------------
+
+set t_AB=[2;%p1%d}
+set t_AF=[1;%p1%d}
+set t_AL=[%p1%dL
+set t_al=[L
+set t_bc=
+set t_cd=[J
+set t_ce=[K
+set t_cl=[H[J
+set t_Co=256
+set t_CS=
+set t_CV=
+set t_ut=
+
+set t_da=
+set t_db=
+set t_DL=[%p1%dM
+set t_dl=[M
+set t_fs=
+set t_IE=
+set t_IS=
+set t_ke=
+set t_ks=
+set t_le=
+set t_mb=[5m
+set t_md=[1m
+
+set t_me=[0m
+set t_mr=[7m
+set t_ms=y
+set t_nd=[C
+set t_op=[39;49m
+set t_RI=
+set t_RV=
+set t_Sb=[2;%p1%d}
+set t_Sf=[1;%p1%d}
+set t_se=[27m
+set t_so=[7m
+set t_sr=M
+
+set t_ts=
+set t_te=
+set t_ti=
+set t_ue=[24m
+set t_us=[4m
+set t_WP=
+set t_WS=
+set t_SI=
+set t_EI=
+set t_xs=
+set t_ZH=[7m
+set t_ZR=[0m
+
+set t_cm=[%i%p1%d;%p2%dH
+set t_cs=[%i%p1%d;%p2%dr
+set t_vb=[?5h[?5l$<200/>
+set t_ve=[?25h[?0c
+set t_vi=[?25l[?1c
+set t_vs=[?25l[?8c
+
+
+

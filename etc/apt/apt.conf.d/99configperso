@@ -1,0 +1,21 @@
+
+#APT::Default-Release "stable";
+#APT::Default-Release "stable-backports";
+#APT::Default-Release "squeeze-backports";
+#APT::Default-Release "stable";
+
+APT::Install-Suggests "false";
+APT::Install-Recommends "false";
+
+APT::Get::Show-Upgraded "true";
+APT::Get::Show-Versions "true";
+APT::Get::Purge "true";
+APT::Get::List-Cleanup "true";
+
+Aptitude::Autoclean-After-Update "true";
+Aptitude::Recommends-Important "false";
+Aptitude::Suggests-Recommends "false";
+
+APT::Cache-Limit 150000000;
+
+Acquire::http::Proxy "http://10.5.10.23:3128";

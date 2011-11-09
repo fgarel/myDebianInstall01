@@ -1,0 +1,300 @@
+
+
+"#############################################################################
+" utilisation de la config perso
+"#############################################################################
+
+" la documentation sur la syntaxe est ici
+" http://ensiwiki.ensimag.fr/index.php/Vimrc_minimal
+
+
+" Activer la coloration et l'indentation
+"---------------------------------------
+
+syn on
+set syntax=on
+" Les deux premières lignes activent la coloration syntaxique.
+syntax on
+" Active le surlignage syntaxique de vim.
+
+filetype indent plugin on
+" La troisième active l'indentation et les plugins relatifs au language
+" (par exemple la complétion des fonctions php quand vous éditez un fichier php).
+" Si l'indentation ne fonctionne pas, vous pouvez ajouter ces lignes :
+" Inutile normalement : uniquement si l'indentation ne fonctionne pas.
+"set ai
+"set smartindent
+"set cindent
+" defini le style a utiliser pour indenter le code C
+"set cinoptions=>s,e0,n0,f0,{0,}0,^0,:s,=s,l0,gs,hs,ps,ts,+s,c3,C0,(2s,us,U0,w0,m0,j0,)20,*30
+
+set background=dark
+" Ceci dit à vim d'utiliser des couleurs correctes sur un fond noir.
+
+"colorscheme skittles
+colorscheme fgherald
+"colorscheme herald
+
+
+" Désactiver le mode compatibilité
+"---------------------------------
+
+set nocp
+set nocompatible
+
+" cette option empêche vim de se comporter d'une façon trop compatible avec vi.
+" Il devrait être au début de chaque fichier vimrc cat il affecte un grand
+" nombre des autres options que vous voulez surcharger.
+
+" A placer tout en haut de votre fichier .vimrc, cette ligne vous permet de
+" désactiver la compatibilité avec VIM 5 et 6.
+" C'est important pour faire fonctionner les plugins récents.
+" A noter que si vous avez ajouté les 2 lignes du .vimrc "n00b-proof", 
+" vous avez déjà cette option (la première ligne du .vimrc n00b-proof est 
+" "set nocompatible" == "set nocp").
+
+" Afficher les numéros de ligne
+"------------------------------
+
+set nu
+
+" Activer la souris pour le mode shell
+"-------------------------------------
+" (si vous utilisez exclusivement gvim cette ligne ne sert à rien)
+
+set mouse =a
+
+" Le "a" signifie "all" : la souris sera disponible tout le temps.
+" Tapez :h mouse pour plus d'informations.
+
+" Afficher les parenthèses correspondantes
+"-----------------------------------------
+
+set showmatch
+
+" Lorsque l'on tape ")", vim éclairera la "(" correspondante ;
+" fonctionne aussi pour les "< >" lors de l'édition HTML/XML, les "{ }", etc :
+" tous les délimiteurs de tous les languages, lorsque c'est pertinent...
+" Cette option est utile pour repérer les parenthèses non fermées
+"  (vim les colorie en blanc) et les parenthèses en trop (en rouge).
+
+" Modifier la police
+"-------------------
+
+set guifont=Courier\ 12
+
+" Pour choisir graphiquement votre font, tapez "set guifont=*" sous gvim.
+" Un menu apparaîtra pour sélectionner la font.
+" Ensuite, en tapant "set guifont=<TAB>" (<TAB> = tabulation) en mode commande,
+" vous retrouverez la font que vous avez sélectionnée.
+" Recopiez la ligne obtenue dans votre .vimrc.
+
+" Modifier la taille des tabulations (ou les remplacer en espaces)
+"-----------------------------------------------------------------
+
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+
+" Les 3 options sont importantes si vous voulez avoir un code cohérent.
+" Pour le projet de Spé, en ADA, il est important d'éliminer les tabulations,
+" en les remplaçant par des espaces.
+" Vim le fait automatiquement avec l'option :
+
+set expandtab    "supprime les tabulations et met des espaces
+
+" Afficher les résultats de la recherche au moment de la saisie
+"--------------------------------------------------------------
+
+set incsearch
+
+" Le curseur se déplace dans les résultats au fur et à mesure de la saisie
+" (comme sous Firefox).
+
+" Recherche sensible à la casse, ou pas, ou un peu
+"-------------------------------------------------
+
+set ignorecase
+set smartcase
+
+" Vim est par défaut sensible à la casse (rechercher "test" ne trouvera pas les
+" occurrences de "tEst").
+" Pour rendre la recherche insensible à la casse, utilisez l'option ignorecase.
+" Mais Vim est bien plus puissant que ça :
+" couplé à l'option "smartcase", la précédente option rend la recherche
+" sensible ET insensible à la casse !
+" Je m'explique : dès que vous tapez une majuscule dans votre recherche,
+" elle redevient sensible à la casse, sinon elle reste insensible.
+" Par exemple en tapant "/test" vous pouvez trouver des "Test".
+" Par contre, en tapant "teSt", seul "teSt" sera recherché.
+
+" Afficher les possibilités lors de la complétion
+"------------------------------------------------
+
+set wildmenu    "affiche le menu
+set wildmode =list:longest,list:full    "affiche toutes les possibilités
+set wildignore =*.o,*.r,*.so,*.sl,*.tar,*.tgz    "ignorer certains types de fichiers pour la complétion des includes
+
+" Auto folding des fonctions
+"---------------------------
+
+" Le folding, c'est le fait de cacher le corps des fonctions ou classes.
+" On retrouve le contenu en le "développant".
+" Pour une idée, c'est l'équivalent du petit "+" et "-" de l'explorateur Windows.
+
+function! MyFoldFunction()
+		let line = getline(v:foldstart)
+		let sub = substitute(line,'/\*\|\*/\|^\s+', '', 'g')
+		let lines = v:foldend - v:foldstart + 1
+		return v:folddashes.sub.'...'.lines.' Lines...'.getline(v:foldend)
+endfunction
+	
+
+set foldmethod=syntax    "Réduira automatiquement les fonctions et blocs (#region en C# par exemple)
+set foldtext=MyFoldFunction()    "on utilise notre fonction (optionnel)
+
+" Au lancement d'un fichier .c (par exemple), vous obtiendrez ceci
+" (vue avant et après avoir appuyé sur "za" pour ouvrir le fold) : VIM02.PNG
+
+" Tapez ":h foldmethod" pour en savoir plus sur les méthodes de folding.
+
+" Vim correcteur orthographique
+"------------------------------
+
+set spelllang=en,fr
+set spell
+set spellsuggest=5
+
+setlocal spell spelllang=en,fr
+set nospell
+" finallement, désactivation de la correction d'ortographe
+
+" Avec ces options, vim vous indiquera automatiquement les fautes de vos
+" zones de texte (strings + commentaires).
+" A noter que ces lignes provoquent une erreur au premier lancement de vim :
+" il faut retapper "set spelllang=en,fr" en mode commande pour que vim
+" télécharge les dictionnaires.
+
+
+" Afficher la ligne contenant le curseur
+"---------------------------------------
+
+set cursorline
+set cursorcolumn
+
+if &bg == 'dark'
+    hi CursorLine gui=NONE guibg=#333333
+else
+    hi CursorLine gui=NONE guibg=#CCCCCC
+endif
+hi! link CursorColumn CursorLine 
+
+" La ligne contenant le curseur sera mise en valeur.
+" Il est possible de faire la même chose avec la colonne,
+" mais ça rend l'affichage peu lisible.
+
+
+" Raccourcis utiles
+"------------------
+
+imap  <C-Space> <C-X><C-O>
+
+" "<C-X><C-O>" exécute la complétion intelligente, on le mappe sur CTRL+SPACE,
+" comme sur la plupart des éditeurs classiques.
+" "imap" permet de préciser que l'on veut que "CTRL+SPACE" ait le même effet
+" que "CTRL+X CTRL+O" en mode insertion.
+
+iab  #i #include
+
+" Lorsque vous tapez "#i<Espace>", vim inscrira "#include".
+" Jouez avec ces abréviations pour gagner du temps.
+
+
+
+" Autres configurations diverses 1
+"---------------------------------
+" http://lfs.traduc.org/view/blfs-5.1-fr/postlfs/vimrc.html
+
+set bs=2
+
+" Ceci influence le comportement de l'option backspace.
+" Elle est assez complexe, donc voir :help 'bs' pour plus de détails.
+
+"set columns=80
+"set columns=144
+set columns=164
+
+" Ceci indique simplement le nombre de colonnes utilisées sur l'écran.
+
+set wrapmargin=8
+
+" Il s'agit du nombre de caractères du bord droit de la fenêtre où
+" le 'wrapping' commence.
+
+set ruler
+
+" Ceci fait que vim affiche la ligne et la colonne courantes
+" dans le bas droit de l'écran.
+
+" Autres configurations diverses 2
+"---------------------------------
+" http://www.vex.net/~x/python_and_vim.html
+
+set tabstop=4
+" ts
+" A four-space tab indent width is the prefered coding style for Python
+" (and everything else!), although of course some disagree.
+" This page generally assumes you want 4-space indents.
+
+set shiftwidth=4
+" sw
+" This allows you to use the < and > keys from VIM's visual (marking) mode
+" to block indent/unindent regions
+
+set smarttab
+"sta
+" Use the "shiftwidth" setting for inserting <TAB>s instead of the "tabstop"
+" setting, when at the beginning of a line.
+" This may be redundant for most people, but some poeple like to keep their
+" tabstop=8 for compatability when loading files, but setting shiftwidth=4 for
+" nicer coding style.
+
+set expandtab
+" et
+" Insert spaces instead of <TAB> character when the <TAB> key is pressed.
+" This is also the prefered method of Python coding, since Python is especially
+" sensitive to problems with indenting which can occur when people load files
+" in different editors with different tab settings, and also cutting and
+" pasting between applications (ie email/news for example) can result in problems.
+" It is safer and more portable to use spaces for indenting.
+
+set softtabstop=4
+" sts
+" People like using real tab character instead of spaces because it makes it
+" easier when pressing BACKSPACE or DELETE, since if the indent is using spaces
+" it will take 4 keystrokes to delete the indent. Using this setting, however,
+" makes VIM see multiple space characters as tabstops, and so <BS> does the
+" right thing and will delete four spaces (assuming 4 is your setting).
+
+set autoindent
+" ai
+" Very painful to live without this (especially with Python)! It means that
+" when you press RETURN and a new line is created, the indent of the new line
+" will match that of the previous line. 
+
+" Autres configurations diverses 3
+"---------------------------------
+" http://sd-1.archive-host.com/membres/up/71854706618929057/vimrc.txt
+set showcmd
+" Show (partial) command in status line.
+
+
+" Autres configurations diverses 4
+"---------------------------------
+" http://planet.vim-fr.org/
+
+" detection des caractères invisibleen fin de ligne
+set list
+set lcs:tab:>-,trail:X
+
+

@@ -1,0 +1,21 @@
+# 
+
+## archive=testing,origin=Debian,label=Debian
+deb http://ftp.fr.debian.org/debian/ testing main contrib non-free
+deb-src http://ftp.fr.debian.org/debian/ testing main contrib non-free
+
+## archive=testing,origin=Debian,label=Debian-Security
+deb http://security.debian.org/ testing/updates main contrib non-free
+deb-src http://security.debian.org/ testing/updates main contrib non-free
+
+## archive=testing-updates,origin=Debian,label=Debian
+#deb http://ftp.fr.debian.org/debian/ testing-updates main contrib non-free
+#deb-src http://ftp.fr.debian.org/debian/ testing-updates main contrib non-free
+
+## archive=testing-backports,origin=Debian,label=testing-backports
+#deb http://backports.debian.org/debian-backports/ testing-backports main contrib non-free
+#deb-src http://backports.debian.org/debian-backports/ testing-backports main contrib non-free
+
+## archive=testing,origin=Unofficial Multimedia Packges,label=Unofficial Multimedia Packages
+deb http://www.debian-multimedia.org/ testing main non-free
+deb-src http://www.debian-multimedia.org/ testing main non-free

@@ -1,0 +1,79 @@
+
+
+"#############################################################################
+" utilisation de vundle pour la gesion des plugins de vim
+"#############################################################################
+
+" la documentation sur la syntaxe est ici
+" http://en.wikibooks.org/wiki/Learning_the_vi_Editor/Vim/VimL_Script_language
+" et ici
+" http://vim.wikia.com/wiki/Write_your_own_Vim_function
+
+
+set nocompatible               " be iMproved
+filetype off                   " required!
+
+let root='/etc/vim/bundle'
+
+"exec 'set rtp+='.root.'/vundle'
+set rtp +=/etc/vim/bundle/vundle
+"set rtp+=~/.vim/bundle/vundle/
+"set rtp+=/etc/vim/bundle/vundle/
+
+call vundle#rc(root)
+
+" let Vundle manage Vundle
+" required! 
+Bundle 'gmarik/vundle'
+
+" My Bundles here:
+"
+" original repos on github
+Bundle 'tpope/vim-fugitive'
+Bundle 'msanders/snipmate.vim'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-git'
+Bundle 'ervandew/supertab'
+Bundle 'sontek/minibufexpl.vim'
+Bundle 'wincent/Command-T'
+Bundle 'mitechie/pyflakes-pathogen'
+Bundle 'mileszs/ack.vim'
+Bundle 'sjl/gundo.vim'
+Bundle 'fs111/pydoc.vim'
+Bundle 'vim-scripts/pep8'
+Bundle 'alfredodeza/pytest.vim'
+"Bundle 'reinh/vim-makegreen'
+"Bundle 'vim-scripts/TaskList.vim'
+Bundle 'vim-scripts/The-NERD-tree'
+Bundle 'sontek/rope-vim'
+Bundle 'ajashton/cascadenik-vim'
+Bundle 'msanders/snipmate.vim'
+Bundle 'altercation/solarized'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/syntastic'
+Bundle 'ivanov/vim-ipython'
+" A two-way integration between Vim and IPython 0.11+
+Bundle 'guns/xterm-color-table.vim'
+
+" vim-scripts repos
+"Bundle 'L9'
+"Bundle 'FuzzyFinder'
+"Bundle 'rails.vim'
+Bundle 'vimpager'
+Bundle 'python.vim'
+Bundle 'SearchComplete.vim'
+
+" non github repos
+"Bundle 'git://git.wincent.com/command-t.git'
+" ...
+
+filetype plugin indent on     " required! 
+
+"
+" Brief help
+"
+" :BundleInstall  - install bundles (won't update installed)
+" :BundleInstall! - update if installed
+"
+"

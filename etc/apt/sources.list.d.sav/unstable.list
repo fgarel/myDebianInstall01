@@ -1,0 +1,21 @@
+# 
+
+## archive=unstable,origin=Debian,label=Debian
+deb http://ftp.fr.debian.org/debian/ unstable main contrib non-free
+deb-src http://ftp.fr.debian.org/debian/ unstable main contrib non-free
+
+## archive=unstable,origin=Debian,label=Debian-Security
+#deb http://security.debian.org/ unstable/updates main contrib non-free
+#deb-src http://security.debian.org/ unstable/updates main contrib non-free
+
+## archive=unstable-updates,origin=Debian,label=Debian
+#deb http://ftp.fr.debian.org/debian/ unstable-updates main contrib non-free
+#deb-src http://ftp.fr.debian.org/debian/ unstable-updates main contrib non-free
+
+## archive=unstable-backports,origin=Debian,label=unstable-backports
+#deb http://backports.debian.org/debian-backports/ unstable-backports main contrib non-free
+#deb-src http://backports.debian.org/debian-backports/ unstable-backports main contrib non-free
+
+## archive=unstable,origin=Unofficial Multimedia Packges,label=Unofficial Multimedia Packages
+deb http://www.debian-multimedia.org/ unstable main non-free
+deb-src http://www.debian-multimedia.org/ unstable main non-free

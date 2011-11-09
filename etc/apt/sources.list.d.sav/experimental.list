@@ -1,0 +1,21 @@
+# 
+
+## archive=experimental,origin=Debian,label=Debian
+deb http://ftp.fr.debian.org/debian/ experimental main contrib non-free
+deb-src http://ftp.fr.debian.org/debian/ experimental main contrib non-free
+
+## archive=experimental,origin=Debian,label=Debian-Security
+#deb http://security.debian.org/ experimental/updates main contrib non-free
+#deb-src http://security.debian.org/ experimental/updates main contrib non-free
+
+## archive=experimental-updates,origin=Debian,label=Debian
+#deb http://ftp.fr.debian.org/debian/ experimental-updates main contrib non-free
+#deb-src http://ftp.fr.debian.org/debian/ experimental-updates main contrib non-free
+
+## archive=experimental-backports,origin=Debian,label=experimental-backports
+#deb http://backports.debian.org/debian-backports/ experimental-backports main contrib non-free
+#deb-src http://backports.debian.org/debian-backports/ experimental-backports main contrib non-free
+
+## archive=experimental,origin=Unofficial Multimedia Packges,label=Unofficial Multimedia Packages
+#deb http://www.debian-multimedia.org/ experimental main non-free
+#deb-src http://www.debian-multimedia.org/ experimental main non-free

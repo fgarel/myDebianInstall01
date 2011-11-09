@@ -1,0 +1,36 @@
+##################################################
+# Origin=Debian
+#    => ftp://ftp.fr.debian.org/debian/
+# Label=Debian
+##################################################
+
+#+++++++++++++++++++++++++++++++++++++++++++++++++
+# famille oldstable
+#+++++++++++++++++++++++++++++++++++++++++++++++++
+
+#-------------------------------------------------
+# archive=oldstable
+#    => ./oldstable (14/02/09)
+#    => ./lenny (15/02/09)
+#-------------------------------------------------
+## archive=oldstable,origin=Debian,label=Debian
+deb http://ftp.fr.debian.org/debian/ oldstable main
+deb-src http://ftp.fr.debian.org/debian/ oldstable main
+
+#-------------------------------------------------
+# archive=oldstable-updates
+#    => ./oldstable-updates (14/02/09)
+#    => ./lenny-updates (21/06/11)
+#-------------------------------------------------
+## archive=oldstable-updates,origin=Debian,label=Debian-security 
+deb http://security.debian.org/ oldstable/updates main
+deb-src http://security.debian.org/ oldstable/updates main
+
+#-------------------------------------------------
+# archive=oldstable-proposed-updates
+#    => ./oldstable-proposed-updates (14/02/09)
+#    => ./lenny-proposed-updates (21/06/11)
+#-------------------------------------------------
+## archive=oldstable-updates,origin=Debian,label=Debian
+deb http://volatile.debian.org/debian-volatile oldstable/volatile main
+deb-src http://volatile.debian.org/debian-volatile oldstable/volatile main

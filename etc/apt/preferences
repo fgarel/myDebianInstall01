@@ -1,0 +1,662 @@
+###############################################################################
+#http://ftp.fr.debian.org/debian-security/dists/stable/updates/Release
+#http://ftp.fr.debian.org/debian-security/dists/squeeze/updates/Release
+###############################################################################
+#Origin: Debian
+#Label: Debian-Security
+#Suite: stable
+#Version: 6.0
+#Codename: squeeze
+#Components: updates/main updates/contrib updates/non-free
+#Description: Debian 6.0 Security Updates
+###############################################################################
+#==============================================================================
+# Origin: Debian
+# Label: Debian-Security
+# Suite: stable
+# Codename: squeeze
+#==============================================================================
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# /etc/apt/sources.list.d/stable.list
+#       => http://ftp.fr.debian.org/debian-security/ stable/updates
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#------------------------------------------------------------------------------
+Package: *
+Pin: release o=Debian,l=Debian-Security,a=stable
+Pin-Priority: 900
+
+#------------------------------------------------------------------------------
+#deb http://ftp.fr.debian.org/debian-security/ stable/updates main contrib non-free
+#deb-src http://ftp.fr.debian.org/debian-security/ stable/updates main contrib non-free
+
+
+###############################################################################
+#http://security.debian.org/dists/stable/updates/Release
+#http://security.debian.org/dists/squeeze/updates/Release
+###############################################################################
+#Origin: Debian
+#Label: Debian-Security
+#Suite: stable
+#Version: 6.0
+#Codename: squeeze
+#Components: updates/main updates/contrib updates/non-free
+#Description: Debian 6.0 Security Updates
+###############################################################################
+#==============================================================================
+# Origin: Debian
+# Label: Debian-Security
+# Suite: stable
+# Codename: squeeze
+#==============================================================================
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# /etc/apt/sources.list.d/stable.list
+#       => http://security.debian.org/ stable/updates
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#------------------------------------------------------------------------------
+Package: *
+Pin: release o=Debian,l=Debian-Security,a=stable
+Pin-Priority: 850
+
+#------------------------------------------------------------------------------
+#deb http://security.debian.org/ stable/updates main contrib non-free
+#deb-src http://security.debian.org/ stable/updates main contrib non-free
+
+
+###############################################################################
+#http://ftp.fr.debian.org/debian/dists/stable-updates/Release
+#http://ftp.fr.debian.org/debian/dists/squeeze-updates/Release
+###############################################################################
+#Origin: Debian
+#Label: Debian
+#Suite: stable-updates
+#Codename: squeeze-updates
+#Components: main contrib non-free
+#Description: Updated packages for Debian 6.0
+###############################################################################
+#==============================================================================
+# Origin: Debian
+# Label: Debian
+# Suite: stable-updates
+# Codename: squeeze-updates
+#==============================================================================
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# /etc/apt/sources.list.d/stable.list
+#       => http://ftp.fr.debian.org/debian/ squeeze-updates
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#------------------------------------------------------------------------------
+Package: *
+Pin: release o=Debian,l=Debian,a=stable-updates
+Pin-Priority: 800
+
+#------------------------------------------------------------------------------
+#deb http://ftp.fr.debian.org/debian/ stable-updates main contrib non-free
+#deb-src http://ftp.fr.debian.org/debian/ stable-updates main contrib non-free
+
+
+###############################################################################
+#http://ftp.fr.debian.org/debian/dists/proposed-updates/Release
+#http://ftp.fr.debian.org/debian/dists/stable-proposed-updates/Release
+#http://ftp.fr.debian.org/debian/dists/squeeze-proposed-updates/Release
+###############################################################################
+#Origin: Debian
+#Label: Debian
+#Suite: proposed-updates
+#Version: 6.0-updates
+#Codename: squeeze-proposed-updates
+#Components: main contrib non-free
+#Description: Proposed Updates for Debian 6.0 - Not Released
+###############################################################################
+#==============================================================================
+# Origin: Debian
+# Label: Debian
+# Suite: proposed-updates
+# Codename: squeeze-proposed-updates
+#==============================================================================
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# /etc/apt/sources.list.d/stable.list
+#       => http://ftp.fr.debian.org/debian/ proposed-updates
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#------------------------------------------------------------------------------
+Package: *
+Pin: release o=Debian,l=Debian,a=proposed-updates
+Pin-Priority: 750
+
+#------------------------------------------------------------------------------
+#deb http://ftp.fr.debian.org/debian/ proposed-updates main contrib non-free
+#deb-src http://ftp.fr.debian.org/debian/ proposed-updates main contrib non-free
+
+
+###############################################################################
+#http://ftp.fr.debian.org/debian-backports/dists/squeeze-backports/Release
+###############################################################################
+#Origin: Debian Backports
+#Label: Debian Backports
+#Suite: squeeze-backports
+#Version: label=Debian Backports
+#Codename: squeeze-backports
+#Components: main contrib non-free
+#Description: Backports for the Squeeze Distribution
+###############################################################################
+#==============================================================================
+# Origin: "Debian Backports"
+# Label: "Debian Backports"
+# Suite: squeeze-backports
+# Codename: squeeze-backports
+#==============================================================================
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# /etc/apt/sources.list.d/stable.list
+#       => http://ftp.fr.debian.org/debian-backports/ squeeze-backports
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#------------------------------------------------------------------------------
+Package: *
+Pin: release o=Debian Backports,l=Debian Backports,a=squeeze-backports
+Pin-Priority: 700
+
+#------------------------------------------------------------------------------
+#deb http://backports.debian.org/debian-backports/ squeeze-backports main contrib non-free
+#deb-src http://backports.debian.org/debian-backports/ squeeze-backports main contrib non-free
+
+
+###############################################################################
+#http://debian-multimedia.org/dists/stable/Release
+#http://debian-multimedia.org/dists/squeeze/Release
+###############################################################################
+#Origin: Unofficial Multimedia Packages
+#Label: Unofficial Multimedia Packages
+#Suite: stable
+#Version: 6.0
+#Codename: squeeze
+#Components: main non-free
+#Description: This repository is mostly non-free
+###############################################################################
+#==============================================================================
+# Origin: "Unofficial Multimedia Packages"
+# Label: "Unofficial Multimedia Packages"
+# Suite: stable
+# Codename: squeeze
+#==============================================================================
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# /etc/apt/sources.list.d/stable.list
+#       => http://www.debian-multimedia.org/ stable
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#------------------------------------------------------------------------------
+Package: *
+Pin: release o=Unofficial Multimedia Packages,l=Unofficial Multimedia Packages,a=stable
+Pin-Priority: 650
+
+#------------------------------------------------------------------------------
+#deb http://www.debian-multimedia.org/ stable main non-free
+#deb-src http://www.debian-multimedia.org/ stable main non-free
+
+
+###############################################################################
+#http://ftp.fr.debian.org/debian/dists/stable/Release
+#http://ftp.fr.debian.org/debian/dists/squeeze/Release
+#http://ftp.fr.debian.org/debian/dists/Debian6.0.2/Release
+###############################################################################
+#Origin: Debian
+#Label: Debian
+#Suite: stable
+#Version: 6.0.2.1
+#Codename: squeeze
+#Components: main contrib non-free
+#Description: Debian 6.0.2.1 Released 26 June 2011
+###############################################################################
+#==============================================================================
+# Origin: Debian
+# Label: Debian
+# Suite: stable
+# Codename: squeeze
+#==============================================================================
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# /etc/apt/sources.list.d/stable.list
+#       => http://ftp.fr.debian.org/debian/ stable
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#------------------------------------------------------------------------------
+Package: *
+Pin: release o=Debian,l=Debian,a=stable
+Pin-Priority: 600
+
+#------------------------------------------------------------------------------
+#deb http://ftp.fr.debian.org/debian/ stable main contrib non-free
+#deb-src http://ftp.fr.debian.org/debian/ stable main contrib non-free
+
+
+###############################################################################
+#http://ftp.fr.debian.org/debian-security/dists/testing/updates/Release
+#http://ftp.fr.debian.org/debian-security/dists/wheezy/updates/Release
+###############################################################################
+#Origin: Debian
+#Label: Debian-Security
+#Suite: testing
+#Codename: wheezy
+#Components: updates/main updates/contrib updates/non-free
+#Description: Debian testing Security Updates
+###############################################################################
+#==============================================================================
+# Origin: Debian
+# Label: Debian-Security
+# Suite: testing
+# Codename: wheezy
+#==============================================================================
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# /etc/apt/sources.list.d/testing.list
+#       => http://ftp.fr.debian.org/debian-security/ testing/updates
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#------------------------------------------------------------------------------
+Package: *
+Pin: release o=Debian,l=Debian-Security,a=testing
+Pin-Priority: 450
+
+#------------------------------------------------------------------------------
+#deb http://ftp.fr.debian.org/debian-security/ testing/updates main contrib non-free
+#deb-src http://ftp.fr.debian.org/debian-security/ testing/updates main contrib non-free
+
+
+###############################################################################
+#http://security.debian.org/dists/testing/updates/Release
+#http://security.debian.org/dists/wheezy/updates/Release
+###############################################################################
+#Origin: Debian
+#Label: Debian-Security
+#Suite: testing
+#Codename: wheezy
+#Components: updates/main updates/contrib updates/non-free
+#Description: Debian testing Security Updates
+###############################################################################
+#==============================================================================
+# Origin: Debian
+# Label: Debian-Security
+# Suite: testing
+# Codename: wheezy
+#==============================================================================
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# /etc/apt/sources.list.d/testing.list
+#       => http://security.debian.org/ testing/updates
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#------------------------------------------------------------------------------
+Package: *
+Pin: release o=Debian,l=Debian-Security,a=testing
+Pin-Priority: 400
+
+#------------------------------------------------------------------------------
+#deb http://security.debian.org/ testing/updates main contrib non-free
+#deb-src http://security.debian.org/ testing/updates main contrib non-free
+
+
+###############################################################################
+#http://ftp.fr.debian.org/debian/dists/testing-proposed-updates/Release
+#http://ftp.fr.debian.org/debian/dists/wheezy-proposed-updates/Release
+###############################################################################
+#Origin: Debian
+#Label: Debian
+#Suite: testing-proposed-updates
+#Codename: wheezy-proposed-updates
+#Components: main contrib non-free
+#Description: Debian x.y Testing distribution Proposed Updates - Not Released
+###############################################################################
+#==============================================================================
+# Origin: Debian
+# Label: Debian
+# Suite: testing-proposed-updates
+# Codename: wheezy-proposed-updates
+#==============================================================================
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# /etc/apt/sources.list.d/testing.list
+#       => http://ftp.fr.debian.org/debian/ testing-proposed-updates
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#------------------------------------------------------------------------------
+Package: *
+Pin: release o=Debian,l=Debian,a=testing-proposed-updates
+Pin-Priority: 300
+
+#------------------------------------------------------------------------------
+#deb http://ftp.fr.debian.org/debian/ testing-proposed-updates main contrib non-free
+#deb-src http://ftp.fr.debian.org/debian/ testing-proposed-updates main contrib non-free
+
+
+###############################################################################
+#http://debian-multimedia.org/dists/testing/Release
+#http://debian-multimedia.org/dists/wheezy/Release
+###############################################################################
+#Origin: Unofficial Multimedia Packages
+#Label: Unofficial Multimedia Packages
+#Suite: testing
+#Version: None
+#Codename: wheezy
+#Components: main non-free
+#Description: This repository is mostly non-free
+###############################################################################
+#==============================================================================
+# Origin: "Unofficial Multimedia Packages"
+# Label: "Unofficial Multimedia Packages"
+# Suite: testing
+# Codename: wheezy
+#==============================================================================
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# /etc/apt/sources.list.d/testing.list
+#       => http://www.debian-multimedia.org/ testing
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#------------------------------------------------------------------------------
+Package: *
+Pin: release o=Unofficial Multimedia Packages,l=Unofficial Multimedia Packages,a=testing
+Pin-Priority: 200
+
+#------------------------------------------------------------------------------
+#deb http://www.debian-multimedia.org/ testing main non-free
+#deb-src http://www.debian-multimedia.org/ testing main non-free
+
+
+###############################################################################
+#http://ftp.fr.debian.org/debian/dists/testing/Release
+#http://ftp.fr.debian.org/debian/dists/wheezy/Release
+###############################################################################
+#Origin: Debian
+#Label: Debian
+#Suite: testing
+#Codename: wheezy
+#Components: main contrib non-free
+#Description: Debian x.y Testing distribution - Not Released
+###############################################################################
+#==============================================================================
+# Origin: Debian
+# Label: Debian
+# Suite: testing
+# Codename: wheezy
+#==============================================================================
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# /etc/apt/sources.list.d/testing.list
+#       => http://ftp.fr.debian.org/debian/ testing
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#------------------------------------------------------------------------------
+Package: *
+Pin: release o=Debian,l=Debian,a=testing
+Pin-Priority: 150
+
+#------------------------------------------------------------------------------
+#deb http://ftp.fr.debian.org/debian/ testing main contrib non-free
+#deb-src http://ftp.fr.debian.org/debian/ testing main contrib non-free
+
+
+###############################################################################
+#http://debian-multimedia.org/dists/unstable/Release
+#http://debian-multimedia.org/dists/sid/Release
+###############################################################################
+#Origin: Unofficial Multimedia Packages
+#Label: Unofficial Multimedia Packages
+#Suite: unstable
+#Version: None
+#Codename: sid
+#Components: main non-free
+#Description: This repository is mostly non-free
+###############################################################################
+#==============================================================================
+# Origin: "Unofficial Multimedia Packages"
+# Label: "Unofficial Multimedia Packages"
+# Suite: unstable
+# Codename: sid
+#==============================================================================
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# /etc/apt/sources.list.d/unstable.list
+#       => http://www.debian-multimedia.org/ unstable
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#------------------------------------------------------------------------------
+Package: *
+Pin: release o=Unofficial Multimedia Packages,l=Unofficial Multimedia Packages,a=unstable
+Pin-Priority: 23
+
+#------------------------------------------------------------------------------
+#deb http://www.debian-multimedia.org/ unstable main non-free
+#deb-src http://www.debian-multimedia.org/ unstable main non-free
+
+
+###############################################################################
+#http://ftp.fr.debian.org/debian/dists/unstable/Release
+#http://ftp.fr.debian.org/debian/dists/sid/Release
+###############################################################################
+#Origin: Debian
+#Label: Debian
+#Suite: unstable
+#Codename: sid
+#Components: main contrib non-free
+#Description: Debian x.y Unstable - Not Released
+###############################################################################
+#==============================================================================
+# Origin: Debian
+# Label: Debian
+# Suite: unstable
+# Codename: sid
+#==============================================================================
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# /etc/apt/sources.list.d/unstable.list
+#       => http://ftp.fr.debian.org/debian/ unstable
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#------------------------------------------------------------------------------
+Package: *
+Pin: release o=Debian,l=Debian,a=unstable
+Pin-Priority: 21
+
+#------------------------------------------------------------------------------
+#deb http://ftp.fr.debian.org/debian/ unstable main contrib non-free
+#deb-src http://ftp.fr.debian.org/debian/ unstable main contrib non-free
+
+
+###############################################################################
+#http://debian-multimedia.org/dists/experimental/Release
+###############################################################################
+#Origin: Unofficial Multimedia Packages
+#Label: Unofficial Multimedia Packages
+#Suite: experimental
+#Version: None
+#Codename: experimental
+#Components: main non-free
+#Description: Experimental packages - not released; use at your own risk.
+###############################################################################
+#==============================================================================
+# Origin: "Unofficial Multimedia Packages"
+# Label: "Unofficial Multimedia Packages"
+# Suite: experimental
+# Codename: experimental
+#==============================================================================
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# /etc/apt/sources.list.d/experimental.list
+#       => http://www.debian-multimedia.org/ experimental
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#------------------------------------------------------------------------------
+Package: *
+Pin: release o=Unofficial Multimedia Packages,l=Unofficial Multimedia Packages,a=experimental
+Pin-Priority: 13
+
+#------------------------------------------------------------------------------
+#deb http://www.debian-multimedia.org/ experimental main non-free
+#deb-src http://www.debian-multimedia.org/ experimental main non-free
+
+
+###############################################################################
+#http://ftp.fr.debian.org/debian/dists/experimental/Release
+#http://ftp.fr.debian.org/debian/dists/rc-buggy/Release
+###############################################################################
+#Origin: Debian
+#Label: Debian
+#Suite: experimental
+#Codename: experimental
+#Components: main contrib non-free
+#Description: Experimental packages - not released; use at your own risk.
+###############################################################################
+#==============================================================================
+# Origin: Debian
+# Label: Debian
+# Suite: experimental
+# Codename: experimental
+#==============================================================================
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# /etc/apt/sources.list.d/experimental.list
+#       => http://ftp.fr.debian.org/debian/ experimental
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#------------------------------------------------------------------------------
+Package: *
+Pin: release o=Debian,l=Debian,a=experimental
+Pin-Priority: 11
+
+#------------------------------------------------------------------------------
+#deb http://ftp.fr.debian.org/debian/ experimental main contrib non-free
+#deb-src http://ftp.fr.debian.org/debian/ experimental main contrib non-free
+
+
+###############################################################################
+#http://ftp.fr.debian.org/debian-security/dists/oldstable/updates/Release
+#http://ftp.fr.debian.org/debian-security/dists/lenny/updates/Release
+###############################################################################
+#Origin: Debian
+#Label: Debian-Security
+#Suite: oldstable
+#Version: 5.0
+#Codename: lenny
+#Components: updates/main updates/contrib updates/non-free
+#Description: Debian 5.0 Security Updates
+###############################################################################
+#==============================================================================
+# Origin: Debian
+# Label: Debian-Security
+# Suite: oldstable
+# Codename: lenny
+#==============================================================================
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# /etc/apt/sources.list.d/oldstable.list
+#       => http://ftp.fr.debian.org/debian-security/ oldstable/updates
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#------------------------------------------------------------------------------
+Package: *
+Pin: release o=Debian,l=Debian-Security,a=oldstable
+Pin-Priority: 9
+
+#------------------------------------------------------------------------------
+#deb http://ftp.fr.debian.org/debian-security/ oldstable/updates main contrib non-free
+#deb-src http://ftp.fr.debian.org/debian-security/ oldstable/updates main contrib non-free
+
+
+###############################################################################
+#http://ftp.fr.debian.org/debian-volatile/dists/oldstable-proposed-updates/volatile/Release
+#http://ftp.fr.debian.org/debian-volatile/dists/lenny-proposed-updates/volatile/Release
+###############################################################################
+#Origin: volatile.debian.org
+#Label: debian-volatile
+#Suite: oldstable-proposed-updates
+#Codename: lenny-proposed-updates
+#Components: volatile/main volatile/contrib volatile/non-free
+#Description: volatile.debian.org
+###############################################################################
+#==============================================================================
+# Origin: volatile.debian.org
+# Label: debian-volatile
+# Suite: oldstable-proposed-updates
+# Codename: lenny-proposed-updates
+#==============================================================================
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# /etc/apt/sources.list.d/oldstable.list
+#       => http://ftp.fr.debian.org/debian-volatile/ oldstable-proposed-updates
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#------------------------------------------------------------------------------
+Package: *
+Pin: release o=volatile.debian.org,l=debian-volatile,a=oldstable-proposed-updates
+Pin-Priority: 8
+
+#------------------------------------------------------------------------------
+#deb http://ftp.fr.debian.org/debian-volatile/ oldstable-proposed-updates/volatile main contrib non-free
+#deb-src http://ftp.fr.debian.org/debian-volatile/ oldstable-proposed-updates/volatile main contrib non-free
+
+
+###############################################################################
+#http://ftp.fr.debian.org/debian-volatile/dists/oldstable/volatile/Release
+#http://ftp.fr.debian.org/debian-volatile/dists/lenny/volatile/Release
+#http://ftp.fr.debian.org/debian-volatile/dists/oldstable/volatile-sloppy/Release
+#http://ftp.fr.debian.org/debian-volatile/dists/lenny/volatile-sloppy/Release
+###############################################################################
+#Origin: volatile.debian.org
+#Label: debian-volatile
+#Suite: oldstable
+#Codename: lenny
+#Components: volatile/main volatile/contrib volatile/non-free
+#Description: volatile.debian.org
+###############################################################################
+#==============================================================================
+# Origin: volatile.debian.org
+# Label: debian-volatile
+# Suite: oldstable
+# Codename: lenny
+#==============================================================================
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# /etc/apt/sources.list.d/oldstable.list
+#       => http://ftp.fr.debian.org/debian-volatile/ oldstable
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#------------------------------------------------------------------------------
+Package: *
+Pin: release o=volatile.debian.org,l=debian-volatile,a=oldstable
+Pin-Priority: 7
+
+#------------------------------------------------------------------------------
+#deb http://ftp.fr.debian.org/debian-volatile/ oldstable/volatile main contrib non-free
+#deb-src http://ftp.fr.debian.org/debian-volatile/ oldstable/volatile main contrib non-free
+
+
+###############################################################################
+#http://ftp.fr.debian.org/debian/dists/oldstable-proposed-updates/Release
+#http://ftp.fr.debian.org/debian/dists/lenny-proposed-updates/Release
+###############################################################################
+#Origin: Debian
+#Label: Debian
+#Suite: oldstable-proposed-updates
+#Version: 5.0-updates
+#Codename: lenny-proposed-updates
+#Components: main contrib non-free
+#Description: Proposed Updates for Debian 5.0 - Not Released
+###############################################################################
+#==============================================================================
+# Origin: Debian
+# Label: Debian
+# Suite: oldstable-proposed-updates
+# Codename: lenny-proposed-updates
+#==============================================================================
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# /etc/apt/sources.list.d/oldstable.list
+#       => http://ftp.fr.debian.org/debian/ oldstable-proposed-updates
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#------------------------------------------------------------------------------
+Package: *
+Pin: release o=Debian,l=Debian,a=oldstable-proposed-updates
+Pin-Priority: 6
+
+#------------------------------------------------------------------------------
+#deb http://ftp.fr.debian.org/debian/ oldstable-proposed-updates main contrib non-free
+#deb-src http://ftp.fr.debian.org/debian/ oldstable-proposed-updates main contrib non-free
+
+
+###############################################################################
+#http://ftp.fr.debian.org/debian-backports/dists/lenny-backports-sloppy/Release
+###############################################################################
+#Origin: Debian Backports
+#Label: Debian Backports
+#Suite: lenny-backports-sloppy
+#Codename: lenny-backports-sloppy
+#Components: main contrib non-free
+#Description: Backports for the Lenny Distribution (Sloppy)
+###############################################################################
+#==============================================================================
+# Origin: "Debian Backports"
+# Label: "Debian Backports"
+# Suite: lenny-backports-sloppy
+# Codename: lenny-backports-sloppy
+#==============================================================================
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# /etc/apt/sources.list.d/lenny-backports-sloppy.list
+#       => http://ftp.fr.debian.org/debian-backports/ lenny-backports-sloppy
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#------------------------------------------------------------------------------
+Package: *
+Pin: release o=Debian Backports,l=Debian Backports,a=lenny-backports-sloppy
+Pin-Priority: 5
+
+#------------------------------------------------------------------------------
+#deb http://ftp.fr.debian.org/debian-backports/ lenny-backports-sloppy main contrib non-free
+#deb-src http://ftp.fr.debian.org/debian-backports/ lenny-backports-sloppy main contrib non-free
+
