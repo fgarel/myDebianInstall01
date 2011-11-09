@@ -6,8 +6,8 @@
 #export https_proxy=http://10.5.10.23:3128/
 fgaptitudeupdate.sh
 fgaptitudeclean.sh
-#fgaptitudeinstallsys.sh
-#fgaptitudeinstallvim.sh
+fgaptitudeinstallsys.sh
+fgaptitudeinstallvim.sh
 #fgaptitudeupgrade.sh
 #fgaptitudeinstallpython.sh
 #sudo -u garel fgaptitudeinstallpythonfabric.sh ; cd $OLDPWD
