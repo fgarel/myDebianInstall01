@@ -11,7 +11,9 @@ Utilisation de ce projet
 2 inserer le cd dans le lecteur de votre machine à installer
 3 au lancement de la machine, si le Cd est le media de boot, appuyer sur la touche Echap
 4 si la machine est virtuelle et se trouve derrière un pare-feu :
-  auto interface=eth0 mirror/http/proxy=http://10.5.10.13:3128/ url=fgarel.ovh.org
+  auto interface=eth0 http_proxy=http://10.5.10.13:3128/ mirror/http/proxy=http://10.5.10.13:3128/ url=fgarel.ovh.org
+  sinon
+  auto url=fgarel.ovh.org
 5 patientez pendant l'installation de votre machine
 6 au redémarrage, vous pouvez vous logguer en tant que xxx, avec le mot de passe yyy
 
