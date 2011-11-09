@@ -194,7 +194,8 @@ echo "  Récupération des fichiers de configurations de Oh my zshell"
 #git checkout /etc/zsh/oh-my-zsh
 #git clean 
 #git clone git://github.com/robbyrussell/oh-my-zsh.git /etc/zsh/oh-my-zsh
-git clone --progress --verbose https://github.com/robbyrussell/oh-my-zsh.git /etc/zsh/oh-my-zsh
+#git clone --progress --verbose https://github.com/robbyrussell/oh-my-zsh.git /etc/zsh/oh-my-zsh
+git clone --progress --verbose http://github.com/robbyrussell/oh-my-zsh.git /etc/zsh/oh-my-zsh
 cd /etc/zsh/oh-my-zsh
 git fetch --progress --verbose
 cd $OLDPWD
