@@ -26,6 +26,9 @@ echo "Aptitude update"
 aptitude update 1> /dev/null 2> /dev/null
 echo "... tude update done"
 
+
+aptitude reinstal man-db 1> /dev/null
+
 # TODO: à mettre dans un bloc if pour eviter de relancer cette install à chaque
 #       fois...
 # installation du trousseau de clefs debian-multimedia-keyring
