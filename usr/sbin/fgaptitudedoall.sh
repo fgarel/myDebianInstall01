@@ -11,7 +11,7 @@ fgaptitudeclean.sh
 fgaptitudeinstallsys.sh
 fgaptitudeinstallvim.sh
 fgaptitudeupgrade.sh
-fgaptitudeinstallpython.sh
+#fgaptitudeinstallpython.sh
 #sudo -u garel fgaptitudeinstallpythonfabric.sh ; cd $OLDPWD
 #sudo -u garel fgaptitudeinstallpythonpyramid.sh ; cd $OLDPWD
 #sudo -u garel fgaptitudeinstallpythonmapnik.sh ; cd $OLDPWD
