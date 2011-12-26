@@ -9,9 +9,9 @@ export LANG=fr_FR.UTF-8
 
 fgaptitudeupdate.sh
 fgaptitudeclean.sh
-fgaptitudeinstallsys.sh
-fgaptitudeinstallvim.sh
-fgaptitudeupgrade.sh
+#fgaptitudeinstallsys.sh
+#fgaptitudeinstallvim.sh
+#fgaptitudeupgrade.sh
 #fgaptitudeinstallpython.sh
 #sudo -u garel fgaptitudeinstallpythonfabric.sh ; cd $OLDPWD
 #sudo -u garel fgaptitudeinstallpythonpyramid.sh ; cd $OLDPWD
