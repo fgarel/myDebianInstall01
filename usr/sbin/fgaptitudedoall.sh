@@ -9,7 +9,7 @@ export LANG=fr_FR.UTF-8
 
 fgaptitudeupdate.sh
 fgaptitudeclean.sh
-#fgaptitudeinstallsys.sh
+fgaptitudeinstallsys.sh
 #fgaptitudeinstallvim.sh
 #fgaptitudeupgrade.sh
 #fgaptitudeinstallpython.sh
