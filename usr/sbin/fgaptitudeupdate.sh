@@ -28,6 +28,8 @@ echo "... tude update done"
 
 
 aptitude reinstall man-db 1> /dev/null
+#aptitude reinstall libconfig1 1> /dev/null
+#aptitude reinstall fontconfig-config 1> /dev/null
 
 # TODO: à mettre dans un bloc if pour eviter de relancer cette install à chaque
 #       fois...
