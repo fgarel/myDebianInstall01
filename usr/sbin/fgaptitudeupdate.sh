@@ -23,12 +23,13 @@ echo "Aptitude update"
 #cat log.txt | grep "Erreur"
 #cat erreur.txt | grep ""
 #aptitude update | grep -v "Ign" | grep -v "Atteint" &> /dev/null
-#aptitude update 1> /dev/null 2> /dev/null
-aptitude update 
+aptitude update 1> /dev/null 2> /dev/null
+#aptitude update 
 echo "... tude update done"
 
 
-aptitude reinstall man-db 1> /dev/null
+#aptitude reinstall man-db 1> /dev/null
+aptitude reinstall man-db
 #aptitude reinstall libconfig1 1> /dev/null
 #aptitude reinstall fontconfig-config 1> /dev/null
 
