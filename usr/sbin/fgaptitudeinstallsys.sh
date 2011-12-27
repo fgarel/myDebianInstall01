@@ -99,7 +99,8 @@ echo y | aptitude install etckeeper 1> /dev/null
 ########################
 # installation de elinks
 echo "Installation de elinks"
-echo y | aptitude install elinks 1> /dev/null
+x#echo y | aptitude install elinks 1> /dev/null
+#echo y | aptitude install elinks
 
 echo 'set mime.extension.jpg="image/jpeg"' >> /etc/elinks/elinks.conf
 echo 'set mime.extension.jpeg="image/jpeg"' >> /etc/elinks/elinks.conf

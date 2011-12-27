@@ -8,9 +8,9 @@ export https_proxy=$http_proxy
 export LANG=fr_FR.UTF-8
 
 fgaptitudeupdate.sh
-fgaptitudeupdate.sh
+#fgaptitudeupdate.sh
 fgaptitudeclean.sh
-#fgaptitudeinstallsys.sh
+fgaptitudeinstallsys.sh
 #fgaptitudeinstallvim.sh
 #fgaptitudeupgrade.sh
 #fgaptitudeinstallpython.sh
