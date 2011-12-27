@@ -23,7 +23,8 @@ echo "Aptitude update"
 #cat log.txt | grep "Erreur"
 #cat erreur.txt | grep ""
 #aptitude update | grep -v "Ign" | grep -v "Atteint" &> /dev/null
-aptitude update 1> /dev/null 2> /dev/null
+#aptitude update 1> /dev/null 2> /dev/null
+aptitude update 
 echo "... tude update done"
 
 

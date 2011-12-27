@@ -15,10 +15,10 @@ echo y | aptitude purge "~c" > /dev/null
 #update-alternatives --all
 # par exemple, au lieu de désinstaller le paquet "util-linux" (qui contient pg et more)
 # http://pwet.fr/man/linux/administration_systeme/update_alternatives
-update-alternatives --remove editor /bin/nano
-update-alternatives --remove editor /usr/bin/vim.basic
-update-alternatives --remove editor /usr/bin/vim.tiny
-update-alternatives --remove fakeroot /usr/bin/fakeroot-tcp
+update-alternatives --remove editor /bin/nano 1> /dev/null
+update-alternatives --remove editor /usr/bin/vim.basic 1> /dev/null
+update-alternatives --remove editor /usr/bin/vim.tiny 1> /dev/null
+update-alternatives --remove fakeroot /usr/bin/fakeroot-tcp 1> /dev/null
 update-alternatives --remove pager /usr/bin/pg 1> /dev/null
 update-alternatives --remove pager /bin/more 1> /dev/null
 update-alternatives --remove vi /usr/bin/vim.tiny 1> /dev/null
