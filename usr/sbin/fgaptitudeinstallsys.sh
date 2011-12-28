@@ -98,9 +98,18 @@ echo y | aptitude install etckeeper 1> /dev/null
                           
 ########################
 # installation de elinks
+echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++"
+echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++"
+echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++"
+apt-cache policy git
+echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++"
+echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++"
+echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++"
+echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++"
+echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++"
 echo "Installation de elinks"
-x#echo y | aptitude install elinks 1> /dev/null
-#echo y | aptitude install elinks
+#echo y | aptitude install elinks 1> /dev/null
+echo y | aptitude install elinks
 
 echo 'set mime.extension.jpg="image/jpeg"' >> /etc/elinks/elinks.conf
 echo 'set mime.extension.jpeg="image/jpeg"' >> /etc/elinks/elinks.conf

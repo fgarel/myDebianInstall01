@@ -27,9 +27,6 @@ rm -f /etc/apt/sources.list~
 
 
 # chainage avec les scripts de configuration et les mises à jour
-echo "==============================="
-apt-cache policy git
-echo "==============================="
 fgaptitudedoall.sh
 
 # comments

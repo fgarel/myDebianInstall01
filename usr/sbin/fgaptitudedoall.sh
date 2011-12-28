@@ -7,9 +7,6 @@
 export https_proxy=$http_proxy
 export LANG=fr_FR.UTF-8
 
-echo "==============================="
-apt-cache policy git
-echo "==============================="
 fgaptitudeupdate.sh
 #fgaptitudeupdate.sh
 fgaptitudeclean.sh
