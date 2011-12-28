@@ -23,29 +23,13 @@ echo "Aptitude update"
 #cat log.txt | grep "Erreur"
 #cat erreur.txt | grep ""
 #aptitude update | grep -v "Ign" | grep -v "Atteint" &> /dev/null
-echo "==============================="
-echo "1"
-apt-cache policy git
-echo "==============================="
 aptitude update 1> /dev/null 2> /dev/null
-echo "==============================="
-echo "2"
-apt-cache policy git
-echo "==============================="
 #aptitude update 
 echo "... tude update done"
 
 
 aptitude reinstall man-db 1> /dev/null
-echo "==============================="
-echo "3"
-apt-cache policy git
-echo "==============================="
 aptitude reinstall man-db
-echo "==============================="
-echo "4"
-apt-cache policy git
-echo "==============================="
 #aptitude reinstall libconfig1 1> /dev/null
 #aptitude reinstall fontconfig-config 1> /dev/null
 
@@ -53,13 +37,3 @@ echo "==============================="
 #       fois...
 # installation du trousseau de clefs debian-multimedia-keyring
 echo "Oui" | aptitude install debian-multimedia-keyring > /dev/null
-echo "==============================="
-echo "5"
-apt-cache policy git
-echo "==============================="
-echo "Oui" | aptitude install debian-multimedia-keyring
-echo "==============================="
-echo "6"
-apt-cache policy git
-echo "==============================="
-
