@@ -10,7 +10,7 @@ echo y | aptitude purge "~c" > /dev/null
 #echo "y" | aptitude remove nano \
 #                           fakeroot > /dev/null
 #echo "y" | aptitude purge ~c > /dev/null
-aptitude install man-db
+#aptitude install man-db
 
 # reglage des update-alternatives
 #update-alternatives --all
