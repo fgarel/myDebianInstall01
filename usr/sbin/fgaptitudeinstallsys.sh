@@ -82,8 +82,8 @@
 
 #####################
 # installation de git
-echo "Installation de git"
-echo y | aptitude install git 1> /dev/null
+#echo "Installation de git"
+#echo y | aptitude install git 1> /dev/null
 
 ############################
 # installation de subversion
@@ -101,7 +101,7 @@ echo y | aptitude install git 1> /dev/null
 #echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++"
 #echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++"
 echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++"
-apt-cache policy git
+#apt-cache policy git
 echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++"
 #echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++"
 #echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++"

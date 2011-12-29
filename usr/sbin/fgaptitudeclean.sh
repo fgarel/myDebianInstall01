@@ -3,7 +3,8 @@
 # suppression des paquets debian
 echo "Nettoyage 2"
 echo y | aptitude clean > /dev/null
-echo y | aptitude purge "~c" > /dev/null
+#echo y | aptitude purge "~c" > /dev/null
+echo y | aptitude purge "~c"
 
 # on enleve quelques paquets qui ne seront pas utilisés
 #echo "Suppression de quelques paquets debian (nano et fakeroot)"
