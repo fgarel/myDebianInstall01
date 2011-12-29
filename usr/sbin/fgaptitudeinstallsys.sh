@@ -14,13 +14,13 @@ addgroup garel sudo 1> /dev/null
 
 ################################
 # ajout de l'utilitaire ack-grep
-#echo "Installation de ack-grep"
-#echo y | aptitude install ack-grep 1> /dev/null
+echo "Installation de ack-grep"
+echo y | aptitude install ack-grep 1> /dev/null
 
 ##############################
 # ajout de l'utilitaire hwinfo
-#echo "Installation de hwinfo"
-#echo y | aptitude install hwinfo 1> /dev/null
+echo "Installation de hwinfo"
+echo y | aptitude install hwinfo 1> /dev/null
 
 ####################################
 # ajout de l'utilitaire ncurses-term
