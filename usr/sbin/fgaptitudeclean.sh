@@ -3,14 +3,14 @@
 # suppression des paquets debian
 echo "Nettoyage 2"
 echo y | aptitude clean > /dev/null
-#echo y | aptitude purge "~c" > /dev/null
-echo y | aptitude purge "~c"
+echo y | aptitude purge "~c" > /dev/null
 
 # on enleve quelques paquets qui ne seront pas utilisés
 #echo "Suppression de quelques paquets debian (nano et fakeroot)"
 #echo "y" | aptitude remove nano \
 #                           fakeroot > /dev/null
 #echo "y" | aptitude purge ~c > /dev/null
+aptitude install man-db
 
 # reglage des update-alternatives
 #update-alternatives --all
