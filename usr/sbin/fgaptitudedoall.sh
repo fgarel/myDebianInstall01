@@ -11,7 +11,7 @@ fgaptitudeupdate.sh
 #fgaptitudeupdate.sh
 fgaptitudeclean.sh
 fgaptitudeinstallsys.sh
-#fgaptitudeinstallvim.sh
+fgaptitudeinstallvim.sh
 #fgaptitudeupgrade.sh
 #fgaptitudeinstallpython.sh
 #sudo -u garel fgaptitudeinstallpythonfabric.sh ; cd $OLDPWD

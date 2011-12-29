@@ -264,7 +264,7 @@ sed -i -e 's/^# theme = random$/theme = random/g' /etc/qingy/settings
 sed -i -e 's/^theme = \"default\"$/# theme = \"default\"/g' /etc/qingy/settings
 
 echo "  Installation de fbterm"
-echo y | aptitude install fbterm 1> /dev/null
+#echo y | aptitude install fbterm 1> /dev/null
 
 # qingy passe la main au shell
 # le shell doit etre paramètré pour utiliser un terminal/console
