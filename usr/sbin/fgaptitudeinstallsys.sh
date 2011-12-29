@@ -39,57 +39,57 @@ echo y | aptitude install make 1> /dev/null
 
 #######################################
 # ajout de l'utilitaire build-essential
-#echo "Installation de build-essential"
-#echo y | aptitude install build-essential 1> /dev/null
+echo "Installation de build-essential"
+echo y | aptitude install build-essential 1> /dev/null
 
 ##################################
 # ajout de l'utilitaire devscripts
-#echo "Installation de devscripts"
-#echo y | aptitude install devscripts 1> /dev/null
+echo "Installation de devscripts"
+echo y | aptitude install devscripts 1> /dev/null
 
 ################################
 # ajout de l'utilitaire fakeroot
-#echo "Installation de fakeroot"
-#echo y | aptitude install fakeroot 1> /dev/null
+echo "Installation de fakeroot"
+echo y | aptitude install fakeroot 1> /dev/null
 
 ############################
 # ajout de l'utilitaire flex
-#echo "Installation de flex"
-#echo y | aptitude install flex 1> /dev/null
+echo "Installation de flex"
+echo y | aptitude install flex 1> /dev/null
 
 #############################
 # ajout de l'utilitaire bison
-#echo "Installation de bison"
-#echo y | aptitude install bison 1> /dev/null
+echo "Installation de bison"
+echo y | aptitude install bison 1> /dev/null
 
 ##########################
 # ajout de libreadline-dev
-#echo "Installation de libreadline-dev"
-#echo y | aptitude install libreadline-dev 1> /dev/null
+echo "Installation de libreadline-dev"
+echo y | aptitude install libreadline-dev 1> /dev/null
 
 ###############################
 # ajout de l'utilitaire mlocate
-#echo "Installation de mlocate"
-#aptitude install mlocate 1> /dev/null
-#echo "  Début de l'indexation"
-#updatedb &
+echo "Installation de mlocate"
+aptitude install mlocate 1> /dev/null
+echo "  Début de l'indexation"
+updatedb &
 #echo "Fin de l'indexation"
 
 ############################
 # ajout de l'utilitaire tmux
-#echo "Installation de tmux"
-#echo y | aptitude install tmux/squeeze-backports 1> /dev/null
+echo "Installation de tmux"
+echo y | aptitude install tmux/squeeze-backports 1> /dev/null
 
 #####################
 # installation de git
-#echo "Installation de git"
-#echo y | aptitude install git 1> /dev/null
+echo "Installation de git"
+echo y | aptitude install git 1> /dev/null
 
 ############################
 # installation de subversion
-#echo "Installation de subversion"
-#echo y | aptitude install subversion \
-#                          subversion-tools 1> /dev/null
+echo "Installation de subversion"
+echo y | aptitude install subversion \
+                          subversion-tools 1> /dev/null
                           
 ###########################
 # installation de etckeeper
