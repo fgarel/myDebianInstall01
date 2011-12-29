@@ -24,18 +24,18 @@ echo y | aptitude install hwinfo 1> /dev/null
 
 ####################################
 # ajout de l'utilitaire ncurses-term
-#echo "Installation de ncurses-term"
-#echo y | aptitude install ncurses-term 1> /dev/null
+echo "Installation de ncurses-term"
+echo y | aptitude install ncurses-term 1> /dev/null
 
 #############################
 # ajout de l'utilitaire bzip2
-#echo "Installation de bzip2"
-#echo y | aptitude install bzip2 1> /dev/null
+echo "Installation de bzip2"
+echo y | aptitude install bzip2 1> /dev/null
 
 ############################
 # ajout de l'utilitaire make
-#echo "Installation de make"
-#echo y | aptitude install make 1> /dev/null
+echo "Installation de make"
+echo y | aptitude install make 1> /dev/null
 
 #######################################
 # ajout de l'utilitaire build-essential
