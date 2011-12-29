@@ -2,15 +2,15 @@
 
 ##############################################
 # ajout de l'utilisateur garel au groupe staff
-#echo "  Ajout de l'utilisateur garel au groupe staff"
-#addgroup garel staff 1> /dev/null
+echo "  Ajout de l'utilisateur garel au groupe staff"
+addgroup garel staff 1> /dev/null
 
 ############################
 # ajout de l'utilitaire sudo
-#echo "Installation de sudo"
-#aptitude install sudo 1> /dev/null
-#echo "  Ajout de l'utilisateur garel au groupe sudo"
-#addgroup garel sudo 1> /dev/null
+echo "Installation de sudo"
+aptitude install sudo 1> /dev/null
+echo "  Ajout de l'utilisateur garel au groupe sudo"
+addgroup garel sudo 1> /dev/null
 
 ################################
 # ajout de l'utilitaire ack-grep
