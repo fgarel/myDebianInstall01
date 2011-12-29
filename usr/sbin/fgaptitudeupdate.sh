@@ -30,6 +30,7 @@ echo "... tude update done"
 
 #aptitude reinstall man-db 1> /dev/null
 #aptitude reinstall man-db
+aptitude remove man-db
 #aptitude reinstall libconfig1 1> /dev/null
 #aptitude reinstall fontconfig-config 1> /dev/null
 
