@@ -279,16 +279,16 @@ echo "  Installation de fbterm"
 #     TERM n'est pas à la bonne valeur)
 #   qui lance zshenv
 #     (la variable TERM est enfin mise à la bonne valeur)
-sed -i -e '/export TERM=/ d' /etc/zsh/zshenv
-echo 'export TERM=fbterm' >> /etc/zsh/zshenv
-#echo 'export TERM=screen-256color' >> /etc/zsh/zshenv
+#sed -i -e '/export TERM=/ d' /etc/zsh/zshenv
+#echo 'export TERM=fbterm' >> /etc/zsh/zshenv
+##echo 'export TERM=screen-256color' >> /etc/zsh/zshenv
 
-sed -i -e '/fbterm -v/ d' /etc/zsh/zlogin
-sed -i -e '/fbterm/ d' /etc/zsh/zlogin
-sed -i -e '/exit/ d' /etc/zsh/zlogin
-#echo 'fbterm -v --cursor-shape=1 /bin/zsh' >> /etc/zsh/zlogin
-echo 'fbterm --cursor-shape=1 /bin/zsh' >> /etc/zsh/zlogin
-echo 'exit' >> /etc/zsh/zlogin
+#sed -i -e '/fbterm -v/ d' /etc/zsh/zlogin
+#sed -i -e '/fbterm/ d' /etc/zsh/zlogin
+#sed -i -e '/exit/ d' /etc/zsh/zlogin
+##echo 'fbterm -v --cursor-shape=1 /bin/zsh' >> /etc/zsh/zlogin
+#echo 'fbterm --cursor-shape=1 /bin/zsh' >> /etc/zsh/zlogin
+#echo 'exit' >> /etc/zsh/zlogin
 
 ###########################################
 # Installation d'utilitaires en framebuffer
