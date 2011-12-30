@@ -9,13 +9,15 @@ Utilisation de ce projet
 ------------------------
 1 se munir d'un cd netinstall http://www.debian.org/distrib/netinst
 2 inserer le cd dans le lecteur de votre machine à installer
-3 au lancement de la machine, si le Cd est le media de boot, appuyer sur la touche Echap
+3 au lancement de la machine, si le CD est le media de boot, appuyer sur la touche Echap
 4 si la machine est virtuelle et se trouve derrière un pare-feu :
-  auto interface=eth0 http_proxy=http://10.5.10.13:3128/ mirror/http/proxy=http://10.5.10.13:3128/ url=fgarel.ovh.org
+  auto interface=eth0 mirror/http/proxy=http://10.5.10.13:3128/ http_proxy=http://10.5.10.13:3128/ url=fgarel.ovh.org
   sinon
   auto url=fgarel.ovh.org
 5 patientez pendant l'installation de votre machine
 6 au redémarrage, vous pouvez vous logguer en tant que xxx, avec le mot de passe yyy
+7 un dernier bout de script est a executer
+  export http_proxy=http://10.5.10.13:3128/ ; fgaptitudeinstallsys2.sh
 
 Les détails de l'installation
 -----------------------------
@@ -30,3 +32,14 @@ Avoir acces à l'url http://fgarel.ovh.org/d-i/squeeze/preseed.cfg
 si la machine est virtuelle, avoir créer deux connections réseaux adéquates
   (une vers internet, une autre vers le reseau interne)
 si la machine est derrière un proxy, avoir installé et configuré squid
+
+Les ressources extérieures
+--------------------------
+ - sur github : 
+     https://github.com/fgarel/myDebianInstall01
+       depot git avec les premières installations
+     https://github.com/fgarel/myDebianInstall02
+       depot git avec la suite des installations
+ - sur ovh :
+     http://fgarel.ovh.org/d-i/squeeze/preseed.cfg
+       le fichier preseed.cfg qui automatise tout ça

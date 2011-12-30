@@ -1,14 +1,11 @@
 #!/bin/sh
 
-
-# chainage avec les scripts de configuration et les mises à jour
-#export http_proxy=http://10.5.10.23:3128/
-#export https_proxy=http://10.5.10.23:3128/
 export https_proxy=$http_proxy
 export LANG=fr_FR.UTF-8
 
+# chainage avec les scripts de configuration et les mises à jour
+
 fgaptitudeupdate.sh
-#fgaptitudeupdate.sh
 fgaptitudeclean.sh
 fgaptitudeinstallsys.sh
 fgaptitudeinstallvim.sh

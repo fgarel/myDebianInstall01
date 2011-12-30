@@ -1,0 +1,87 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# licence GPL
+# $Id: $
+
+""" Paramètres de connexion.
+
+# su postgres
+postgres$ createuser -d -R -S -P nabu
+Saisir le mot de passe pour le nouveau role : nabu
+Le saisir de nouveau : nabu
+postgres$ createdb -E UTF8 -O nabu nabudemo
+
+postgres$ createuser -d -R -S -P fred
+Saisir le mot de passe pour le nouveau role : fred
+Le saisir de nouveau : fred
+postgres$ createdb -E UTF8 -O fred election
+"""
+
+__author__ = "Frédéric Garel <fgarel@free.fr>"
+__date__ = "26 Jan 2010"
+__version__ = "$Revision: 1.5 $"
+__credits__ = """Thanks to ... for his help on this module"""
+
+
+import sys
+import psycopg2 as dbapi
+
+class ConnectPython():
+    """ ConnectPython est une classe offrant les outils nécessaires pour établir
+    une connexion
+    à une base de données postgresql
+
+
+    """
+    def __init__(self):
+        # connect to the database
+        #params = {
+        #    'database': 'nabudemo',
+        #    'user': 'nabudemo',
+        #    'password': '$nabudemo',
+        #    'host': 'localhost',
+        #}
+        self.params = {
+            'database': 'election',
+            'user': 'fred',
+            'password': 'fred',
+            'host': 'localhost',
+        }
+
+    def __call__(self):
+        """  appel de la clasee
+        """
+        #print 'call'
+        self.test()
+
+    def connect_dbapi(self):
+        """
+        Connects to the database using a DBAPI-2.0 compliant connection and returns
+        a (module, connection) pair.
+        """
+        try:
+            conn = dbapi.connect(**self.params)
+        except dbapi.Error:
+            print 'Content-type:', 'text/plain'
+            print 'Status: 500 Could not connect to server.'
+            print
+            sys.exit(1)
+        
+        #return dbapi, conn
+        return conn
+
+    def test(self):
+        """ methode pour test
+        """
+        print "ConnectPython.test"
+
+def main():
+    """ main permet d'instancier un objet de la classe ConnectPython
+    """
+    # Creation de l'instance
+    _myconnectpython = ConnectPython()
+    _myconnectpython.test()
+
+if __name__ == '__main__':
+    main()
+

@@ -1,0 +1,25 @@
+Création d'une base de données
+==============================
+cd ~/travail/docInterne/postgis/
+fab create_database:police
+
+
+import des données
+==================
+
+de shape vers postgis
+---------------------
+
+fab shp2pgsql:~/f/GEOMATIQUE/police/shape/voirie_filaire_voie.shp,srid=27562,encodage=latin1 
+
+de csv vers sql
+---------------
+
+fab csv2pgsql:data_header.sql,data=data.txt
+
+Manipulation des données
+========================
+
+fab manipulate_data:sql2kml.sql
+
+
