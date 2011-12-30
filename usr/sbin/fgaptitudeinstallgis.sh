@@ -43,8 +43,8 @@ echo y | aptitude install gmt-examples/stable 1> /dev/null
 #echo y | aptitude install liblas/testing 1> /dev/null
 #echo y | aptitude install librasterlite/testing 1> /dev/null
 #echo y | aptitude install libterralib/unstable 1> /dev/null
-echo "    Installation de mapnik"
-echo y | aptitude install python-mapnik 1> /dev/null
+#echo "    Installation de mapnik"
+#echo y | aptitude install python-mapnik 1> /dev/null
 #echo y | aptitude install mapnik-viewer/testing 1> /dev/null
 #echo y | aptitude install mapserver/unstable 1> /dev/null
 #echo y | aptitude install mkgmap 1> /dev/null
@@ -59,14 +59,14 @@ echo y | aptitude install python-mapnik 1> /dev/null
 #echo y | aptitude install osmosis 1> /dev/null
 #echo y | aptitude install ossim/testing 1> /dev/null
 #echo y | aptitude install postgis/squeeze-backports 1> /dev/null
-echo "    Installation de postgresql"
-echo y | aptitude install postgresql-common 1> /dev/null
+#echo "    Installation de postgresql"
+#echo y | aptitude install postgresql-common 1> /dev/null
 
-echo "    Installation de postgis"
-echo y | aptitude install postgis \
-                          postgresql-8.4-postgis 1> /dev/null
-echo "    Installation de postgresql-dev"
-echo y | aptitude install postgresql-server-dev-8.4 1> /dev/null
+#echo "    Installation de postgis"
+#echo y | aptitude install postgis \
+#                          postgresql-8.4-postgis 1> /dev/null
+#echo "    Installation de postgresql-dev"
+#echo y | aptitude install postgresql-server-dev-8.4 1> /dev/null
 #cd /usr/local/src
 #svn co http://svn.osgeo.org/postgis/trunk postgis-svn
 #cd $OLDPWD

@@ -27,3 +27,16 @@ sed -i -e '/exit/ d' /etc/zsh/zlogin
 #echo 'fbterm -v --cursor-shape=1 /bin/zsh' >> /etc/zsh/zlogin
 echo 'fbterm --cursor-shape=1 /bin/zsh' >> /etc/zsh/zlogin
 echo 'exit' >> /etc/zsh/zlogin
+
+###########################################
+echo "    Installation de mapnik"
+echo y | aptitude install python-mapnik 1> /dev/null
+
+echo "    Installation de postgresql"
+echo y | aptitude install postgresql-common 1> /dev/null
+
+echo "    Installation de postgis"
+echo y | aptitude install postgis \
+                          postgresql-8.4-postgis 1> /dev/null
+echo "    Installation de postgresql-dev"
+echo y | aptitude install postgresql-server-dev-8.4 1> /dev/null
