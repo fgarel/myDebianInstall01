@@ -185,12 +185,12 @@ echo y | aptitude install trac-bitten \
                           trac-mercurial 1> /dev/null
 echo "    Installation de jdonref"
 
-echo "    Installation de imagemagick"
-echo y | aptitude install imagemagick 1> /dev/null
+#echo "    Installation de imagemagick"
+#echo y | aptitude install imagemagick 1> /dev/null
 
 echo "    Installation des dépendances pour geonode"
-#aptitude install sun-java6-jre #1> /dev/null
-echo y | aptitude install openjdk-6-jre 1> /dev/null
-#echo y | aptitude install tomcat6 1> /dev/null
+##aptitude install sun-java6-jre #1> /dev/null
+#echo y | aptitude install openjdk-6-jre 1> /dev/null
+##echo y | aptitude install tomcat6 1> /dev/null
 
 
