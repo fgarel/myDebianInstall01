@@ -45,6 +45,7 @@ echo "Installation de xserver-xorg"
 echo y | aptitude install xserver-common/experimental \
                           xserver-xorg-core/testing \
                           xserver-xorg-video-fbdev/testing \
+                          xserver-xorg-input-evdev/testing \
                           libxfont1/squeeze-backports \
                           xinit #1> /dev/null
 
