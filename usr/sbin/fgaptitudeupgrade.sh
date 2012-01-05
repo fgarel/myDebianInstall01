@@ -40,11 +40,12 @@ echo "Installation de xserver-xorg"
 echo y | aptitude install xserver-common/experimental \
                           xserver-xorg-core/testing \
                           xserver-xorg-video-fbdev/testing \
-                          libxfont1/squeeze-backports
+                          libxfont1/squeeze-backports \
+                          xinit
 
 # ajout de dkms et de virtualbox-ose-guest
 echo "Installation de virtualbox et dkms"
-echo y | aptitude install dkms \
-                          virtualbox-guest-dkms \
-                          virtualbox-guest-utils/unstable \
-                          virtualbox-guest-x11/unstable
+#echo y | aptitude install dkms \
+#                          virtualbox-guest-dkms \
+#                          virtualbox-guest-utils/unstable \
+#                          virtualbox-guest-x11/unstable
