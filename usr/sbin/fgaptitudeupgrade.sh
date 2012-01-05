@@ -50,7 +50,7 @@ echo y | aptitude install xserver-common/experimental \
 
 # ajout de dkms et de virtualbox-ose-guest
 echo "Installation de virtualbox et dkms"
-#echo y | aptitude install dkms \
-#                          virtualbox-guest-dkms \
-#                          virtualbox-guest-utils/unstable \
-#                          virtualbox-guest-x11/unstable
+echo y | aptitude install dkms \
+                          virtualbox-guest-dkms \
+                          virtualbox-guest-utils/unstable \
+                          virtualbox-guest-x11/unstable #1> /dev/null
