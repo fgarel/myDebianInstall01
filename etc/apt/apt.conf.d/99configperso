@@ -18,4 +18,4 @@ Aptitude::Suggests-Recommends "false";
 
 APT::Cache-Limit 150000000;
 
-Acquire::http::Proxy "http://10.5.10.23:3128";
+#Acquire::http::Proxy "http://10.5.10.23:3128";

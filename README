@@ -9,15 +9,33 @@ Utilisation de ce projet
 ------------------------
 1 se munir d'un cd netinstall http://www.debian.org/distrib/netinst
 2 inserer le cd dans le lecteur de votre machine à installer
-3 au lancement de la machine, si le CD est le media de boot, appuyer sur la touche Echap
+3 au lancement de la machine, si le CD est le media de boot,
+  appuyer sur la touche Echap
 4 si la machine est virtuelle et se trouve derrière un pare-feu :
-  auto interface=eth0 mirror/http/proxy=http://10.5.10.13:3128/ http_proxy=http://10.5.10.13:3128/ url=fgarel.ovh.org
+    auto interface=eth0
+         mirror/http/proxy=http://10.5.10.13:3128/
+         http_proxy=http://10.5.10.13:3128/
+         url=fgarel.ovh.org
   sinon
-  auto url=fgarel.ovh.org
+    auto url=fgarel.ovh.org
 5 patientez pendant l'installation de votre machine
-6 au redémarrage, vous pouvez vous logguer en tant que xxx, avec le mot de passe yyy
+6 au redémarrage, vous pouvez vous logguer en tant que xxx,
+  avec le mot de passe yyy
 7 un dernier bout de script est a executer
   export http_proxy=http://10.5.10.13:3128/ ; fgaptitudeinstallsys2.sh
+  
+Quelques remarques concernant les paramètres utilisés
+-----------------------------------------------------
+# quelques remarques concernant les différents paramètres employés :
+# interface=eth0     : la machine virtualbox est configurée avec deux cartes réseaux
+#                      la première est en mode bridge (accès par pont)
+#                      la seconde est en mode nat
+#                      il faut configuré les deux pour avoir accès à la fois
+#                      au réseau interne et à internet
+# mirror/http/proxy  : un serveur proxy est installé et configuré sur la
+#                      machine hote pour que la machine invitée puisse communiquer
+#                      avec l'exterieur malgré le firewall
+# url=fgarel.ovh.org : un fichier preseed.cfg est disponible à cet emplacement
 
 Les détails de l'installation
 -----------------------------
@@ -43,3 +61,53 @@ Les ressources extérieures
  - sur ovh :
      http://fgarel.ovh.org/d-i/squeeze/preseed.cfg
        le fichier preseed.cfg qui automatise tout ça
+
+Contribuez à l'amélioration de ce script
+----------------------------------------
+La question posée ici est plutôt : comment modifier les ressources exterieures
+
+Pour ameliorer et debuger le procédé, la manip est différente en fonction
+du site impacté :
+   1 - mise a jour de preseed.cfg (sur ovh.net)
+   2 - debug des scripts (sur github.org)
+
+
+1.   Mise a jour de preseed.cfg (sur ovh.net)
+     Le fichier source se trouve dans
+       myDebianInstall02/home/garel/public_html/d-i/squeeze/preseed.cfg
+     Prerequis : un navigateur web avec les infos pour se connecter au serveur ovh
+     
+1.1. Aller sur la page https://www.ovh.com/managerv3/
+     Identifiant (NIC-handle, Domaine, Email) : gf14448-ovh
+     Mot de Passe : 
+
+     Aller sur hebergements seuls / fgarel.ovh.org
+     Puis, aller sur Offre Gratuit / Hébergement / Net2Ftp
+
+     Bref, aller sur le site http://fgarel.ovh.org/net2ftp/
+     Nom d'utilisateur : fgarel
+     Mot de Passe : 
+     Repertoire de Depart : /www/d-i/squeeze/
+     Langue : French
+     Habillement : India
+     Mode FTP : Automatique
+
+     Action : Upload
+     Uploader vers le repertoire : /wwww/d-i/squeeze
+     Fichiers : (les fichiers entres ici seront transferes vers le serveur FTP) : 
+       /clefUsb2/home/garel/public_html/d-i/squeeze.cfg
+     Puis cliquer sur le bouton "V" Vert pour valider le transfert
+
+2.   Debug des scripts (sur github.org)
+
+2.1. Aller dans le repertoire du depot
+     sur une machine fraichement installee, c'est /root/myDebianInstall01/
+     sur la machine du travail, c'est ~/travail/docInterne/github/myDebianInstall01/
+     (attention, au préalable, il faut, avec meld, synchronise avec le repertoire ~/travail/docInterne/clefUsb)
+     
+     pour memoire, l'initialisation d'un nouveau depot a été réalisé avec les commandes
+     git init
+     git remote add origin git@github.com:fgarel/myDebianInstall02.git
+
+     mise a jour d'un depot distant avec nos données locales
+     git status ; git add * ; git commit -m "debug" ; git push origin master
