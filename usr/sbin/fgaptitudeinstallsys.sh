@@ -241,27 +241,27 @@ update-grub2
 ####################################################
 # Installation de qingy : pour avoir le frame buffer
 echo "Installationd de qingy"
-echo y | aptitude install qingy 1> /dev/null
-sed -i -e 's/1:2345:respawn:\/sbin\/getty 38400 tty1/1:2345:respawn:\/usr\/sbin\/qingy tty1 -n/g' /etc/inittab
-sed -i -e 's/2:23:respawn:\/sbin\/getty 38400 tty2/2:23:respawn:\/usr\/sbin\/qingy tty2 -n/g' /etc/inittab
-sed -i -e 's/3:23:respawn:\/sbin\/getty 38400 tty3$/3:23:respawn:\/sbin\/getty 38400 tty3 fbterm/g' /etc/inittab
-sed -i -e 's/4:23:respawn:\/sbin\/getty 38400 tty4$/4:23:respawn:\/sbin\/getty 38400 tty4 screen-256color/g' /etc/inittab
-sed -i -e 's/5:23:respawn:\/sbin\/getty 38400 tty5$/5:23:respawn:\/sbin\/getty 38400 tty5 xterm-256color/g' /etc/inittab
-sed -i -e 's/6:23:respawn:\/sbin\/getty 38400 tty6$/6:23:respawn:\/sbin\/getty 38400 tty6/g' /etc/inittab
-#sed -i -e 's/1:2345:respawn:\/sbin\/getty 38400 tty1/1:2345:respawn:\/sbin\/getty 38400 tty1 xterm-256color/g' /etc/inittab
-#sed -i -e 's/2:23:respawn:\/sbin\/getty 38400 tty2/2:23:respawn:\/sbin\/getty 38400 tty2 xterm-256color/g' /etc/inittab
-#sed -i -e 's/3:23:respawn:\/sbin\/getty 38400 tty3/3:23:respawn:\/sbin\/getty 38400 tty3 xterm-256color/g' /etc/inittab
-#sed -i -e 's/4:23:respawn:\/sbin\/getty 38400 tty4/4:23:respawn:\/sbin\/getty 38400 tty4 xterm-256color/g' /etc/inittab
-#sed -i -e 's/5:23:respawn:\/sbin\/getty 38400 tty5/5:23:respawn:\/sbin\/getty 38400 tty5 xterm-256color/g' /etc/inittab
-echo "  Récupération des thèmes"
-cd /usr/share/qingy/themes/
-wget -nv -q -N http://sourceforge.net/projects/qingy/files/qingy%20themes/themepack%20for%20qingy%200.3xx/qingy_0.3_themepack_1.0.tar.bz2 qingy_0.3_themepack_1.0.tar.bz2
-tar xjvf qingy_0.3_themepack_1.0.tar.bz2 1> /dev/null
-mv qingy_0.3_themepack_1.0/* . 1> /dev/null 2> /dev/null
-rm -rf qingy_0.3_themepack_1.0
-cd $OLDPWD
-sed -i -e 's/^# theme = random$/theme = random/g' /etc/qingy/settings
-sed -i -e 's/^theme = \"default\"$/# theme = \"default\"/g' /etc/qingy/settings
+#echo y | aptitude install qingy 1> /dev/null
+#sed -i -e 's/1:2345:respawn:\/sbin\/getty 38400 tty1/1:2345:respawn:\/usr\/sbin\/qingy tty1 -n/g' /etc/inittab
+#sed -i -e 's/2:23:respawn:\/sbin\/getty 38400 tty2/2:23:respawn:\/usr\/sbin\/qingy tty2 -n/g' /etc/inittab
+#sed -i -e 's/3:23:respawn:\/sbin\/getty 38400 tty3$/3:23:respawn:\/sbin\/getty 38400 tty3 fbterm/g' /etc/inittab
+#sed -i -e 's/4:23:respawn:\/sbin\/getty 38400 tty4$/4:23:respawn:\/sbin\/getty 38400 tty4 screen-256color/g' /etc/inittab
+#sed -i -e 's/5:23:respawn:\/sbin\/getty 38400 tty5$/5:23:respawn:\/sbin\/getty 38400 tty5 xterm-256color/g' /etc/inittab
+#sed -i -e 's/6:23:respawn:\/sbin\/getty 38400 tty6$/6:23:respawn:\/sbin\/getty 38400 tty6/g' /etc/inittab
+##sed -i -e 's/1:2345:respawn:\/sbin\/getty 38400 tty1/1:2345:respawn:\/sbin\/getty 38400 tty1 xterm-256color/g' /etc/inittab
+##sed -i -e 's/2:23:respawn:\/sbin\/getty 38400 tty2/2:23:respawn:\/sbin\/getty 38400 tty2 xterm-256color/g' /etc/inittab
+##sed -i -e 's/3:23:respawn:\/sbin\/getty 38400 tty3/3:23:respawn:\/sbin\/getty 38400 tty3 xterm-256color/g' /etc/inittab
+##sed -i -e 's/4:23:respawn:\/sbin\/getty 38400 tty4/4:23:respawn:\/sbin\/getty 38400 tty4 xterm-256color/g' /etc/inittab
+##sed -i -e 's/5:23:respawn:\/sbin\/getty 38400 tty5/5:23:respawn:\/sbin\/getty 38400 tty5 xterm-256color/g' /etc/inittab
+#echo "  Récupération des thèmes"
+#cd /usr/share/qingy/themes/
+#wget -nv -q -N http://sourceforge.net/projects/qingy/files/qingy%20themes/themepack%20for%20qingy%200.3xx/qingy_0.3_themepack_1.0.tar.bz2 qingy_0.3_themepack_1.0.tar.bz2
+#tar xjvf qingy_0.3_themepack_1.0.tar.bz2 1> /dev/null
+#mv qingy_0.3_themepack_1.0/* . 1> /dev/null 2> /dev/null
+#rm -rf qingy_0.3_themepack_1.0
+#cd $OLDPWD
+#sed -i -e 's/^# theme = random$/theme = random/g' /etc/qingy/settings
+#sed -i -e 's/^theme = \"default\"$/# theme = \"default\"/g' /etc/qingy/settings
 
 echo "  Installation de fbterm"
 #echo y | aptitude install fbterm 1> /dev/null
