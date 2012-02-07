@@ -21,9 +21,9 @@ echo y | aptitude install gdal-bin/testing \
 #echo y | aptitude install geographiclib/testing 1> /dev/null
 #echo y | aptitude install geos/testing 1> /dev/null
 echo "    Installation de gmt"
-echo y | aptitude install gmt/stable 1> /dev/null
-echo y | aptitude install gmt-coast-low/stable 1> /dev/null
-echo y | aptitude install gmt-examples/stable 1> /dev/null
+###echo y | aptitude install gmt/stable 1> /dev/null
+###echo y | aptitude install gmt-coast-low/stable 1> /dev/null
+###echo y | aptitude install gmt-examples/stable 1> /dev/null
 #echo y | aptitude install gosmore 1> /dev/null
 #echo y | aptitude install gpsdrive 1> /dev/null
 #echo y | aptitude install gpsprune/testing 1> /dev/null
