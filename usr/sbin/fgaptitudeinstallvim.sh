@@ -1,5 +1,10 @@
 #!/bin/sh
 
+# Installation et configuration de vim
+
+###########################################
+echo "Installation et configuration de vim"
+
 # suppression des scripts vim
 # à l'aide du gestionnaire de plugins vim-addon-manager
 #vim-addons -w remove project
