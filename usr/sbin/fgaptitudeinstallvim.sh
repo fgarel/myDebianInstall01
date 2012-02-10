@@ -38,6 +38,7 @@ echo y | aptitude remove vim-tiny 1> /dev/null
 echo "  Installation de vim-nox"
 #echo y | aptitude install vim 1> /dev/null
 #echo y | aptitude reinstall vim 1> /dev/null
+echo y | aptitude insttakk libperl5.10/stable 1> /dev/null
 echo y | aptitude install vim-nox 1> /dev/null
 #aptitude install exuberant-ctags
 #aptitude install vim-scripts
