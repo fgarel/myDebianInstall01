@@ -22,6 +22,9 @@ fgaptitudeupdate.sh
 # X
 fgaptitudeinstallsysx02.sh
 
+# Mise à jour du système
+fgaptitudeupgrade02.sh
+
 # installation de quelques applications et utilitaires
 # spécifiques au domaine du sig
 fgaptitudeinstallgis02.sh
