@@ -45,9 +45,9 @@ fgaptitudeupgrade01.sh
 #    - les differentes sources
 # - quelques utilitiares
 # - quelques fichiers de configurations
-echo "Récupération des fichiers depuis la machine distante - clefUsb2"
-git clone --progress --verbose http://github.com/fgarel/myDebianInstall02.git /root/myDebianInstall02
-cp /root/myDebianInstall02/* /
+#echo "Récupération des fichiers depuis la machine distante - clefUsb2"
+#git clone --progress --verbose http://github.com/fgarel/myDebianInstall02.git /root/myDebianInstall02
+#cp /root/myDebianInstall02/* /
 ###scp -q -r root@10.5.10.23:/media/clefUsb2/\* /
-chown -R garel:garel /home/garel/
-sudo -u garel fgaptitudeinstallgis03.sh ; cd $OLDPWD
+#chown -R garel:garel /home/garel/
+#sudo -u garel fgaptitudeinstallgis03.sh ; cd $OLDPWD
