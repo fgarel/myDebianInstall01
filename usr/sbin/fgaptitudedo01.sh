@@ -25,7 +25,7 @@ fgaptitudeinstallsyscommun01.sh
 fgaptitudeinstallsysx01.sh
 # installation de vim
 fgaptitudeinstallvim.sh
-#fgaptitudeupgrade.sh
+#fgaptitudeupgrade01.sh
 fgaptitudeinstallpython.sh
 sudo -u garel fgaptitudeinstallpythonfabric.sh ; cd $OLDPWD
 sudo -u garel fgaptitudeinstallpythonpyramid.sh ; cd $OLDPWD

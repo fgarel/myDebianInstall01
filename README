@@ -16,6 +16,24 @@ Création d'un utilisateur xxx
 Installation et paramétrage de d'un certain nombre d'application
 Comme vous avez pu vous en douter en lisant le titre, ce projet peut
 être complèter avec un second projet qui va complèter l'installation
+Pourquoi deux projets ?
+Le premier, myDebianInstall01, contient tous les scripts pour
+une installation personnalisée : il se concentre sur la partie
+système
+Le second projet, myDebianInstall02, se focalise lui plus sur la
+partie developpeur/utilisateur.
+
+Mais revenons à ce premier projet.
+Dans la pratique, on distingue les scripts qui vont pouvoir
+s"enchainer via debian-installer, c'est à dire, qu'à la fin du
+fihcier preseed.cfg, un premier lot de scripts va effectuer
+quelques installations et personnalisation. Les scripts de ce
+premier lot finissent par 01.
+Cependant, un second lot de scripts doit etre lancé à la main au
+premier reboot : en effet, certaines commandes ne semblent pas
+fonctionner quand on les execute via debian-installer (in-target
+?). Les scripts de ce second lot finissent par 02.
+
 
 Utilisation de ce projet
 ------------------------
@@ -62,7 +80,7 @@ si la machine est derrière un proxy, avoir installé et configuré squid
 
 Les ressources extérieures
 --------------------------
- - sur github : 
+ - sur github :
      https://github.com/fgarel/myDebianInstall01
        depot git avec les premières installations
      https://github.com/fgarel/myDebianInstall02
@@ -88,20 +106,20 @@ du site impacté :
      C'est ce fichier qui doit etre modifié, puis :
        - envoyé par ftp au serveur ovh.org
        - sauvegardé sur le serveur github.org via les commandes git
-     
+
      Prerequis : un navigateur web avec les infos pour se connecter au serveur ovh
-     
+
 1.1. Procédure pour transferer le fichier sur le serveur ovh.org
      Aller sur la page https://www.ovh.com/managerv3/
      Identifiant (NIC-handle, Domaine, Email) : gf14448-ovh
-     Mot de Passe : 
+     Mot de Passe :
 
      Aller sur "hebergements seuls" / fgarel.ovh.org
      Puis, aller sur Offre Gratuit / Hébergement / Net2Ftp
 
      Bref, aller sur le site http://fgarel.ovh.org/net2ftp/
      Nom d'utilisateur : fgarel
-     Mot de Passe : 
+     Mot de Passe :
      Repertoire de Depart : /www/d-i/squeeze/
      Langue : French
      Habillement : India
@@ -109,7 +127,7 @@ du site impacté :
 
      Action : Upload
      Uploader vers le repertoire : /wwww/d-i/squeeze
-     Fichiers : (les fichiers entres ici seront transferes vers le serveur FTP) : 
+     Fichiers : (les fichiers entres ici seront transferes vers le serveur FTP) :
        /clefUsb2/home/garel/public_html/d-i/squeeze.cfg
      Puis cliquer sur le bouton "V" Vert pour valider le transfert
 
@@ -122,12 +140,8 @@ du site impacté :
      Aller dans le repertoire du depot
      sur une machine fraichement installee, c'est /root/myDebianInstall01/
      sur la machine du travail, c'est ~/travail/docInterne/github/myDebianInstall01/
-     (attention, sur la machine de travail, au préalable, il faut, avec meld, 
+     (attention, sur la machine de travail, au préalable, il faut, avec meld,
       synchroniser le repertoire courant avec le repertoire ~/travail/docInterne/clefUsb)
-     
-     pour memoire, l'initialisation d'un nouveau depot a été réalisé avec les commandes
-     git init
-     git remote add origin git@github.com:fgarel/myDebianInstall02.git
 
 2.2. Mise a jour d'un depot distant avec nos données locales
      git status ; git add * ; git commit -m "debug" ; git push origin master
