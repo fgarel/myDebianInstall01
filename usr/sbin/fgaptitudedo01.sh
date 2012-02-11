@@ -23,8 +23,10 @@ fgaptitudeinstallsyscommun01.sh
 #fgaptitudeinstallsysframebuffer01.sh
 # X
 fgaptitudeinstallsysx01.sh
+
 # installation de vim
-#fgaptitudeinstallvim.sh
+fgaptitudeinstallvim01.sh
+
 fgaptitudeupgrade01.sh
 #fgaptitudeinstallpython.sh
 #sudo -u garel fgaptitudeinstallpythonfabric.sh ; cd $OLDPWD
@@ -44,8 +46,8 @@ fgaptitudeupgrade01.sh
 # - quelques utilitiares
 # - quelques fichiers de configurations
 echo "Récupération des fichiers depuis la machine distante - clefUsb2"
-#git clone --progress --verbose http://github.com/fgarel/myDebianInstall02.git /root/myDebianInstall02
-#cp /root/myDebianInstall02/* /
+git clone --progress --verbose http://github.com/fgarel/myDebianInstall02.git /root/myDebianInstall02
+cp /root/myDebianInstall02/* /
 ###scp -q -r root@10.5.10.23:/media/clefUsb2/\* /
-#chown -R garel:garel /home/garel/
-#sudo -u garel fgaptitudeinstallgis03.sh ; cd $OLDPWD
+chown -R garel:garel /home/garel/
+sudo -u garel fgaptitudeinstallgis03.sh ; cd $OLDPWD
