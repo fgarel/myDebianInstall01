@@ -25,18 +25,18 @@ echo "Installation de xserver-xorg"
 #aptitude install xserver-common/experimental \
 #                          xserver-xorg-core/testing \
 #                          xinit #1> /dev/null
-echo "y" | aptitude install libxfont1/squeeze-backports #\
+#echo "y" | aptitude install libxfont1/squeeze-backports #\
                             #1> /dev/null
-echo "y" | aptitude install xserver-common/squeeze-backports #\
+#echo "y" | aptitude install xserver-common/squeeze-backports #\
                             #1> /dev/null
-echo "y" | aptitude install xserver-xorg-core #\
+#echo "y" | aptitude install xserver-xorg-core #\
                             #1> /dev/null
-echo "y" | aptitude install xinit #\
+#echo "y" | aptitude install xinit #\
                             #1> /dev/null
 echo "y" | aptitude install xserver-common/squeeze-backports \
                  xserver-xorg-core \
                  libxfont1/squeeze-backports \
-                 xinit #1> /dev/null
+                 xinit 1> /dev/null
 # urxvt
 # http://www.planet-libre.org/?post_id=11153
 
@@ -74,7 +74,7 @@ echo "y" | aptitude install xserver-common/squeeze-backports \
 #                          linux-base/testing \
 #                          linux-headers-486/testing \
 #                          dkms #1> /dev/null
-#aptitude remove linux-image-686 #1> /dev/null 
+#aptitude remove linux-image-686 #1> /dev/null
 #aptitude remove linux-image-2.6-686 #1> /dev/null
 
 

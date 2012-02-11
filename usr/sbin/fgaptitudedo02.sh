@@ -26,7 +26,7 @@ fgaptitudeinstallsysx02.sh
 fgaptitudeupgrade02.sh
 
 # installation de vim
-fgaptitudeinstallvim02.sh
+#fgaptitudeinstallvim02.sh
 
 # installation de quelques applications et utilitaires
 # spécifiques au domaine du sig
