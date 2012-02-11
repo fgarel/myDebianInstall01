@@ -19,6 +19,8 @@ fgaptitudeupdate.sh
 #fgaptitudeinstallsyscommun02.sh
 # framebuffer
 #fgaptitudeinstallsysframebuffer02.sh
+# X
+fgaptitudeinstallsysx02.sh
 
 # installation de quelques applications et utilitaires
 # spécifiques au domaine du sig

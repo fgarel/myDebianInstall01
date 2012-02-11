@@ -18,12 +18,34 @@ fgaptitudeclean.sh
 # sauvegarde
 #fgaptitudeinstallsys.sh
 # commun
-fgaptitudeinstallsyscommun02.sh
+fgaptitudeinstallsyscommun01.sh
 # framebuffer
-#fgaptitudeinstallsysframebuffer02.sh
+#fgaptitudeinstallsysframebuffer01.sh
 # X
-fgaptitudeinstallsysx02.sh
+fgaptitudeinstallsysx01.sh
+# installation de vim
+fgaptitudeinstallvim.sh
 #fgaptitudeupgrade.sh
-fgaptitudeinstallgis02sh
+fgaptitudeinstallpython.sh
+sudo -u garel fgaptitudeinstallpythonfabric.sh ; cd $OLDPWD
+sudo -u garel fgaptitudeinstallpythonpyramid.sh ; cd $OLDPWD
+sudo -u garel fgaptitudeinstallpythonmapnik.sh ; cd $OLDPWD
+sudo -u garel fgaptitudeinstallpythongeonode.sh ; cd $OLDPWD
+# installation de quelques applications et utilitaires
+# spécifiques au domaine du sig
+fgaptitudeinstallgis01.sh
 
 
+# récupération de la suite des fichiers
+# recopie de :
+# - la configuration d'apt :
+#    - le fichier de preferences,
+#    - les differentes sources
+# - quelques utilitiares
+# - quelques fichiers de configurations
+echo "Récupération des fichiers depuis la machine distante - clefUsb2"
+git clone --progress --verbose http://github.com/fgarel/myDebianInstall02.git /root/myDebianInstall02
+cp /root/myDebianInstall02/* /
+#scp -q -r root@10.5.10.23:/media/clefUsb2/\* /
+chown -R garel:garel /home/garel/
+sudo -u garel fgaptitudeinstallgis03.sh ; cd $OLDPWD
