@@ -103,7 +103,7 @@ echo "  Installation des extensions vim"
 # petit hack pour ne pas voir les installations des bundles
 sed -i -e 's/  echo a:msg/  " echo a:msg/g' \
     /etc/vim/bundle/vundle/autoload/vundle/installer.vim
-##############vim +BundleInstall! +BundleClean! +q +q +q
+vim +BundleInstall! +BundleClean! +q +q +q
 
 echo "  Installation de vimpager en tant que pager"
 rm -f /usr/bin/vimpager
