@@ -28,14 +28,14 @@ fgaptitudeinstallsysx01.sh
 fgaptitudeinstallvim01.sh
 
 fgaptitudeupgrade01.sh
-#fgaptitudeinstallpython.sh
-#sudo -u garel fgaptitudeinstallpythonfabric.sh ; cd $OLDPWD
-#sudo -u garel fgaptitudeinstallpythonpyramid.sh ; cd $OLDPWD
-#sudo -u garel fgaptitudeinstallpythonmapnik.sh ; cd $OLDPWD
-#sudo -u garel fgaptitudeinstallpythongeonode.sh ; cd $OLDPWD
+fgaptitudeinstallpython.sh
+sudo -u garel fgaptitudeinstallpythonfabric.sh ; cd $OLDPWD
+sudo -u garel fgaptitudeinstallpythonpyramid.sh ; cd $OLDPWD
+sudo -u garel fgaptitudeinstallpythonmapnik.sh ; cd $OLDPWD
+sudo -u garel fgaptitudeinstallpythongeonode.sh ; cd $OLDPWD
 # installation de quelques applications et utilitaires
 # spécifiques au domaine du sig
-#fgaptitudeinstallgis01.sh
+fgaptitudeinstallgis01.sh
 
 
 # récupération de la suite des fichiers
