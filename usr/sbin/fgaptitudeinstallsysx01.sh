@@ -25,10 +25,18 @@ echo "Installation de xserver-xorg"
 #aptitude install xserver-common/experimental \
 #                          xserver-xorg-core/testing \
 #                          xinit #1> /dev/null
+echo "y" | aptitude install libxfont1/squeeze-backports #\
+                            #1> /dev/null
+echo "y" | aptitude install xserver-common/squeeze-backports #\
+                            #1> /dev/null
+echo "y" | aptitude install xserver-xorg-core #\
+                            #1> /dev/null
+echo "y" | aptitude install xinit #\
+                            #1> /dev/null
 echo "y" | aptitude install xserver-common/squeeze-backports \
                  xserver-xorg-core \
                  libxfont1/squeeze-backports \
-                 xinit 1> /dev/null
+                 xinit #1> /dev/null
 # urxvt
 # http://www.planet-libre.org/?post_id=11153
 
