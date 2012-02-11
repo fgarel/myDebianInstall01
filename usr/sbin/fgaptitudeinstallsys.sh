@@ -90,17 +90,18 @@ echo y | aptitude install git 1> /dev/null
 echo "Installation de subversion"
 echo y | aptitude install subversion \
                           subversion-tools 1> /dev/null
-                          
+
 ###########################
 # installation de etckeeper
 echo "Installation de etckeeper"
 echo y | aptitude install etckeeper 1> /dev/null
-                          
+
 ########################
 # installation de elinks
 echo "Installation de elinks"
 echo y | aptitude install elinks 1> /dev/null
-
+mkdir /etc/elinks
+touch /etc/elinks/elinks.conf
 echo 'set mime.extension.jpg="image/jpeg"' >> /etc/elinks/elinks.conf
 echo 'set mime.extension.jpeg="image/jpeg"' >> /etc/elinks/elinks.conf
 echo 'set mime.extension.png="image/png"' >> /etc/elinks/elinks.conf
