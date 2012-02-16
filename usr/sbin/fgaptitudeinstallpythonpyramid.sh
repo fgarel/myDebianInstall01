@@ -17,13 +17,17 @@ virtualenv --python=python2.6 \
 
 # une fois dans l'environnement pyramid, on installe quelques modules
 echo "    Upgrade de pip"
-pip install --upgrade --proxy="10.5.10.23:3128" pip 1> /dev/null
+#pip install --upgrade --proxy="10.5.10.23:3128" pip 1> /dev/null
+pip install --upgrade pip 1> /dev/null
 echo "    Upgrade de distribute"
-pip install --upgrade --proxy="10.5.10.23:3128" distribute 1> /dev/null
+#pip install --upgrade --proxy="10.5.10.23:3128" distribute 1> /dev/null
+pip install --upgrade distribute 1> /dev/null
 echo "    Install de pylint"
-pip install --proxy="10.5.10.23:3128" pylint 1> /dev/null
+#pip install --proxy="10.5.10.23:3128" pylint 1> /dev/null
+pip install pylint 1> /dev/null
 echo "    Install de pyramid"
-pip install --proxy="10.5.10.23:3128" pyramid 1> /dev/null
+#pip install --proxy="10.5.10.23:3128" pyramid 1> /dev/null
+pip install pyramid 1> /dev/null
 #cd $OLDPWD
 
 echo "  ... tion de l'environnement pyramid done"
