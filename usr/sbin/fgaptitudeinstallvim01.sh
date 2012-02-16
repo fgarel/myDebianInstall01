@@ -112,8 +112,9 @@ rm -f /usr/bin/vimpager
 chmod +x /etc/vim/bundle/vimpager/vimpager
 ln -s /etc/vim/bundle/vimpager/vimpager /usr/bin/vimpager
 
-update-alternatives --install /usr/bin/pager pager /usr/bin/vimpager 50
-update-alternatives --remove pager /bin/more
+update-alternatives --install /usr/bin/pager pager /usr/bin/vimpager 50 1> /dev/null
+update-alternatives --remove pager /bin/more 1> /dev/null
+update-alternatives --remove pager /bin/less 1> /dev/null
 update-alternatives --remove view /usr/bin/see 1> /dev/null
 update-alternatives --remove view /usr/bin/vim.nox 1> /dev/null
 
