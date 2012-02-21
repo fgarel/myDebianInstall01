@@ -27,7 +27,11 @@ echo "    Install de pylint"
 pip install pylint 1> /dev/null
 echo "    Install de ckan"
 #pip install --proxy="10.5.10.23:3128" ckan 1> /dev/null
-pip install ckan 1> /dev/null
+#pip install ckan 1> /dev/null
+pip install --ignore-installed -e git+https://github.com/okfn/ckan.git#egg=ckan
+pip install --ignore-installed -r ckan/src/ckan/requires/lucid_missing.txt -r src/ckan/requires/lucid_conflict.txt
+pip install webob==1.0.8
+pip install --ignore-installed -r ckan/src/ckan/requires/lucid_present.txt
 #cd $OLDPWD
 
 echo "  ... tion de l'environnement ckan done"
