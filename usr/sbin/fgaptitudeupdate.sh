@@ -23,7 +23,8 @@ if [ ! -e /var/log/fg/deb-multimedia-keyring ]
 then
 
   echo "Installation du trousseau de clefs deb-multimedia-keyring"
-  echo "Oui" | aptitude install deb-multimedia-keyring #> /dev/null
+  aptitude update 1> /dev/null #2> /dev/null
+  echo "Oui" | aptitude install deb-multimedia-keyring > /dev/null
   mkdir /var/log/fg
   touch /var/log/fg/deb-multimedia-keyring
 
@@ -35,7 +36,8 @@ echo "Aptitude update"
 #cat log.txt | grep "Erreur"
 #cat erreur.txt | grep ""
 #aptitude update | grep -v "Ign" | grep -v "Atteint" &> /dev/null
-aptitude update #1> /dev/null 2> /dev/null
+aptitude update 1> /dev/null 2> /dev/null
+date +"%F %T" > /var/log/fg/fgaptitudeupdate.log
 echo "... tude update done"
 
 #aptitude reinstall man-db 1> /dev/null
