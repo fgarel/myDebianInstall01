@@ -1,5 +1,11 @@
 #!/bin/sh
 
+# 1ère partie des applications "système"
+
+###########################################
+echo "Installation de systeme-commun (1ère partie)"
+
+
 ##############################################
 # ajout de l'utilisateur garel au groupe staff
 echo "  Ajout de l'utilisateur garel au groupe staff"
@@ -98,28 +104,27 @@ echo y | aptitude install etckeeper 1> /dev/null
 
 ########################
 # installation de elinks
-echo "Installation de elinks"
-echo y | aptitude install elinks 1> /dev/null
-mkdir /etc/elinks
-touch /etc/elinks/elinks.conf
-echo 'set mime.extension.jpg="image/jpeg"' >> /etc/elinks/elinks.conf
-echo 'set mime.extension.jpeg="image/jpeg"' >> /etc/elinks/elinks.conf
-echo 'set mime.extension.png="image/png"' >> /etc/elinks/elinks.conf
-echo 'set mime.extension.gif="image/gif"' >> /etc/elinks/elinks.conf
-echo 'set mime.extension.bmp="image/bmp"' >> /etc/elinks/elinks.conf
-echo '' >> /etc/elinks/elinks.conf
-echo 'set mime.handler.image_viewer.unix.ask = 1' >> /etc/elinks/elinks.conf
-echo 'set mime.handler.image_viewer.unix-xwin.ask = 0' >> /etc/elinks/elinks.conf
-echo 'set mime.handler.image_viewer.unix.block = 1' >> /etc/elinks/elinks.conf
-echo 'set mime.handler.image_viewer.unix-xwin.block = 0' >> /etc/elinks/elinks.conf
-echo 'set mime.handler.image_viewer.unix.program = "fim %"' >> /etc/elinks/elinks.conf
-echo '#set mime.handler.image_viewer.unix-xwin.program = "ida %"' >> /etc/elinks/elinks.conf
-echo '' >> /etc/elinks/elinks.conf
-echo 'set mime.type.image.jpg = "image_viewer"' >> /etc/elinks/elinks.conf
-echo 'set mime.type.image.jpeg = "image_viewer"' >> /etc/elinks/elinks.conf
-echo 'set mime.type.image.png = "image_viewer"' >> /etc/elinks/elinks.conf
-echo 'set mime.type.image.gif = "image_viewer"' >> /etc/elinks/elinks.conf
-echo 'set mime.type.image.bmp = "image_viewer"' >> /etc/elinks/elinks.conf
+#echo "Installation de elinks"
+#echo y | aptitude install elinks 1> /dev/null
+
+#echo 'set mime.extension.jpg="image/jpeg"' >> /etc/elinks/elinks.conf
+#echo 'set mime.extension.jpeg="image/jpeg"' >> /etc/elinks/elinks.conf
+#echo 'set mime.extension.png="image/png"' >> /etc/elinks/elinks.conf
+#echo 'set mime.extension.gif="image/gif"' >> /etc/elinks/elinks.conf
+#echo 'set mime.extension.bmp="image/bmp"' >> /etc/elinks/elinks.conf
+#echo '' >> /etc/elinks/elinks.conf
+#echo 'set mime.handler.image_viewer.unix.ask = 1' >> /etc/elinks/elinks.conf
+#echo 'set mime.handler.image_viewer.unix-xwin.ask = 0' >> /etc/elinks/elinks.conf
+#echo 'set mime.handler.image_viewer.unix.block = 1' >> /etc/elinks/elinks.conf
+#echo 'set mime.handler.image_viewer.unix-xwin.block = 0' >> /etc/elinks/elinks.conf
+#echo 'set mime.handler.image_viewer.unix.program = "fim %"' >> /etc/elinks/elinks.conf
+#echo '#set mime.handler.image_viewer.unix-xwin.program = "ida %"' >> /etc/elinks/elinks.conf
+#echo '' >> /etc/elinks/elinks.conf
+#echo 'set mime.type.image.jpg = "image_viewer"' >> /etc/elinks/elinks.conf
+#echo 'set mime.type.image.jpeg = "image_viewer"' >> /etc/elinks/elinks.conf
+#echo 'set mime.type.image.png = "image_viewer"' >> /etc/elinks/elinks.conf
+#echo 'set mime.type.image.gif = "image_viewer"' >> /etc/elinks/elinks.conf
+#echo 'set mime.type.image.bmp = "image_viewer"' >> /etc/elinks/elinks.conf
 
 
 ########################################
@@ -230,101 +235,7 @@ echo "  Source de /etc/zsh/zshrc"
 #`/etc/zsh/zshrc`
 /bin/zsh /etc/zsh/zshrc
 
-###############################################################
-# modification de grub-pc pour lancer la console en 1152x864x32
-echo "Modification de grub-pc pour lancer la console en 1152x864x32"
-sed -i -e '/GRUB_GFXMODE=1/ d' /etc/default/grub   # suppression
-sed -i -e '/#GRUB_GFXMODE=640x480/ a\GRUB_GFXMODE=1152x864,1152x864x32,1152x864x24,1152x864x16,1280x1024x16,1024x768x16,1152x864x32,1024x768x32,1024x768x24,800x600,640x480' /etc/default/grub # ajout
-sed -i -e '/set gfxpayload=keep/ d' /etc/grub.d/00_header   # suppression de set gfxpayload
-sed -i -e '/load_video/  i\  set gfxpayload=keep' /etc/grub.d/00_header # ajout de set gfxpayload
-update-grub2
 
-####################################################
-# Installation de qingy : pour avoir le frame buffer
-echo "Installationd de qingy"
-#echo y | aptitude install qingy 1> /dev/null
-#sed -i -e 's/1:2345:respawn:\/sbin\/getty 38400 tty1/1:2345:respawn:\/usr\/sbin\/qingy tty1 -n/g' /etc/inittab
-#sed -i -e 's/2:23:respawn:\/sbin\/getty 38400 tty2/2:23:respawn:\/usr\/sbin\/qingy tty2 -n/g' /etc/inittab
-#sed -i -e 's/3:23:respawn:\/sbin\/getty 38400 tty3$/3:23:respawn:\/sbin\/getty 38400 tty3 fbterm/g' /etc/inittab
-#sed -i -e 's/4:23:respawn:\/sbin\/getty 38400 tty4$/4:23:respawn:\/sbin\/getty 38400 tty4 screen-256color/g' /etc/inittab
-#sed -i -e 's/5:23:respawn:\/sbin\/getty 38400 tty5$/5:23:respawn:\/sbin\/getty 38400 tty5 xterm-256color/g' /etc/inittab
-#sed -i -e 's/6:23:respawn:\/sbin\/getty 38400 tty6$/6:23:respawn:\/sbin\/getty 38400 tty6/g' /etc/inittab
-##sed -i -e 's/1:2345:respawn:\/sbin\/getty 38400 tty1/1:2345:respawn:\/sbin\/getty 38400 tty1 xterm-256color/g' /etc/inittab
-##sed -i -e 's/2:23:respawn:\/sbin\/getty 38400 tty2/2:23:respawn:\/sbin\/getty 38400 tty2 xterm-256color/g' /etc/inittab
-##sed -i -e 's/3:23:respawn:\/sbin\/getty 38400 tty3/3:23:respawn:\/sbin\/getty 38400 tty3 xterm-256color/g' /etc/inittab
-##sed -i -e 's/4:23:respawn:\/sbin\/getty 38400 tty4/4:23:respawn:\/sbin\/getty 38400 tty4 xterm-256color/g' /etc/inittab
-##sed -i -e 's/5:23:respawn:\/sbin\/getty 38400 tty5/5:23:respawn:\/sbin\/getty 38400 tty5 xterm-256color/g' /etc/inittab
-#echo "  Récupération des thèmes"
-#cd /usr/share/qingy/themes/
-#wget -nv -q -N http://sourceforge.net/projects/qingy/files/qingy%20themes/themepack%20for%20qingy%200.3xx/qingy_0.3_themepack_1.0.tar.bz2 qingy_0.3_themepack_1.0.tar.bz2
-#tar xjvf qingy_0.3_themepack_1.0.tar.bz2 1> /dev/null
-#mv qingy_0.3_themepack_1.0/* . 1> /dev/null 2> /dev/null
-#rm -rf qingy_0.3_themepack_1.0
-#cd $OLDPWD
-#sed -i -e 's/^# theme = random$/theme = random/g' /etc/qingy/settings
-#sed -i -e 's/^theme = \"default\"$/# theme = \"default\"/g' /etc/qingy/settings
-
-echo "  Installation de fbterm"
-#echo y | aptitude install fbterm 1> /dev/null
-
-# qingy passe la main au shell
-# le shell doit etre paramètré pour utiliser un terminal/console
-# - qui exploite le frame buffer
-# - qui soit capable de gerer 256 couleurs
-# la methode trouvée pour réaliser cette manipulation est 
-#   que qingy lance zlogin
-#     (je ne sais pas comment passer d'eventuelles action à qingy)
-#   qui lance fbterm
-#     (ce terminal exploite le frame buffer, mais la commande tput colors
-#     et la commande printenv indiquent que la variable d'environnement
-#     TERM n'est pas à la bonne valeur)
-#   qui lance zshenv
-#     (la variable TERM est enfin mise à la bonne valeur)
-#sed -i -e '/export TERM=/ d' /etc/zsh/zshenv
-#echo 'export TERM=fbterm' >> /etc/zsh/zshenv
-##echo 'export TERM=screen-256color' >> /etc/zsh/zshenv
-
-#sed -i -e '/fbterm -v/ d' /etc/zsh/zlogin
-#sed -i -e '/fbterm/ d' /etc/zsh/zlogin
-#sed -i -e '/exit/ d' /etc/zsh/zlogin
-##echo 'fbterm -v --cursor-shape=1 /bin/zsh' >> /etc/zsh/zlogin
-#echo 'fbterm --cursor-shape=1 /bin/zsh' >> /etc/zsh/zlogin
-#echo 'exit' >> /etc/zsh/zlogin
-
-###########################################
-# Installation d'utilitaires en framebuffer
-# http://kmandla.wordpress.com/2010/04/16/a-quick-look-at-framebuffer-applications/
-
-echo "Installation d'utilitaires divers" 
-
-# ajout de l'utilitaire fim
-# http://www.autistici.org/dezperado/fim/
-echo "  Installation de fim"
-echo y | aptitude install fim 1> /dev/null
-
-#cd /usr/local/bin
-#wget -nv -q -N  http://www.autistici.org/dezperado/fim/fim-0.3-beta-prerelease-20110702.tar.gz
-#tar xzf fim-0.3-beta-prerelease-20110702.tar.gz 
-#cd fim-0.3-beta-prerelease-20110702 
-#./configure -q
-#make -s
-#make -s install
-#cd $OLDPWD
-
-
-#echo "  Installation de fbida"
-# 
-# http://www.kraxel.org/cgit/fbida/
-#git clone git://git.kraxel.org/fbida /usr/local/bin/fbida
-#cd /usr/local/bin/fbida
-#./configure 
-#make 
-#make install
-#cd $OLDPWD
-
-
-#echo "Installationd de zathura"
-#echo y | aptitude install zathura 1> /dev/null
 
 
 

@@ -1,5 +1,10 @@
 #!/bin/sh
 
+# Installation et configuration de vim
+
+###########################################
+echo "Installation et configuration de vim"
+
 # suppression des scripts vim
 # à l'aide du gestionnaire de plugins vim-addon-manager
 #vim-addons -w remove project
@@ -33,6 +38,7 @@ echo y | aptitude remove vim-tiny 1> /dev/null
 echo "  Installation de vim-nox"
 #echo y | aptitude install vim 1> /dev/null
 #echo y | aptitude reinstall vim 1> /dev/null
+echo y | aptitude install libperl5.10/stable 1> /dev/null
 echo y | aptitude install vim-nox 1> /dev/null
 #aptitude install exuberant-ctags
 #aptitude install vim-scripts
@@ -106,8 +112,9 @@ rm -f /usr/bin/vimpager
 chmod +x /etc/vim/bundle/vimpager/vimpager
 ln -s /etc/vim/bundle/vimpager/vimpager /usr/bin/vimpager
 
-update-alternatives --install /usr/bin/pager pager /usr/bin/vimpager 50
-update-alternatives --remove pager /bin/more
+update-alternatives --install /usr/bin/pager pager /usr/bin/vimpager 50 1> /dev/null
+update-alternatives --remove pager /bin/more 1> /dev/null
+update-alternatives --remove pager /bin/less 1> /dev/null
 update-alternatives --remove view /usr/bin/see 1> /dev/null
 update-alternatives --remove view /usr/bin/vim.nox 1> /dev/null
 

@@ -1,9 +1,13 @@
 #!/bin/sh
 
+# Première partie des applications "gis"
+
 ####################################################################################
 # http://qa.debian.org/developer.php?login=pkg-grass-devel%40lists.alioth.debian.org
 #
-echo "Installation de debian-gis"
+
+###########################################
+echo "Installation de debian-gis (1ère partie)"
 
 ######
 # main
@@ -20,10 +24,10 @@ echo y | aptitude install gdal-bin/testing \
                           python-gdal/testing 1> /dev/null
 #echo y | aptitude install geographiclib/testing 1> /dev/null
 #echo y | aptitude install geos/testing 1> /dev/null
-echo "    Installation de gmt"
-echo y | aptitude install gmt/stable 1> /dev/null
-echo y | aptitude install gmt-coast-low/stable 1> /dev/null
-echo y | aptitude install gmt-examples/stable 1> /dev/null
+###echo "    Installation de gmt"
+###echo y | aptitude install gmt/stable 1> /dev/null
+###echo y | aptitude install gmt-coast-low/stable 1> /dev/null
+###echo y | aptitude install gmt-examples/stable 1> /dev/null
 #echo y | aptitude install gosmore 1> /dev/null
 #echo y | aptitude install gpsdrive 1> /dev/null
 #echo y | aptitude install gpsprune/testing 1> /dev/null

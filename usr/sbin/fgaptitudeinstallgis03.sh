@@ -1,17 +1,22 @@
 #!/bin/sh
 
+###########################################
+#export http_proxy=http://10.5.10.23:3128/
+#export https_proxy=http://10.5.10.23:3128/
+#
+#
+#sed -i -e 's/# http-proxy-host = defaultproxy.whatever.com/http-proxy-host = 10.5.10.23/g' $HOME/.subversion/servers
+#sed -i -e 's/# http-proxy-port = 7000/http-proxy-port = 3128/g' $HOME/.subversion/servers
+###########################################
+
+# 3ème partie des applications "gis"
+
 ####################################################################################
 # http://qa.debian.org/developer.php?login=pkg-grass-devel%40lists.alioth.debian.org
 #
 
-export http_proxy=http://10.5.10.23:3128/
-export https_proxy=http://10.5.10.23:3128/
-
-
-sed -i -e 's/# http-proxy-host = defaultproxy.whatever.com/http-proxy-host = 10.5.10.23/g' $HOME/.subversion/servers
-sed -i -e 's/# http-proxy-port = 7000/http-proxy-port = 3128/g' $HOME/.subversion/servers
-
-echo "Installation de debian-gis 2"
+###########################################
+echo "Installation de debian-gis (3ème partie)"
 
 ######
 # main
