@@ -16,6 +16,17 @@ rm -f /var/lib/apt/lists/*
 # alors la solution est indiquée sur cette page :
 # http://hydra.geht.net/tino/english/faq/debian/apt/aptlimit/
 
+# TODO: à mettre dans un bloc if pour eviter de relancer cette install à chaque
+#       fois...
+# installation du trousseau de clefs deb-multimedia-keyring
+if [ ! -e /var/log/fg/deb-multimedia-keyring ]
+then
+
+  echo "Installation du trousseau de clefs deb-multimedia-keyring"
+  echo "Oui" | aptitude install deb-multimedia-keyring > /dev/null
+  touch /var/log/fg/deb-multimedia-keyring
+
+fi
 
 # update
 echo "Aptitude update"
@@ -31,13 +42,3 @@ aptitude remove man-db
 #aptitude reinstall libconfig1 1> /dev/null
 #aptitude reinstall fontconfig-config 1> /dev/null
 
-# TODO: à mettre dans un bloc if pour eviter de relancer cette install à chaque
-#       fois...
-# installation du trousseau de clefs deb-multimedia-keyring
-if [ ! -e /var/log/fg/deb-multimedia-keyring ]
-then
-
-  echo "Oui" | aptitude install deb-multimedia-keyring > /dev/null
-  touch /var/log/fg/deb-multimedia-keyring
-
-fi
