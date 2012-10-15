@@ -8,7 +8,7 @@ rm -f /var/lib/apt/lists/partial/*
 rmdir /var/lib/apt/lists/partial
 rm -f /var/lib/apt/lists/*
 
-mkdir /var/log/fg
+mkdir /var/log/fg 2> /dev/null
 #aptitude clean
 # si le problème est :
 # Reading package lists... Error!
