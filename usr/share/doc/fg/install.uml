@@ -1,0 +1,37 @@
+@startuml install.png
+
+(*) --> "preseed.cfg"
+note right: myDebianInstall02/home/garel/public_html/d-i/wheezy/preseed.cfg
+note left
+  appelé par cd d'install
+end note
+"preseed.cfg" --> "fg-git-fetch.sh"
+note right: myDebianInstall01/usr/sbin/fg-git-fetch.sh
+note left
+  appelé a la fin de preseed.cfg
+end note
+"fg-git-fetch.sh" --> "fgaptitudedo01.sh"
+note left
+  appelé a la fin de fg-git-fetch.sh
+end note
+"fgaptitudedo01.sh" -right-> "fgaptitudeupdate.sh"
+note right: myDebianInstall01/usr/sbin/fgaptitudeupdate.sh
+"fgaptitudeupdate.sh" --> "fgaptitudeclean.sh"
+note right: myDebianInstall01/usr/sbin/fgaptitudeclean.sh
+"fgaptitudeclean.sh" --> "fgaptitudeinstallsyscommun01.sh"
+note right: myDebianInstall01/usr/sbin/fgaptitudeinstallsyscommun01.sh
+"fgaptitudeinstallsyscommun01.sh" --> "fgaptitudeinstallsysframebuffer01.sh"
+note right: myDebianInstall01/usr/sbin/fgaptitudeinstallsysframebuffer01.sh
+"fgaptitudeinstallsysframebuffer01.sh" --> "fgaptitudeinstallsysx01.sh"
+note right: myDebianInstall01/usr/sbin/fgaptitudeinstallsysx01.sh
+"fgaptitudeinstallsysx01.sh" --> "fgaptitudeinstallvim01.sh"
+note right: myDebianInstall01/usr/sbin/fgaptitudeinstallvim01.sh
+"fgaptitudeinstallvim01.sh" --> "fgaptitudeinstallupgrade01.sh"
+note right: myDebianInstall01/usr/sbin/fgaptitudeinstallupgrade01.sh
+"fgaptitudeinstallupgrade01.sh" --> "fgaptitudeinstallpython.sh"
+note right: myDebianInstall01/usr/sbin/fgaptitudeinstallpython.sh
+"fgaptitudeinstallpython.sh" --> "fgaptitudeinstallgis01.sh"
+note right: myDebianInstall01/usr/sbin/fgaptitudeinstallgis01.sh
+"fgaptitudeinstallgis01.sh" --> (*)
+
+@enduml
