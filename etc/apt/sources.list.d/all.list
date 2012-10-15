@@ -158,8 +158,8 @@ deb-src http://backports.debian.org/debian-backports/ squeeze-backports main con
 
 
 ###############################################################################
-#http://debian-multimedia.org/dists/stable/Release
-#http://debian-multimedia.org/dists/squeeze/Release
+#http://deb-multimedia.org/dists/stable/Release
+#http://deb-multimedia.org/dists/squeeze/Release
 ###############################################################################
 #Origin: Unofficial Multimedia Packages
 #Label: Unofficial Multimedia Packages
@@ -177,7 +177,7 @@ deb-src http://backports.debian.org/debian-backports/ squeeze-backports main con
 #==============================================================================
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # /etc/apt/sources.list.d/stable.list
-#       => http://www.debian-multimedia.org/ stable
+#       => http://www.deb-multimedia.org/ stable
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 #------------------------------------------------------------------------------
 #Package: *
@@ -185,8 +185,8 @@ deb-src http://backports.debian.org/debian-backports/ squeeze-backports main con
 #Pin-Priority: 650
 #
 #------------------------------------------------------------------------------
-deb http://www.debian-multimedia.org/ stable main non-free
-deb-src http://www.debian-multimedia.org/ stable main non-free
+deb http://www.deb-multimedia.org/ stable main non-free
+deb-src http://www.deb-multimedia.org/ stable main non-free
 
 
 ###############################################################################
@@ -316,8 +316,8 @@ deb-src http://ftp.fr.debian.org/debian/ testing-proposed-updates main contrib n
 
 
 ###############################################################################
-#http://debian-multimedia.org/dists/testing/Release
-#http://debian-multimedia.org/dists/wheezy/Release
+#http://deb-multimedia.org/dists/testing/Release
+#http://deb-multimedia.org/dists/wheezy/Release
 ###############################################################################
 #Origin: Unofficial Multimedia Packages
 #Label: Unofficial Multimedia Packages
@@ -335,7 +335,7 @@ deb-src http://ftp.fr.debian.org/debian/ testing-proposed-updates main contrib n
 #==============================================================================
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # /etc/apt/sources.list.d/testing.list
-#       => http://www.debian-multimedia.org/ testing
+#       => http://www.deb-multimedia.org/ testing
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 #------------------------------------------------------------------------------
 #Package: *
@@ -343,8 +343,8 @@ deb-src http://ftp.fr.debian.org/debian/ testing-proposed-updates main contrib n
 #Pin-Priority: 200
 #
 #------------------------------------------------------------------------------
-deb http://www.debian-multimedia.org/ testing main non-free
-deb-src http://www.debian-multimedia.org/ testing main non-free
+deb http://www.deb-multimedia.org/ testing main non-free
+deb-src http://www.deb-multimedia.org/ testing main non-free
 
 
 ###############################################################################
@@ -379,8 +379,8 @@ deb-src http://ftp.fr.debian.org/debian/ testing main contrib non-free
 
 
 ###############################################################################
-#http://debian-multimedia.org/dists/unstable/Release
-#http://debian-multimedia.org/dists/sid/Release
+#http://deb-multimedia.org/dists/unstable/Release
+#http://deb-multimedia.org/dists/sid/Release
 ###############################################################################
 #Origin: Unofficial Multimedia Packages
 #Label: Unofficial Multimedia Packages
@@ -406,8 +406,8 @@ deb-src http://ftp.fr.debian.org/debian/ testing main contrib non-free
 #Pin-Priority: 23
 #
 #------------------------------------------------------------------------------
-deb http://www.debian-multimedia.org/ unstable main non-free
-deb-src http://www.debian-multimedia.org/ unstable main non-free
+deb http://www.deb-multimedia.org/ unstable main non-free
+deb-src http://www.deb-multimedia.org/ unstable main non-free
 
 
 ###############################################################################
@@ -442,7 +442,7 @@ deb-src http://ftp.fr.debian.org/debian/ unstable main contrib non-free
 
 
 ###############################################################################
-#http://debian-multimedia.org/dists/experimental/Release
+#http://deb-multimedia.org/dists/experimental/Release
 ###############################################################################
 #Origin: Unofficial Multimedia Packages
 #Label: Unofficial Multimedia Packages
@@ -460,7 +460,7 @@ deb-src http://ftp.fr.debian.org/debian/ unstable main contrib non-free
 #==============================================================================
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # /etc/apt/sources.list.d/experimental.list
-#       => http://www.debian-multimedia.org/ experimental
+#       => http://www.deb-multimedia.org/ experimental
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 #------------------------------------------------------------------------------
 #Package: *
@@ -468,8 +468,8 @@ deb-src http://ftp.fr.debian.org/debian/ unstable main contrib non-free
 #Pin-Priority: 13
 #
 #------------------------------------------------------------------------------
-deb http://www.debian-multimedia.org/ experimental main non-free
-deb-src http://www.debian-multimedia.org/ experimental main non-free
+deb http://www.deb-multimedia.org/ experimental main non-free
+deb-src http://www.deb-multimedia.org/ experimental main non-free
 
 
 ###############################################################################
