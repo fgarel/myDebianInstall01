@@ -26,6 +26,7 @@ then
 
   echo "Installation du trousseau de clefs deb-multimedia-keyring"
   aptitude update 1> /dev/null 2> /dev/null
+  date +"%F %T" >> /var/log/fg/fgaptitudeupdate.log
   echo "Oui" | aptitude install deb-multimedia-keyring > /dev/null
   #mkdir /var/log/fg
   #touch /var/log/fg/deb-multimedia-keyring.log
