@@ -1,0 +1,160 @@
+Installation automatisée et personnalisée de Debian GNU/Linux (1ère Partie)
+===========================================================================
+
+Ce projet a pour objectif d'offrir les moyens (scripts et documentations)
+à tout utilisateur souhaitant procéder à une installation entièrement
+automatisée de la distribution Debian GNU/Linux sur son matériel.
+
+Guide de l'Utilisateur
+======================
+
+Les détails de l'installation
+-----------------------------
+Formatage complet et rapartitionnement de votre disque dur
+Installation et configuration de Debian GNU/Linux en français
+Création d'un utilisateur xxx
+Installation et paramétrage de d'un certain nombre d'application
+Comme vous avez pu vous en douter en lisant le titre, ce projet peut
+<<<<<<< HEAD
+être complèté avec un second projet qui va enrichir l'installation.
+=======
+être complèter avec un second projet qui va complèter l'installation
+Pourquoi deux projets ?
+Le premier, myDebianInstall01, contient tous les scripts pour
+une installation personnalisée : il se concentre sur la partie
+système
+Le second projet, myDebianInstall02, se focalise lui plus sur la
+partie developpeur/utilisateur.
+
+Mais revenons à ce premier projet.
+Dans la pratique, on distingue les scripts qui vont pouvoir
+s"enchainer via debian-installer, c'est à dire, qu'à la fin du
+fihcier preseed.cfg, un premier lot de scripts va effectuer
+quelques installations et personnalisation. Les scripts de ce
+premier lot finissent par 01.
+Cependant, un second lot de scripts doit etre lancé à la main au
+premier reboot : en effet, certaines commandes ne semblent pas
+fonctionner quand on les execute via debian-installer (in-target
+?). Les scripts de ce second lot finissent par 02.
+
+>>>>>>> de3c9aabcbe2b57babfbacb1944d3f655d2e50df
+
+Utilisation de ce projet
+------------------------
+1 se munir d'un cd netinstall http://www.debian.org/distrib/netinst
+2 inserer le cd dans le lecteur de votre machine à installer
+3 au lancement de la machine, si le CD est le media de boot,
+  appuyer sur la touche Echap (sinon, il faut aller dans le bios pour
+  modifier l'ordre de demarrage)
+4 si la machine est virtuelle et se trouve derrière un pare-feu :
+    auto interface=eth0
+         mirror/http/proxy=http://10.5.10.13:3128/
+         http_proxy=http://10.5.10.13:3128/
+         url=fgarel.ovh.org
+  sinon
+    auto url=fgarel.ovh.org
+5 patientez pendant l'installation de votre machine
+6 au redémarrage, vous pouvez vous logguer en tant que xxx,
+  avec le mot de passe yyy
+7 un dernier bout de script est a executer
+  export http_proxy=http://10.5.10.13:3128/ ; fgaptitudeinstallsys2.sh
+  
+Quelques remarques concernant les paramètres utilisés
+-----------------------------------------------------
+# quelques remarques concernant les différents paramètres employés :
+# interface=eth0     : la machine virtualbox est configurée avec deux cartes réseaux
+#                      la première est en mode bridge (accès par pont)
+#                      la seconde est en mode nat
+#                      il faut configuré les deux pour avoir accès à la fois
+#                      au réseau interne et à internet
+# mirror/http/proxy  : un serveur proxy est installé et configuré sur la
+#                      machine hote pour que la machine invitée puisse communiquer
+#                      avec l'exterieur malgré le firewall
+# url=fgarel.ovh.org : un fichier preseed.cfg est disponible à cet emplacement
+
+Guide de l'Administrateur
+=========================
+
+Les prérequis pour que ça puisse fonctionner
+--------------------------------------------
+Avoir acces à l'url http://fgarel.ovh.org/d-i/squeeze/preseed.cfg
+si la machine est virtuelle, avoir créer deux connections réseaux adéquates
+  (une vers internet, une autre vers le reseau interne)
+si la machine est derrière un proxy, avoir installé et configuré squid
+
+Les ressources extérieures
+--------------------------
+ - sur github :
+     https://github.com/fgarel/myDebianInstall01
+       depot git avec les premières installations
+     https://github.com/fgarel/myDebianInstall02
+       depot git avec la suite des installations
+ - sur ovh :
+     http://fgarel.ovh.org/d-i/squeeze/preseed.cfg
+       le fichier preseed.cfg qui automatise tout ça
+
+
+Contribuez à l'amélioration des scripts
+---------------------------------------
+La question posée ici est plutôt : comment modifier les ressources exterieures
+
+Pour ameliorer et debuger le procédé, la manip est différente en fonction
+du site impacté :
+   1 - mise a jour de preseed.cfg (sur ovh.net)
+   2 - debug des scripts (sur github.org)
+
+
+1.   Mise a jour de preseed.cfg (sur ovh.net)
+     Le fichier source se trouve dans
+       myDebianInstall02/home/garel/public_html/d-i/squeeze/preseed.cfg
+     C'est ce fichier qui doit etre modifié, puis :
+       - envoyé par ftp au serveur ovh.org
+       - sauvegardé sur le serveur github.org via les commandes git
+
+     Prerequis : un navigateur web avec les infos pour se connecter au serveur ovh
+
+1.1. Procédure pour transferer le fichier sur le serveur ovh.org
+     Aller sur la page https://www.ovh.com/managerv3/
+     Identifiant (NIC-handle, Domaine, Email) : gf14448-ovh
+     Mot de Passe :
+
+     Aller sur "hebergements seuls" / fgarel.ovh.org
+     Puis, aller sur Offre Gratuit / Hébergement / Net2Ftp
+
+     Bref, aller sur le site http://fgarel.ovh.org/net2ftp/
+     Nom d'utilisateur : fgarel
+     Mot de Passe :
+     Repertoire de Depart : /www/d-i/squeeze/
+     Langue : French
+     Habillement : India
+     Mode FTP : Automatique
+
+     Action : Upload
+     Uploader vers le repertoire : /wwww/d-i/squeeze
+     Fichiers : (les fichiers entres ici seront transferes vers le serveur FTP) :
+       /clefUsb2/home/garel/public_html/d-i/squeeze.cfg
+     Puis cliquer sur le bouton "V" Vert pour valider le transfert
+
+1.2. Procédure pour sauvegarder le projet sur le serveur github.org
+     cf paragraphe 2.2. sur le transfert du dépot local vers le depot distant
+
+2.   Debug des scripts (et transfert sur github.org)
+
+2.1. Modification des fichiers
+     Aller dans le repertoire du depot
+     sur une machine fraichement installee, c'est /root/myDebianInstall01/
+     sur la machine du travail, c'est ~/travail/docInterne/github/myDebianInstall01/
+     (attention, sur la machine de travail, au préalable, il faut, avec meld,
+      synchroniser le repertoire courant avec le repertoire ~/travail/docInterne/clefUsb)
+
+2.2. Mise a jour d'un depot distant avec nos données locales
+     git status ; git add * ; git commit -m "debug" ; git push origin master
+
+2.3. Pour memoire quelques commandes de git a connaitre
+
+     Initialisation d'un nouveau depot
+     git init
+     git remote add origin git@github.com:fgarel/myDebianInstall02.git
+
+     Recuperation, cad, mise à jour du depot local à partir du dépot distant
+     git clone --progress --verbose http://github.com/fgarel/myDebianInstall01.git /root/myDebianInstall01
