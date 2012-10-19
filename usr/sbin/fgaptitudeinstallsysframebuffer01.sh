@@ -5,29 +5,42 @@
 ###########################################
 echo "Installation de systeme-framebuffer (1ère partie)"
 
+mkdir /var/log/fg 2> /dev/null
 
-###############################################################
-# modification de grub-pc pour lancer la console en 1152x864x32
-echo "Modification de grub-pc pour lancer la console en 1152x864x32"
-# dans le fichier /etc/default/grub, definition de GFXMODE
-sed -i -r -e '/^GRUB_GFXMODE=1/ d' /etc/default/grub   # suppression
-sed -i -r -e '/^#GRUB_GFXMODE=640x480/ a\GRUB_GFXMODE=1152x864,1152x864x32,1152x864x24,1152x864x16,1280x1024x16,1024x768x16,1152x864x32,1024x768x32,1024x768x24,800x600,640x480' /etc/default/grub # ajout
-# dans le fichier /etc/grub.d/00_header, ajout du parametre gfxpayload=keep
-sed -i -r -e '/^  set gfxpayload=keep/ d' /etc/grub.d/00_header   # suppression de set gfxpayload=keep
-sed -i -r -e '/^  load_video/  i\  set gfxpayload=keep' /etc/grub.d/00_header # ajout de set gfxpayload=keep
-update-grub2
+if [ ! -e /var/log/fg/fgaptitudeinstallsysframebuffer01-grub.log ]
+then
+  ###############################################################
+  # modification de grub-pc pour lancer la console en 1152x864x32
+  echo "Modification de grub-pc pour lancer la console en 1152x864x32"
+  # dans le fichier /etc/default/grub, definition de GFXMODE
+  sed -i -r -e '/^GRUB_GFXMODE=1/ d' /etc/default/grub   # suppression
+  sed -i -r -e '/^#GRUB_GFXMODE=640x480/ a\GRUB_GFXMODE=1152x864,1152x864x32,1152x864x24,1152x864x16,1280x1024x16,1024x768x16,1152x864x32,1024x768x32,1024x768x24,800x600,640x480' /etc/default/grub # ajout
+  # dans le fichier /etc/grub.d/00_header, ajout du parametre gfxpayload=keep
+  sed -i -r -e '/^  set gfxpayload=keep/ d' /etc/grub.d/00_header   # suppression de set gfxpayload=keep
+  sed -i -r -e '/^  load_video/  i\  set gfxpayload=keep' /etc/grub.d/00_header # ajout de set gfxpayload=keep
 
+  # update-grub2 est a relancer apres reboot : ne marche pas a l'interieur de preseed...
+  update-grub2
+
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsysframebuffer01-grub.log
+fi
 
 ###########################################
 # Installation d'utilitaires en framebuffer
 # http://kmandla.wordpress.com/2010/04/16/a-quick-look-at-framebuffer-applications/
 
-echo "Installation d'utilitaires divers" 
+if [ ! -e /var/log/fg/fgaptitudeinstallsysframebuffer01-divers.log ]
+then
 
-# ajout de l'utilitaire fim
-# http://www.autistici.org/dezperado/fim/
-echo "  Installation de fim"
-echo y | aptitude install fim 1> /dev/null
+  echo "Installation d'utilitaires divers" 
+  # ajout de l'utilitaire fim
+  # http://www.autistici.org/dezperado/fim/
+  echo "  Installation de fim"
+  echo y | aptitude install fim 1> /dev/null
+
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsysframebuffer01-divers.log
+fi
+
 
 #cd /usr/local/bin
 #wget -nv -q -N  http://www.autistici.org/dezperado/fim/fim-0.3-beta-prerelease-20110702.tar.gz

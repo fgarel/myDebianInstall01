@@ -30,8 +30,10 @@ echo "Aptitude update"
 #mkdir /var/log/fg
 if [ ! -e /var/log/fg/fgaptitudeupdate-update.log ]
 then
+  echo "Aptitude update"
   aptitude update 1> /dev/null 2> /dev/null
   date +"%F %T" >> /var/log/fg/fgaptitudeupdate-update.log
+  echo "... tude update done"
 fi
 
 # installation du trousseau de clefs deb-multimedia-keyring
@@ -49,7 +51,6 @@ then
 
 fi
 
-echo "... tude update done"
 
 #aptitude reinstall man-db 1> /dev/null
 # d'après ce que je peux comprendre, a chaque fois qu'un paquet est installé
@@ -61,6 +62,7 @@ echo "... tude update done"
 # on retire donc ce paquet ...
 if [ ! -e /var/log/fg/fgaptitudeupdate-mandb.log ]
 then
+  echo "  Suppression de man-db"
   aptitude remove man-db 1> /dev/null 2> /dev/null
   date +"%F %T" >> /var/log/fg/fgaptitudeupdate-mandb.log
 fi
