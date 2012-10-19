@@ -7,7 +7,7 @@ echo "Installation de systeme-framebuffer (1ère partie)"
 
 mkdir /var/log/fg 2> /dev/null
 
-if [ ! -e /var/log/fg/fgaptitudeinstallsysframebuffer01-grub.log ]
+if [ ! -e /var/log/fg/fgaptitudeinstallsysframebuffer01-grubcfg.log ]
 then
   ###############################################################
   # modification de grub-pc pour lancer la console en 1152x864x32
@@ -18,11 +18,27 @@ then
   # dans le fichier /etc/grub.d/00_header, ajout du parametre gfxpayload=keep
   sed -i -r -e '/^  set gfxpayload=keep/ d' /etc/grub.d/00_header   # suppression de set gfxpayload=keep
   sed -i -r -e '/^  load_video/  i\  set gfxpayload=keep' /etc/grub.d/00_header # ajout de set gfxpayload=keep
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsysframebuffer01-grubcfg.log
 
-  # update-grub2 est a relancer apres reboot : ne marche pas a l'interieur de preseed...
-  update-grub2
+  # update-grub2 a l'interieur de preseed...
+  update-grub2 2> /dev/null
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsysframebuffer01-grub01.log
+fi
 
-  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsysframebuffer01-grub.log
+# quand on est à l'interieur du pressed, on saute cette boucle
+# 2 conditions : si (grub_01 n existe pas et grub_02 n existe pas) alors faire, sinon supprimer grub_01
+# la premiere fois, grub_01 existe mais grub_02 n existe pas donc, on supprime grub_02
+# la seconde fois, on cree grub_02
+# les fois suivantes, on ne fait rien
+if [ ! -e /var/log/fg/fgaptitudeinstallsysframebuffer01-grub01.log -a ! -e /var/log/fg/fgaptitudeinstallsysframebuffer01-grub02.log ]
+then
+  # update-grub2 est a relancer apres reboot : ne fonctionne pas à l'interieur du preseed...
+  # on l execute donc dans un deuxième temps
+  echo "...Modification de grub-pc pour lancer la console en 1152x864x32"
+  update-grub2 2> /dev/null
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsysframebuffer01-grub02.log
+else
+  rm -f /var/log/fg/fgaptitudeinstallsysframebuffer01-grub01.log
 fi
 
 ###########################################
@@ -65,6 +81,7 @@ fi
 
 #echo "Installationd de zathura"
 #echo y | aptitude install zathura 1> /dev/null
+
 
 
 
