@@ -9,10 +9,12 @@ echo "Installation de systeme-framebuffer (1ère partie)"
 ###############################################################
 # modification de grub-pc pour lancer la console en 1152x864x32
 echo "Modification de grub-pc pour lancer la console en 1152x864x32"
-sed -i -e '/GRUB_GFXMODE=1/ d' /etc/default/grub   # suppression
-sed -i -e '/#GRUB_GFXMODE=640x480/ a\GRUB_GFXMODE=1152x864,1152x864x32,1152x864x24,1152x864x16,1280x1024x16,1024x768x16,1152x864x32,1024x768x32,1024x768x24,800x600,640x480' /etc/default/grub # ajout
-sed -i -e '/set gfxpayload=keep/ d' /etc/grub.d/00_header   # suppression de set gfxpayload
-sed -i -e '/load_video/  i\  set gfxpayload=keep' /etc/grub.d/00_header # ajout de set gfxpayload
+# dans le fichier /etc/default/grub, definition de GFXMODE
+sed -i -r -e '/^GRUB_GFXMODE=1/ d' /etc/default/grub   # suppression
+sed -i -r -e '/^#GRUB_GFXMODE=640x480/ a\GRUB_GFXMODE=1152x864,1152x864x32,1152x864x24,1152x864x16,1280x1024x16,1024x768x16,1152x864x32,1024x768x32,1024x768x24,800x600,640x480' /etc/default/grub # ajout
+# dans le fichier /etc/grub.d/00_header, ajout du parametre gfxpayload=keep
+sed -i -r -e '/^  set gfxpayload=keep/ d' /etc/grub.d/00_header   # suppression de set gfxpayload=keep
+sed -i -r -e '/^load_video/  i\  set gfxpayload=keep' /etc/grub.d/00_header # ajout de set gfxpayload=keep
 update-grub2
 
 
