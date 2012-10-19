@@ -28,31 +28,42 @@ echo "Aptitude update"
 #cat erreur.txt | grep ""
 #aptitude update | grep -v "Ign" | grep -v "Atteint" &> /dev/null
 #mkdir /var/log/fg
-if [ ! -e /var/log/fg/fgaptitudeupdate.log ]
+if [ ! -e /var/log/fg/fgaptitudeupdate-update.log ]
 then
   aptitude update 1> /dev/null 2> /dev/null
-  date +"%F %T" >> /var/log/fg/fgaptitudeupdate.log
+  date +"%F %T" >> /var/log/fg/fgaptitudeupdate-update.log
 fi
 
 # installation du trousseau de clefs deb-multimedia-keyring
-if [ ! -e /var/log/fg/deb-multimedia-keyring.log ]
+if [ ! -e /var/log/fg/fgaptitudeupdate-keyring.log ]
 then
 
-  echo "Installation du trousseau de clefs deb-multimedia-keyring"
+  echo "  Installation du trousseau de clefs deb-multimedia-keyring"
   echo "Oui" | aptitude install deb-multimedia-keyring > /dev/null
-  touch /var/log/fg/deb-multimedia-keyring.log
-  date +"%F %T" >> /var/log/fg/deb-multimedia-keyring.log
+  #touch /var/log/fg/deb-multimedia-keyring.log
+  date +"%F %T" >> /var/log/fg/fgaptitudeupdate-keyring.log
 
   # apres avoir installe la clef, on refait un aptitude update
   aptitude update 1> /dev/null 2> /dev/null
-  date +"%F %T" >> /var/log/fg/fgaptitudeupdate.log
+  date +"%F %T" >> /var/log/fg/fgaptitudeupdate-update.log
 
 fi
 
 echo "... tude update done"
 
 #aptitude reinstall man-db 1> /dev/null
-#aptitude remove man-db 1> /dev/null 2> /dev/null
+# d'après ce que je peux comprendre, a chaque fois qu'un paquet est installé
+# la base de donnée "man" est mise à jour
+# pour une raison que j'ignore encore, (peut-etre tout simplement parce que
+# cette base de données "man" ne peut pas être mise à jour ?),
+# l'execution de preseed entraine plein d'erreaurs provenant
+# du paquet man-db
+# on retire donc ce paquet ...
+if [ ! -e /var/log/fg/fgaptitudeupdate-mandb.log ]
+then
+  aptitude remove man-db 1> /dev/null 2> /dev/null
+  date +"%F %T" >> /var/log/fg/fgaptitudeupdate-mandb.log
+fi
 #aptitude reinstall libconfig1 1> /dev/null
 #aptitude reinstall fontconfig-config 1> /dev/null
 
