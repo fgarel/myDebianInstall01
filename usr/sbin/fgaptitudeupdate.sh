@@ -18,21 +18,8 @@ mkdir /var/log/fg 2> /dev/null
 # alors la solution est indiquée sur cette page :
 # http://hydra.geht.net/tino/english/faq/debian/apt/aptlimit/
 
-# TODO: à mettre dans un bloc if pour eviter de relancer cette install à chaque
+# mis dans un bloc if pour eviter de relancer cette install à chaque
 #       fois...
-# installation du trousseau de clefs deb-multimedia-keyring
-if [ ! -e /var/log/fg/deb-multimedia-keyring.log ]
-then
-
-  echo "Installation du trousseau de clefs deb-multimedia-keyring"
-  aptitude update 1> /dev/null 2> /dev/null
-  date +"%F %T" >> /var/log/fg/fgaptitudeupdate.log
-  echo "Oui" | aptitude install deb-multimedia-keyring > /dev/null
-  #mkdir /var/log/fg
-  #touch /var/log/fg/deb-multimedia-keyring.log
-  date +"%F %T" >> /var/log/fg/deb-multimedia-keyring.log
-
-fi
 
 # update
 echo "Aptitude update"
@@ -41,12 +28,31 @@ echo "Aptitude update"
 #cat erreur.txt | grep ""
 #aptitude update | grep -v "Ign" | grep -v "Atteint" &> /dev/null
 #mkdir /var/log/fg
-aptitude update 1> /dev/null 2> /dev/null
-date +"%F %T" >> /var/log/fg/fgaptitudeupdate.log
+if [ ! -e /var/log/fg/fgaptitudeupdate.log ]
+then
+  aptitude update 1> /dev/null 2> /dev/null
+  date +"%F %T" >> /var/log/fg/fgaptitudeupdate.log
+fi
+
+# installation du trousseau de clefs deb-multimedia-keyring
+if [ ! -e /var/log/fg/deb-multimedia-keyring.log ]
+then
+
+  echo "Installation du trousseau de clefs deb-multimedia-keyring"
+  echo "Oui" | aptitude install deb-multimedia-keyring > /dev/null
+  touch /var/log/fg/deb-multimedia-keyring.log
+  date +"%F %T" >> /var/log/fg/deb-multimedia-keyring.log
+
+  # apres avoir installe la clef, on refait un aptitude update
+  aptitude update 1> /dev/null 2> /dev/null
+  date +"%F %T" >> /var/log/fg/fgaptitudeupdate.log
+
+fi
+
 echo "... tude update done"
 
 #aptitude reinstall man-db 1> /dev/null
-aptitude remove man-db 1> /dev/null 2> /dev/null
+#aptitude remove man-db 1> /dev/null 2> /dev/null
 #aptitude reinstall libconfig1 1> /dev/null
 #aptitude reinstall fontconfig-config 1> /dev/null
 

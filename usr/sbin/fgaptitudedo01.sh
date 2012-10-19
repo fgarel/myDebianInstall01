@@ -20,7 +20,7 @@ fgaptitudeclean.sh
 # commun
 fgaptitudeinstallsyscommun01.sh
 # framebuffer
-fgaptitudeinstallsysframebuffer01.sh
+#fgaptitudeinstallsysframebuffer01.sh
 # X
 fgaptitudeinstallsysx01.sh
 
