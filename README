@@ -15,7 +15,6 @@ Installation et configuration de Debian GNU/Linux en français
 Création d'un utilisateur xxx
 Installation et paramétrage de d'un certain nombre d'application
 Comme vous avez pu vous en douter en lisant le titre, ce projet peut
-<<<<<<< HEAD
 être complèté avec un second projet qui va enrichir l'installation.
 =======
 être complèter avec un second projet qui va complèter l'installation
@@ -37,7 +36,6 @@ premier reboot : en effet, certaines commandes ne semblent pas
 fonctionner quand on les execute via debian-installer (in-target
 ?). Les scripts de ce second lot finissent par 02.
 
->>>>>>> de3c9aabcbe2b57babfbacb1944d3f655d2e50df
 
 Utilisation de ce projet
 ------------------------
