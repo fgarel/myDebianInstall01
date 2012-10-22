@@ -62,7 +62,7 @@ Bundle 'guns/xterm-color-table.vim'
 "Bundle 'rails.vim'
 Bundle 'vimpager'
 Bundle 'python.vim'
-Bundle 'SearchComplete.vim'
+"Bundle 'SearchComplete.vim'
 
 " non github repos
 "Bundle 'git://git.wincent.com/command-t.git'

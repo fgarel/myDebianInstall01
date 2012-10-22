@@ -94,13 +94,13 @@ then
   # cf /etc/vim/vimrc.fg
   # http://vim-fr.org/index.php/Correction_orthographique
   echo "  Récupération et installation des dictionnaires de langue"
-  VER=`/usr/bin/vim --version | grep "VIM - Vi IMproved " | sed -e "s/VIM - Vi IMproved //g" | sed -e "s/ (.*)$//g" | sed -e "s/\.//g"`
+  VER=`vim --version | grep "VIM - Vi IMproved " | sed -e "s/VIM - Vi IMproved //g" | sed -e "s/ (.*)$//g" | sed -e "s/\.//g"`
   VIMPATH="/usr/share/vim/vim"$VER"/spell"
   cd $VIMPATH
-  wget -nv -q -N http://ftp.vim.org/vim/runtime/spell/fr.latin1.spl -O fr.latin1.spl
-  wget -nv -q -N http://ftp.vim.org/vim/runtime/spell/fr.latin1.sug -O fr.latin1.sug
-  wget -nv -q -N http://ftp.vim.org/vim/runtime/spell/fr.utf-8.spl -O fr.utf-8.spl
-  wget -nv -q -N http://ftp.vim.org/vim/runtime/spell/fr.utf-8.sug -O fr.utf-8.sug
+  #wget -nv -q -N http://ftp.vim.org/vim/runtime/spell/fr.latin1.spl -O fr.latin1.spl
+  #wget -nv -q -N http://ftp.vim.org/vim/runtime/spell/fr.latin1.sug -O fr.latin1.sug
+  #wget -nv -q -N http://ftp.vim.org/vim/runtime/spell/fr.utf-8.spl -O fr.utf-8.spl
+  #wget -nv -q -N http://ftp.vim.org/vim/runtime/spell/fr.utf-8.sug -O fr.utf-8.sug
   cd $OLDPWD
   date +"%F %T" >> /var/log/fg/fgaptitudeinstallvim01-lang.log
 fi
@@ -139,7 +139,7 @@ then
   # petit hack pour ne pas voir les installations des bundles
   sed -i -e 's/  echo a:msg/  " echo a:msg/g' \
       /etc/vim/bundle/vundle/autoload/vundle/installer.vim
-  /usr/bin/vim +BundleInstall! +BundleClean! +q +q +q
+  vim +BundleInstall! +BundleClean! +q +q +q
   date +"%F %T" >> /var/log/fg/fgaptitudeinstallvim01-vundle02.log
 fi
 
