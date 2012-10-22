@@ -135,12 +135,12 @@ fi
 # à l'aide du gestionnaire de plugins vundle
 if [ ! -e /var/log/fg/fgaptitudeinstallvim01-vundle02.log ]
 then
-  echo "  Installation des extensions vim"
+ # echo "  Installation des extensions vim"
   # petit hack pour ne pas voir les installations des bundles
-  sed -i -e 's/  echo a:msg/  " echo a:msg/g' \
-      /etc/vim/bundle/vundle/autoload/vundle/installer.vim
-  vim +BundleInstall! +BundleClean! +q +q +q
-  date +"%F %T" >> /var/log/fg/fgaptitudeinstallvim01-vundle02.log
+#  sed -i -e 's/  echo a:msg/  " echo a:msg/g' \
+#      /etc/vim/bundle/vundle/autoload/vundle/installer.vim
+#  vim +BundleInstall! +BundleClean! +q +q +q
+#  date +"%F %T" >> /var/log/fg/fgaptitudeinstallvim01-vundle02.log
 fi
 
 if [ ! -e /var/log/fg/fgaptitudeinstallvim01-vimpager.log ]
