@@ -99,8 +99,8 @@ then
   cd $VIMPATH
   #wget -nv -q -N http://ftp.vim.org/vim/runtime/spell/fr.latin1.spl -O fr.latin1.spl
   #wget -nv -q -N http://ftp.vim.org/vim/runtime/spell/fr.latin1.sug -O fr.latin1.sug
-  #wget -nv -q -N http://ftp.vim.org/vim/runtime/spell/fr.utf-8.spl -O fr.utf-8.spl
-  #wget -nv -q -N http://ftp.vim.org/vim/runtime/spell/fr.utf-8.sug -O fr.utf-8.sug
+  wget -nv -q -N http://ftp.vim.org/vim/runtime/spell/fr.utf-8.spl -O fr.utf-8.spl
+  wget -nv -q -N http://ftp.vim.org/vim/runtime/spell/fr.utf-8.sug -O fr.utf-8.sug
   cd $OLDPWD
   date +"%F %T" >> /var/log/fg/fgaptitudeinstallvim01-lang.log
 fi
