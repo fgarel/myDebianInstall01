@@ -22,7 +22,6 @@ mkdir /var/log/fg 2> /dev/null
 #       fois...
 
 # update
-echo "Aptitude update"
 #aptitude update | grep -v "Ign" | grep -v "Atteint" 1> log.txt 2> erreur.txt
 #cat log.txt | grep "Erreur"
 #cat erreur.txt | grep ""
