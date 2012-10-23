@@ -161,12 +161,12 @@ set foldtext=MyFoldFunction()    "on utilise notre fonction (optionnel)
 " Vim correcteur orthographique
 "------------------------------
 
-set spelllang=en,fr
-set spell
-set spellsuggest=5
+"#set spelllang=en,fr
+"#set spell
+"#set spellsuggest=5
 
-setlocal spell spelllang=en,fr
-set nospell
+"#setlocal spell spelllang=en,fr
+"#set nospell
 " finallement, désactivation de la correction d'ortographe
 
 " Avec ces options, vim vous indiquera automatiquement les fautes de vos
