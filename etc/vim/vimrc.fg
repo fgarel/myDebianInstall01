@@ -187,7 +187,7 @@ if &bg == 'dark'
 else
     hi CursorLine gui=NONE guibg=#CCCCCC
 endif
-hi! link CursorColumn CursorLine 
+hi! link CursorColumn CursorLine
 
 " La ligne contenant le curseur sera mise en valeur.
 " Il est possible de faire la même chose avec la colonne,
@@ -221,8 +221,8 @@ set bs=2
 " Elle est assez complexe, donc voir :help 'bs' pour plus de détails.
 
 "set columns=80
-"set columns=144
-set columns=164
+set columns=144
+"set columns=164
 
 " Ceci indique simplement le nombre de colonnes utilisées sur l'écran.
 

@@ -139,7 +139,7 @@ then
   # petit hack pour ne pas voir les installations des bundles
   sed -i -e 's/  echo a:msg/  " echo a:msg/g' \
       /etc/vim/bundle/vundle/autoload/vundle/installer.vim
-  #vim +BundleInstall! +BundleClean! +q +q +q
+  vim +BundleInstall! +BundleClean! +q +q +q
   date +"%F %T" >> /var/log/fg/fgaptitudeinstallvim01-vundle02.log
 fi
 
