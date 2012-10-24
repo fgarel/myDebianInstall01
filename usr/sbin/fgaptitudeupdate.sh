@@ -3,7 +3,7 @@
 
 # en cas de problème, il faut eventuellement nettoyé les listes
 # qui ne peuvent pas etre mergées
-echo "Nettoyage 1"
+echo "Nettoyage 1 : fgaptitudeupdate"
 rm -f /var/lib/apt/lists/partial/*
 rmdir /var/lib/apt/lists/partial
 rm -f /var/lib/apt/lists/*
@@ -50,21 +50,46 @@ then
 
 fi
 
-
-#aptitude reinstall man-db 1> /dev/null
-# d'après ce que je peux comprendre, a chaque fois qu'un paquet est installé
+# resolution elegante du probleme d'installation du paquet man-db
+#
+# Le Probleme :
+# D'après ce que je peux comprendre, a chaque fois qu'un paquet est installé
 # la base de donnée "man" est mise à jour
-# pour une raison que j'ignore encore, (peut-etre tout simplement parce que
+# Pour une raison que j'ignore encore, (peut-etre tout simplement parce que
 # cette base de données "man" ne peut pas être mise à jour ?),
-# l'execution de preseed entraine plein d'erreaurs provenant
+# l'execution de preseed entraine plein d'erreurs provenant
 # du paquet man-db
-# on retire donc ce paquet ...
-if [ ! -e /var/log/fg/fgaptitudeupdate-mandb.log ]
+#
+# La Solution :
+# On retire donc ce paquet quand on execute à l'interieur du preseed : mandb01
+# On l'installe quand on est à l'exterieur de preseed : mandb02
+#
+if [ ! -e /var/log/fg/fgaptitudeupdate-mandb01.log ]
 then
+  # man-db est a installer apres reboot : ne fonctionne pas à l'interieur du preseed...
+  # on le supprime donc dans un premier temps
   echo "  Suppression de man-db"
   aptitude remove man-db 1> /dev/null 2> /dev/null
-  date +"%F %T" >> /var/log/fg/fgaptitudeupdate-mandb.log
+  date +"%F %T" >> /var/log/fg/fgaptitudeupdate-mandb01.log
 fi
+
+# Quand on est à l'interieur du pressed, on saute cette boucle
+# 2 conditions : si (mandb_01 n existe pas et mandb_02 n existe pas) alors faire, sinon supprimer mandb_01
+# la premiere fois, mandb_01 existe mais mandb_02 n existe pas donc, on supprime mandb_01
+# la seconde fois, on cree mandb_02
+# les fois suivantes, on ne fait rien
+
+if [ ! -e /var/log/fg/fgaptitudeupdate-mandb01.log -a ! -e /var/log/fg/fgaptitudeupdate-mandb02.log ]
+then
+  # man-db est a installer apres reboot : ne fonctionne pas à l'interieur du preseed...
+  # on l installe donc dans un deuxième temps
+  echo "  Installation de man-db"
+  echo y | aptitude install man-db 1> /dev/null 2> /dev/null
+  date +"%F %T" >> /var/log/fg/fgaptitudeupdate-mandb02.log
+else
+  rm -f /var/log/fg/fgaptitudeupdate-mandb01.log
+fi
+
 #aptitude reinstall libconfig1 1> /dev/null
 #aptitude reinstall fontconfig-config 1> /dev/null
 

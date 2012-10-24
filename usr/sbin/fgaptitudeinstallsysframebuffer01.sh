@@ -3,7 +3,7 @@
 # Première partie des applications "système framebuffer"
 
 ###########################################
-echo "Installation de systeme-framebuffer (1ère partie)"
+echo "Installation de systeme-framebuffer (1ère partie) : fgaptitudeinstallsysframebuffer01"
 
 mkdir /var/log/fg 2> /dev/null
 
@@ -27,7 +27,7 @@ fi
 
 # quand on est à l'interieur du pressed, on saute cette boucle
 # 2 conditions : si (grub_01 n existe pas et grub_02 n existe pas) alors faire, sinon supprimer grub_01
-# la premiere fois, grub_01 existe mais grub_02 n existe pas donc, on supprime grub_02
+# la premiere fois, grub_01 existe mais grub_02 n existe pas donc, on supprime grub_01
 # la seconde fois, on cree grub_02
 # les fois suivantes, on ne fait rien
 if [ ! -e /var/log/fg/fgaptitudeinstallsysframebuffer01-grub01.log -a ! -e /var/log/fg/fgaptitudeinstallsysframebuffer01-grub02.log ]
@@ -48,7 +48,7 @@ fi
 if [ ! -e /var/log/fg/fgaptitudeinstallsysframebuffer01-divers.log ]
 then
 
-  echo "Installation d'utilitaires divers" 
+  echo "Installation d'utilitaires divers"
   # ajout de l'utilitaire fim
   # http://www.autistici.org/dezperado/fim/
   echo "  Installation de fim"
@@ -60,8 +60,8 @@ fi
 
 #cd /usr/local/bin
 #wget -nv -q -N  http://www.autistici.org/dezperado/fim/fim-0.3-beta-prerelease-20110702.tar.gz
-#tar xzf fim-0.3-beta-prerelease-20110702.tar.gz 
-#cd fim-0.3-beta-prerelease-20110702 
+#tar xzf fim-0.3-beta-prerelease-20110702.tar.gz
+#cd fim-0.3-beta-prerelease-20110702
 #./configure -q
 #make -s
 #make -s install
@@ -69,12 +69,12 @@ fi
 
 
 #echo "  Installation de fbida"
-# 
+#
 # http://www.kraxel.org/cgit/fbida/
 #git clone git://git.kraxel.org/fbida /usr/local/bin/fbida
 #cd /usr/local/bin/fbida
-#./configure 
-#make 
+#./configure
+#make
 #make install
 #cd $OLDPWD
 

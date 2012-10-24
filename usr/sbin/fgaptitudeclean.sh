@@ -1,9 +1,21 @@
 #!/bin/sh
 
 # suppression des paquets debian
-echo "Nettoyage 2"
-echo y | aptitude clean > /dev/null
-echo y | aptitude purge "~c" > /dev/null
+echo "Nettoyage 2 : fgaptitudeclean"
+
+if [ ! -e /var/log/fg/fgaptitudeclean-clean.log ]
+then
+  echo "  Aptitude clean"
+  echo y | aptitude clean 1> /dev/null 2> /dev/null
+  date +"%F %T" >> /var/log/fg/fgaptitudeclean-clean.log
+fi
+
+if [ ! -e /var/log/fg/fgaptitudeclean-purge.log ]
+then
+  echo "  Aptitude purge"
+  echo y | aptitude purge "~c" 1> /dev/null 2> /dev/null
+  date +"%F %T" >> /var/log/fg/fgaptitudeclean-clean.log
+fi
 
 # on enleve quelques paquets qui ne seront pas utilisés
 #echo "Suppression de quelques paquets debian (nano et fakeroot)"

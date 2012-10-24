@@ -3,104 +3,176 @@
 # 1ère partie des applications "système"
 
 ###########################################
-echo "Installation de systeme-commun (1ère partie)"
-
+echo "Installation de systeme-commun (1ère partie) : fgaptitudeinstallsyscommun01"
 
 ##############################################
 # ajout de l'utilisateur garel au groupe staff
-echo "  Ajout de l'utilisateur garel au groupe staff"
-addgroup garel staff 1> /dev/null
+if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun01-addgroup.log ]
+then
+  echo "  Ajout de l'utilisateur garel au groupe staff"
+  addgroup garel staff 1> /dev/null
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun01-addgroup.log
+fi
 
 ############################
 # ajout de l'utilitaire sudo
-echo "Installation de sudo"
-aptitude install sudo 1> /dev/null
-echo "  Ajout de l'utilisateur garel au groupe sudo"
-addgroup garel sudo 1> /dev/null
+if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun01-sudo.log ]
+then
+  echo "Installation de sudo"
+  aptitude install sudo 1> /dev/null
+  echo "  Ajout de l'utilisateur garel au groupe sudo"
+  addgroup garel sudo 1> /dev/null
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun01-sudo.log
+fi
 
 ################################
 # ajout de l'utilitaire ack-grep
-echo "Installation de ack-grep"
-echo y | aptitude install ack-grep 1> /dev/null
+if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun01-ackgrep.log ]
+then
+  echo "Installation de ack-grep"
+  echo y | aptitude install ack-grep 1> /dev/null
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun01-ackgrep.log
+fi
 
 ##############################
 # ajout de l'utilitaire hwinfo
-echo "Installation de hwinfo"
-echo y | aptitude install hwinfo 1> /dev/null
+if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun01-hwinfo.log ]
+then
+  echo "Installation de hwinfo"
+  echo y | aptitude install hwinfo 1> /dev/null
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun01-hwinfo.log
+fi
 
 ####################################
 # ajout de l'utilitaire ncurses-term
-echo "Installation de ncurses-term"
-echo y | aptitude install ncurses-term 1> /dev/null
+if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun01-ncurses.log ]
+then
+  echo "Installation de ncurses-term"
+  echo y | aptitude install ncurses-term 1> /dev/null
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun01-ncurses.log
+fi
 
 #############################
 # ajout de l'utilitaire bzip2
-echo "Installation de bzip2"
-echo y | aptitude install bzip2 1> /dev/null
+if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun01-bzip2.log ]
+then
+  echo "Installation de bzip2"
+  echo y | aptitude install bzip2 1> /dev/null
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun01-bzip2.log
+fi
+
 
 ############################
 # ajout de l'utilitaire make
-echo "Installation de make"
-echo y | aptitude install make 1> /dev/null
+if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun01-make.log ]
+then
+  echo "Installation de make"
+  echo y | aptitude install make 1> /dev/null
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun01-make.log
+fi
 
 #######################################
 # ajout de l'utilitaire build-essential
-echo "Installation de build-essential"
-echo y | aptitude install build-essential 1> /dev/null
+if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun01-build.log ]
+then
+  echo "Installation de build-essential"
+  echo y | aptitude install build-essential 1> /dev/null
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun01-build.log
+fi
 
 ##################################
 # ajout de l'utilitaire devscripts
-echo "Installation de devscripts"
-echo y | aptitude install devscripts 1> /dev/null
+if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun01-devscripts.log ]
+then
+  echo "Installation de devscripts"
+  echo y | aptitude install devscripts 1> /dev/null
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun01-devscripts.log
+fi
 
 ################################
 # ajout de l'utilitaire fakeroot
-echo "Installation de fakeroot"
-echo y | aptitude install fakeroot 1> /dev/null
+if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun01-fakeroot.log ]
+then
+  echo "Installation de fakeroot"
+  echo y | aptitude install fakeroot 1> /dev/null
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun01-fakeroot.log
+fi
 
 ############################
 # ajout de l'utilitaire flex
-echo "Installation de flex"
-echo y | aptitude install flex 1> /dev/null
+if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun01-flex.log ]
+then
+  echo "Installation de flex"
+  echo y | aptitude install flex 1> /dev/null
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun01-flex.log
+fi
 
 #############################
 # ajout de l'utilitaire bison
-echo "Installation de bison"
-echo y | aptitude install bison 1> /dev/null
+if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun01-bison.log ]
+then
+  echo "Installation de bison"
+  echo y | aptitude install bison 1> /dev/null
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun01-bison.log
+fi
 
 ##########################
 # ajout de libreadline-dev
-echo "Installation de libreadline-dev"
-echo y | aptitude install libreadline-dev 1> /dev/null
+if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun01-libreadline.log ]
+then
+  echo "Installation de libreadline-dev"
+  echo y | aptitude install libreadline-dev 1> /dev/null
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun01-libreadline.log
+fi
 
 ###############################
 # ajout de l'utilitaire mlocate
-echo "Installation de mlocate"
-aptitude install mlocate 1> /dev/null
-echo "  Début de l'indexation"
-updatedb &
-#echo "Fin de l'indexation"
+if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun01-mlocate.log ]
+then
+  echo "Installation de mlocate"
+  aptitude install mlocate 1> /dev/null
+  echo "  Début de l'indexation"
+  updatedb &
+  #echo "Fin de l'indexation"
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun01-mlocate.log
+fi
 
 ############################
 # ajout de l'utilitaire tmux
-echo "Installation de tmux"
-echo y | aptitude install tmux/squeeze-backports 1> /dev/null
+if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun01-tmux.log ]
+then
+  echo "Installation de tmux"
+  echo y | aptitude install tmux/squeeze-backports 1> /dev/null
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun01-tmux.log
+fi
 
 #####################
 # installation de git
-echo "Installation de git"
-echo y | aptitude install git 1> /dev/null
+if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun01-git.log ]
+then
+  echo "Installation de git"
+  echo y | aptitude install git 1> /dev/null
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun01-git.log
+fi
 
 ############################
 # installation de subversion
-echo "Installation de subversion"
-echo y | aptitude install subversion \
-                          subversion-tools 1> /dev/null
+if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun01-subversion.log ]
+then
+  echo "Installation de subversion"
+  echo y | aptitude install subversion \
+                            subversion-tools 1> /dev/null
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun01-subversion.log
+fi
 
 ###########################
 # installation de etckeeper
-echo "Installation de etckeeper"
-echo y | aptitude install etckeeper 1> /dev/null
+if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun01-etckeeper.log ]
+then
+  echo "Installation de etckeeper"
+  echo y | aptitude install etckeeper 1> /dev/null
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun01-etckeeper.log
+fi
 
 ########################
 # installation de elinks
@@ -139,103 +211,93 @@ echo y | aptitude install etckeeper 1> /dev/null
 #
 # tips supplémentaire : pony ssh sur grml
 # http://grml.org/zsh-pony/
-# 
-echo "Installation de zsh"
-#echo y | aptitude remove zsh 1> /dev/null
-#echo y | aptitude purge ~c 1> /dev/null
-mv /etc/zsh/zlogin /etc/zsh/zlogin_sav 2> /dev/null
-mv /etc/zsh/zlogout /etc/zsh/zlogout_sav 2> /dev/null
-mv /etc/zsh/zprofile /etc/zsh/zprofile_sav 2> /dev/null
-mv /etc/zsh/zshenv /etc/zsh/zshenv_sav 2> /dev/null
-mv /etc/zsh/zshrc /etc/zsh/zshrc_sav 2> /dev/null
-#cd /etc/zsh
-#touch zshrc zshenv zprofile zlogin zlogout
-#cd $OLDPWD
-echo y | aptitude install zsh 1> /dev/null
-#aptitude install zsh
+#
+if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun01-zsh.log ]
+then
+  echo "Installation de zsh"
+  mv /etc/zsh/zlogin /etc/zsh/zlogin_sav 2> /dev/null
+  mv /etc/zsh/zlogout /etc/zsh/zlogout_sav 2> /dev/null
+  mv /etc/zsh/zprofile /etc/zsh/zprofile_sav 2> /dev/null
+  mv /etc/zsh/zshenv /etc/zsh/zshenv_sav 2> /dev/null
+  mv /etc/zsh/zshrc /etc/zsh/zshrc_sav 2> /dev/null
+  echo y | aptitude install zsh 1> /dev/null
+  echo "  Sauvegarde des fichiers de configuration zsh du responsable du paquet"
+  mv /etc/zsh/zprofile /etc/zsh/zprofile_mainteneur_debian 2> /dev/null
+  mv /etc/zsh/zshrc /etc/zsh/zshrc_mainteneur_debian 2> /dev/null
+  mv /etc/zsh/zshenv /etc/zsh/zshenv_mainteneur_debian 2> /dev/null
+  mv /etc/zsh/zlogin /etc/zsh/zlogin_mainteneur_debian 2> /dev/null
+  mv /etc/zsh/zlogout /etc/zsh/zlogout_mainteneur_debian 2> /dev/null
 
-echo "  Sauvegarde des fichiers de configuration zsh du responsable du paquet"
-mv /etc/zsh/zprofile /etc/zsh/zprofile_mainteneur_debian 2> /dev/null
-mv /etc/zsh/zshrc /etc/zsh/zshrc_mainteneur_debian 2> /dev/null
-mv /etc/zsh/zshenv /etc/zsh/zshenv_mainteneur_debian 2> /dev/null
-mv /etc/zsh/zlogin /etc/zsh/zlogin_mainteneur_debian 2> /dev/null
-mv /etc/zsh/zlogout /etc/zsh/zlogout_mainteneur_debian 2> /dev/null
+  # pour changer le shell de l'utilisateur en cours
+  # https://wiki.archlinux.org/index.php/Zsh
+  #echo "/usr/bin/zsh" | chsh
+  chsh -s /bin/zsh root
+  chsh -s /bin/zsh garel
 
-# pour changer le shell de l'utilisateur en cours
-# https://wiki.archlinux.org/index.php/Zsh
-#echo "/usr/bin/zsh" | chsh
-chsh -s /bin/zsh root
-chsh -s /bin/zsh garel
+  echo "  Création d'un fichier zshrc pour l'utilisateur garel"
+  echo "# Created by newuser" > /home/garel/.zshrc
 
-echo "  Création d'un fichier zshrc pour l'utilisateur garel"
-echo "# Created by newuser" > /home/garel/.zshrc
+  echo "  Changement du shell par defaut pour les futurs utilisateurs"
+  # pour changer le shell des futurs utilisateurs
+  # http://askubuntu.com/questions/28969/how-do-you-change-the-default-shell-for-all-users-to-bash
+  sed -i -e 's/DSHELL=\/bin\/bash/DSHELL=\/bin\/zsh/g' /etc/adduser.conf
 
-echo "  Changement du shell par defaut pour les futurs utilisateurs"
-# pour changer le shell des futurs utilisateurs
-# http://askubuntu.com/questions/28969/how-do-you-change-the-default-shell-for-all-users-to-bash
-sed -i -e 's/DSHELL=\/bin\/bash/DSHELL=\/bin\/zsh/g' /etc/adduser.conf
+  # recuperation des fichiers de configuration de la formation Debian
+  # http://formation-debian.via.ecp.fr/shell.html
+  echo "  Récupération des fichiers de configuration zsh de la formation debian"
+  cd /etc/zsh
+  wget -nv -q -N http://formation-debian.via.ecp.fr/fichiers-config/zshrc -O zshrc_formation_debian
+  wget -nv -q -N http://formation-debian.via.ecp.fr/fichiers-config/zshenv -O zshenv_formation_debian
+  wget -nv -q -N http://formation-debian.via.ecp.fr/fichiers-config/zlogin -O zlogin_formation_debian
+  wget -nv -q -N http://formation-debian.via.ecp.fr/fichiers-config/zlogout -O zlogout_formation_debian
+  #cp /etc/zsh/zshrc /etc/zsh/zshrc_formation_debian
+  cd $OLDPWD
 
-# recuperation des fichiers de configuration de la formation Debian
-# http://formation-debian.via.ecp.fr/shell.html
-echo "  Récupération des fichiers de configuration zsh de la formation debian"
-cd /etc/zsh
-wget -nv -q -N http://formation-debian.via.ecp.fr/fichiers-config/zshrc -O zshrc_formation_debian
-wget -nv -q -N http://formation-debian.via.ecp.fr/fichiers-config/zshenv -O zshenv_formation_debian
-wget -nv -q -N http://formation-debian.via.ecp.fr/fichiers-config/zlogin -O zlogin_formation_debian
-wget -nv -q -N http://formation-debian.via.ecp.fr/fichiers-config/zlogout -O zlogout_formation_debian
-#cp /etc/zsh/zshrc /etc/zsh/zshrc_formation_debian
-cd $OLDPWD
+  cd /etc/
+  wget -nv -N http://formation-debian.via.ecp.fr/fichiers-config/dir_colors
+  cd $OLDPWD
 
-cd /etc/
-wget -nv -N http://formation-debian.via.ecp.fr/fichiers-config/dir_colors
-cd $OLDPWD
+  echo "  Récupération des fichiers de configuration zsh de grml"
+  cd /etc/zsh
+  wget -nv -q -N http://git.grml.org/f/grml-etc-core/etc/zsh/zshrc -O zshrc_grml
+  cd $OLDPWD
 
-echo "  Récupération des fichiers de configuration zsh de grml"
-cd /etc/zsh
-wget -nv -q -N http://git.grml.org/f/grml-etc-core/etc/zsh/zshrc -O zshrc_grml
-cd $OLDPWD
+  echo "  Récupération des fichiers de configurations de Oh my zshell"
+  #git checkout /etc/zsh/oh-my-zsh
+  #git clean
+  #git clone git://github.com/robbyrussell/oh-my-zsh.git /etc/zsh/oh-my-zsh
+  #git clone --progress --verbose https://github.com/robbyrussell/oh-my-zsh.git /etc/zsh/oh-my-zsh
+  git clone --progress --verbose http://github.com/robbyrussell/oh-my-zsh.git /etc/zsh/oh-my-zsh
+  cd /etc/zsh/oh-my-zsh
+  git fetch --progress --verbose
+  cd $OLDPWD
+  cp /etc/zsh/oh-my-zsh/templates/zshrc.zsh-template /etc/zsh/zshrc
+  #sed -i -e 's/export ZSH=$HOME\/.oh-my-zsh/export ZSH=\/etc\/zsh\/oh-my-zsh/g' /etc/zsh/zshrc
+  sed -i -e 's/ZSH=$HOME\/.oh-my-zsh/ZSH=\/etc\/zsh\/oh-my-zsh/g' /etc/zsh/zshrc
+  #sed -i -e 's/ZSH_THEME=\"robbyrussell\"/ZSH_THEME=\"jtriley\"/g' /etc/zsh/zshrc
+  sed -i -e 's/ZSH_THEME=\"robbyrussell\"/ZSH_THEME=\"sporty_256\"/g' /etc/zsh/zshrc
+  sed -i -e 's/plugins=(git)/plugins=(deb debian git github perl pip vi-mode)/g' /etc/zsh/zshrc
+  sed -i -e 's/export PAGER=less/export PAGER=vimpager/g' /etc/zsh/oh-my-zsh/lib/misc.zsh
+  sed -i -e 's/export LC_CTYPE=en_US.UTF-8/export LC_CTYPE="fr_FR.UTF-8"/g' /etc/zsh/oh-my-zsh/lib/misc.zsh
+  sed -i -e '/LC_ALL/ d' /etc/zsh/oh-my-zsh/lib/misc.zsh
+  sed -i -e '/LANG/ d' /etc/zsh/oh-my-zsh/lib/misc.zsh
+  sed -i -e '/LANGUAGE/ d' /etc/zsh/oh-my-zsh/lib/misc.zsh
+  echo 'export LC_ALL="fr_FR.UTF-8"' >> /etc/zsh/oh-my-zsh/lib/misc.zsh
+  echo 'export LANG="fr_FR.UTF-8"' >> /etc/zsh/oh-my-zsh/lib/misc.zsh
+  echo 'export LANGUAGE="fr_FR.UTF-8"' >> /etc/zsh/oh-my-zsh/lib/misc.zsh
+  cp /etc/zsh/zshrc_formation_debian /etc/zsh/oh-my-zsh/custom/zshrc_formation_debian.zsh 2> /dev/null
+  cp /etc/zsh/zshrc_grmln /etc/zsh/oh-my-zsh/custom/zshrc_grml.zsh 2> /dev/null
 
+  cp /etc/zsh/zlogin_formation_debian /etc/zsh/zlogin 2> /dev/null
+  cp /etc/zsh/zlogout_formation_debian /etc/zsh/zlogout 2> /dev/null
+  cp /etc/zsh/zshenv_formation_debian /etc/zsh/zshenv 2> /dev/null
 
+  echo "  Source de /etc/zsh/zshrc"
+  #source /etc/zsh/zshrc
+  #`/etc/zsh/zshrc`
+  /bin/zsh /etc/zsh/zshrc
 
-echo "  Récupération des fichiers de configurations de Oh my zshell"
-#git checkout /etc/zsh/oh-my-zsh
-#git clean 
-#git clone git://github.com/robbyrussell/oh-my-zsh.git /etc/zsh/oh-my-zsh
-#git clone --progress --verbose https://github.com/robbyrussell/oh-my-zsh.git /etc/zsh/oh-my-zsh
-git clone --progress --verbose http://github.com/robbyrussell/oh-my-zsh.git /etc/zsh/oh-my-zsh
-cd /etc/zsh/oh-my-zsh
-git fetch --progress --verbose
-cd $OLDPWD
-cp /etc/zsh/oh-my-zsh/templates/zshrc.zsh-template /etc/zsh/zshrc
-#sed -i -e 's/export ZSH=$HOME\/.oh-my-zsh/export ZSH=\/etc\/zsh\/oh-my-zsh/g' /etc/zsh/zshrc
-sed -i -e 's/ZSH=$HOME\/.oh-my-zsh/ZSH=\/etc\/zsh\/oh-my-zsh/g' /etc/zsh/zshrc
-#sed -i -e 's/ZSH_THEME=\"robbyrussell\"/ZSH_THEME=\"jtriley\"/g' /etc/zsh/zshrc
-sed -i -e 's/ZSH_THEME=\"robbyrussell\"/ZSH_THEME=\"sporty_256\"/g' /etc/zsh/zshrc
-sed -i -e 's/plugins=(git)/plugins=(deb debian git github perl pip vi-mode)/g' /etc/zsh/zshrc
-sed -i -e 's/export PAGER=less/export PAGER=vimpager/g' /etc/zsh/oh-my-zsh/lib/misc.zsh
-sed -i -e 's/export LC_CTYPE=en_US.UTF-8/export LC_CTYPE="fr_FR.UTF-8"/g' /etc/zsh/oh-my-zsh/lib/misc.zsh
-sed -i -e '/LC_ALL/ d' /etc/zsh/oh-my-zsh/lib/misc.zsh
-sed -i -e '/LANG/ d' /etc/zsh/oh-my-zsh/lib/misc.zsh
-sed -i -e '/LANGUAGE/ d' /etc/zsh/oh-my-zsh/lib/misc.zsh
-echo 'export LC_ALL="fr_FR.UTF-8"' >> /etc/zsh/oh-my-zsh/lib/misc.zsh
-echo 'export LANG="fr_FR.UTF-8"' >> /etc/zsh/oh-my-zsh/lib/misc.zsh
-echo 'export LANGUAGE="fr_FR.UTF-8"' >> /etc/zsh/oh-my-zsh/lib/misc.zsh
-cp /etc/zsh/zshrc_formation_debian /etc/zsh/oh-my-zsh/custom/zshrc_formation_debian.zsh 2> /dev/null
-cp /etc/zsh/zshrc_grmln /etc/zsh/oh-my-zsh/custom/zshrc_grml.zsh 2> /dev/null
-
-
-cp /etc/zsh/zlogin_formation_debian /etc/zsh/zlogin 2> /dev/null
-cp /etc/zsh/zlogout_formation_debian /etc/zsh/zlogout 2> /dev/null
-cp /etc/zsh/zshenv_formation_debian /etc/zsh/zshenv 2> /dev/null
-
-
-
-echo "  Source de /etc/zsh/zshrc"
-#source /etc/zsh/zshrc
-#`/etc/zsh/zshrc`
-/bin/zsh /etc/zsh/zshrc
-
-
-
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun01-zsh.log
+fi
 
 
