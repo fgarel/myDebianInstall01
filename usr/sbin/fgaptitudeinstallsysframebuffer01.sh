@@ -25,7 +25,7 @@ then
   date +"%F %T" >> /var/log/fg/fgaptitudeinstallsysframebuffer01-grub01.log
 fi
 
-# quand on est à l'interieur du pressed, on saute cette boucle
+# Quand on est à l'interieur du preseed, on saute cette boucle
 # 2 conditions : si (grub_01 n existe pas et grub_02 n existe pas) alors faire, sinon supprimer grub_01
 # la premiere fois, grub_01 existe mais grub_02 n existe pas donc, on supprime grub_01
 # la seconde fois, on cree grub_02

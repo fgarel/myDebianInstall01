@@ -64,16 +64,17 @@ fi
 # On retire donc ce paquet quand on execute à l'interieur du preseed : mandb01
 # On l'installe quand on est à l'exterieur de preseed : mandb02
 #
-if [ ! -e /var/log/fg/fgaptitudeupdate-mandb01.log ]
+if [ ! -e /var/log/fg/fgaptitudeupdate-mandb00.log ]
 then
   # man-db est a installer apres reboot : ne fonctionne pas à l'interieur du preseed...
   # on le supprime donc dans un premier temps
   echo "  Suppression de man-db"
   aptitude remove man-db 1> /dev/null 2> /dev/null
+  date +"%F %T" >> /var/log/fg/fgaptitudeupdate-mandb00.log
   date +"%F %T" >> /var/log/fg/fgaptitudeupdate-mandb01.log
 fi
 
-# Quand on est à l'interieur du pressed, on saute cette boucle
+# Quand on est à l'interieur du preseed, on saute cette boucle
 # 2 conditions : si (mandb_01 n existe pas et mandb_02 n existe pas) alors faire, sinon supprimer mandb_01
 # la premiere fois, mandb_01 existe mais mandb_02 n existe pas donc, on supprime mandb_01
 # la seconde fois, on cree mandb_02
