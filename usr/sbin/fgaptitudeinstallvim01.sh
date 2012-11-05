@@ -3,7 +3,7 @@
 # Installation et configuration de vim
 
 ###########################################
-echo "Installation et configuration de vim"
+echo "fgaptitudeinstallvim01.sh : Installation et configuration de vim"
 
 mkdir /var/log/fg 2> /dev/null
 
@@ -124,7 +124,7 @@ then
   #git clone http://github.com/gmarik/vundle.git /etc/vim/bundle/vundle
   #git clone git://github.com/gmarik/vundle.git /etc/vim/bundle/vundle
   #git clone --progress --verbose https://github.com/gmarik/vundle.git /etc/vim/bundle/vundle
-  git clone --progress --verbose https://github.com/gmarik/vundle.git /etc/vim/bundle/vundle
+  git clone --progress --verbose https://github.com/gmarik/vundle.git /etc/vim/bundle/vundle 2> /dev/null
   cd /etc/vim/bundle/vundle
   git fetch --progress --verbose
   cd $OLDPWD

@@ -3,6 +3,8 @@
 export https_proxy=$http_proxy
 export LANG=fr_FR.UTF-8
 
+mkdir /var/log/fg 2> /dev/null
+
 # chainage avec les scripts de configuration et les mises à jour
 
 fgaptitudeupdate.sh
@@ -29,11 +31,36 @@ fgaptitudeinstallvim01.sh
 
 fgaptitudeupgrade01.sh
 fgaptitudeinstallpython.sh
-#sudo -u garel fgaptitudeinstallpythonfabric.sh ; cd $OLDPWD
-#sudo -u garel fgaptitudeinstallpythonpyramid.sh ; cd $OLDPWD
-#sudo -u garel fgaptitudeinstallpythonmapnik.sh ; cd $OLDPWD
-#sudo -u garel fgaptitudeinstallpythongeonode.sh ; cd $OLDPWD
-#sudo -u garel fgaptitudeinstallpythonckan.sh ; cd $OLDPWD
+if [ ! -e /var/log/fg/fgaptitudeinstallpythonfabric-fabric.log ]
+then
+  echo "  python fabric"
+  sudo -u garel fgaptitudeinstallpythonfabric.sh ; cd $OLDPWD
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallpythonfabric-fabric.log
+fi
+if [ ! -e /var/log/fg/fgaptitudeinstallpythonpyramid-pyramid.log ]
+then
+  echo "  python pyramid"
+  sudo -u garel fgaptitudeinstallpythonpyramid.sh ; cd $OLDPWD
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallpythonpyramid-pyramid.log
+fi
+if [ ! -e /var/log/fg/fgaptitudeinstallpythonmapnik-mapnik.log ]
+then
+  echo "  python mapnik"
+  sudo -u garel fgaptitudeinstallpythonmapnik.sh ; cd $OLDPWD
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallpythonmapnik-mapnik.log
+fi
+if [ ! -e /var/log/fg/fgaptitudeinstallpythongeonode-geonode.log ]
+then
+  echo "  python geonode"
+  sudo -u garel fgaptitudeinstallpythongeonode.sh ; cd $OLDPWD
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallpythongeonode-geonode.log
+fi
+if [ ! -e /var/log/fg/fgaptitudeinstallpythonckan-ckan.log ]
+then
+  echo "  python ckan"
+  sudo -u garel fgaptitudeinstallpythonckan.sh ; cd $OLDPWD
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallpythonckan-ckan.log
+fi
 
 # installation de quelques applications et utilitaires
 # spécifiques au domaine du sig
@@ -47,8 +74,8 @@ fgaptitudeinstallpython.sh
 #    - les differentes sources
 # - quelques utilitiares
 # - quelques fichiers de configurations
-echo "Récupération des fichiers depuis la machine distante - clefUsb2"
-git clone --progress --verbose http://github.com/fgarel/myDebianInstall02.git /root/myDebianInstall02
+echo "fgaptitudedo01 : Récupération des fichiers du projet 'myDebianInstall02'"
+git clone --progress --verbose http://github.com/fgarel/myDebianInstall02.git /root/myDebianInstall02 2> /dev/null
 cp /root/myDebianInstall02/* /
 ###scp -q -r root@10.5.10.23:/media/clefUsb2/\* /
 chown -R garel:garel /home/garel/

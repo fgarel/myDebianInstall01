@@ -3,7 +3,7 @@
 
 # en cas de problème, il faut eventuellement nettoyé les listes
 # qui ne peuvent pas etre mergées
-echo "Nettoyage 1 : fgaptitudeupdate"
+echo "fgaptitudeupdate : Nettoyage 1"
 rm -f /var/lib/apt/lists/partial/*
 rmdir /var/lib/apt/lists/partial
 rm -f /var/lib/apt/lists/*
@@ -29,10 +29,10 @@ mkdir /var/log/fg 2> /dev/null
 #mkdir /var/log/fg
 if [ ! -e /var/log/fg/fgaptitudeupdate-update.log ]
 then
-  echo "Aptitude update"
+  echo "  Aptitude update"
   aptitude update 1> /dev/null 2> /dev/null
   date +"%F %T" >> /var/log/fg/fgaptitudeupdate-update.log
-  echo "... tude update done"
+  echo "  ... tude update done"
 fi
 
 # installation du trousseau de clefs deb-multimedia-keyring

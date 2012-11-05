@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # suppression des paquets debian
-echo "Nettoyage 2 : fgaptitudeclean"
+echo "fgaptitudeclean : Nettoyage 2"
 
 if [ ! -e /var/log/fg/fgaptitudeclean-clean.log ]
 then

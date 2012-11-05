@@ -3,7 +3,7 @@
 # 1ère partie des applications "système"
 
 ###########################################
-echo "Installation de systeme-commun (1ère partie) : fgaptitudeinstallsyscommun01"
+echo "fgaptitudeinstallsyscommun01 : Installation d'outils systeme communs au mode console et au mode graphique (1ere partie)"
 
 ##############################################
 # ajout de l'utilisateur garel au groupe staff
@@ -18,7 +18,7 @@ fi
 # ajout de l'utilitaire sudo
 if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun01-sudo.log ]
 then
-  echo "Installation de sudo"
+  echo "  Installation de sudo"
   aptitude install sudo 1> /dev/null
   echo "  Ajout de l'utilisateur garel au groupe sudo"
   addgroup garel sudo 1> /dev/null
@@ -29,7 +29,7 @@ fi
 # ajout de l'utilitaire ack-grep
 if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun01-ackgrep.log ]
 then
-  echo "Installation de ack-grep"
+  echo "  Installation de ack-grep"
   echo y | aptitude install ack-grep 1> /dev/null
   date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun01-ackgrep.log
 fi
@@ -38,7 +38,7 @@ fi
 # ajout de l'utilitaire hwinfo
 if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun01-hwinfo.log ]
 then
-  echo "Installation de hwinfo"
+  echo "  Installation de hwinfo"
   echo y | aptitude install hwinfo 1> /dev/null
   date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun01-hwinfo.log
 fi
@@ -47,7 +47,7 @@ fi
 # ajout de l'utilitaire ncurses-term
 if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun01-ncurses.log ]
 then
-  echo "Installation de ncurses-term"
+  echo "  Installation de ncurses-term"
   echo y | aptitude install ncurses-term 1> /dev/null
   date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun01-ncurses.log
 fi
@@ -56,7 +56,7 @@ fi
 # ajout de l'utilitaire bzip2
 if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun01-bzip2.log ]
 then
-  echo "Installation de bzip2"
+  echo "  Installation de bzip2"
   echo y | aptitude install bzip2 1> /dev/null
   date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun01-bzip2.log
 fi
@@ -66,7 +66,7 @@ fi
 # ajout de l'utilitaire make
 if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun01-make.log ]
 then
-  echo "Installation de make"
+  echo "  Installation de make"
   echo y | aptitude install make 1> /dev/null
   date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun01-make.log
 fi
@@ -75,7 +75,7 @@ fi
 # ajout de l'utilitaire build-essential
 if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun01-build.log ]
 then
-  echo "Installation de build-essential"
+  echo "  Installation de build-essential"
   echo y | aptitude install build-essential 1> /dev/null
   date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun01-build.log
 fi
@@ -84,7 +84,7 @@ fi
 # ajout de l'utilitaire devscripts
 if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun01-devscripts.log ]
 then
-  echo "Installation de devscripts"
+  echo "  Installation de devscripts"
   echo y | aptitude install devscripts 1> /dev/null
   date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun01-devscripts.log
 fi
@@ -93,7 +93,7 @@ fi
 # ajout de l'utilitaire fakeroot
 if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun01-fakeroot.log ]
 then
-  echo "Installation de fakeroot"
+  echo "  Installation de fakeroot"
   echo y | aptitude install fakeroot 1> /dev/null
   date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun01-fakeroot.log
 fi
@@ -102,7 +102,7 @@ fi
 # ajout de l'utilitaire flex
 if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun01-flex.log ]
 then
-  echo "Installation de flex"
+  echo "  Installation de flex"
   echo y | aptitude install flex 1> /dev/null
   date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun01-flex.log
 fi
@@ -111,7 +111,7 @@ fi
 # ajout de l'utilitaire bison
 if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun01-bison.log ]
 then
-  echo "Installation de bison"
+  echo "  Installation de bison"
   echo y | aptitude install bison 1> /dev/null
   date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun01-bison.log
 fi
@@ -120,7 +120,7 @@ fi
 # ajout de libreadline-dev
 if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun01-libreadline.log ]
 then
-  echo "Installation de libreadline-dev"
+  echo "  Installation de libreadline-dev"
   echo y | aptitude install libreadline-dev 1> /dev/null
   date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun01-libreadline.log
 fi
@@ -129,11 +129,11 @@ fi
 # ajout de l'utilitaire mlocate
 if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun01-mlocate.log ]
 then
-  echo "Installation de mlocate"
+  echo "  Installation de mlocate"
   aptitude install mlocate 1> /dev/null
   echo "  Début de l'indexation"
   updatedb &
-  #echo "Fin de l'indexation"
+  #echo "  ...Fin de l'indexation"
   date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun01-mlocate.log
 fi
 
@@ -141,7 +141,7 @@ fi
 # ajout de l'utilitaire tmux
 if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun01-tmux.log ]
 then
-  echo "Installation de tmux"
+  echo "  Installation de tmux"
   echo y | aptitude install tmux/squeeze-backports 1> /dev/null
   date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun01-tmux.log
 fi
@@ -150,7 +150,7 @@ fi
 # installation de git
 if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun01-git.log ]
 then
-  echo "Installation de git"
+  echo "  Installation de git"
   echo y | aptitude install git 1> /dev/null
   date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun01-git.log
 fi
@@ -159,7 +159,7 @@ fi
 # installation de subversion
 if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun01-subversion.log ]
 then
-  echo "Installation de subversion"
+  echo "  Installation de subversion"
   echo y | aptitude install subversion \
                             subversion-tools 1> /dev/null
   date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun01-subversion.log
@@ -169,14 +169,14 @@ fi
 # installation de etckeeper
 if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun01-etckeeper.log ]
 then
-  echo "Installation de etckeeper"
+  echo "  Installation de etckeeper"
   echo y | aptitude install etckeeper 1> /dev/null
   date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun01-etckeeper.log
 fi
 
 ########################
 # installation de elinks
-#echo "Installation de elinks"
+#echo "  Installation de elinks"
 #echo y | aptitude install elinks 1> /dev/null
 
 #echo 'set mime.extension.jpg="image/jpeg"' >> /etc/elinks/elinks.conf
@@ -214,7 +214,7 @@ fi
 #
 if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun01-zsh.log ]
 then
-  echo "Installation de zsh"
+  echo "  Installation de zsh"
   mv /etc/zsh/zlogin /etc/zsh/zlogin_sav 2> /dev/null
   mv /etc/zsh/zlogout /etc/zsh/zlogout_sav 2> /dev/null
   mv /etc/zsh/zprofile /etc/zsh/zprofile_sav 2> /dev/null
@@ -267,7 +267,7 @@ then
   #git clean
   #git clone git://github.com/robbyrussell/oh-my-zsh.git /etc/zsh/oh-my-zsh
   #git clone --progress --verbose https://github.com/robbyrussell/oh-my-zsh.git /etc/zsh/oh-my-zsh
-  git clone --progress --verbose http://github.com/robbyrussell/oh-my-zsh.git /etc/zsh/oh-my-zsh
+  git clone --progress --verbose http://github.com/robbyrussell/oh-my-zsh.git /etc/zsh/oh-my-zsh 2> /dev/null
   cd /etc/zsh/oh-my-zsh
   git fetch --progress --verbose
   cd $OLDPWD

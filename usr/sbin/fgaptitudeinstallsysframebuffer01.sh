@@ -3,7 +3,7 @@
 # Première partie des applications "système framebuffer"
 
 ###########################################
-echo "Installation de systeme-framebuffer (1ère partie) : fgaptitudeinstallsysframebuffer01"
+echo "fgaptitudeinstallsysframebuffer01 : Installation d'outils pour le mode console (1ere partie)"
 
 mkdir /var/log/fg 2> /dev/null
 
@@ -11,7 +11,7 @@ if [ ! -e /var/log/fg/fgaptitudeinstallsysframebuffer01-grubcfg.log ]
 then
   ###############################################################
   # modification de grub-pc pour lancer la console en 1152x864x32
-  echo "Modification de grub-pc pour lancer la console en 1152x864x32"
+  echo "  Modification de grub-pc pour lancer la console en 1152x864x32 : configuration"
   # dans le fichier /etc/default/grub, definition de GFXMODE
   sed -i -r -e '/^GRUB_GFXMODE=1/ d' /etc/default/grub   # suppression
   sed -i -r -e '/^#GRUB_GFXMODE=640x480/ a\GRUB_GFXMODE=1152x864,1152x864x32,1152x864x24,1152x864x16,1280x1024x16,1024x768x16,1152x864x32,1024x768x32,1024x768x24,800x600,640x480' /etc/default/grub # ajout
@@ -34,7 +34,7 @@ if [ ! -e /var/log/fg/fgaptitudeinstallsysframebuffer01-grub01.log -a ! -e /var/
 then
   # update-grub2 est a relancer apres reboot : ne fonctionne pas à l'interieur du preseed...
   # on l execute donc dans un deuxième temps
-  echo "...Modification de grub-pc pour lancer la console en 1152x864x32"
+  echo "  ...Modification de grub-pc pour lancer la console en 1152x864x32 : update-grub2"
   update-grub2 2> /dev/null
   date +"%F %T" >> /var/log/fg/fgaptitudeinstallsysframebuffer01-grub02.log
 else
@@ -48,7 +48,7 @@ fi
 if [ ! -e /var/log/fg/fgaptitudeinstallsysframebuffer01-divers.log ]
 then
 
-  echo "Installation d'utilitaires divers"
+  echo "  Installation d'utilitaires divers"
   # ajout de l'utilitaire fim
   # http://www.autistici.org/dezperado/fim/
   echo "  Installation de fim"
@@ -79,7 +79,7 @@ fi
 #cd $OLDPWD
 
 
-#echo "Installationd de zathura"
+#echo "  Installationd de zathura"
 #echo y | aptitude install zathura 1> /dev/null
 
 

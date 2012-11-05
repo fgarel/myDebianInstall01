@@ -1,5 +1,6 @@
 #!/bin/sh
 
-echo "Aptitude full-upgrade"
+echo "fgaptitudeupgrade01 : Mise à jour"
+echo "  Aptitude full-upgrade"
 #echo y | aptitude full-upgrade #1> /dev/null
-echo "... tude full-upgrade done"
+echo "  ... tude full-upgrade done"
