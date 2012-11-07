@@ -4,9 +4,6 @@
 # en cas de problème, il faut eventuellement nettoyé les listes
 # qui ne peuvent pas etre mergées
 echo "fgaptitudeupdate : Nettoyage 1"
-rm -f /var/lib/apt/lists/partial/*
-rmdir /var/lib/apt/lists/partial
-rm -f /var/lib/apt/lists/*
 
 mkdir /var/log/fg 2> /dev/null
 #aptitude clean
@@ -30,6 +27,9 @@ mkdir /var/log/fg 2> /dev/null
 if [ ! -e /var/log/fg/fgaptitudeupdate-update.log ]
 then
   echo "  Aptitude update"
+  #rm -f /var/lib/apt/lists/partial/*
+  #rmdir /var/lib/apt/lists/partial
+  #rm -f /var/lib/apt/lists/*
   aptitude update 1> /dev/null 2> /dev/null
   date +"%F %T" >> /var/log/fg/fgaptitudeupdate-update.log
   echo "  ... tude update done"
@@ -69,7 +69,8 @@ then
   # man-db est a installer apres reboot : ne fonctionne pas à l'interieur du preseed...
   # on le supprime donc dans un premier temps
   echo "  Suppression de man-db"
-  aptitude remove man-db 1> /dev/null 2> /dev/null
+  echo y | aptitude remove man-db 1> /dev/null 2> /dev/null
+  echo y | aptitude purge man-db 1> /dev/null 2> /dev/null
   date +"%F %T" >> /var/log/fg/fgaptitudeupdate-mandb00.log
   date +"%F %T" >> /var/log/fg/fgaptitudeupdate-mandb01.log
 fi
