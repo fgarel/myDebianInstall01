@@ -49,14 +49,21 @@ set nocompatible
 " A placer tout en haut de votre fichier .vimrc, cette ligne vous permet de
 " désactiver la compatibilité avec VIM 5 et 6.
 " C'est important pour faire fonctionner les plugins récents.
-" A noter que si vous avez ajouté les 2 lignes du .vimrc "n00b-proof", 
-" vous avez déjà cette option (la première ligne du .vimrc n00b-proof est 
+" A noter que si vous avez ajouté les 2 lignes du .vimrc "n00b-proof",
+" vous avez déjà cette option (la première ligne du .vimrc n00b-proof est
 " "set nocompatible" == "set nocp").
 
 " Afficher les numéros de ligne
 "------------------------------
 
 set nu
+
+" pour avoir la numerotation des lignes relatives il faut rajouter
+" la lettre r (pour relative)
+set rnu
+
+" pour désactiver, la commande est
+" set nornu
 
 " Activer la souris pour le mode shell
 "-------------------------------------
@@ -143,12 +150,12 @@ set wildignore =*.o,*.r,*.so,*.sl,*.tar,*.tgz    "ignorer certains types de fich
 " Pour une idée, c'est l'équivalent du petit "+" et "-" de l'explorateur Windows.
 
 function! MyFoldFunction()
-		let line = getline(v:foldstart)
-		let sub = substitute(line,'/\*\|\*/\|^\s+', '', 'g')
-		let lines = v:foldend - v:foldstart + 1
-		return v:folddashes.sub.'...'.lines.' Lines...'.getline(v:foldend)
+    let line = getline(v:foldstart)
+    let sub = substitute(line,'/\*\|\*/\|^\s+', '', 'g')
+    let lines = v:foldend - v:foldstart + 1
+    return v:folddashes.sub.'...'.lines.' Lines...'.getline(v:foldend)
 endfunction
-	
+
 
 set foldmethod=syntax    "Réduira automatiquement les fonctions et blocs (#region en C# par exemple)
 set foldtext=MyFoldFunction()    "on utilise notre fonction (optionnel)
@@ -220,8 +227,8 @@ set bs=2
 " Ceci influence le comportement de l'option backspace.
 " Elle est assez complexe, donc voir :help 'bs' pour plus de détails.
 
-"set columns=80
-set columns=144
+set columns=80
+"set columns=144
 "set columns=164
 
 " Ceci indique simplement le nombre de colonnes utilisées sur l'écran.
@@ -280,7 +287,7 @@ set autoindent
 " ai
 " Very painful to live without this (especially with Python)! It means that
 " when you press RETURN and a new line is created, the indent of the new line
-" will match that of the previous line. 
+" will match that of the previous line.
 
 " Autres configurations diverses 3
 "---------------------------------

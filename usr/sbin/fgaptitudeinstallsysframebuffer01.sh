@@ -34,8 +34,11 @@ if [ ! -e /var/log/fg/fgaptitudeinstallsysframebuffer01-grub01.log -a ! -e /var/
 then
   # update-grub2 est a relancer apres reboot : ne fonctionne pas à l'interieur du preseed...
   # on l execute donc dans un deuxième temps
-  echo "  ...Modification de grub-pc pour lancer la console en 1152x864x32 : update-grub2"
+  echo "  Modification de grub-pc pour lancer la console en 1152x864x32 : update-grub2"
   update-grub2 2> /dev/null
+  echo "  Modification de vimrc.fg pour modifier la largeur de colonne"
+  sed -i -r -e 's/^set columns=80$/\"set columns=80/' /etc/vim/vimrc.fg   # substitution : desactivation de 80
+  sed -i -r -e 's/^\"set columns=144$/set columns=144/' /etc/vim/vimrc.fg # substitution : activation de 144
   date +"%F %T" >> /var/log/fg/fgaptitudeinstallsysframebuffer01-grub02.log
 else
   rm -f /var/log/fg/fgaptitudeinstallsysframebuffer01-grub01.log

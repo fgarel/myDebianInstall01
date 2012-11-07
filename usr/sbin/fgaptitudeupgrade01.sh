@@ -1,6 +1,10 @@
 #!/bin/sh
 
 echo "fgaptitudeupgrade01 : Mise à jour"
-echo "  Aptitude full-upgrade"
-#echo y | aptitude full-upgrade #1> /dev/null
-echo "  ... tude full-upgrade done"
+if [ ! -e /var/log/fg/fgaptitudeupgrade-upgrade.log ]
+then
+  echo "  Aptitude full-upgrade"
+  #echo y | aptitude full-upgrade #1> /dev/null
+  echo "  ... tude full-upgrade done"
+  date +"%F %T" >> /var/log/fg/fgaptitudeupgrade-upgrade.log
+fi
