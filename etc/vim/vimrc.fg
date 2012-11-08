@@ -32,9 +32,10 @@ set background=dark
 " Ceci dit à vim d'utiliser des couleurs correctes sur un fond noir.
 
 "colorscheme skittles
-colorscheme fgherald
+"colorscheme fgherald
 "colorscheme herald
-
+colorscheme fgherald
+colorscheme molokai
 
 " Désactiver le mode compatibilité
 "---------------------------------
@@ -227,9 +228,9 @@ set bs=2
 " Ceci influence le comportement de l'option backspace.
 " Elle est assez complexe, donc voir :help 'bs' pour plus de détails.
 
-set columns=80
-"set columns=144
-"set columns=164
+""set columns=80
+""set columns=144
+""set columns=164
 
 " Ceci indique simplement le nombre de colonnes utilisées sur l'écran.
 

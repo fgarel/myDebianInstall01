@@ -40,7 +40,7 @@ then
   echo y | aptitude remove vim-common 1> /dev/null 2> /dev/null
   # attention, il ne faut pas purger, car sinon, il y a risque de perdre
   # les fichiers /etc/vim/vimrc
-  #echo "y" | aptitude purge ~c > /dev/null
+  echo y | aptitude purge "~c" > /dev/null
   date +"%F %T" >> /var/log/fg/fgaptitudeinstallvim01-vimtiny.log
 fi
 
