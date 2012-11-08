@@ -43,6 +43,16 @@ then
 else
   rm -f /var/log/fg/fgaptitudeinstallsysframebuffer01-grub01.log
 fi
+###########################################
+# terminal en 256 couleurs
+
+if [ ! -e /var/log/fg/fgaptitudeinstallsysframebuffer01-fontconfig.log ]
+then
+  echo y | aptitude install fontconfig-config/testing 1> /dev/null
+  echo y | aptitude install libfontconfig1/testing 1> /dev/null
+  echo y | aptitude install fbterm/testing 1> /dev/null
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsysframebuffer01-fontconfig.log
+fi
 
 ###########################################
 # Installation d'utilitaires en framebuffer

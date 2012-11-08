@@ -92,6 +92,10 @@ else
   rm -f /var/log/fg/fgaptitudeupdate-mandb01.log
 fi
 
-#aptitude reinstall libconfig1 1> /dev/null
-#aptitude reinstall fontconfig-config 1> /dev/null
-
+#if [ ! -e /var/log/fg/fgaptitudeupdate-fontconfig.log ]
+#then
+#  echo y | aptitude install fontconfig-config/testing 1> /dev/null
+#  echo y | aptitude install libfontconfig1/testing 1> /dev/null
+#  echo y | aptitude install fbterm/testing 1> /dev/null
+#  date +"%F %T" >> /var/log/fg/fgaptitudeupdate-fontconfig.log
+#fi

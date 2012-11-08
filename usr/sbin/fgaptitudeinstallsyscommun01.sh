@@ -299,5 +299,3 @@ then
 
   date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun01-zsh.log
 fi
-
-
