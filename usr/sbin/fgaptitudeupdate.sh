@@ -71,6 +71,7 @@ then
   echo "  Suppression de man-db"
   echo y | aptitude remove man-db 1> /dev/null 2> /dev/null
   echo y | aptitude purge man-db 1> /dev/null 2> /dev/null
+  echo y | aptitude purge "~c" > /dev/null
   date +"%F %T" >> /var/log/fg/fgaptitudeupdate-mandb00.log
   date +"%F %T" >> /var/log/fg/fgaptitudeupdate-mandb01.log
 fi
