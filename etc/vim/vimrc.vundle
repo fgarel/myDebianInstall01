@@ -60,6 +60,7 @@ Bundle 'guns/xterm-color-table.vim'
 "Bundle 'L9'
 "Bundle 'FuzzyFinder'
 "Bundle 'rails.vim'
+Bundle 'ScrollColor.vim'
 Bundle 'vimpager'
 Bundle 'python.vim'
 "Bundle 'SearchComplete.vim'
@@ -68,7 +69,7 @@ Bundle 'python.vim'
 "Bundle 'git://git.wincent.com/command-t.git'
 " ...
 
-filetype plugin indent on     " required! 
+filetype plugin indent on     " required!
 
 "
 " Brief help

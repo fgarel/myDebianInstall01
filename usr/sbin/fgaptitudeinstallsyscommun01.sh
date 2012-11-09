@@ -61,6 +61,14 @@ then
   date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun01-bzip2.log
 fi
 
+##################################
+# ajout de l'utilitaire p7zip-full
+if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun01-p7zipfull.log ]
+then
+  echo "  Installation de p7zip-full"
+  echo y | aptitude install p7zip-full 1> /dev/null
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun01-p7zipfull.log
+fi
 
 ############################
 # ajout de l'utilitaire make
