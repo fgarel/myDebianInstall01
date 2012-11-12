@@ -4,8 +4,8 @@
 
 # création de l'environnement mapnik
 echo "fgaptiudeinstallpythonmapnik : Création de l'environnement mapnik"
-mkdir $HOME/virtualenvs 2> /dev/null
-cd $HOME/virtualenvs
+mkdir $HOME/.virtualenvs 2> /dev/null
+cd $HOME/.virtualenvs
 virtualenv --python=python2.7 \
            --clear \
            --no-site-packages \
@@ -13,7 +13,7 @@ virtualenv --python=python2.7 \
            mapnik
 
 # on "source" pour se mettre dans l'environnement python
-. $HOME/virtualenvs/mapnik/bin/activate
+. $HOME/.virtualenvs/mapnik/bin/activate
 
 # une fois dans l'environnement mapnik, on installe quelques modules
 echo "  Upgrade de pip"
@@ -58,5 +58,5 @@ echo "  ... tion de l'environnement mapnik done"
 echo 
 echo "Pour activer l'environnement python, il faut executer :"
 echo 
-echo "source $HOME/virtualenvs/mapnik/bin/activate"
+echo "source $HOME/.virtualenvs/mapnik/bin/activate"
 

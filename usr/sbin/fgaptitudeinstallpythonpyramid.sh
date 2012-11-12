@@ -4,8 +4,8 @@
 
 # création de l'environnement pyramid
 echo "fgaptitudeinstallpythonpyramid : Création de l'environnement pyramid"
-mkdir $HOME/virtualenvs 2> /dev/null
-cd $HOME/virtualenvs
+mkdir $HOME/.virtualenvs 2> /dev/null
+cd $HOME/.virtualenvs
 virtualenv --python=python2.7 \
            --clear \
            --no-site-packages \
@@ -13,7 +13,7 @@ virtualenv --python=python2.7 \
            pyramid
 
 # on "source" pour se mettre dans l'environnement python
-. $HOME/virtualenvs/pyramid/bin/activate
+. $HOME/.virtualenvs/pyramid/bin/activate
 
 # une fois dans l'environnement pyramid, on installe quelques modules
 echo "  Upgrade de pip"
@@ -34,5 +34,5 @@ echo "  ... tion de l'environnement pyramid done"
 echo 
 echo "Pour activer l'environnement python, il faut executer :"
 echo 
-echo "source $HOME/virtualenvs/pyramid/bin/activate"
+echo "source $HOME/.virtualenvs/pyramid/bin/activate"
 

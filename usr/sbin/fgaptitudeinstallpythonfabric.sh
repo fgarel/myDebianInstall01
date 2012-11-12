@@ -4,8 +4,8 @@
 
 # création de l'environnement fabric
 echo "fgaptitudeinstallpythonfabric : Création de l'environnement fabric"
-mkdir $HOME/virtualenvs 2> /dev/null
-cd $HOME/virtualenvs
+mkdir $HOME/.virtualenvs 2> /dev/null
+cd $HOME/.virtualenvs
 virtualenv --python=python2.7 \
            --clear \
            --no-site-packages \
@@ -13,7 +13,7 @@ virtualenv --python=python2.7 \
            fabric
 
 # on "source" pour se mettre dans l'environnement python
-. $HOME/virtualenvs/fabric/bin/activate
+. $HOME/.virtualenvs/fabric/bin/activate
 
 # une fois dans l'environnement fabric, on installe quelques modules
 echo "  Upgrade de pip"
@@ -40,5 +40,5 @@ echo "  ... tion de l'environnement fabric done"
 echo
 echo "Pour activer l'environnement python, il faut executer :"
 echo
-echo "source $HOME/virtualenvs/fabric/bin/activate"
+echo "source $HOME/.virtualenvs/fabric/bin/activate"
 

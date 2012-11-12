@@ -47,7 +47,6 @@ then
   date +"%F %T" >> /var/log/fg/fgaptitudeinstallpython-python.log
 fi
 
-
 if [ ! -e /var/log/fg/fgaptitudeinstallpython-libboost.log ]
 then
   echo "  Installation de libboost-python-dev"
@@ -62,7 +61,6 @@ then
   date +"%F %T" >> /var/log/fg/fgaptitudeinstallpython-setuptools.log
 fi
 
-
 if [ ! -e /var/log/fg/fgaptitudeinstallpython-virtualenv.log ]
 then
   echo "  Installation de distribute et virtualenv"
@@ -73,5 +71,10 @@ then
   date +"%F %T" >> /var/log/fg/fgaptitudeinstallpython-virtualenv.log
 fi
 
-
+if [ ! -e /var/log/fg/fgaptitudeinstallpython-virtualenvwrapper.log ]
+then
+  echo "  Installation de virtualenvwrapper"
+  echo y | aptitude install python-support/testing virtualenvwrapper/testing 1> /dev/null
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallpython-virtualenvwrapper.log
+fi
 

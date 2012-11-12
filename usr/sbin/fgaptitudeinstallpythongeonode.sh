@@ -4,8 +4,8 @@
 
 # création de l'environnement geonode
 echo "fgaptitudeinstallpythongeonode : Création de l'environnement geonode"
-mkdir $HOME/virtualenvs 2> /dev/null
-cd $HOME/virtualenvs
+mkdir $HOME/.virtualenvs 2> /dev/null
+cd $HOME/.virtualenvs
 virtualenv --python=python2.7 \
            --clear \
            --no-site-packages \
@@ -13,7 +13,7 @@ virtualenv --python=python2.7 \
            geonode
 
 # on "source" pour se mettre dans l'environnement python
-. $HOME/virtualenvs/geonode/bin/activate
+. $HOME/.virtualenvs/geonode/bin/activate
 
 # une fois dans l'environnement geonode, on installe quelques modules
 echo "  Upgrade de pip"
@@ -46,5 +46,5 @@ echo "  ... tion de l'environnement geonode done"
 echo 
 echo "Pour activer l'environnement python, il faut executer :"
 echo 
-echo "source $HOME/virtualenvs/geonode/bin/activate"
+echo "source $HOME/.virtualenvs/geonode/bin/activate"
 

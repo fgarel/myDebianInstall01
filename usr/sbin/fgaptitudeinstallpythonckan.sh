@@ -4,8 +4,8 @@
 
 # création de l'environnement ckan
 echo "fgaptitudeinstallpythonckan : Création de l'environnement ckan"
-mkdir $HOME/virtualenvs 2> /dev/null
-cd $HOME/virtualenvs
+mkdir $HOME/.virtualenvs 2> /dev/null
+cd $HOME/.virtualenvs
 virtualenv --python=python2.7 \
            --clear \
            --no-site-packages \
@@ -13,7 +13,7 @@ virtualenv --python=python2.7 \
            ckan
 
 # on "source" pour se mettre dans l'environnement python
-. $HOME/virtualenvs/ckan/bin/activate
+. $HOME/.virtualenvs/ckan/bin/activate
 
 # une fois dans l'environnement pyramid, on installe quelques modules
 echo "  Upgrade de pip"
@@ -38,5 +38,5 @@ echo "  ... tion de l'environnement ckan done"
 echo 
 echo "Pour activer l'environnement python, il faut executer :"
 echo 
-echo "source $HOME/virtualenvs/ckan/bin/activate"
+echo "source $HOME/.virtualenvs/ckan/bin/activate"
 
