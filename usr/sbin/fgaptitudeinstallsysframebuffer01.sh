@@ -67,7 +67,9 @@ then
   # ajout de l'utilitaire fim
   # http://www.autistici.org/dezperado/fim/
   echo "  Installation de fim"
-  echo y | aptitude install fim 1> /dev/null
+  echo y | aptitude install fim/testing \
+                            libdjvulibre-text/testing \
+                            libdjvulibre21/testing 1> /dev/null
 
   date +"%F %T" >> /var/log/fg/fgaptitudeinstallsysframebuffer01-divers.log
 fi
@@ -99,4 +101,18 @@ fi
 
 
 
+if [ ! -e /var/log/fg/fgaptitudeinstallsysframebuffer01-divers2.log ]
+then
+
+  echo "  Installation d'utilitaires divers2"
+  # ajout de l'utilitaire fim
+  # http://www.autistici.org/dezperado/fim/
+  echo "  Installation de links2"
+  echo y | aptitude install links2/testing \
+                            libsvga1/testing \
+                            libjpeg8/testing \
+                            libtiff4/testing 1> /dev/null
+
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsysframebuffer01-divers2.log
+fi
 
