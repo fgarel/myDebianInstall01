@@ -64,7 +64,7 @@ fi
 
 # installation de quelques applications et utilitaires
 # spécifiques au domaine du sig
-#fgaptitudeinstallgis01.sh
+fgaptitudeinstallgis01.sh
 
 
 # récupération de la suite des fichiers

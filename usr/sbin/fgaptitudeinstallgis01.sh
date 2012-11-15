@@ -7,11 +7,38 @@
 #
 
 ###########################################
-echo "Installation de debian-gis (1ère partie)"
+echo "fgaptitudeinstallgis01.sh : Installation de debian-gis (1ère partie)"
 
+mkdir /var/log/fg 2> /dev/null
+
+if [ ! -e /var/log/fg/fgaptitudeinstallgis01-mapnik.log ]
+then
+  ######
+  # main
+  echo "  main"
+  echo "    Installation de geos"
+  echo y | aptitude install libgeos-c1/testing 1> /dev/null
+  echo y | aptitude install libltdl7/testing 1> /dev/null
+  echo y | aptitude install libgfortran3/testing 1> /dev/null
+  echo y | aptitude install mysql-common/testing 1> /dev/null
+  echo "    Installation de proj"
+  echo y | aptitude install proj-bin 1> /dev/null
+  echo "    Installation de gdal"
+  echo y | aptitude install gdal-bin/testing \
+                            python-gdal/testing 1> /dev/null
+  echo "    Installation de libmapnik2"
+  echo y | aptitude install libmapnik2-2.0/testing 1> /dev/null
+  echo "    Installation de python-mapnik2"
+  echo y | aptitude install python-lxml/testing 1> /dev/null
+  echo y | aptitude install python-cairo/testing 1> /dev/null
+  echo y | aptitude install python-mapnik2/testing 1> /dev/null
+  echo "    Installation de mapnik-utils"
+  echo y | aptitude install mapnik-utils/testing 1> /dev/null
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallgis01-mapnik.log
+fi
 ######
 # main
-echo "  main"
+#echo "  main"
 #echo y | aptitude install avce00 1> /dev/null
 #echo y | aptitude install dans-gdal-scripts/testing 1> /dev/null
 #echo y | aptitude install debian-gis 1> /dev/null
@@ -19,9 +46,9 @@ echo "  main"
 #echo y | aptitude install e00compr/testing 1> /dev/null
 #echo y | aptitude install earth3d/testing 1> /dev/null
 #echo y | aptitude install epr-api/testing 1> /dev/null
-echo "    Installation de gdal"
-echo y | aptitude install gdal-bin/testing \
-                          python-gdal/testing 1> /dev/null
+#echo "    Installation de gdal"
+#echo y | aptitude install gdal-bin/testing \
+#                          python-gdal/testing 1> /dev/null
 #echo y | aptitude install geographiclib/testing 1> /dev/null
 #echo y | aptitude install geos/testing 1> /dev/null
 ###echo "    Installation de gmt"
@@ -77,8 +104,8 @@ echo y | aptitude install gdal-bin/testing \
 #cd /usr/local/src/postgis-svn
 #touch test
 #cd $OLDPWD
-echo "    Installation de proj"
-echo y | aptitude install proj-bin 1> /dev/null
+#echo "    Installation de proj"
+#echo y | aptitude install proj-bin 1> /dev/null
 #echo y | aptitude install pyepr/testing 1> /dev/null
 #echo y | aptitude install python-liblas 1> /dev/null
 #echo y | aptitude install python-pyproj/testing 1> /dev/null
@@ -167,26 +194,26 @@ echo "  other"
 #echo "    Installation de geoextjs"
 #echo "    Installation de sencha touch"
 echo "    Installation d'apache"
-echo y | aptitude install apache2 1> /dev/null
-echo y | aptitude install libapache2-mod-ldap-userdir 1> /dev/null
-a2enmod userdir
-echo y | aptitude install libapache2-mod-wsgi 1> /dev/null
-a2enmod wsgi
-/etc/init.d/apache2 restart
+#echo y | aptitude install apache2 1> /dev/null
+#echo y | aptitude install libapache2-mod-ldap-userdir 1> /dev/null
+#a2enmod userdir
+#echo y | aptitude install libapache2-mod-wsgi 1> /dev/null
+#a2enmod wsgi
+#/etc/init.d/apache2 restart
 echo "    Installation de wordmill"
 echo "    Installation de descartes"
 echo "    Installation de mapnik-utils"
 echo "    Installation de sphinxsearch"
-echo y | aptitude install sphinxsearch 1> /dev/null
+#echo y | aptitude install sphinxsearch 1> /dev/null
 #sed -i -e 's/^\ttype\t\t\t\t= mysql$/\ttype\t\t\t\t= pgsql/g' /etc/sphinxsearch/sphinx.conf
-sed -i -e 's/^START=no$/START=yes/g' /etc/default/sphinxsearch
+#sed -i -e 's/^START=no$/START=yes/g' /etc/default/sphinxsearch
 
 echo "    Installation de mercurial"
-echo y | aptitude install mercurial 1> /dev/null
+#echo y | aptitude install mercurial 1> /dev/null
 echo "    Installation de trac"
-echo y | aptitude install trac-bitten \
-                          trac \
-                          trac-mercurial 1> /dev/null
+#echo y | aptitude install trac-bitten \
+#                          trac \
+#                          trac-mercurial 1> /dev/null
 echo "    Installation de jdonref"
 
 #echo "    Installation de imagemagick"
