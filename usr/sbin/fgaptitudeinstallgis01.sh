@@ -11,7 +11,7 @@ echo "fgaptitudeinstallgis01.sh : Installation de debian-gis (1ère partie)"
 
 mkdir /var/log/fg 2> /dev/null
 
-if [ ! -e /var/log/fg/fgaptitudeinstallgis01-mapnik.log ]
+if [ ! -e /var/log/fg/fgaptitudeinstallgis01-mainmapnik.log ]
 then
   ######
   # main
@@ -24,8 +24,9 @@ then
   echo "    Installation de proj"
   echo y | aptitude install proj-bin 1> /dev/null
   echo "    Installation de gdal"
-  echo y | aptitude install gdal-bin/testing \
-                            python-gdal/testing 1> /dev/null
+  echo y | aptitude install gdal-bin/testing 1> /dev/null
+  echo y | aptitude install python-numpy/testing 1> /dev/null
+  echo y | aptitude install python-gdal/testing 1> /dev/null
   echo "    Installation de libmapnik2"
   echo y | aptitude install libmapnik2-2.0/testing 1> /dev/null
   echo "    Installation de python-mapnik2"
@@ -34,11 +35,8 @@ then
   echo y | aptitude install python-mapnik2/testing 1> /dev/null
   echo "    Installation de mapnik-utils"
   echo y | aptitude install mapnik-utils/testing 1> /dev/null
-  date +"%F %T" >> /var/log/fg/fgaptitudeinstallgis01-mapnik.log
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallgis01-mainmapnik.log
 fi
-######
-# main
-#echo "  main"
 #echo y | aptitude install avce00 1> /dev/null
 #echo y | aptitude install dans-gdal-scripts/testing 1> /dev/null
 #echo y | aptitude install debian-gis 1> /dev/null
@@ -124,15 +122,18 @@ fi
 #echo y | aptitude install tilestache/testing 1> /dev/null
 
 
-##########
-# non-free
-echo "  non-free"
-#echo y | aptitude install libgeotiff-epsg 1> /dev/null
-
+if [ ! -e /var/log/fg/fgaptitudeinstallgis01-nonfree.log ]
+then
+  ##########
+  # non-free
+  echo "  non-free"
+  #echo y | aptitude install libgeotiff-epsg 1> /dev/null
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallgis01-nonfree.log
+fi
 
 ######
 # ddpo
-echo "  ddpo"
+#echo "  ddpo"
 #echo y | aptitude install grace6 1> /dev/null
 #echo y | aptitude install gts/testing 1> /dev/null
 #echo y | aptitude install gypsy 1> /dev/null
@@ -144,7 +145,7 @@ echo "  ddpo"
 
 #####
 # gps
-echo "  gps"
+#echo "  gps"
 #echo y | aptitude install gpsbabel/testing 1> /dev/null
 #echo y | aptitude install gpscorrelate 1> /dev/null
 #echo y | aptitude install gpsd/testing 1> /dev/null
@@ -158,7 +159,7 @@ echo "  gps"
 
 #####
 # osm
-echo "  osm"
+#echo "  osm"
 #echo y | aptitude install merkaartor/testing 1> /dev/null
 #echo y | aptitude install openstreetmap-map-icons/testing 1> /dev/null
 #echo y | aptitude install viking/testing 1> /dev/null
@@ -166,7 +167,7 @@ echo "  osm"
 
 ############
 # statistics
-echo "  statistics"
+#echo "  statistics"
 #echo y | aptitude install r-cran-mapdata/testing 1> /dev/null
 #echo y | aptitude install r-cran-mapproj/testing 1> /dev/null
 #echo y | aptitude install r-cran-maps/testing 1> /dev/null
@@ -175,7 +176,7 @@ echo "  statistics"
 
 #############
 # workstation
-echo "  workstation"
+#echo "  workstation"
 #echo y | aptitude install geoip/testing 1> /dev/null
 #echo y | aptitude install googleearth-package 1> /dev/null
 #echo y | aptitude install gpsmanshp 1> /dev/null
@@ -186,42 +187,46 @@ echo "  workstation"
 #echo y | aptitude install s3d/testing 1> /dev/null
 
 
-#######
-# other
-echo "  other"
-#echo "    Installation d'openlayers"
-#echo y | aptitude install  1> /dev/null
-#echo "    Installation de geoextjs"
-#echo "    Installation de sencha touch"
-echo "    Installation d'apache"
-#echo y | aptitude install apache2 1> /dev/null
-#echo y | aptitude install libapache2-mod-ldap-userdir 1> /dev/null
-#a2enmod userdir
-#echo y | aptitude install libapache2-mod-wsgi 1> /dev/null
-#a2enmod wsgi
-#/etc/init.d/apache2 restart
-echo "    Installation de wordmill"
-echo "    Installation de descartes"
-echo "    Installation de mapnik-utils"
-echo "    Installation de sphinxsearch"
-#echo y | aptitude install sphinxsearch 1> /dev/null
-#sed -i -e 's/^\ttype\t\t\t\t= mysql$/\ttype\t\t\t\t= pgsql/g' /etc/sphinxsearch/sphinx.conf
-#sed -i -e 's/^START=no$/START=yes/g' /etc/default/sphinxsearch
+if [ ! -e /var/log/fg/fgaptitudeinstallgis01-other.log ]
+then
+  #######
+  # other
+  echo "  other"
+  #echo "    Installation d'openlayers"
+  #echo y | aptitude install  1> /dev/null
+  #echo "    Installation de geoextjs"
+  #echo "    Installation de sencha touch"
+  echo "    Installation d'apache"
+  #echo y | aptitude install apache2 1> /dev/null
+  #echo y | aptitude install libapache2-mod-ldap-userdir 1> /dev/null
+  #a2enmod userdir
+  #echo y | aptitude install libapache2-mod-wsgi 1> /dev/null
+  #a2enmod wsgi
+  #/etc/init.d/apache2 restart
+  echo "    Installation de wordmill"
+  echo "    Installation de descartes"
+  echo "    Installation de mapnik-utils"
+  echo "    Installation de sphinxsearch"
+  #echo y | aptitude install sphinxsearch 1> /dev/null
+  #sed -i -e 's/^\ttype\t\t\t\t= mysql$/\ttype\t\t\t\t= pgsql/g' /etc/sphinxsearch/sphinx.conf
+  #sed -i -e 's/^START=no$/START=yes/g' /etc/default/sphinxsearch
 
-echo "    Installation de mercurial"
-#echo y | aptitude install mercurial 1> /dev/null
-echo "    Installation de trac"
-#echo y | aptitude install trac-bitten \
-#                          trac \
-#                          trac-mercurial 1> /dev/null
-echo "    Installation de jdonref"
+  echo "    Installation de mercurial"
+  #echo y | aptitude install mercurial 1> /dev/null
+  echo "    Installation de trac"
+  #echo y | aptitude install trac-bitten \
+  #                          trac \
+  #                          trac-mercurial 1> /dev/null
+  echo "    Installation de jdonref"
 
-#echo "    Installation de imagemagick"
-#echo y | aptitude install imagemagick 1> /dev/null
+  #echo "    Installation de imagemagick"
+  #echo y | aptitude install imagemagick 1> /dev/null
 
-echo "    Installation des dépendances pour geonode"
-##aptitude install sun-java6-jre #1> /dev/null
-#echo y | aptitude install openjdk-6-jre 1> /dev/null
-##echo y | aptitude install tomcat6 1> /dev/null
+  echo "    Installation des dépendances pour geonode"
+  ##aptitude install sun-java6-jre #1> /dev/null
+  #echo y | aptitude install openjdk-6-jre 1> /dev/null
+  ##echo y | aptitude install tomcat6 1> /dev/null
 
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallgis01-other.log
+fi
 
