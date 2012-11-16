@@ -33,6 +33,7 @@ fgaptitudeinstallsysframebuffer02.sh
 
 # installation de quelques applications et utilitaires
 # spécifiques au domaine du sig
+fgaptitudeinstallgis01.sh
 #fgaptitudeinstallgis02.sh
 
 
