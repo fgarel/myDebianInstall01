@@ -70,6 +70,15 @@ then
   date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun01-p7zipfull.log
 fi
 
+#############################
+# ajout de l'utilitaire unzip
+if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun01-unzip.log ]
+then
+  echo "  Installation de unzip"
+  echo y | aptitude install unzip 1> /dev/null
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun01-unzip.log
+fi
+
 ############################
 # ajout de l'utilitaire make
 if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun01-make.log ]
