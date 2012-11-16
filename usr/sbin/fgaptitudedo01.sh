@@ -76,7 +76,10 @@ fi
 # - quelques fichiers de configurations
 echo "fgaptitudedo01 : Récupération des fichiers du projet 'myDebianInstall02'"
 git clone --progress --verbose http://github.com/fgarel/myDebianInstall02.git /root/myDebianInstall02 2> /dev/null
-cp /root/myDebianInstall02/* / 2> /dev/null
+cd /root/myDebianInstall02
+git fetch --progress --verbose
+cd $OLDPWD
+yes | cp -r -f /root/myDebianInstall02/* / 2> /dev/null
 ###scp -q -r root@10.5.10.23:/media/clefUsb2/\* /
 chown -R garel:garel /home/garel/
 #sudo -u garel fgaptitudeinstallgis03.sh ; cd $OLDPWD
