@@ -197,12 +197,12 @@ then
   #echo "    Installation de geoextjs"
   #echo "    Installation de sencha touch"
   echo "    Installation d'apache"
-  #echo y | aptitude install apache2 1> /dev/null
-  #echo y | aptitude install libapache2-mod-ldap-userdir 1> /dev/null
-  #a2enmod userdir
+  echo y | aptitude install apache2 1> /dev/null
+  echo y | aptitude install libapache2-mod-ldap-userdir 1> /dev/null
+  a2enmod userdir
   #echo y | aptitude install libapache2-mod-wsgi 1> /dev/null
   #a2enmod wsgi
-  #/etc/init.d/apache2 restart
+  /etc/init.d/apache2 restart
   echo "    Installation de wordmill"
   echo "    Installation de descartes"
   echo "    Installation de mapnik-utils"
