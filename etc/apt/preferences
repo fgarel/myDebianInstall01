@@ -243,10 +243,10 @@ Pin-Priority: 600
 # /etc/apt/sources.list.d/testing.list
 #       => http://ftp.fr.debian.org/debian-security/ testing/updates
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-#------------------------------------------------------------------------------
+#----------------------------------------------------------------------450-990-
 Package: *
 Pin: release o=Debian,l=Debian-Security,a=testing
-Pin-Priority: 450
+Pin-Priority: 990
 
 #------------------------------------------------------------------------------
 #deb http://ftp.fr.debian.org/debian-security/ testing/updates main contrib non-free
@@ -274,10 +274,10 @@ Pin-Priority: 450
 # /etc/apt/sources.list.d/testing.list
 #       => http://security.debian.org/ testing/updates
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-#------------------------------------------------------------------------------
+#----------------------------------------------------------------------400-970-
 Package: *
 Pin: release o=Debian,l=Debian-Security,a=testing
-Pin-Priority: 400
+Pin-Priority: 970
 
 #------------------------------------------------------------------------------
 #deb http://security.debian.org/ testing/updates main contrib non-free
@@ -305,10 +305,10 @@ Pin-Priority: 400
 # /etc/apt/sources.list.d/testing.list
 #       => http://ftp.fr.debian.org/debian/ testing-proposed-updates
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-#------------------------------------------------------------------------------
+#----------------------------------------------------------------------300-950-
 Package: *
 Pin: release o=Debian,l=Debian,a=testing-proposed-updates
-Pin-Priority: 300
+Pin-Priority: 950
 
 #------------------------------------------------------------------------------
 #deb http://ftp.fr.debian.org/debian/ testing-proposed-updates main contrib non-free
@@ -337,10 +337,10 @@ Pin-Priority: 300
 # /etc/apt/sources.list.d/testing.list
 #       => http://www.deb-multimedia.org/ testing
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-#------------------------------------------------------------------------------
+#----------------------------------------------------------------------200-930-
 Package: *
 Pin: release o=Unofficial Multimedia Packages,l=Unofficial Multimedia Packages,a=testing
-Pin-Priority: 200
+Pin-Priority: 930
 
 #------------------------------------------------------------------------------
 #deb http://www.deb-multimedia.org/ testing main non-free
@@ -368,10 +368,10 @@ Pin-Priority: 200
 # /etc/apt/sources.list.d/testing.list
 #       => http://ftp.fr.debian.org/debian/ testing
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-#------------------------------------------------------------------------------
+#----------------------------------------------------------------------150-910-
 Package: *
 Pin: release o=Debian,l=Debian,a=testing
-Pin-Priority: 150
+Pin-Priority: 910
 
 #------------------------------------------------------------------------------
 #deb http://ftp.fr.debian.org/debian/ testing main contrib non-free
