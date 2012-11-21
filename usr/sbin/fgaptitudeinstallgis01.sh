@@ -221,6 +221,9 @@ then
 
   echo "    Installation de imagemagick"
   echo y | aptitude install imagemagick/testing 1> /dev/null
+  # libmagickcore5-extra nous permettra de manipuler le format
+  # SVG
+  echo y | aptitude install libmagickcore5-extra 1> /dev/null
 
   echo "    Installation des dépendances pour geonode"
   ##aptitude install sun-java6-jre #1> /dev/null
