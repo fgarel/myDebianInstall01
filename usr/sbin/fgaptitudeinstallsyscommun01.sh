@@ -185,12 +185,12 @@ fi
 
 ###########################
 # installation de etckeeper
-if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun01-etckeeper.log ]
-then
-  echo "  Installation de etckeeper"
-  echo y | aptitude install etckeeper 1> /dev/null
-  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun01-etckeeper.log
-fi
+#if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun01-etckeeper.log ]
+#then
+#  echo "  Installation de etckeeper"
+#  echo y | aptitude install etckeeper 1> /dev/null
+#  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun01-etckeeper.log
+#fi
 
 ########################
 # installation de elinks
