@@ -159,7 +159,8 @@ fi
 if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun01-tmux.log ]
 then
   echo "  Installation de tmux"
-  echo y | aptitude install tmux/squeeze-backports 1> /dev/null
+  #echo y | aptitude install tmux/squeeze-backports 1> /dev/null
+  echo y | aptitude install tmux 1> /dev/null
   date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun01-tmux.log
 fi
 

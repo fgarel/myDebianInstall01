@@ -111,7 +111,7 @@ then
   echo y | aptitude install links2/testing \
                             libsvga1/testing \
                             libjpeg8/testing \
-                            libtiff4/testing 1> /dev/null
+                            libtiff4/testing #1> /dev/null
 
   date +"%F %T" >> /var/log/fg/fgaptitudeinstallsysframebuffer01-divers2.log
 fi

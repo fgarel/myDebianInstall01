@@ -34,13 +34,13 @@ then
   #                           vim-scripts \
   #                           vim \
   #                           vim-tiny > /dev/null
-  echo y | aptitude remove vim-nox 1> /dev/null
-  echo y | aptitude remove vim-tiny 1> /dev/null
-  echo y | aptitude remove vim-runtime 1> /dev/null 2> /dev/null
-  echo y | aptitude remove vim-common 1> /dev/null 2> /dev/null
+  echo y | aptitude remove vim-nox #1> /dev/null
+  echo y | aptitude remove vim-tiny #1> /dev/null
+  echo y | aptitude remove vim-runtime #1> /dev/null 2> /dev/null
+  echo y | aptitude remove vim-common #1> /dev/null 2> /dev/null
   # attention, il ne faut pas purger, car sinon, il y a risque de perdre
   # les fichiers /etc/vim/vimrc
-  echo y | aptitude purge "~c" > /dev/null
+  echo y | aptitude purge "~c" #> /dev/null
   # il n'y a plus besoin de recopier le fichier vimrc :
   # notre config est dorénavant dans vimrc.local
   # tandis que celle du gestionnaire de paquet est vimrc
@@ -58,9 +58,9 @@ then
   #echo y | aptitude install libperl5.10/stable 1> /dev/null
   #echo y | aptitude install libperl5.10
   #echo y | aptitude install vim-nox 1> /dev/null
-  echo y | aptitude install vim-common/testing 1> /dev/null
-  echo y | aptitude install vim-runtime/testing 1> /dev/null
-  echo y | aptitude install vim-nox/testing 1> /dev/null
+  echo y | aptitude install vim-common/testing #1> /dev/null
+  echo y | aptitude install vim-runtime/testing #1> /dev/null
+  echo y | aptitude install vim-nox/testing #1> /dev/null
   #aptitude install exuberant-ctags
   #aptitude install vim-scripts
   #echo "y" | aptitude install vim-addon-manager
