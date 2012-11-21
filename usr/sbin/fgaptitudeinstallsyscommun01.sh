@@ -185,6 +185,8 @@ fi
 
 ###########################
 # installation de etckeeper
+# attention, il semblerait que la version de wheezy
+# n'a pas pu etre installée dans le preseed
 #if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun01-etckeeper.log ]
 #then
 #  echo "  Installation de etckeeper"
