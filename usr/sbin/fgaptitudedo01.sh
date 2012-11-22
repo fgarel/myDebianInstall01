@@ -24,7 +24,7 @@ fgaptitudeinstallsyscommun01.sh
 # framebuffer
 fgaptitudeinstallsysframebuffer01.sh
 # X
-fgaptitudeinstallsysx01.sh
+#fgaptitudeinstallsysx01.sh
 
 # installation de vim
 fgaptitudeinstallvim01.sh

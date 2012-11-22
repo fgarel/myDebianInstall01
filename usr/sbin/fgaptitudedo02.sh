@@ -23,7 +23,7 @@ fgaptitudeinstallsysframebuffer02a.sh
 # framebuffer
 fgaptitudeinstallsysframebuffer02b.sh
 # X
-#fgaptitudeinstallsysx02.sh
+fgaptitudeinstallsysx02a.sh
 
 # Mise à jour du système
 #fgaptitudeupgrade02.sh
