@@ -7,7 +7,7 @@ mkdir /var/log/fg 2> /dev/null
 
 # chainage avec les scripts de configuration et les mises à jour
 
-fgaptitudeupdate.sh
+fgaptitudeupdate01.sh
 fgaptitudeclean.sh
 # installation de quelques applications et utilitaires
 # spécifiques à l'administration du système
@@ -24,7 +24,7 @@ fgaptitudeinstallsyscommun01.sh
 # framebuffer
 fgaptitudeinstallsysframebuffer01.sh
 # X
-#fgaptitudeinstallsysx01.sh
+fgaptitudeinstallsysx01.sh
 
 # installation de vim
 fgaptitudeinstallvim01.sh

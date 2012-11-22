@@ -7,8 +7,8 @@ mkdir /var/log/fg 2> /dev/null
 
 # chainage avec les scripts de configuration et les mises à jour
 
-fgaptitudeupdate.sh
-fgaptitudeinstallsysframebuffer01.sh
+fgaptitudeupdate02.sh
+fgaptitudeinstallsysframebuffer02a.sh
 
 # installation de quelques applications et utilitaires
 # spécifiques à l'administration du système
@@ -21,7 +21,7 @@ fgaptitudeinstallsysframebuffer01.sh
 # commun
 #fgaptitudeinstallsyscommun02.sh
 # framebuffer
-fgaptitudeinstallsysframebuffer02.sh
+fgaptitudeinstallsysframebuffer02b.sh
 # X
 #fgaptitudeinstallsysx02.sh
 
@@ -33,7 +33,7 @@ fgaptitudeinstallsysframebuffer02.sh
 
 # installation de quelques applications et utilitaires
 # spécifiques au domaine du sig
-fgaptitudeinstallgis01.sh
+fgaptitudeinstallgis02a.sh
 #fgaptitudeinstallgis02.sh
 
 
