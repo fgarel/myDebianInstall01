@@ -61,6 +61,12 @@ then
   sudo -u garel fgaptitudeinstallpythonckan.sh ; cd $OLDPWD
   date +"%F %T" >> /var/log/fg/fgaptitudeinstallpythonckan-ckan.log
 fi
+if [ ! -e /var/log/fg/fgaptitudeinstallpythongeopy-geopy.log ]
+then
+  echo "  python geopy"
+  sudo -u garel fgaptitudeinstallpythongeopy.sh ; cd $OLDPWD
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallpythongeopy-geopy.log
+fi
 
 # installation de quelques applications et utilitaires
 # spécifiques au domaine du sig

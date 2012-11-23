@@ -4,7 +4,7 @@
 
 ###########################################
 #echo "Installation de systeme-framebuffer (2de partie)"
-echo "fgaptitudeinstallsysframebuffer02 : Installation d'outils pour le mode console (2de partie)"
+echo "fgaptitudeinstallsysframebuffer02b : Installation d'outils pour le mode console (partie 2b)"
 
 mkdir /var/log/fg 2> /dev/null
 
@@ -15,19 +15,19 @@ mkdir /var/log/fg 2> /dev/null
 ###########################################
 # terminal framebuffer et 256 couleurs
 
-if [ ! -e /var/log/fg/fgaptitudeinstallsysframebuffer02-fbterm.log ]
+if [ ! -e /var/log/fg/fgaptitudeinstallsysframebuffer02b-fbterm.log ]
 then
   echo "  Installation de fbterm"
   echo y | aptitude install fontconfig-config/testing 1> /dev/null
   echo y | aptitude install libfontconfig1/testing 1> /dev/null
   echo y | aptitude install fbterm/testing 1> /dev/null
-  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsysframebuffer02-fbterm.log
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsysframebuffer02b-fbterm.log
 fi
 
 ####################################################
 # Installation de qingy : framebuffer et login
 
-if [ ! -e /var/log/fg/fgaptitudeinstallsysframebuffer02-qingy.log ]
+if [ ! -e /var/log/fg/fgaptitudeinstallsysframebuffer02b-qingy.log ]
 then
   echo "  Installationd de qingy"
   echo y | aptitude install qingy 1> /dev/null
@@ -41,7 +41,7 @@ then
   cd $OLDPWD
   sed -i -e 's/^# theme = random$/theme = random/g' /etc/qingy/settings
   sed -i -e 's/^theme = \"default\"$/# theme = \"default\"/g' /etc/qingy/settings
-  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsysframebuffer02-qingy.log
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsysframebuffer02b-qingy.log
 fi
 
 ###########################################
@@ -59,7 +59,7 @@ fi
 #   qui lance zshenv
 #     (la variable TERM est enfin mise à la bonne valeur)
 
-if [ ! -e /var/log/fg/fgaptitudeinstallsysframebuffer02-configuration.log ]
+if [ ! -e /var/log/fg/fgaptitudeinstallsysframebuffer02b-configuration.log ]
 then
   echo "  Configuration de zshenv"
   sed -i -e '/export TERM=/ d' /etc/zsh/zshenv
@@ -91,5 +91,5 @@ then
   sed -i -r -e 's/^set columns=80$/\"set columns=80/' /etc/vim/vimrc.fg   # substitution : desactivation de 80
   sed -i -r -e 's/^set columns=144$/\"set columns=144/' /etc/vim/vimrc.fg # substitution : desactivation de 144
   sed -i -r -e 's/^\"set columns=164$/set columns=164/' /etc/vim/vimrc.fg # substitution : activation de 164
-  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsysframebuffer02-configuration.log
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsysframebuffer02b-configuration.log
 fi

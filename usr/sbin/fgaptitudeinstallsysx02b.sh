@@ -3,18 +3,20 @@
 # Seconde partie des applications "système X"
 
 ###########################################
-echo "Installation de systeme-X (2de partie)"
+echo "fgaptitudeinstallsysx02b : Installation d'outils pour le mode graphique (partie 02b)"
+
+mkdir /var/log/fg 2> /dev/null
 
 
 # suppression de xorg"
-echo "Suppression de xserver-xorg"
+echo "  Suppression de xserver-xorg"
 #echo y | aptitude remove xserver-xorg \
 #                         xserver-xorg-core \
 #                         xserver-xorg-input-evdev \
 #                         virtualbox-ose-guest-x11 #1> /dev/null
 
 # installation de xserver-xorg
-echo "Installation de xserver-xorg"
+echo "  Installation de xserver-xorg"
 #echo y | aptitude install xserver-common/experimental \
 #                          xserver-xorg-core/testing \
 #                          xserver-xorg-video-fbdev/testing \

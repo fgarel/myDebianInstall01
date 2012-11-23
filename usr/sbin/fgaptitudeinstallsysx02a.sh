@@ -3,7 +3,7 @@
 # Première partie des applications "système X"
 
 ###########################################
-echo "fgaptitudeinstallsysx02a : Installation d'outils pour le mode graphique (1ere partie)"
+echo "fgaptitudeinstallsysx02a : Installation d'outils pour le mode graphique (partie 02a)"
 
 mkdir /var/log/fg 2> /dev/null
 
@@ -17,6 +17,7 @@ then
                            xserver-xorg-video-fbdev \
                            xserver-xorg-input-evdev \
                            xinit \
+                           connman \
                            e17 1> /dev/null
   #                         virtualbox-ose-guest-x11 #1> /dev/null
   date +"%F %T" >> /var/log/fg/fgaptitudeinstallsysx02a-suppression.log
@@ -32,6 +33,7 @@ then
                             xserver-xorg-video-fbdev \
                             xserver-xorg-input-evdev \
                             xinit \
+                            connman \
                             e17 1> /dev/null
   echo "  Permettre à un utilisateur non-root de pouvoir utiliser X"
   # pour autoriser les utilisateurs à lancer X, il faut modifier le fichier /etc/X11/Xwrapper.conf
@@ -59,6 +61,14 @@ fi
 
 # urxvt
 # http://www.planet-libre.org/?post_id=11153
+if [ ! -e /var/log/fg/fgaptitudeinstallsysx02a-rxvtunicode.log ]
+then
+
+    # installation du terminal x ()
+  echo "  Installation de rxvt-unicode-256color"
+  echo y | aptitude install rxvt-unicode-256color # 1> /dev/null
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsysx02a-rxvtunicode.log
+fi
 
 # suppression de la souris
 # http://www.planet-libre.org/?post_id=11141
