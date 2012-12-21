@@ -35,7 +35,7 @@ filetype indent plugin on
 " FIX : ce n'est pas une bonne idée de forcer vi en 256 colors
 " l'idée est plutot de modifier la valeur de t_Co en fonction de la valeur de
 " term
-if ($TERM == "xterm-256color" || $TERM == "screen-256color")
+if ($TERM == "xterm-256color" || $TERM == "screen-256color" || $TERM == "fbterm")
     set t_Co=256
     " vu sur 256 colors in vim http://vim.wikia.com/wiki/256_colors_in_vim
     "set t_AB=^[[48;5;%dm

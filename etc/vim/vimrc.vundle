@@ -22,47 +22,47 @@ set rtp +=/etc/vim/bundle/vundle
 
 call vundle#rc(root)
 
+Bundle 'mileszs/ack.vim'
+Bundle 'ajashton/cascadenik-vim'
+Bundle 'wincent/Command-T'
+Bundle 'sjl/gundo.vim'
+Bundle 'sontek/minibufexpl.vim'
+Bundle 'scrooloose/nerdtree'
+Bundle 'vim-scripts/pep8'
+Bundle 'fs111/pydoc.vim'
+Bundle 'mitechie/pyflakes-pathogen'
+Bundle 'alfredodeza/pytest.vim'
+Bundle 'python.vim'
+Bundle 'sontek/rope-vim'
+Bundle 'msanders/snipmate.vim'
+Bundle 'altercation/solarized'
+Bundle 'ervandew/supertab'
+Bundle 'scrooloose/syntastic'
+Bundle 'vim-scripts/The-NERD-tree'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-git'
+Bundle 'ivanov/vim-ipython'
+Bundle 'vimpager'
+Bundle 'tpope/vim-surround'
 " let Vundle manage Vundle
 " required! 
 Bundle 'gmarik/vundle'
+Bundle 'guns/xterm-color-table.vim'
 
 " My Bundles here:
 "
 " original repos on github
-Bundle 'tpope/vim-fugitive'
-Bundle 'msanders/snipmate.vim'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-git'
-Bundle 'ervandew/supertab'
-Bundle 'sontek/minibufexpl.vim'
-Bundle 'wincent/Command-T'
-Bundle 'mitechie/pyflakes-pathogen'
-Bundle 'mileszs/ack.vim'
-Bundle 'sjl/gundo.vim'
-Bundle 'fs111/pydoc.vim'
-Bundle 'vim-scripts/pep8'
-Bundle 'alfredodeza/pytest.vim'
 "Bundle 'reinh/vim-makegreen'
 "Bundle 'vim-scripts/TaskList.vim'
-Bundle 'vim-scripts/The-NERD-tree'
-Bundle 'sontek/rope-vim'
-Bundle 'ajashton/cascadenik-vim'
 "Bundle 'msanders/snipmate.vim'
-Bundle 'altercation/solarized'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/syntastic'
-Bundle 'ivanov/vim-ipython'
 " A two-way integration between Vim and IPython 0.11+
-Bundle 'guns/xterm-color-table.vim'
 
 " vim-scripts repos
 "Bundle 'L9'
 "Bundle 'FuzzyFinder'
 "Bundle 'rails.vim'
 "Bundle 'ScrollColor.vim'
-Bundle 'vimpager'
-Bundle 'python.vim'
 "Bundle 'SearchComplete.vim'
 
 " non github repos

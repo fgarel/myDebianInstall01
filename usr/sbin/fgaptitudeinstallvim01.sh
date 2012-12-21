@@ -61,7 +61,7 @@ then
   echo y | aptitude install vim-common/testing 1> /dev/null
   echo y | aptitude install vim-runtime/testing 1> /dev/null
   echo y | aptitude install vim-nox/testing 1> /dev/null
-  #aptitude install exuberant-ctags
+  echo y | aptitude install exuberant-ctags 1> /dev/null
   #aptitude install vim-scripts
   #echo "y" | aptitude install vim-addon-manager
   #echo "y" | aptitude install git
