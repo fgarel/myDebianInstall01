@@ -78,3 +78,11 @@ endif
 if filereadable("/etc/vim/vimrc.fg")
   source /etc/vim/vimrc.fg
 endif
+
+"#############################################################################
+" utilisation de la config tmux
+"#############################################################################
+
+if filereadable("/etc/vim/tmux.vim")
+  source /etc/vim/tmux.vim
+endif

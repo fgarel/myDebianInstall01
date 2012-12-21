@@ -1,0 +1,295 @@
+" Activation de la coloration syntaxique
+syntax on
+" Modification du modèle de coloration syntaxique
+" blue darkblue default delek desert elflord evening koehler morning murphy pablo peachpuff ron shine slate torte zellner
+colorscheme delek
+" Fonction d'affichage d'un message en inverse vidéo
+function! s:DisplayStatus(msg)
+  echohl Todo
+  echo a:msg
+  echohl None
+endfunction
+
+" Variable d'enregistrement de l'état de la gestion de la souris
+let s:mouseActivation = 1
+" Fonction permettant l'activation/désactivation de la gestion de la souris
+function! ToggleMouseActivation()
+  if (s:mouseActivation)
+    let s:mouseActivation = 0
+    set mouse=n
+    set paste
+    call s:DisplayStatus('Désactivation de la gestion de la souris (mode collage)')
+  else
+    let s:mouseActivation = 1
+    set mouse=a
+    set nopaste
+    call s:DisplayStatus('Activation de la gestion de la souris (mode normal)')
+  endif
+endfunction
+
+" Activation par défaut au démarrage de la gestion de la souris
+set mouse=a
+set nopaste
+" Personnalisation de la ligne de status
+set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [Line=%04l]\ [Col=%04v]\ [%p%%]
+set laststatus=2
+" Activation de l'indentation automatique
+set autoindent
+" Redefinition des tabulations
+set expandtab
+set shiftwidth=4
+set softtabstop=4
+set tabstop=4
+" Fonction de 'nettoyage' d'un fichier :
+"   - remplacement des tabulations par des espaces
+"   - suppression des caracteres  en fin de ligne
+function! CleanCode()
+  %retab
+  %s///g
+  call s:DisplayStatus('Code nettoyé')
+endfunction
+" Déplacement de l'onglet courant vers la gauche ou vers la droite
+function! MoveTab(direction)
+  if (a:direction == 'left')
+    let tabNum = tabpagenr()-2
+    if (tabNum < 0)
+      let tabNum = 0
+    endif
+    execute 'tabm ' . tabNum
+  else
+    let tabNum = tabpagenr()
+    execute 'tabm ' . tabNum
+  endif
+endfunction
+"Ajout de la numérotation des lignes
+set number
+highlight LineNr ctermbg=black ctermfg=gray
+
+" Ajout d'une ligne colorée pour surligner la ligne en cours
+set cursorline
+highlight CursorLine term=reverse cterm=reverse
+" Amélioration de la lisibilité des noms des onglets
+highlight TabLine term=none cterm=none
+highlight TabLineSel ctermbg=darkblue
+" Définition du style d'affichage des signets
+sign define information text=>> linehl=Warning texthl=Error
+" Variable d'enregistrement des identifiants de signets pour chaque buffer
+let s:signMarks = {}
+" Variable d'enregistrement des sauts sur les signets de chaque buffer
+let s:jumpMarks = {}
+" Fonction de marquage des signets
+function! MarkSign()
+  let filename = bufname(winbufnr(winnr()))
+  if (has_key(s:signMarks, filename))
+    let s:signMarks[filename] += 1
+  else
+    let s:signMarks[filename] = 1
+  endif
+  exe ':sign place ' . s:signMarks[filename] . ' line=' . line('.') . ' name=information file=' . expand('%:p')
+endfunction
+
+" Fonction de saut sur un signet
+function! JumpToSign()
+  let filename = bufname(winbufnr(winnr()))
+  if (has_key(s:signMarks, filename))
+    if (has_key(s:jumpMarks, filename))
+      let s:jumpMarks[filename] += 1
+    else
+      let s:jumpMarks[filename] = 1
+    endif
+    if (s:jumpMarks[filename] > s:signMarks[filename])
+      let s:jumpMarks[filename] = 1
+    endif
+    silent! execute ':sign jump ' . s:jumpMarks[filename] . ' file=' . expand('%p')
+  endif
+endfunction
+" Autorisation de remonter ou descendre d'une ligne avec les flèches
+" gauche et droite
+set whichwrap=b,s,<,>,[,]
+" Ouverturre des fichiers avec le curseur à la position de la dernière édition
+function! s:CursorOldPosition()
+  if line("'\"") > 0 && line("'\"") <= line("$")
+    exe "normal g`\""
+  endif
+endfunction
+autocmd BufReadPost * silent! call s:CursorOldPosition()
+
+" Auto-complétion multiple
+function! MultipleAutoCompletion()
+  if &omnifunc != ''
+    return "\<C-x>\<C-o>"
+  elseif &dictionnary != ''
+    return "\<C-x>\<C-k>"
+  else
+    return "\<C-x>\<C-n>"
+  endif
+endfunction
+" Affichage textuel personnalisé lors d'un pliage
+function! MyFoldFunction()
+  let line = getline(v:foldstart)
+  let sub = substitute(line, '/\*\|\*/\|^\s+', '', 'g')
+  let lines = v:foldend - v:foldstart + 1
+  return '[+] ' . v:folddashes.sub . '...' .  lines . ' lignes...' . getline(v:foldend)
+endfunction
+
+" Activation de la gestion des ouvertures/fermetures des replis de code
+set foldenable
+" Affichage d'une ligne de '=' sur les pliages
+set fillchars =fold:=
+" Définition personnlle de l'affichage du pliage
+set foldtext=MyFoldFunction()
+
+" Variable indiquant le nom de la sesson en cours d'utilisation
+let s:sessionName = ''
+
+" Détection d'une session en cours d'utilisation
+function! s:IsSessionInUse()
+  if (s:sessionName != '')
+    call s:DisplayStatus('La session "' . s:sessionName . '"' . " est en cours d'utilisation. Veulliez quitter Vim pour charge une nouvelle session.")
+    return 1
+  else
+    return 0
+  endif
+endfunction
+
+" Lecture du nom d'une session
+function! s:GetSessionName()
+  let l:tmpSessionName = input('Nom de la session : ')
+  if (!match(l:tmpSessionName, '^[a-zA-Z]*\n$'))
+    call s:DisplayStatus('Abandon : un nom de session de doit contenir que des lettres')
+    return -1
+  endif
+  if (l:tmpSessionName == '')
+    call s:DisplayStatus('Abandon : vous devez spécifier un nom de session')
+    return -1
+  endif
+  return l:tmpSessionName
+endfunction
+
+" Sauvegarde des sessions
+function! SaveSession()
+  let l:saveSession = 1
+  if (s:sessionName == '')
+    let l:keepDesc = 0
+    let s:sessionName = s:GetSessionName()
+    if (s:sessionName == -1)
+      return -1
+    endif
+    let s:sessionDesc = input('Description de la session : ')
+    if (s:sessionDesc == '')
+      let s:sessionDesc = 'Pas de description'
+    endif
+    if filereadable($HOME . '/.vim/sessions/' . s:sessionName . '.vim')
+      let l:saveSession = confirm('Une session du même nom existe déjà ! Ecraser ?', "&Oui (défaut)\n&Non", 1)
+    endif
+  else
+    let l:keepDesc = 1
+  endif
+  if (l:saveSession == 1)
+    execute 'mksession! ' . $HOME . '/.vim/sessions/' . s:sessionName . '.vim'
+    execute 'wviminfo! ' . $HOME . '/.vim/sessions/' . s:sessionName . '.viminfo'
+    if (!l:keepDesc)
+      execute 'split ' . $HOME . '/.vim/sessions/' . s:sessionName . '.desc'
+      execute '1delete'
+      execute 'call append(0, "' . s:sessionName . ' : ' . s:sessionDesc . '")'
+      execute 'wq'
+    endif
+    call s:DisplayStatus('La session "' . s:sessionName . '" a été enregistrée')
+  endif
+endfunction
+
+" Chargement direct d'une session
+function! LoadSessionDirect()
+  if (s:IsSessionInUse())
+    return -1
+  endif
+  let s:sessionName = s:GetSessionName()
+  if (s:sessionName == -1)
+    return -1
+  endif
+  let l:fileBaseName = $HOME . '/.vim/sessions/' . s:sessionName
+  if (filereadable(l:fileBaseName . '.vim') && (filereadable(l:fileBaseName . '.viminfo'))
+    execute 'source ' . l:fileBaseName . '.vim'
+    execute 'rviminfo! ' . l:fileBaseName . '.viminfo'
+    call s:DisplayStatus('La session "' . s:sessionName . '" a été chargée')
+  else
+    call s:DisplayStatus('La session "' . s:sessionName . '" est introuvable')
+  endif
+endfunction
+
+" Chargement d'une session après sélection dans une liste
+function! LoadSession()
+  if (s:IsSessionInUse())
+    return -1
+  endif
+  let l:sessionList = split(system('ls ' . $HOME . '/.vim/sessions/*desc'))
+  let l:sessionNumber = 1
+  for item in l:sessionList
+    echo l:sessionNumber . '. ' . substitute(system('cat ' . item), '\n\n', '\n', '')
+    let l:sessionNumber += 1
+  endfor
+  call LoadSessionDirect()
+endfunction
+
+" Activation des templates lors de la création d'un nouveau fichier
+" et, en fonction de l'extension du fichier ouvert, charge les
+" abréviations et les commandes Vim spécifiques
+function! LoadTemplate(extension, type)
+  if (a:type == 'all')
+    silent! execute '0r ' . $HOME . '/.vim/templates/' . a:extension . '.tpl'
+    silent! execute 'source ' . $HOME . '/.vim/templates/autocompletion.vim'
+  endif
+  " Insertion des abréviations
+  silent! execute 'source' . $HOME . '/.vim/abbreviations/' . a:extension . '.abb.vim'
+  " Insertion du dictionnaire
+  set dictionary+=$HOME . '/.vim/dictionary/' . a:extension . '.dict'
+  " Insertion des commandes spécifiques Vim
+  silent! execute 'source' . $HOME . '/.vim/specific/' . a:extension . '.vim'
+endfunction
+
+" Activation des templates et des chargements spécifiques en fonction de
+" l'extension du fichier chargé
+autocmd BufNewFile * silent! call LoadTemplate('%:e', 'all')
+autocmd BufRead * silent! call LoadTemplate('%:e', 'noTemplate')
+
+" Surlignement des champs à remplir dans les templates
+3match Todo /<+.\++>/
+
+" Variable indiquant l'état de l'affichage de l'aide
+let helpDisplay = 0
+
+" Fonction d'affichage/masquage de l'aide
+function! HelpMemory()
+  if g:helpDisplay == 0
+    silent! topleft vertical 40split +buffer helpMemory
+    let g:helpDisplay = 1
+    set buftype=nofile
+    0read $HOME/.vim/memory.txt
+    highlight Memory ctermfg=white ctermbg=blue
+    3match Memory /·\+\ \+:/
+  else
+    bdelete helpMemory
+    let g:helpDisplay = 0
+  endif
+endfunction
+
+" Evite de recharger les fichiers distants lorque l'on navigue entre les
+" buffers
+set bufhidden=hide
+
+" Lecture des raccourcis clavier généraux
+source $HOME/.vim/shortkeys.vim
+
+
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
+autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+autocmd FileType c set omnifunc=ccomplete#Complete
+" autocmd FileType 
+
+" désactivation du beep sonore 
+" passage en visual bell
+set vb

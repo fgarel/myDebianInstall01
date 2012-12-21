@@ -28,88 +28,14 @@ filetype indent plugin on
 " defini le style a utiliser pour indenter le code C
 "set cinoptions=>s,e0,n0,f0,{0,}0,^0,:s,=s,l0,gs,hs,ps,ts,+s,c3,C0,(2s,us,U0,w0,m0,j0,)20,*30
 
-"set t_Co=256
-" pour obliger vim à préférer le mode 256 colors
-" pour afficher, il suffit d'écrire
-" echo &t_Co
-" FIX : ce n'est pas une bonne idée de forcer vi en 256 colors
-" l'idée est plutot de modifier la valeur de t_Co en fonction de la valeur de
-" term
-if ($TERM == "xterm-256color" || $TERM == "screen-256color")
-    set t_Co=256
-    " vu sur 256 colors in vim http://vim.wikia.com/wiki/256_colors_in_vim
-    "set t_AB=^[[48;5;%dm
-    "set t_AF=^[[38;5;%dm
-else
-    set t_Co=8
-endif
-if ($TERM == "xterm" || $TERM == "screen")
-    set t_Co=256
-    "set t_AB=^[[48;5;%dm
-    "set t_AF=^[[38;5;%dm
-endif
-
-"set background=dark
+set background=dark
 " Ceci dit à vim d'utiliser des couleurs correctes sur un fond noir.
 
 "colorscheme skittles
 "colorscheme fgherald
 "colorscheme herald
-"colorscheme fgherald
-let g:molokai_original=1
+colorscheme fgherald
 colorscheme molokai
-
-
-" Afficher la ligne contenant le curseur
-"---------------------------------------
-" La ligne contenant le curseur sera mise en valeur.
-" Il est possible de faire la même chose avec la colonne,
-" Le colorscheme contient des instructions pour mettre en lumiere la ligne
-" courante.
-" Ici, on ne fait que rajouter la focntionnalité "mettre en gras"
-if &bg == 'dark'
-    "hi CursorLine cterm=NONE ctermbg=darkred ctermfg=white gui=NONE guibg=darkred guifg=white
-    "hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=white gui=NONE guibg=darkred guifg=white
-    " pour mettre la ligne courante en gras (en plus de la mise en
-    " surbrillance scpécifique au colorscheme)
-    hi CursorLine term=bold cterm=bold
-else
-    "hi CursorLine cterm=NONE ctermbg=darkred ctermfg=white gui=NONE guibg=darkred guifg=white
-    "hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=white gui=NONE guibg=darkred guifg=white
-    hi CursorLine term=bold cterm=bold
-endif
-"hi! link CursorColumn CursorLine
-
-" Attention : ces fonctionnalités ralentissent vim
-" pour désactiver
-set nocursorline
-set nocursorcolumn
-" pour activer
-"set cursorline
-"set cursorcolumn
-" pour switcher (vu sur http://vim.wikia.com/wiki/Highlight_current_line)
-" With the default backslash leader key, typing \c will toggle highlighting on
-" and off. That makes it easy to locate the cursor after scrolling in a large
-" file.
-nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
-
-" Modifier la police
-"-------------------
-
-if has('gui_running')
-    set guifont=Courier\ 12
-    set guifont=Lucida_Console:h11
-    " vu sur The perfect programming font
-    " http://vim.wikia.com/wiki/The_perfect_programming_font
-    set guifont=ProggyCleanTT\ 12
-endif
-
-" Pour choisir graphiquement votre font, tapez "set guifont=*" sous gvim.
-" Un menu apparaîtra pour sélectionner la font.
-" Ensuite, en tapant "set guifont=<TAB>" (<TAB> = tabulation) en mode commande,
-" vous retrouverez la font que vous avez sélectionnée.
-" Recopiez la ligne obtenue dans votre .vimrc.
-
 
 " Désactiver le mode compatibilité
 "---------------------------------
@@ -144,7 +70,7 @@ set rnu
 "-------------------------------------
 " (si vous utilisez exclusivement gvim cette ligne ne sert à rien)
 
-set mouse=a
+set mouse =a
 
 " Le "a" signifie "all" : la souris sera disponible tout le temps.
 " Tapez :h mouse pour plus d'informations.
@@ -160,6 +86,16 @@ set showmatch
 " Cette option est utile pour repérer les parenthèses non fermées
 "  (vim les colorie en blanc) et les parenthèses en trop (en rouge).
 
+" Modifier la police
+"-------------------
+
+set guifont=Courier\ 12
+
+" Pour choisir graphiquement votre font, tapez "set guifont=*" sous gvim.
+" Un menu apparaîtra pour sélectionner la font.
+" Ensuite, en tapant "set guifont=<TAB>" (<TAB> = tabulation) en mode commande,
+" vous retrouverez la font que vous avez sélectionnée.
+" Recopiez la ligne obtenue dans votre .vimrc.
 
 " Modifier la taille des tabulations (ou les remplacer en espaces)
 "-----------------------------------------------------------------
@@ -248,6 +184,23 @@ set foldtext=MyFoldFunction()    "on utilise notre fonction (optionnel)
 " télécharge les dictionnaires.
 
 
+" Afficher la ligne contenant le curseur
+"---------------------------------------
+
+set cursorline
+set cursorcolumn
+
+if &bg == 'dark'
+    hi CursorLine gui=NONE guibg=#333333
+else
+    hi CursorLine gui=NONE guibg=#CCCCCC
+endif
+hi! link CursorColumn CursorLine
+
+" La ligne contenant le curseur sera mise en valeur.
+" Il est possible de faire la même chose avec la colonne,
+" mais ça rend l'affichage peu lisible.
+
 
 " Raccourcis utiles
 "------------------
@@ -258,9 +211,6 @@ imap  <C-Space> <C-X><C-O>
 " comme sur la plupart des éditeurs classiques.
 " "imap" permet de préciser que l'on veut que "CTRL+SPACE" ait le même effet
 " que "CTRL+X CTRL+O" en mode insertion.
-
-" Abbréviations
-"--------------
 
 iab  #i #include
 
@@ -355,6 +305,4 @@ set showcmd
 set list
 set lcs:tab:>-,trail:X
 
-" Raccourcis
-"-----------
 

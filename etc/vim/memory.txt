@@ -1,0 +1,57 @@
+AIDE-MEMOIRE pour VIM
+
+<F1> : Affichage de l'aide
+<F2> : Recherche
+<F3> : Recherche dans le repertoire courant et tous les sous repertoires du terme sous le curseur
+<F4> : 
+<F5> : Activation/Désactivation de la souris
+<F6> : Nettoyage du code
+<F7> : Placement d'une marque sur la ligne courante
+<A-F7> : Retrait du signet de la ligne en cours
+<S-F7> : Saut à la ligne marquée
+<F8> : Affichage de la fenêtre TagList
+<F9> : Activation/Désactivation de la fenêtre d'exploration des fichiers
+<F10> : Affichage de l'aide PHP sur le mot se trouvant sous le curseur
+<F11> : Sauvegarde de la session
+<F12> : Chargement de la session
+
+...
+:tabe file : ouverture d'un nouvel onglet
+<C-LEFT> : navigation dans les onglets
+<S-LEFT> : déplacement de l'onglet
+
+dd   : Supprimer une ligne
+
+TIPS
+ s'obtient par <Ctrl-v> + <Return>
+
+anglais : glmf : vimRefCardFr
+
+??? : fenetre : Défilement et multi-fenetrage
+v ou :vsplit  sépare la fenetre courante en deux, verticalement
+s ou :split   sépare la fenetre courante en deux, horizontalement
+n ou :new     créé un nouvelle fenêtre vide
+w             on passe de l'une à l'autre
+
+
+??? : Onglets :
+Ouverture d'un fichier dans un nouvel onglet : :tabe fichier
+Pour passer d'un onglet à l'autre, on utilise :tabp et :tabn
+
+Markers : Marques et déplacement :
+set marker c on this line       mc      marque la position courante avec c € [a..Z]
+goto marker c                   'c      va à la marque c
+list marks                      :marks  affiche la liste des marques actives
+list jumps                      :jumps  affiche la liste des sauts
+
+Auto-complétion
+ + <Tab>
+omni-completion : complétion basée sur le langage de programmation : <Ctrl-x> + <Ctrl-o>
+auto-completion par dictionnaire : <Ctrl-x> + <Ctrl-k>
+auto-completion directe : mots déjà définis dans le fichier en cours d'utilisation : <Ctrl-x> + <Ctrl-n>
+
+Pliage : Repli de code
+zfm créé un repli avec le mouvement m suivant la ligne courante
+zm ferme tous les blocs du fichier en cours
+zr ouvre tous les blocs du fichier en cours
+za ouvre ou ferm un repli

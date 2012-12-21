@@ -1,0 +1,97 @@
+#!/bin/bash
+
+#---------------------------------------------------------------------------
+#  sav2WorkPull 0.1
+#  --  Pour copier la config sauvegarde vers le poste de travail
+#  --  à partir du poste au travail
+#  (C) 2009 Frédéric Garel <fgarel@free.fr>
+
+#  This program is free software; you can redistribute it and/or modify
+#  it under the terms of the GNU General Public License as published by
+#  the Free Software Foundation; either version 2 of the License, or
+#  (at your option) any later version.
+#
+#  This program is distributed in the hope that it will be useful,
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#  GNU General Public License for more details.
+#
+#  You should have received a copy of the GNU General Public License
+#  along with this program; if not, write to the Free Software
+#  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+#---------------------------------------------------------------------------
+
+# ------------------
+# initialisation
+# ------------------
+progName="sav2WorkPull"
+progVersion="0.1"
+progRelease="2009/06/08"
+
+# initialisation des variables d'option
+progOptGetHelp=0
+progOptGetVersion=0
+
+# sauvegarde et initialisation des variables d'environnement
+#unset IFS
+IFS=$'\n'
+
+# ------------------
+# test des options
+# ------------------
+while getopts "hv" option
+do
+  case $option in
+      h) progOptGetHelp=1 ;;
+      v) progOptGetVersion=1 ;;
+      *) echo "$progName option -$OPTARG inconnue"
+         progOptGetHelp =1 ;;
+  esac
+done
+shift $((OPTIND -1))
+
+# ------------------
+# test des arguments
+# ------------------
+# test de l'argument 1
+dir=$1
+# si le repertoire n'est pas spécifié, alors on travaille sur le reperoire courant
+if [ "x$dir" == "x" ]; then
+  dir="." 
+  #echo $0: erreur, vous devez donner un nom de fichier .png.
+  #progOptGetHelp=1
+fi
+
+
+# ------------------
+# re-test des options
+# ------------------
+# help
+if [ $progOptGetHelp = 1 ]; then
+  echo "Pour copier la config sauvegarde vers le poste de travail"
+  echo "à partir du poste au travail"
+  echo "Syntax: $progName -options"
+  echo "les options sont -hv"
+  echo "-h pour afficher l'aide"
+  echo "-v pour afficher la version du programme"
+  unset IFS
+  exit 0
+fi
+
+# version info
+if [ $progOptGetVersion = 1 ]; then
+  echo "$progName versions $progVersion ($progRelease)."
+  echo "Relased under the GPL."
+  unset IFS
+  exit 0
+fi
+
+
+# ------------------
+# lance le programme
+# ------------------
+scp fgarel@nic-nac-project.org:sav/home/fred/man/listOfFiles /home/garel/man/listOfFiles
+cat /home/garel/man/listOfFiles | xargs -I MYFILE scp -r fgarel@nic-nac-project.org:sav/home/fred/MYFILE /home/garel/
+
+unset IFS
+exit 0
