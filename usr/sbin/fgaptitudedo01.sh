@@ -27,7 +27,9 @@ fgaptitudeinstallsysframebuffer01.sh
 #fgaptitudeinstallsysx01.sh
 
 # installation de vim
-fgaptitudeinstallvim01.sh
+fgaptitudeinstallvim01a.sh
+fgaptitudeinstallvim01b.sh
+sudo -u garel fgaptitudeinstallvim01b.sh
 
 fgaptitudeupgrade01.sh
 fgaptitudeinstallpython.sh

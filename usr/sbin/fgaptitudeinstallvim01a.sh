@@ -110,61 +110,46 @@ then
   date +"%F %T" >> /var/log/fg/fgaptitudeinstallvim01-lang.log
 fi
 
-# installation des scripts vim
-# à l'aide du gestionnaire de plugins vim-addon-manager
-#vim-addons -w install taglist
-#vim-addons -w install nerd-commenter
-##vim-addons -w install snipmate
-#vim-addons -w install supertab
-#vim-addons -w install python-indent
-#vim-addons -w install "colors sampler pack"
-#vim-addons -w install markdown-syntax
-#vim-addons -w install project
-
 # installation du gestionnaire d'extension vim vundle
-if [ ! -e /var/log/fg/fgaptitudeinstallvim01-vundle01.log ]
-then
-  echo "  Récupération du gestionnaire d'extension vundle"
-  #git clone http://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-  #git clone http://github.com/gmarik/vundle.git /etc/vim/bundle/vundle
-  #git clone git://github.com/gmarik/vundle.git /etc/vim/bundle/vundle
-  #git clone --progress --verbose https://github.com/gmarik/vundle.git /etc/vim/bundle/vundle
-  git clone --progress --verbose https://github.com/gmarik/vundle.git /etc/vim/bundle/vundle 2> /dev/null
-  cd /etc/vim/bundle/vundle
-  git fetch --progress --verbose
-  cd $OLDPWD
-  date +"%F %T" >> /var/log/fg/fgaptitudeinstallvim01-vundle01.log
-fi
+#if [ ! -e /var/log/fg/fgaptitudeinstallvim01-vundle01.log ]
+#then
+#  echo "  Récupération du gestionnaire d'extension vundle"
+#  git clone --progress --verbose https://github.com/gmarik/vundle.git /etc/vim/bundle/vundle 2> /dev/null
+#  cd /etc/vim/bundle/vundle
+#  git fetch --progress --verbose
+#  cd $OLDPWD
+#  date +"%F %T" >> /var/log/fg/fgaptitudeinstallvim01-vundle01.log
+#fi
 
 # installation des plugins vim
 # à l'aide du gestionnaire de plugins vundle
-if [ ! -e /var/log/fg/fgaptitudeinstallvim01-vundle02.log ]
-then
-  echo "  Installation des extensions vim"
-  # petit hack pour ne pas voir les installations des bundles
-  sed -i -e 's/  echo a:msg/  " echo a:msg/g' \
-      /etc/vim/bundle/vundle/autoload/vundle/installer.vim
-  vim +BundleInstall! +BundleClean! +q +q +q
-  date +"%F %T" >> /var/log/fg/fgaptitudeinstallvim01-vundle02.log
-fi
+#if [ ! -e /var/log/fg/fgaptitudeinstallvim01-vundle02.log ]
+#then
+#  echo "  Installation des extensions vim"
+#  # petit hack pour ne pas voir les installations des bundles
+#  sed -i -e 's/  echo a:msg/  " echo a:msg/g' \
+#      /etc/vim/bundle/vundle/autoload/vundle/installer.vim
+#  vim +BundleInstall! +BundleClean! +q +q +q
+#  date +"%F %T" >> /var/log/fg/fgaptitudeinstallvim01-vundle02.log
+#fi
 
-if [ ! -e /var/log/fg/fgaptitudeinstallvim01-vimpager.log ]
-then
-  echo "  Installation de vimpager en tant que pager"
-  rm -f /usr/bin/vimpager
-  #cp ~/.vim/bundle/vimpager/vimpager /usr/bin/vimpager
-  #chmod +x /usr/bin/vimpager
-  chmod +x /etc/vim/bundle/vimpager/vimpager
-  ln -s /etc/vim/bundle/vimpager/vimpager /usr/bin/vimpager
-
-  update-alternatives --install /usr/bin/pager pager /usr/bin/vimpager 50 1> /dev/null
-  update-alternatives --remove pager /bin/more 1> /dev/null
-  update-alternatives --remove pager /bin/less 1> /dev/null
-  update-alternatives --remove view /usr/bin/see 1> /dev/null
-  update-alternatives --remove view /usr/bin/vim.nox 1> /dev/null
-
-  date +"%F %T" >> /var/log/fg/fgaptitudeinstallvim01-vimpager.log
-fi
+#if [ ! -e /var/log/fg/fgaptitudeinstallvim01-vimpager.log ]
+#then
+#  echo "  Installation de vimpager en tant que pager"
+#  rm -f /usr/bin/vimpager
+#  #cp ~/.vim/bundle/vimpager/vimpager /usr/bin/vimpager
+#  #chmod +x /usr/bin/vimpager
+#  chmod +x /etc/vim/bundle/vimpager/vimpager
+#  ln -s /etc/vim/bundle/vimpager/vimpager /usr/bin/vimpager
+#
+#  update-alternatives --install /usr/bin/pager pager /usr/bin/vimpager 50 1> /dev/null
+#  update-alternatives --remove pager /bin/more 1> /dev/null
+#  update-alternatives --remove pager /bin/less 1> /dev/null
+#  update-alternatives --remove view /usr/bin/see 1> /dev/null
+#  update-alternatives --remove view /usr/bin/vim.nox 1> /dev/null
+#
+#  date +"%F %T" >> /var/log/fg/fgaptitudeinstallvim01-vimpager.log
+#fi
 
 ## cascadenik-vim : cf ajashton/cascadenik-vim
 # => done : dans /etc/vim/vimrc.vundle
