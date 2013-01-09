@@ -183,6 +183,16 @@ then
   date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun01-subversion.log
 fi
 
+######################
+# installation de curl
+if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun01-curl.log ]
+then
+  echo "  Installation de curl"
+  echo y | aptitude install curl \
+                            libcurl3 1> /dev/null
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun01-curl.log
+fi
+
 ###########################
 # installation de etckeeper
 # attention, il semblerait que la version de wheezy
