@@ -21,4 +21,5 @@ echo '" chargement des fonctions' > ~/.vimrc.local.d/functions.vim
 echo "\" Une bonne base d'extension quel que soit votre langage de programmation :" > ~/.vimrc.bundles.local
 echo "let g:spf13_bundle_groups=['general', 'neocomplcache', 'programming', 'python', 'javascript', 'html', 'php']" >> ~/.vimrc.bundles.local
 echo "Bundle 'ZoomWin'" >> ~/.vimrc.bundles.local
-echo "Bundle 'spf13/vim-colors'" >> ~/.vimrc.bundles.local
+echo "\"Bundle 'spf13/vim-colors'" >> ~/.vimrc.bundles.local
+echo "Bundle 'ajashton/cascadenik-vim'" >> ~/.vimrc.bundles.local
