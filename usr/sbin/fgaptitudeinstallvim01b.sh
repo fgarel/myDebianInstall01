@@ -1,4 +1,14 @@
 #!/bin/sh
+
+
+# Installation et configuration de vim
+###########################################
+echo "fgaptitudeinstallvim01b.sh : Installation et configuration de vim"
+
+mkdir /var/log/fg 2> /dev/null
+
+# recupération de spf13-vim3 et execution du script
+###################################################
 curl http://j.mp/spf13-vim3 -L -o - | sh
 
 # fabrication du fichier ~/.vimrc.local
@@ -24,3 +34,15 @@ echo "Bundle 'ZoomWin'" >> ~/.vimrc.bundles.local
 echo "\"Bundle 'spf13/vim-colors'" >> ~/.vimrc.bundles.local
 echo "Bundle 'ajashton/cascadenik-vim'" >> ~/.vimrc.bundles.local
 echo "Bundle 'vimpager'" >> ~/.vimrc.bundles.local
+
+
+# installation des bundles listés dans ~/.vimrc.bundles.local
+
+# installation des plugins vim
+# à l'aide du gestionnaire de plugins vundle
+#if [ ! -e /var/log/fg/fgaptitudeinstallvim01-vundle02.log ]
+#then
+  echo "  Installation des extensions vim"
+  vim +BundleInstall! +BundleClean! +q +q +q
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallvim01-vundle02.log
+#fi
