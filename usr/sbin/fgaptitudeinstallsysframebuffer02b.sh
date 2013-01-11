@@ -87,9 +87,9 @@ then
   #sed -i -e 's/4:23:respawn:\/sbin\/getty 38400 tty4/4:23:respawn:\/sbin\/getty 38400 tty4 xterm-256color/g' /etc/inittab
   #sed -i -e 's/5:23:respawn:\/sbin\/getty 38400 tty5/5:23:respawn:\/sbin\/getty 38400 tty5 xterm-256color/g' /etc/inittab
 
-  echo "  Modification de vimrc.fg pour modifier la largeur de colonne"
-  sed -i -r -e 's/^set columns=80$/\"set columns=80/' /etc/vim/vimrc.fg   # substitution : desactivation de 80
-  sed -i -r -e 's/^set columns=144$/\"set columns=144/' /etc/vim/vimrc.fg # substitution : desactivation de 144
-  sed -i -r -e 's/^\"set columns=164$/set columns=164/' /etc/vim/vimrc.fg # substitution : activation de 164
+  #echo "  Modification de vimrc.fg pour modifier la largeur de colonne"
+  #sed -i -r -e 's/^set columns=80$/\"set columns=80/' /etc/vim/vimrc.fg   # substitution : desactivation de 80
+  #sed -i -r -e 's/^set columns=144$/\"set columns=144/' /etc/vim/vimrc.fg # substitution : desactivation de 144
+  #sed -i -r -e 's/^\"set columns=164$/set columns=164/' /etc/vim/vimrc.fg # substitution : activation de 164
   date +"%F %T" >> /var/log/fg/fgaptitudeinstallsysframebuffer02b-configuration.log
 fi

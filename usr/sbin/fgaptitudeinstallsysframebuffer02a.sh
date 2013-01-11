@@ -36,10 +36,12 @@ then
   # on l execute donc dans un deuxième temps
   echo "  Modification de grub-pc pour lancer la console en 1152x864x32 : update-grub2"
   update-grub2 2> /dev/null
-  echo "  Modification de vimrc.fg pour modifier la largeur de colonne"
-  sed -i -r -e 's/^set columns=80$/\"set columns=80/' /etc/vim/vimrc.fg   # substitution : desactivation de 80
-  sed -i -r -e 's/^\"set columns=144$/set columns=144/' /etc/vim/vimrc.fg # substitution : activation de 144
-  sed -i -r -e 's/^set columns=164$/\"set columns=164/' /etc/vim/vimrc.fg # substitution : desactivation de 164
+  # les lignes suivantes ont été commentées : dorénavant, avec spf13-vim3, la largeur de colonne
+  # n'a plus besoin d'ètre définie
+  #echo "  Modification de vimrc.fg pour modifier la largeur de colonne"
+  #sed -i -r -e 's/^set columns=80$/\"set columns=80/' /etc/vim/vimrc.fg   # substitution : desactivation de 80
+  #sed -i -r -e 's/^\"set columns=144$/set columns=144/' /etc/vim/vimrc.fg # substitution : activation de 144
+  #sed -i -r -e 's/^set columns=164$/\"set columns=164/' /etc/vim/vimrc.fg # substitution : desactivation de 164
   date +"%F %T" >> /var/log/fg/fgaptitudeinstallsysframebuffer00-grub02.log
 else
   rm -f /var/log/fg/fgaptitudeinstallsysframebuffer00-grub01.log
