@@ -16,8 +16,6 @@ Création d'un utilisateur xxx
 Installation et paramétrage de d'un certain nombre d'application
 Comme vous avez pu vous en douter en lisant le titre, ce projet peut
 être complèté avec un second projet qui va enrichir l'installation.
-=======
-être complèter avec un second projet qui va complèter l'installation
 Pourquoi deux projets ?
 Le premier, myDebianInstall01, contient tous les scripts pour
 une installation personnalisée : il se concentre sur la partie

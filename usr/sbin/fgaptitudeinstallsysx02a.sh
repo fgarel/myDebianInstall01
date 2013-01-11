@@ -66,7 +66,7 @@ then
 
     # installation du terminal x ()
   echo "  Installation de rxvt-unicode-256color"
-  echo y | aptitude install rxvt-unicode-256color # 1> /dev/null
+  echo y | aptitude install rxvt-unicode-256color 1> /dev/null
   date +"%F %T" >> /var/log/fg/fgaptitudeinstallsysx02a-rxvtunicode.log
 fi
 
