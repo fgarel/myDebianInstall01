@@ -29,8 +29,18 @@ fgaptitudeinstallsysframebuffer01.sh
 # installation de vim
 fgaptitudeinstallvim01a.sh
 #fgaptitudeinstallvim01b.sh
-sudo -u root fgaptitudeinstallvim01b.sh
-sudo -u garel fgaptitudeinstallvim01b.sh
+if [ ! -e /var/log/fg/fgaptitudeinstallvim01b-root.log ]
+then
+  echo "  vim pour root"
+  sudo -u root fgaptitudeinstallvim01b.sh
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallvim01b-root.log
+fi
+if [ ! -e /var/log/fg/fgaptitudeinstallvim01b-user.log ]
+then
+  echo "  vim pour user"
+  sudo -u garel fgaptitudeinstallvim01b.sh
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallvim01b-user.log
+fi
 sudo -u root fgaptitudeinstallvim01c.sh
 
 fgaptitudeupgrade01.sh

@@ -22,7 +22,7 @@ then
   update-alternatives --remove pager /bin/more 1> /dev/null
   update-alternatives --remove pager /bin/less 1> /dev/null
   update-alternatives --remove view /usr/bin/see 1> /dev/null
-  update-alternatives --remove view /usr/bin/vim.nox 1> /dev/null
+  #update-alternatives --remove view /usr/bin/vim.nox 1> /dev/null
 
   date +"%F %T" >> /var/log/fg/fgaptitudeinstallvim01-vimpager.log
 fi
