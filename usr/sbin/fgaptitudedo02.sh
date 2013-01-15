@@ -34,7 +34,7 @@ fgaptitudeinstallsysx02a.sh
 # installation de quelques applications et utilitaires
 # spécifiques au domaine du sig
 fgaptitudeinstallgis02a.sh
-#fgaptitudeinstallgis02.sh
+fgaptitudeinstallgis02b.sh
 
 
 #echo "Récupération des fichiers depuis la machine distante - clefUsb2"

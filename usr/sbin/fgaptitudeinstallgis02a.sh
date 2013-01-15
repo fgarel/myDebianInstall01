@@ -7,11 +7,11 @@
 #
 
 ###########################################
-echo "fgaptitudeinstallgis01.sh : Installation de debian-gis (1ère partie)"
+echo "fgaptitudeinstallgis02a.sh : Installation de debian-gis (1ère partie)"
 
 mkdir /var/log/fg 2> /dev/null
 
-if [ ! -e /var/log/fg/fgaptitudeinstallgis01-mainmapnik.log ]
+if [ ! -e /var/log/fg/fgaptitudeinstallgis02a-mainmapnik.log ]
 then
   ######
   # main
@@ -35,7 +35,7 @@ then
   echo y | aptitude install python-mapnik2/testing 1> /dev/null
   echo "    Installation de mapnik-utils"
   echo y | aptitude install mapnik-utils/testing 1> /dev/null
-  date +"%F %T" >> /var/log/fg/fgaptitudeinstallgis01-mainmapnik.log
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallgis02a-mainmapnik.log
 fi
 #echo y | aptitude install avce00 1> /dev/null
 #echo y | aptitude install dans-gdal-scripts/testing 1> /dev/null
@@ -122,13 +122,13 @@ fi
 #echo y | aptitude install tilestache/testing 1> /dev/null
 
 
-if [ ! -e /var/log/fg/fgaptitudeinstallgis01-nonfree.log ]
+if [ ! -e /var/log/fg/fgaptitudeinstallgis02a-nonfree.log ]
 then
   ##########
   # non-free
   echo "  non-free"
   #echo y | aptitude install libgeotiff-epsg 1> /dev/null
-  date +"%F %T" >> /var/log/fg/fgaptitudeinstallgis01-nonfree.log
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallgis02a-nonfree.log
 fi
 
 ######
@@ -187,7 +187,7 @@ fi
 #echo y | aptitude install s3d/testing 1> /dev/null
 
 
-if [ ! -e /var/log/fg/fgaptitudeinstallgis01-other.log ]
+if [ ! -e /var/log/fg/fgaptitudeinstallgis02a-other.log ]
 then
   #######
   # other
@@ -230,6 +230,6 @@ then
   #echo y | aptitude install openjdk-6-jre 1> /dev/null
   ##echo y | aptitude install tomcat6 1> /dev/null
 
-  date +"%F %T" >> /var/log/fg/fgaptitudeinstallgis01-other.log
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallgis02a-other.log
 fi
 

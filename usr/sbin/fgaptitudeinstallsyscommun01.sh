@@ -142,6 +142,42 @@ then
   date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun01-libreadline.log
 fi
 
+###################
+# ajout de autoconf
+if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun01-autoconf.log ]
+then
+  echo "  Installation de autoconf"
+  echo y | aptitude install autoconf 1> /dev/null
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun01-autoconf.log
+fi
+
+###################
+# ajout de automake
+if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun01-automake.log ]
+then
+  echo "  Installation de automake"
+  echo y | aptitude install automake 1> /dev/null
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun01-automake.log
+fi
+
+##################
+# ajout de libtool
+if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun01-libtool.log ]
+then
+  echo "  Installation de libtool"
+  echo y | aptitude install libtool 1> /dev/null
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun01-libtool.log
+fi
+
+######################
+# ajout de lsb-release
+if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun01-lsbrelease.log ]
+then
+  echo "  Installation de lsb-release"
+  echo y | aptitude install lsb-release 1> /dev/null
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun01-lsbrelease.log
+fi
+
 ###############################
 # ajout de l'utilitaire mlocate
 if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun01-mlocate.log ]
