@@ -74,7 +74,11 @@ fi
 if [ ! -e /var/log/fg/fgaptitudeinstallpython-virtualenvwrapper.log ]
 then
   echo "  Installation de virtualenvwrapper"
-  echo y | aptitude install python-support/testing virtualenvwrapper/testing 1> /dev/null
+  echo y | aptitude install python-support/testing \
+                    virtualenvwrapper/testing 1> /dev/null
+  # creation d'un lien symbolique /usr/bin/virtualenvwrapper_lazy.sh
+  cp /usr/share/doc/virtualenvwrapper/examples/virtualenvwrapper_lazy.sh /usr/bin/virtualenvwrapper_lazy.sh
+  chmod +x /usr/bin/virtualenvwrapper_lazy.sh
   date +"%F %T" >> /var/log/fg/fgaptitudeinstallpython-virtualenvwrapper.log
 fi
 

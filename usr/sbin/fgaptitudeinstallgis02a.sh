@@ -7,7 +7,7 @@
 #
 
 ###########################################
-echo "fgaptitudeinstallgis02a.sh : Installation de debian-gis (1ère partie)"
+echo "fgaptitudeinstallgis02a.sh : Installation de debian-gis (Partie 2a)"
 
 mkdir /var/log/fg 2> /dev/null
 

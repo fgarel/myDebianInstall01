@@ -7,7 +7,7 @@
 #
 
 ###########################################
-echo "Installation de debian-gis (2de partie)"
+echo "fgaptitudeinstallgis02b.sh : Installation de debian-gis (Partie 2b)"
 
 if [ ! -e /var/log/fg/fgaptitudeinstallgis02b-postgis.log ]
 then
@@ -21,8 +21,8 @@ then
   echo y | aptitude install libgdal-dev 1> /dev/null
 
   echo "    Installation des librairies de postgresql"
-  echo y | aptitude install libpq5/experimental 1> /dev/null
-  echo y | aptitude install libpq-dev/experimental 1> /dev/null
+  echo y | aptitude install libpq5/experimental \
+                    libpq-dev/experimental 1> /dev/null
   echo y | aptitude install postgresql-server-dev-9.2/experimental 1> /dev/null
 
   echo "    Installation des outils pour generer la documentation"
@@ -31,10 +31,14 @@ then
   echo y | aptitude install docbook-xsl 1> /dev/null
   echo y | aptitude install libjson0-dev 1> /dev/null
   echo y | aptitude install libcunit1-dev 1> /dev/null
+  echo y | aptitude install libxml2-utils 1> /dev/null
 
+  echo "    Suppresion de l'editeur ed dans le fichier des alternatives"
+  update-alternatives --remove editor /bin/ed 1> /dev/null
+  
   echo "    Téléchargement des sources de postgis2"
   cd /usr/local/src
-  svn co http://svn.osgeo.org/postgis/trunk postgis-svn
+  svn co http://svn.osgeo.org/postgis/trunk postgis-svn 1> /dev/null
   cd $OLDPWD
 
   echo "    Installation de postgis2"
