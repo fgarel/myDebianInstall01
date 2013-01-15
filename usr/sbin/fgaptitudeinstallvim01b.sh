@@ -34,6 +34,7 @@ echo "let g:spf13_bundle_groups=['general', 'neocomplcache', 'programming', 'pyt
 echo "Bundle 'ZoomWin'" >> ~/.vimrc.bundles.local
 echo "\"Bundle 'spf13/vim-colors'" >> ~/.vimrc.bundles.local
 echo "Bundle 'ajashton/cascadenik-vim'" >> ~/.vimrc.bundles.local
+echo "Bundle 'scrooloose/nerdcommenter'" >> ~/.vimrc.bundles.local
 echo "Bundle 'vimpager'" >> ~/.vimrc.bundles.local
 
 
