@@ -33,9 +33,20 @@ then
   echo y | aptitude install libcunit1-dev 1> /dev/null
   echo y | aptitude install libxml2-utils 1> /dev/null
 
-  echo "    Suppresion de l'editeur ed dans le fichier des alternatives"
+  echo "    Suppression de l'editeur ed dans le fichier des alternatives"
   update-alternatives --remove editor /bin/ed 1> /dev/null
   
+  echo "    Installation des librairies pour le raster"
+  echo y | aptitude install libarmadillo-dev 1> /dev/null
+  echo y | aptitude install libpoppler-dev 1> /dev/null
+  echo y | aptitude install libfreexl-dev 1> /dev/null
+  echo y | aptitude install libepsilon-dev 1> /dev/null
+  echo y | aptitude install libkml-dev 1> /dev/null
+  echo y | aptitude install libzip-dev 1> /dev/null
+  echo y | aptitude install liburiparser-dev 1> /dev/null
+  echo y | aptitude install libogdi3.2-dev 1> /dev/null
+  echo y | aptitude install liblzma-dev 1> /dev/null
+
   echo "    Téléchargement des sources de postgis2"
   cd /usr/local/src
   svn co http://svn.osgeo.org/postgis/trunk postgis-svn 1> /dev/null
@@ -49,7 +60,22 @@ then
   ./configure 1> /dev/null
   cd $OLDPWD
   cd /usr/local/src/postgis-svn
-  make
+  make 1> /dev/null
+  cd $OLDPWD
+  cd /usr/local/src/postgis-svn
+  make install 1> /dev/null
+  cd $OLDPWD
+  cd /usr/local/src/postgis-svn
+  make comments 1> /dev/null
+  cd $OLDPWD
+  cd /usr/local/src/postgis-svn
+  make cheatsheets 1> /dev/null
+  cd $OLDPWD
+  cd /usr/local/src/postgis-svn/extensions
+  make 1> /dev/null
+  cd $OLDPWD
+  cd /usr/local/src/postgis-svn/extensions
+  make install 1> /dev/null
   cd $OLDPWD
 
   date +"%F %T" >> /var/log/fg/fgaptitudeinstallgis02b-postgis.log
