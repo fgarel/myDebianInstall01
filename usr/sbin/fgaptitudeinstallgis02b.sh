@@ -20,12 +20,16 @@ then
   echo y | aptitude install libproj-dev 1> /dev/null
   echo y | aptitude install libgdal-dev 1> /dev/null
 
-  echo "    Installation des librairies de postgresql"
+  echo "    Installation de postgresql et des librairies libpq"
+  echo y | aptitude install postgresql-common/experimental \
+                            postgresql-client-common/experimental \
+                            postgresql-9.2/experimental \
+                            postgresql-client-9.2/experimental 1> /dev/null
   echo y | aptitude install libpq5/experimental \
-                    libpq-dev/experimental 1> /dev/null
+                            libpq-dev/experimental 1> /dev/null
   echo y | aptitude install postgresql-server-dev-9.2/experimental 1> /dev/null
 
-  echo "    Installation des outils pour generer la documentation"
+  echo "    Installation des outils pour generer la documentation lors de la compilation"
   echo y | aptitude install xsltproc 1> /dev/null
   echo y | aptitude install dblatex 1> /dev/null
   echo y | aptitude install docbook-xsl 1> /dev/null
@@ -36,7 +40,7 @@ then
   echo "    Suppression de l'editeur ed dans le fichier des alternatives"
   update-alternatives --remove editor /bin/ed 1> /dev/null
   
-  echo "    Installation des librairies pour le raster"
+  echo "    Installation des librairies pour le support du raster dans postgis2"
   echo y | aptitude install libarmadillo-dev 1> /dev/null
   echo y | aptitude install libpoppler-dev 1> /dev/null
   echo y | aptitude install libfreexl-dev 1> /dev/null
@@ -52,32 +56,54 @@ then
   svn co http://svn.osgeo.org/postgis/trunk postgis-svn 1> /dev/null
   cd $OLDPWD
 
-  echo "    Installation de postgis2"
+  echo "    Compilation et Installation de postgis2"
+  echo "      ./autogen.sh"
   cd /usr/local/src/postgis-svn
   ./autogen.sh 1> /dev/null
   cd $OLDPWD
+  echo "      ./configure"
   cd /usr/local/src/postgis-svn
   ./configure 1> /dev/null
   cd $OLDPWD
+  echo "      ./make"
   cd /usr/local/src/postgis-svn
-  make 1> /dev/null
+  make 1> /dev/null 2> /dev/null
   cd $OLDPWD
+  echo "      ./make check"
   cd /usr/local/src/postgis-svn
-  make install 1> /dev/null
+  sudo -u postgres dropuser root
+  sudo -u postgres createuser -s root
+  make check #1> /dev/null
+  sudo -u postgres dropuser root
   cd $OLDPWD
+  echo "      ./make install"
+  cd /usr/local/src/postgis-svn
+  make install 1> /dev/null 2>/dev/null
+  cd $OLDPWD
+  echo "      ./make comments"
   cd /usr/local/src/postgis-svn
   make comments 1> /dev/null
   cd $OLDPWD
+  echo "      ./make comments-install"
+  cd /usr/local/src/postgis-svn
+  make comments-install 1> /dev/null
+  cd $OLDPWD
+  echo "      ./make cheatsheets"
   cd /usr/local/src/postgis-svn
   make cheatsheets 1> /dev/null
   cd $OLDPWD
+  echo "      ./make"
   cd /usr/local/src/postgis-svn/extensions
   make 1> /dev/null
   cd $OLDPWD
+  echo "      ./make install"
   cd /usr/local/src/postgis-svn/extensions
   make install 1> /dev/null
   cd $OLDPWD
-
+  echo "    Creation d'une database template postgis"
+  sudo -u postgres createdb templatepostgis
+  sudo -u postgres psql -d templatepostgis -c "CREATE EXTENSION postgis;"
+  sudo -u postgres psql -d templatepostgis -c "CREATE EXTENSION postgis_topology;"
   date +"%F %T" >> /var/log/fg/fgaptitudeinstallgis02b-postgis.log
 fi
 
