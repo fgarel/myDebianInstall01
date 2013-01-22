@@ -25,4 +25,5 @@ echo 'fi' >> /usr/sbin/fgaptitudeinstallgis02arm.sh
 echo "" >> /usr/sbin/fgaptitudeinstallgis02arm.sh
 echo "# END" >> /usr/sbin/fgaptitudeinstallgis02arm.sh
 
+chmod +x /usr/sbin/fgaptitudeinstallgis02arm.sh
 #cat /usr/sbin/fgaptitudeinstallgis02arm.sh
