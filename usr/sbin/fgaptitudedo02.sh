@@ -33,6 +33,7 @@ fgaptitudeinstallsysx02a.sh
 
 # installation de quelques applications et utilitaires
 # spécifiques au domaine du sig
+fgaptitudemakeinstall2.sh
 fgaptitudeinstallgis02a.sh
 fgaptitudeinstallgis02b.sh
 
