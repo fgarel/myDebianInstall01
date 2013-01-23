@@ -1,4 +1,4 @@
-010;apache2.2
+010;apache2.2-bin
 020;libapache2-mod-ldap-userdir;# This module implements UserDir directory 
 030;imagemagick
 040;libmagickcore5-extra;# libmagickcore5-extra nous permettra de manipuler le format SVG
@@ -6,20 +6,31 @@
 060;mysql-common
 070;libgeos-c1
 080;proj-bin
-090;gdal-bin
-100;libgeos-dev
-110;libproj-dev
-120;libgdal-dev
-130;libpq5/experimental
-140;postgresql-9.2/experimental
-150;libpq-dev/experimental
-160;postgresql-server-dev-9.2/experimental
-170;libxml2-utils
-180;xsltproc
-190;libjson0-dev
-200;dblatex texlive
-210;docbook-xsl
-220;python-numpy
-230;python-gdal
-240;python-mapnik2
-250;mapnik-utils
+090;libpq5/experimental
+100;libpq-dev/experimental
+110;libgdal1
+120;gdal-bin
+130;libgeos-dev
+140;libproj-dev
+150;libgdal-dev
+160;postgresql-9.2/experimental postgresql-common/experimental postgresql-client-9.2/experimental postgresql-client-common/experimental
+170;postgresql-server-dev-9.2/experimental
+180;libxml2-utils
+190;xsltproc
+200;libjson0-dev
+210;dblatex texlive
+220;docbook-xsl
+230;python-numpy
+240;python-gdal
+250;python-mapnik2
+260;mapnik-utils
+270;libarmadillo-dev
+280;libpoppler-dev
+290;libfreexl-dev
+300;libepsilon-dev
+310;liburiparser-dev
+320;libkml-dev
+330;libzip-dev
+340;liburiparser-dev
+350;libogdi3.2-dev
+360;liblzma-dev
