@@ -17,6 +17,7 @@ echo 'if [ ! -e /var/log/fg/fgaptitudeinstallgis02a.log ]' >> /usr/sbin/fgaptitu
 echo 'then' >> /usr/sbin/fgaptitudeinstallgis02a.sh
 echo '  ######' >> /usr/sbin/fgaptitudeinstallgis02a.sh
 
+#/usr/sbin/fgaptitudemakeinstall.sh /usr/sbin/gis_sav.txt >> /usr/sbin/fgaptitudeinstallgis02a.sh
 /usr/sbin/fgaptitudemakeinstall.sh /usr/sbin/gis.txt >> /usr/sbin/fgaptitudeinstallgis02a.sh
 
 echo '' >> /usr/sbin/fgaptitudeinstallgis02a.sh

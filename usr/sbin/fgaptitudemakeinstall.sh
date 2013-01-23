@@ -14,7 +14,11 @@
 # si on a un 0 en 4ème champ, alors on ne visualise pas
 # si on a un 1 en 4ème champ, alors on visualise
 
-cut $1 -d, -f1,2,3,4,5 | sort | cut -d, -f2,3,4,5 | \
+#cut $1 -d, -f1,2,3,4,5 | sort | cut -d, -f2,3,4,5 | \
+#    sed -r \
+#        -e 's/;/ /g' \
+#        -e 's/^0,(.*),(0|1),(.*)$/  echo \"Installation de \1\"\n  echo \"\3\"\n  aptitude -q2 install \1\n/'
+
+cut $1 -d";" -f1,2,3,4,5 | sort | cut -d";" -f2,3,4,5 | \
     sed -r \
-        -e 's/;/ /g' \
-        -e 's/^0,(.*),(0|1),(.*)$/  echo \"Installation de \1\"\n  echo \"\3\"\n  aptitude -q2 install \1\n/'
+        -e 's/^(.*);*(.*)$/  echo \"Installation de \1\"\n  echo \"\2\"\n  aptitude install \1\n/'

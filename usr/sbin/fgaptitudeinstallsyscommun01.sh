@@ -52,6 +52,15 @@ then
   date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun01-ncurses.log
 fi
 
+############################
+# ajout de l'utilitaire ncdu
+if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun01-ncdu.log ]
+then
+  echo "  Installation de ncdu"
+  echo y | aptitude install ncdu 1> /dev/null
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun01-ncdu.log
+fi
+
 #############################
 # ajout de l'utilitaire bzip2
 if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun01-bzip2.log ]
