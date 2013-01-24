@@ -7,7 +7,7 @@
 #
 
 ###########################################
-echo "fgaptitudeinstallgis02b.sh : Installation de debian-gis (Partie 2b)"
+echo "fgaptitudeinstallgis02b.sh :             Installation de debian-gis (Partie 02b)"
 
 if [ ! -e /var/log/fg/fgaptitudeinstallgis02b.log ]
 then
@@ -39,7 +39,7 @@ then
   cd $OLDPWD
   echo "      ./make check"
   cd /usr/local/src/postgis-svn
-  sudo -u postgres dropuser root
+  #sudo -u postgres dropuser root
   sudo -u postgres createuser -s root
   make check 1> /dev/null
   sudo -u postgres dropuser root

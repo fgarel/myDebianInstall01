@@ -27,4 +27,4 @@
 # (.*)$ le second groupe est le restant de la ligne
 cut $1 -d";" -f1,2,3,4,5 | sort | cut -d";" -f2,3,4,5 | \
     sed -r \
-        -e 's/^([^;]*);?(.*)$/  echo \"Installation de \1\"\n  echo \"\2\"\n  echo y | aptitude install \1 #1> \/dev\/null\n/' #\
+        -e 's/^([^;]*);?(.*)$/  echo \"Installation de \1\"\n  echo \"\2\"\n  echo y | aptitude install \1 1> \/dev\/null\n/' #\

@@ -3,7 +3,7 @@
 # Première partie des applications "système framebuffer"
 
 ###########################################
-echo "fgaptitudeinstallsysframebuffer01 : Installation d'outils pour le mode console (partie 1)"
+echo "fgaptitudeinstallsysframebuffer01.sh :  Installation d'outils pour le mode console (Partie 01)"
 
 mkdir /var/log/fg 2> /dev/null
 

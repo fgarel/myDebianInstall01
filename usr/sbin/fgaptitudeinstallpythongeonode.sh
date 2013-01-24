@@ -3,7 +3,8 @@
 # une commande "source" qui ne semble pas fonctionnr si le shellbang est /bin/sh
 
 # création de l'environnement geonode
-echo "fgaptitudeinstallpythongeonode : Création de l'environnement geonode"
+echo "fgaptitudeinstallpythongeonode.sh :     Création de l'environnement geonode"
+
 mkdir $HOME/.virtualenvs 2> /dev/null
 cd $HOME/.virtualenvs
 virtualenv --python=python2.7 \

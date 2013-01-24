@@ -27,4 +27,4 @@
 cut $1 -d";" -f1,2,3,4,5 | sort -r | cut -d";" -f2,3,4,5 | \
     sed -r \
         -e 's/\/experimental//g' \
-        -e 's/^([^;]*);?(.*)$/  echo \"Suppression de \1\"\n  echo \"\2\"\n  aptitude remove \1\n  aptitude purge \1\n/'
+        -e 's/^([^;]*);?(.*)$/  echo \"Suppression de \1\"\n  echo \"\2\"\n  echo y | aptitude remove \1 1> \/dev\/null\n  echo y | aptitude purge \1 1 > \/dev\/null\n/'

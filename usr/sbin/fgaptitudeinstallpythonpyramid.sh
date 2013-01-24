@@ -3,7 +3,7 @@
 # une commande "source" qui ne semble pas fonctionnr si le shellbang est /bin/sh
 
 # création de l'environnement pyramid
-echo "fgaptitudeinstallpythonpyramid : Création de l'environnement pyramid"
+echo "fgaptitudeinstallpythonpyramid.sh :     Création de l'environnement pyramid"
 mkdir $HOME/.virtualenvs 2> /dev/null
 cd $HOME/.virtualenvs
 virtualenv --python=python2.7 \

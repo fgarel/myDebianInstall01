@@ -3,6 +3,9 @@
 export https_proxy=$http_proxy
 export LANG=fr_FR.UTF-8
 
+#
+echo "fgaptitudedo02.sh :                     Actions manuelles"
+
 mkdir /var/log/fg 2> /dev/null
 
 # chainage avec les scripts de configuration et les mises à jour

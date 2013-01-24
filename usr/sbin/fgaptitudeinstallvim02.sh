@@ -3,7 +3,7 @@
 # Installation et configuration de vim
 
 ###########################################
-echo "Installation et configuration de vim"
+echo "fgaptitudeinstallvim02.sh :             Installation et configuration de vim (Partie 02)"
 
 # suppression des scripts vim
 # à l'aide du gestionnaire de plugins vim-addon-manager

@@ -2,7 +2,7 @@
 
 # Installation et configuration de vim
 ###########################################
-echo "fgaptitudeinstallvim01c.sh : Installation et configuration de vim"
+echo "fgaptitudeinstallvim01c.sh :            Installation et configuration de vim (Partie 01c)"
 
 mkdir /var/log/fg 2> /dev/null
 

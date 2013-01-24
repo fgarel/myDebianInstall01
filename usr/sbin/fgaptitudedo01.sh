@@ -3,6 +3,9 @@
 export https_proxy=$http_proxy
 export LANG=fr_FR.UTF-8
 
+#
+echo "fgaptitudedo01.sh :                     Actions commencées lors de l'installation automatique"
+
 mkdir /var/log/fg 2> /dev/null
 
 # chainage avec les scripts de configuration et les mises à jour

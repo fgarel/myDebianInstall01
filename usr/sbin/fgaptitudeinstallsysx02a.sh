@@ -3,7 +3,7 @@
 # Première partie des applications "système X"
 
 ###########################################
-echo "fgaptitudeinstallsysx02a : Installation d'outils pour le mode graphique (partie 02a)"
+echo "fgaptitudeinstallsysx02a.sh :           Installation d'outils pour le mode graphique (Partie 02a)"
 
 mkdir /var/log/fg 2> /dev/null
 

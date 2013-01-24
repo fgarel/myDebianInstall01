@@ -2,7 +2,7 @@
 # attention, il le shellbang doit etre bash, car on utilise dans ce script
 # une commande "source" qui ne semble pas fonctionnr si le shellbang est /bin/sh
 
-echo "fgaptitudeinstallpython : Installation de python"
+echo "fgaptitudeinstallpython.sh :            Installation de python"
 
 mkdir /var/log/fg 2> /dev/null
 #echo "  Installation de python"

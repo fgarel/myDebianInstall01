@@ -16,7 +16,7 @@
 #
 
 ###########################################
-echo "Installation de debian-gis (3ème partie)"
+echo "fgaptitudeinstallgis02u.sh :            Installation de debian-gis (Partie 02u)"
 
 ######
 # main

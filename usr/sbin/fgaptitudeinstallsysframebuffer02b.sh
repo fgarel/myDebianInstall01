@@ -4,7 +4,7 @@
 
 ###########################################
 #echo "Installation de systeme-framebuffer (2de partie)"
-echo "fgaptitudeinstallsysframebuffer02b : Installation d'outils pour le mode console (partie 2b)"
+echo "fgaptitudeinstallsysframebuffer02b.sh : Installation d'outils pour le mode console (Partie 02b)"
 
 mkdir /var/log/fg 2> /dev/null
 

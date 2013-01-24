@@ -16,7 +16,7 @@
 #    - les differentes sources
 # - quelques utilitiares
 # - quelques fichiers de configurations
-echo "Récupération des fichiers depuis la machine distante - clefUsb"
+echo "fg-git-fetch.sh :                       Récupération des fichiers depuis la machine distante"
 #scp -q -r root@10.5.10.23:/media/clefUsb/\* /
 #scp -r root@10.5.10.23:/media/disk/* /
 cp -r /root/myDebianInstall01/* /

@@ -7,7 +7,7 @@
 #
 
 ###########################################
-echo "fgaptitudeinstallgis02b.sh : Installation de debian-gis (Partie 2b)"
+echo "fgaptitudeinstallgis02t.sh :            Installation de debian-gis (Partie 02t)"
 
 if [ ! -e /var/log/fg/fgaptitudeinstallgis02b-postgis.log ]
 then

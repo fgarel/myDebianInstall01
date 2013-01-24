@@ -3,7 +3,7 @@
 # une commande "source" qui ne semble pas fonctionnr si le shellbang est /bin/sh
 
 # création de l'environnement ckan
-echo "fgaptitudeinstallpythonckan : Création de l'environnement ckan"
+echo "fgaptitudeinstallpythonckan.sh :        Création de l'environnement ckan"
 mkdir $HOME/.virtualenvs 2> /dev/null
 cd $HOME/.virtualenvs
 virtualenv --python=python2.7 \

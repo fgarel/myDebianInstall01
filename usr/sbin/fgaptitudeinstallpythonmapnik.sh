@@ -3,7 +3,7 @@
 # une commande "source" qui ne semble pas fonctionnr si le shellbang est /bin/sh
 
 # création de l'environnement mapnik
-echo "fgaptiudeinstallpythonmapnik : Création de l'environnement mapnik"
+echo "fgaptiudeinstallpythonmapnik.sh :       Création de l'environnement mapnik"
 mkdir $HOME/.virtualenvs 2> /dev/null
 cd $HOME/.virtualenvs
 virtualenv --python=python2.7 \

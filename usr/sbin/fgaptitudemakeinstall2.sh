@@ -9,7 +9,7 @@ echo "#!/bin/sh" > /usr/sbin/fgaptitudeinstallgis02a.sh
 
 echo "#" >> /usr/sbin/fgaptitudeinstallgis02a.sh
 echo "" >> /usr/sbin/fgaptitudeinstallgis02a.sh
-echo 'echo "fgaptitudeinstallgis02a.sh : Installation de debian-gis (Partie 2a)"' >> /usr/sbin/fgaptitudeinstallgis02a.sh
+echo 'echo "fgaptitudeinstallgis02a.sh :            Installation de debian-gis (Partie 02a)"' >> /usr/sbin/fgaptitudeinstallgis02a.sh
 echo "" >> /usr/sbin/fgaptitudeinstallgis02a.sh
 echo 'mkdir /var/log/fg 2> /dev/null' >>/usr/sbin/fgaptitudeinstallgis02a.sh
 echo "" >> /usr/sbin/fgaptitudeinstallgis02a.sh

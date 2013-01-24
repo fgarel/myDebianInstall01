@@ -7,7 +7,7 @@
 #
 
 ###########################################
-echo "fgaptitudeinstallgis02brm.sh : Suppression de debian-gis (Partie 2b)"
+echo "fgaptitudeinstallgis02trm.sh :          Suppression de debian-gis (Partie 02trm)"
 
 if [ ! -e /var/log/fg/fgaptitudeinstallgis02brm-postgis.log ]
 then

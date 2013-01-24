@@ -3,7 +3,7 @@
 # une commande "source" qui ne semble pas fonctionnr si le shellbang est /bin/sh
 
 # création de l'environnement fabric
-echo "fgaptitudeinstallpythonfabric : Création de l'environnement fabric"
+echo "fgaptitudeinstallpythonfabric.sh :      Création de l'environnement fabric"
 mkdir $HOME/.virtualenvs 2> /dev/null
 cd $HOME/.virtualenvs
 virtualenv --python=python2.7 \

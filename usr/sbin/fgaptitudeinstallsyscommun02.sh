@@ -3,7 +3,7 @@
 # 2de partie des applications "système"
 
 ###########################################
-echo "Installation de systeme-commun (2de partie)"
+echo "fgaptitudeinstallsyscommun02.sh :       Installation d'outils systeme communs au mode console et au mode graphique (partie 02)"
 
 
 ###########################################

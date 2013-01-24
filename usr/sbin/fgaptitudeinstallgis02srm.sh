@@ -7,7 +7,7 @@
 #
 
 ###########################################
-echo "fgaptitudeinstallgis02arm.sh : Suppression de debian-gis (Partie 2a)"
+echo "fgaptitudeinstallgis02srm.sh :          Suppression de debian-gis (Partie 02srm)"
 
 mkdir /var/log/fg 2> /dev/null
 

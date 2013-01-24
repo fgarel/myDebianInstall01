@@ -3,7 +3,7 @@
 # une commande "source" qui ne semble pas fonctionnr si le shellbang est /bin/sh
 
 # création de l'environnement geopy
-echo "fgaptitudeinstallpythongeopy : Création de l'environnement geopy"
+echo "fgaptitudeinstallpythongeopy.sh :       Création de l'environnement geopy"
 mkdir $HOME/.virtualenvs 2> /dev/null
 cd $HOME/.virtualenvs
 virtualenv --python=python2.7 \

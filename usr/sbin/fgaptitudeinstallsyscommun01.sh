@@ -3,7 +3,7 @@
 # 1ère partie des applications "système"
 
 ###########################################
-echo "fgaptitudeinstallsyscommun01 : Installation d'outils systeme communs au mode console et au mode graphique (1ere partie)"
+echo "fgaptitudeinstallsyscommun01.sh :       Installation d'outils systeme communs au mode console et au mode graphique (Partie 01)"
 
 ##############################################
 # ajout de l'utilisateur garel au groupe staff

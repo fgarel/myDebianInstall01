@@ -28,9 +28,8 @@
 280;libpoppler-dev
 290;libfreexl-dev
 300;libepsilon-dev
-310;liburiparser-dev
-320;libkml-dev
 330;libzip-dev
-340;liburiparser-dev
+340;libkml-dev liburiparser-dev
 350;libogdi3.2-dev
 360;liblzma-dev
+370;libcunit1-dev
