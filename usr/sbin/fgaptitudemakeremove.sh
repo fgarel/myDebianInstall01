@@ -19,8 +19,12 @@
 #        -e 's/\/experimental//g' \
 #        -e 's/^0,(.*),(0|1),(.*)$/  echo \"Suppression de \1\"\n  echo \"\3\"\n  aptitude -q2 remove \1\n  aptitude -q2 -y purge \1\n/'
 
+# explication de l'expression reguliere
+# [^;] signifie tous les caractères saus le ;
+# ^([^;]*) le premier groupe va contenir tout le début de la chaine jusqu'a ce qu'il trouve un ;
+# ;? le ; est optionnel : il y en a 0 ou 1
+# (.*)$ le second groupe est le restant de la ligne
 cut $1 -d";" -f1,2,3,4,5 | sort -r | cut -d";" -f2,3,4,5 | \
     sed -r \
         -e 's/\/experimental//g' \
-        -e 's/^(.*);*(.*)$/  echo \"Suppression de \1\"\n  echo \"\2\"\n  aptitude remove \1\n  aptitude purge \1\n/'
-
+        -e 's/^([^;]*);?(.*)$/  echo \"Suppression de \1\"\n  echo \"\2\"\n  aptitude remove \1\n  aptitude purge \1\n/'
