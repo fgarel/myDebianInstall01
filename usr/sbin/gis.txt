@@ -1,4 +1,4 @@
-010;apache2.2-bin
+010;apache2.2-bin apache2 apache2-mpm-worker
 020;libapache2-mod-ldap-userdir;# This module implements UserDir directory 
 030;imagemagick
 040;libmagickcore5-extra;# libmagickcore5-extra nous permettra de manipuler le format SVG
