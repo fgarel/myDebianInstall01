@@ -238,6 +238,17 @@ then
   date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun01-curl.log
 fi
 
+######################
+# installation de cups
+if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun01-cups.log ]
+then
+  echo "  Installation de cups"
+  echo y | aptitude install cups \
+                            cups-pdf 1> /dev/null
+  adduser garel lpadmin
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun01-cups.log
+fi
+
 ###########################
 # installation de etckeeper
 # attention, il semblerait que la version de wheezy

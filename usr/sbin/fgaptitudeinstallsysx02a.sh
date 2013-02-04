@@ -70,6 +70,17 @@ then
   date +"%F %T" >> /var/log/fg/fgaptitudeinstallsysx02a-rxvtunicode.log
 fi
 
+# xterm
+# pour le moment, il est necessaire pour enlightenment
+if [ ! -e /var/log/fg/fgaptitudeinstallsysx02a-xterm.log ]
+then
+
+    # installation du terminal x ()
+  echo "  Installation de xterm"
+  echo y | aptitude install xterm 1> /dev/null
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsysx02a-xterm.log
+fi
+
 # suppression de la souris
 # http://www.planet-libre.org/?post_id=11141
 

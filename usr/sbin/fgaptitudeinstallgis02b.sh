@@ -72,6 +72,10 @@ then
   sudo -u postgres createdb templatepostgis
   sudo -u postgres psql -d templatepostgis -c "CREATE EXTENSION postgis;"
   sudo -u postgres psql -d templatepostgis -c "CREATE EXTENSION postgis_topology;"
+  echo "    Creation d'un utilisateur contrib et d'une database dbmapnik"
+  sudo -u postgres createuser -s contrib
+  sudo -u postgres psql -d templatepostgis -c "ALTER ROLE contrib with password 'alambic';"
+  sudo -u postgres createdb -O contrib -T templatepostgis dbmpanik
   date +"%F %T" >> /var/log/fg/fgaptitudeinstallgis02b.log
 fi
 

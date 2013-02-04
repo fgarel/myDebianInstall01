@@ -33,3 +33,6 @@
 350;libogdi3.2-dev
 360;liblzma-dev
 370;libcunit1-dev
+510;qgis
+520;pgadmin3
+530;trac trac-git
