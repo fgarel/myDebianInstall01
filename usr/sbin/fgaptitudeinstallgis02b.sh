@@ -78,7 +78,7 @@ then
   echo "    Creation d'un utilisateur contrib et d'une database dbmapnik"
   sudo -u postgres createuser -s contrib
   sudo -u postgres psql -d templatepostgis -c "ALTER ROLE contrib with password 'alambic';"
-  sudo -u postgres createdb -O contrib -T templatepostgis dbmpanik
+  sudo -u postgres createdb -O contrib -T templatepostgis dbmapnik
   date +"%F %T" >> /var/log/fg/fgaptitudeinstallgis02b.log
 fi
 
