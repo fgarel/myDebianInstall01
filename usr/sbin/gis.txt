@@ -36,3 +36,4 @@
 510;qgis
 520;pgadmin3
 530;trac trac-git
+540;cups cups-pdf

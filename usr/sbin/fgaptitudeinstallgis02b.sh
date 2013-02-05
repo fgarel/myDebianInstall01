@@ -19,6 +19,9 @@ then
   a2enmod userdir
   /etc/init.d/apache2 restart
 
+  echo "    Ajout de l'utilisateur garel au groupe lpadmin"
+  adduser garel lpadmin
+
   echo "    Téléchargement des sources de postgis2"
   cd /usr/local/src
   svn co http://svn.osgeo.org/postgis/trunk postgis-svn 1> /dev/null
