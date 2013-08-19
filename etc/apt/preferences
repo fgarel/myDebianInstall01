@@ -180,9 +180,9 @@ Pin-Priority: 700
 #       => http://www.deb-multimedia.org/ stable
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 #------------------------------------------------------------------------------
-Package: *
-Pin: release o=Unofficial Multimedia Packages,l=Unofficial Multimedia Packages,a=stable
-Pin-Priority: 650
+#Package: *
+#Pin: release o=Unofficial Multimedia Packages,l=Unofficial Multimedia Packages,a=stable
+#Pin-Priority: 650
 
 #------------------------------------------------------------------------------
 #deb http://www.deb-multimedia.org/ stable main non-free
@@ -338,9 +338,9 @@ Pin-Priority: 950
 #       => http://www.deb-multimedia.org/ testing
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 #----------------------------------------------------------------------200-930-
-Package: *
-Pin: release o=Unofficial Multimedia Packages,l=Unofficial Multimedia Packages,a=testing
-Pin-Priority: 930
+#Package: *
+#Pin: release o=Unofficial Multimedia Packages,l=Unofficial Multimedia Packages,a=testing
+#Pin-Priority: 930
 
 #------------------------------------------------------------------------------
 #deb http://www.deb-multimedia.org/ testing main non-free
@@ -401,9 +401,9 @@ Pin-Priority: 910
 #       => http://www.deb-multimedia.org/ unstable
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 #------------------------------------------------------------------------------
-Package: *
-Pin: release o=Unofficial Multimedia Packages,l=Unofficial Multimedia Packages,a=unstable
-Pin-Priority: 23
+#Package: *
+#Pin: release o=Unofficial Multimedia Packages,l=Unofficial Multimedia Packages,a=unstable
+#Pin-Priority: 23
 
 #------------------------------------------------------------------------------
 #deb http://www.deb-multimedia.org/ unstable main non-free
@@ -463,9 +463,9 @@ Pin-Priority: 21
 #       => http://www.deb-multimedia.org/ experimental
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 #------------------------------------------------------------------------------
-Package: *
-Pin: release o=Unofficial Multimedia Packages,l=Unofficial Multimedia Packages,a=experimental
-Pin-Priority: 13
+#Package: *
+#Pin: release o=Unofficial Multimedia Packages,l=Unofficial Multimedia Packages,a=experimental
+#Pin-Priority: 13
 
 #------------------------------------------------------------------------------
 #deb http://www.deb-multimedia.org/ experimental main

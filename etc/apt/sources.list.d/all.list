@@ -185,8 +185,8 @@ deb-src http://backports.debian.org/debian-backports/ squeeze-backports main con
 #Pin-Priority: 650
 #
 #------------------------------------------------------------------------------
-deb http://www.deb-multimedia.org/ stable main non-free
-deb-src http://www.deb-multimedia.org/ stable main non-free
+#deb http://www.deb-multimedia.org/ stable main non-free
+#deb-src http://www.deb-multimedia.org/ stable main non-free
 
 
 ###############################################################################
@@ -343,8 +343,8 @@ deb-src http://ftp.fr.debian.org/debian/ testing-proposed-updates main contrib n
 #Pin-Priority: 200
 #
 #------------------------------------------------------------------------------
-deb http://www.deb-multimedia.org/ testing main non-free
-deb-src http://www.deb-multimedia.org/ testing main non-free
+#deb http://www.deb-multimedia.org/ testing main non-free
+#deb-src http://www.deb-multimedia.org/ testing main non-free
 
 
 ###############################################################################
@@ -406,8 +406,8 @@ deb-src http://ftp.fr.debian.org/debian/ testing main contrib non-free
 #Pin-Priority: 23
 #
 #------------------------------------------------------------------------------
-deb http://www.deb-multimedia.org/ unstable main non-free
-deb-src http://www.deb-multimedia.org/ unstable main non-free
+#deb http://www.deb-multimedia.org/ unstable main non-free
+#deb-src http://www.deb-multimedia.org/ unstable main non-free
 
 
 ###############################################################################
@@ -468,8 +468,8 @@ deb-src http://ftp.fr.debian.org/debian/ unstable main contrib non-free
 #Pin-Priority: 13
 #
 #------------------------------------------------------------------------------
-deb http://www.deb-multimedia.org/ experimental main
-deb-src http://www.deb-multimedia.org/ experimental main
+#deb http://www.deb-multimedia.org/ experimental main
+#deb-src http://www.deb-multimedia.org/ experimental main
 
 
 ###############################################################################
