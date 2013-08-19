@@ -76,7 +76,7 @@ Les prérequis pour que cette installation puisse fonctionner
 Avoir acces à l'url http://fgarel.ovh.org/d-i/wheezy/preseed.cfg
 si la machine est virtuelle, avoir créer deux connections réseaux adéquates
   (une vers internet, une autre vers le reseau interne)
-si la machine est derrière un proxy, avoir installé et configuré squid
+si la machine est derrière un proxy, avoir installé et configuré squid3
   (aptitude install squid3 ; vim /etc/squid3/squid.conf)
   (acl localnet src 10.2.0.0/16  # machines dont l'adresse commence par 10.2)
   (http_access allow localnet)
