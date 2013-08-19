@@ -44,8 +44,8 @@ Utilisation de ce projet
   modifier l'ordre de demarrage)
 4 Si la machine est virtuelle et se trouve derrière un pare-feu :
     auto interface=eth0
-         mirror/http/proxy=http://10.5.10.13:3128/
-         http_proxy=http://10.5.10.13:3128/
+         mirror/http/proxy=http://10.2.10.6:3128/
+         http_proxy=http://10.2.10.6:3128/
          url=fgarel.ovh.org
   sinon
     auto url=fgarel.ovh.org
@@ -53,7 +53,7 @@ Utilisation de ce projet
 6 Au redémarrage, vous pouvez vous logguer en tant que blueflamingo,
   avec le mot de passe blueflamingo
 7 Un dernier bout de script est a executer
-  export http_proxy=http://10.5.10.13:3128/ ; fgaptitudeinstallsys2.sh
+  export http_proxy=http://10.2.10.6:3128/ ; fgaptitudeinstallsys2.sh
 
 Quelques remarques concernant les paramètres utilisés
 -----------------------------------------------------
@@ -77,14 +77,17 @@ Avoir acces à l'url http://fgarel.ovh.org/d-i/wheezy/preseed.cfg
 si la machine est virtuelle, avoir créer deux connections réseaux adéquates
   (une vers internet, une autre vers le reseau interne)
 si la machine est derrière un proxy, avoir installé et configuré squid
+  (aptitude install squid3 ; vim /etc/squid3/squid.conf)
+  (acl localnet src 10.2.0.0/16  # machines dont l'adresse commence par 10.2)
+  (http_access allow localnet)
 
 Les ressources extérieures
 --------------------------
  - sur github :
      https://github.com/fgarel/myDebianInstall01
-       depot git avec les premières installations
+       depot git avec les installations dites "systèmes"
      https://github.com/fgarel/myDebianInstall02
-       depot git avec la suite des installations
+       depot git avec les installations dites "utilisateurs"
  - sur ovh :
      http://fgarel.ovh.org/d-i/wheezy/preseed.cfg
        le fichier preseed.cfg qui automatise tout ça
