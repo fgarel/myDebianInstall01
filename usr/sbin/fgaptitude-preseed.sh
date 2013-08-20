@@ -41,7 +41,7 @@ fi
 if [ ! -e /var/log/fg/fgaptitudeinstallvim01b-user.log ]
 then
   echo "  vim pour user"
-  sudo -u garel fgaptitudeinstallvim01b.sh
+  sudo -u blueflamingo fgaptitudeinstallvim01b.sh
   date +"%F %T" >> /var/log/fg/fgaptitudeinstallvim01b-user.log
 fi
 sudo -u root fgaptitudeinstallvim01c.sh
@@ -51,37 +51,37 @@ fgaptitudeinstallpython.sh
 if [ ! -e /var/log/fg/fgaptitudeinstallpythonfabric-fabric.log ]
 then
   echo "  python fabric"
-  sudo -u garel fgaptitudeinstallpythonfabric.sh ; cd $OLDPWD
+  sudo -u blueflamingo fgaptitudeinstallpythonfabric.sh ; cd $OLDPWD
   date +"%F %T" >> /var/log/fg/fgaptitudeinstallpythonfabric-fabric.log
 fi
 if [ ! -e /var/log/fg/fgaptitudeinstallpythonpyramid-pyramid.log ]
 then
   echo "  python pyramid"
-  sudo -u garel fgaptitudeinstallpythonpyramid.sh ; cd $OLDPWD
+  sudo -u blueflamingo fgaptitudeinstallpythonpyramid.sh ; cd $OLDPWD
   date +"%F %T" >> /var/log/fg/fgaptitudeinstallpythonpyramid-pyramid.log
 fi
 if [ ! -e /var/log/fg/fgaptitudeinstallpythonmapnik-mapnik.log ]
 then
   echo "  python mapnik"
-  sudo -u garel fgaptitudeinstallpythonmapnik.sh ; cd $OLDPWD
+  sudo -u blueflamingo fgaptitudeinstallpythonmapnik.sh ; cd $OLDPWD
   date +"%F %T" >> /var/log/fg/fgaptitudeinstallpythonmapnik-mapnik.log
 fi
 if [ ! -e /var/log/fg/fgaptitudeinstallpythongeonode-geonode.log ]
 then
   echo "  python geonode"
-  sudo -u garel fgaptitudeinstallpythongeonode.sh ; cd $OLDPWD
+  sudo -u blueflamingo fgaptitudeinstallpythongeonode.sh ; cd $OLDPWD
   date +"%F %T" >> /var/log/fg/fgaptitudeinstallpythongeonode-geonode.log
 fi
 if [ ! -e /var/log/fg/fgaptitudeinstallpythonckan-ckan.log ]
 then
   echo "  python ckan"
-  sudo -u garel fgaptitudeinstallpythonckan.sh ; cd $OLDPWD
+  sudo -u blueflamingo fgaptitudeinstallpythonckan.sh ; cd $OLDPWD
   date +"%F %T" >> /var/log/fg/fgaptitudeinstallpythonckan-ckan.log
 fi
 if [ ! -e /var/log/fg/fgaptitudeinstallpythongeopy-geopy.log ]
 then
   echo "  python geopy"
-  sudo -u garel fgaptitudeinstallpythongeopy.sh ; cd $OLDPWD
+  sudo -u blueflamingo fgaptitudeinstallpythongeopy.sh ; cd $OLDPWD
   date +"%F %T" >> /var/log/fg/fgaptitudeinstallpythongeopy-geopy.log
 fi
 
@@ -104,5 +104,5 @@ git fetch --progress --verbose
 cd $OLDPWD
 yes | cp -r -f /root/myDebianInstall02/* / 2> /dev/null
 ###scp -q -r root@10.5.10.23:/media/clefUsb2/\* /
-chown -R garel:garel /home/garel/
+chown -R blueflamingo:blueflamingo /home/blueflamingo/
 #sudo -u garel fgaptitudeinstallgis03.sh ; cd $OLDPWD
