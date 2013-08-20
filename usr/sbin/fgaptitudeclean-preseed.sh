@@ -1,20 +1,20 @@
 #!/bin/sh
 
 # suppression des paquets debian
-echo "fgaptitudeclean.sh :                    Nettoyage 2"
+echo "fgaptitudeclean-preseed.sh :                    Nettoyage 2"
 
-if [ ! -e /var/log/fg/fgaptitudeclean-clean.log ]
+if [ ! -e /var/log/fg/fgaptitudeclean-preseed-clean.log ]
 then
   echo "  Aptitude clean"
   echo y | aptitude clean 1> /dev/null 2> /dev/null
-  date +"%F %T" >> /var/log/fg/fgaptitudeclean-clean.log
+  date +"%F %T" >> /var/log/fg/fgaptitudeclean-preseed-clean.log
 fi
 
-if [ ! -e /var/log/fg/fgaptitudeclean-purge.log ]
+if [ ! -e /var/log/fg/fgaptitudeclean-preseed-purge.log ]
 then
   echo "  Aptitude purge"
   echo y | aptitude purge "~c" 1> /dev/null 2> /dev/null
-  date +"%F %T" >> /var/log/fg/fgaptitudeclean-purge.log
+  date +"%F %T" >> /var/log/fg/fgaptitudeclean-preseed-purge.log
 fi
 
 # on enleve quelques paquets qui ne seront pas utilisés
@@ -28,7 +28,7 @@ fi
 #update-alternatives --all
 # par exemple, au lieu de désinstaller le paquet "util-linux" (qui contient pg et more)
 # http://pwet.fr/man/linux/administration_systeme/update_alternatives
-if [ ! -e /var/log/fg/fgaptitudeclean-alternatives.log ]
+if [ ! -e /var/log/fg/fgaptitudeclean-preseed-alternatives.log ]
 then
   echo "  Alternatives"
   update-alternatives --remove editor /bin/nano 1> /dev/null
@@ -42,5 +42,5 @@ then
   update-alternatives --remove view /usr/bin/vim.tiny 1> /dev/null
   update-alternatives --remove vim /usr/bin/vim.basic 1> /dev/null
   update-alternatives --remove vimdiff /usr/bin/vim.basic 1> /dev/null
-  date +"%F %T" >> /var/log/fg/fgaptitudeclean-alternatives.log
+  date +"%F %T" >> /var/log/fg/fgaptitudeclean-preseed-alternatives.log
 fi

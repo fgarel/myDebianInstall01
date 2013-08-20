@@ -3,239 +3,238 @@
 # 1ère partie des applications "système"
 
 ###########################################
-echo "fgaptitudeinstallsyscommun01.sh :       Installation d'outils systeme communs au mode console et au mode graphique (Partie 01)"
+echo "fgaptitudeinstallsyscommun-preseed.sh :       Installation d'outils systeme communs au mode console et au mode graphique (Partie 01)"
 
 ##############################################
-# ajout de l'utilisateur garel au groupe staff
-if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun01-addgroup.log ]
+# ajout de l'utilisateur blueflamingo au groupe staff
+if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun-preseed-addgroup.log ]
 then
-  echo "  Ajout de l'utilisateur garel au groupe staff"
-  addgroup garel staff 1> /dev/null
-  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun01-addgroup.log
+  echo "  Ajout de l'utilisateur blueflamingo au groupe staff"
+  addgroup blueflamingo staff 1> /dev/null
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun-preseed-addgroup.log
 fi
 
 ############################
 # ajout de l'utilitaire sudo
-if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun01-sudo.log ]
+if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun-preseed-sudo.log ]
 then
   echo "  Installation de sudo"
   aptitude install sudo 1> /dev/null
-  echo "  Ajout de l'utilisateur garel au groupe sudo"
-  addgroup garel sudo 1> /dev/null
-  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun01-sudo.log
+  echo "  Ajout de l'utilisateur blueflamingo au groupe sudo"
+  addgroup blueflamingo sudo 1> /dev/null
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun-preseed-sudo.log
 fi
 
 ################################
 # ajout de l'utilitaire ack-grep
-if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun01-ackgrep.log ]
+if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun-preseed-ackgrep.log ]
 then
   echo "  Installation de ack-grep"
   echo y | aptitude install ack-grep 1> /dev/null
-  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun01-ackgrep.log
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun-preseed-ackgrep.log
 fi
 
 ##############################
 # ajout de l'utilitaire hwinfo
-if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun01-hwinfo.log ]
+if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun-preseed-hwinfo.log ]
 then
   echo "  Installation de hwinfo"
   echo y | aptitude install hwinfo 1> /dev/null
-  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun01-hwinfo.log
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun-preseed-hwinfo.log
 fi
 
 ####################################
 # ajout de l'utilitaire ncurses-term
-if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun01-ncurses.log ]
+if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun-preseed-ncurses.log ]
 then
   echo "  Installation de ncurses-term"
   echo y | aptitude install ncurses-term 1> /dev/null
-  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun01-ncurses.log
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun-preseed-ncurses.log
 fi
 
 ############################
 # ajout de l'utilitaire ncdu
-if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun01-ncdu.log ]
+if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun-preseed-ncdu.log ]
 then
   echo "  Installation de ncdu"
   echo y | aptitude install ncdu 1> /dev/null
-  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun01-ncdu.log
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun-preseed-ncdu.log
 fi
 
 #############################
 # ajout de l'utilitaire bzip2
-if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun01-bzip2.log ]
+if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun-preseed-bzip2.log ]
 then
   echo "  Installation de bzip2"
   echo y | aptitude install bzip2 1> /dev/null
-  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun01-bzip2.log
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun-preseed-bzip2.log
 fi
 
 ##################################
 # ajout de l'utilitaire p7zip-full
-if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun01-p7zipfull.log ]
+if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun-preseed-p7zipfull.log ]
 then
   echo "  Installation de p7zip-full"
   echo y | aptitude install p7zip-full 1> /dev/null
-  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun01-p7zipfull.log
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun-preseed-p7zipfull.log
 fi
 
 #############################
 # ajout de l'utilitaire unzip
-if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun01-unzip.log ]
+if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun-preseed-unzip.log ]
 then
   echo "  Installation de unzip"
   echo y | aptitude install unzip 1> /dev/null
-  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun01-unzip.log
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun-preseed-unzip.log
 fi
 
 ############################
 # ajout de l'utilitaire make
-if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun01-make.log ]
+if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun-preseed-make.log ]
 then
   echo "  Installation de make"
   echo y | aptitude install make 1> /dev/null
-  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun01-make.log
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun-preseed-make.log
 fi
 
 #######################################
 # ajout de l'utilitaire build-essential
-if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun01-build.log ]
+if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun-preseed-build.log ]
 then
   echo "  Installation de build-essential"
   echo y | aptitude install build-essential 1> /dev/null
-  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun01-build.log
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun-preseed-build.log
 fi
 
 ##################################
 # ajout de l'utilitaire devscripts
-if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun01-devscripts.log ]
+if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun-preseed-devscripts.log ]
 then
   echo "  Installation de devscripts"
   echo y | aptitude install devscripts 1> /dev/null
-  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun01-devscripts.log
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun-preseed-devscripts.log
 fi
 
 ################################
 # ajout de l'utilitaire fakeroot
-if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun01-fakeroot.log ]
+if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun-preseed-fakeroot.log ]
 then
   echo "  Installation de fakeroot"
   echo y | aptitude install fakeroot 1> /dev/null
-  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun01-fakeroot.log
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun-preseed-fakeroot.log
 fi
 
 ############################
 # ajout de l'utilitaire flex
-if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun01-flex.log ]
+if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun-preseed-flex.log ]
 then
   echo "  Installation de flex"
   echo y | aptitude install flex 1> /dev/null
-  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun01-flex.log
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun-preseed-flex.log
 fi
 
 #############################
 # ajout de l'utilitaire bison
-if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun01-bison.log ]
+if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun-preseed-bison.log ]
 then
   echo "  Installation de bison"
   echo y | aptitude install bison 1> /dev/null
-  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun01-bison.log
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun-preseed-bison.log
 fi
 
 ##########################
 # ajout de libreadline-dev
-if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun01-libreadline.log ]
+if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun-preseed-libreadline.log ]
 then
   echo "  Installation de libreadline-dev"
   echo y | aptitude install libreadline-dev 1> /dev/null
-  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun01-libreadline.log
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun-preseed-libreadline.log
 fi
 
 ###################
 # ajout de autoconf
-if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun01-autoconf.log ]
+if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun-preseed-autoconf.log ]
 then
   echo "  Installation de autoconf"
   echo y | aptitude install autoconf 1> /dev/null
-  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun01-autoconf.log
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun-preseed-autoconf.log
 fi
 
 ###################
 # ajout de automake
-if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun01-automake.log ]
+if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun-preseed-automake.log ]
 then
   echo "  Installation de automake"
   echo y | aptitude install automake 1> /dev/null
-  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun01-automake.log
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun-preseed-automake.log
 fi
 
 ##################
 # ajout de libtool
-if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun01-libtool.log ]
+if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun-preseed-libtool.log ]
 then
   echo "  Installation de libtool"
   echo y | aptitude install libtool 1> /dev/null
-  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun01-libtool.log
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun-preseed-libtool.log
 fi
 
 ######################
 # ajout de lsb-release
-if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun01-lsbrelease.log ]
+if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun-preseed-lsbrelease.log ]
 then
   echo "  Installation de lsb-release"
   echo y | aptitude install lsb-release 1> /dev/null
-  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun01-lsbrelease.log
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun-preseed-lsbrelease.log
 fi
 
 ###############################
 # ajout de l'utilitaire mlocate
-if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun01-mlocate.log ]
+if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun-preseed-mlocate.log ]
 then
   echo "  Installation de mlocate"
-  aptitude install mlocate 1> /dev/null
+  echo y | aptitude install mlocate 1> /dev/null
   echo "  Début de l'indexation"
   updatedb &
   #echo "  ...Fin de l'indexation"
-  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun01-mlocate.log
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun-preseed-mlocate.log
 fi
 
 ############################
 # ajout de l'utilitaire tmux
-if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun01-tmux.log ]
+if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun-pressed-tmux.log ]
 then
   echo "  Installation de tmux"
-  #echo y | aptitude install tmux/squeeze-backports 1> /dev/null
   echo y | aptitude install tmux 1> /dev/null
-  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun01-tmux.log
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun-preseed-tmux.log
 fi
 
 #####################
 # installation de git
-if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun01-git.log ]
+if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun-preseed-git.log ]
 then
   echo "  Installation de git"
   echo y | aptitude install git 1> /dev/null
-  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun01-git.log
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun-preseed-git.log
 fi
 
 ############################
 # installation de subversion
-if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun01-subversion.log ]
+if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun-preseed-subversion.log ]
 then
   echo "  Installation de subversion"
   echo y | aptitude install subversion \
                             subversion-tools 1> /dev/null
-  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun01-subversion.log
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun-preseed-subversion.log
 fi
 
 ######################
 # installation de curl
-if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun01-curl.log ]
+if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun-preseed-curl.log ]
 then
   echo "  Installation de curl"
   echo y | aptitude install curl \
                             libcurl3 1> /dev/null
-  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun01-curl.log
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun-preseed-curl.log
 fi
 
 ######################
@@ -299,7 +298,7 @@ fi
 # tips supplémentaire : pony ssh sur grml
 # http://grml.org/zsh-pony/
 #
-if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun01-zsh.log ]
+if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun-preseed-zsh.log ]
 then
   echo "  Installation de zsh"
   mv /etc/zsh/zlogin /etc/zsh/zlogin_sav 2> /dev/null
@@ -319,10 +318,10 @@ then
   # https://wiki.archlinux.org/index.php/Zsh
   #echo "/usr/bin/zsh" | chsh
   chsh -s /bin/zsh root
-  chsh -s /bin/zsh garel
+  chsh -s /bin/zsh blueflamingo
 
-  echo "  Création d'un fichier zshrc pour l'utilisateur garel"
-  echo "# Created by newuser" > /home/garel/.zshrc
+  echo "  Création d'un fichier zshrc pour l'utilisateur blueflamingo"
+  echo "# Created by newuser" > /home/blueflamingo/.zshrc
 
   echo "  Changement du shell par defaut pour les futurs utilisateurs"
   # pour changer le shell des futurs utilisateurs
@@ -386,5 +385,5 @@ then
   #`/etc/zsh/zshrc`
   /bin/zsh /etc/zsh/zshrc
 
-  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun01-zsh.log
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun-preseed-zsh.log
 fi

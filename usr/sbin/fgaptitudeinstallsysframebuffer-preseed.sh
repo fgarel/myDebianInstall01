@@ -3,7 +3,7 @@
 # Première partie des applications "système framebuffer"
 
 ###########################################
-echo "fgaptitudeinstallsysframebuffer01.sh :  Installation d'outils pour le mode console (Partie 01)"
+echo "fgaptitudeinstallsysframebuffer-preseed.sh :  Installation d'outils pour le mode console (Partie 01)"
 
 mkdir /var/log/fg 2> /dev/null
 
@@ -62,7 +62,7 @@ fi
 # Installation d'utilitaires en framebuffer
 # http://kmandla.wordpress.com/2010/04/16/a-quick-look-at-framebuffer-applications/
 
-if [ ! -e /var/log/fg/fgaptitudeinstallsysframebuffer01-divers1.log ]
+if [ ! -e /var/log/fg/fgaptitudeinstallsysframebuffer-preseed-divers1.log ]
 then
 
   echo "  Installation d'utilitaires divers1"
@@ -73,7 +73,7 @@ then
                             libdjvulibre-text/testing \
                             libdjvulibre21/testing 1> /dev/null
 
-  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsysframebuffer01-divers1.log
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsysframebuffer-preseed-divers1.log
 fi
 
 
@@ -103,7 +103,7 @@ fi
 
 
 
-if [ ! -e /var/log/fg/fgaptitudeinstallsysframebuffer01-divers2.log ]
+if [ ! -e /var/log/fg/fgaptitudeinstallsysframebuffer-preseed-divers2.log ]
 then
 
   echo "  Installation d'utilitaires divers2"
@@ -114,6 +114,6 @@ then
                             libtiff4/testing 1> /dev/null
 
   update-alternatives --remove x-www-browser /usr/bin/xlinks2 1> /dev/null
-  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsysframebuffer01-divers2.log
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsysframebuffer-preseed-divers2.log
 fi
 

@@ -4,14 +4,14 @@ export https_proxy=$http_proxy
 export LANG=fr_FR.UTF-8
 
 #
-echo "fgaptitudedo01.sh :                     Actions commencées lors de l'installation automatique"
+echo "fgaptitude-preseed.sh :                 Actions commencées lors de l'installation automatique"
 
 mkdir /var/log/fg 2> /dev/null
 
 # chainage avec les scripts de configuration et les mises à jour
 
-fgaptitudeupdate01.sh
-fgaptitudeclean.sh
+fgaptitudeupdate-preseed.sh
+fgaptitudeclean-preseed.sh
 # installation de quelques applications et utilitaires
 # spécifiques à l'administration du système
 # ces applications systèmes sont divisés en trois groupes
@@ -23,9 +23,9 @@ fgaptitudeclean.sh
 # sauvegarde
 #fgaptitudeinstallsys.sh
 # commun
-fgaptitudeinstallsyscommun01.sh
+fgaptitudeinstallsyscommun-preseed.sh
 # framebuffer
-fgaptitudeinstallsysframebuffer01.sh
+fgaptitudeinstallsysframebuffer-preseed.sh
 # X
 #fgaptitudeinstallsysx01.sh
 
@@ -46,7 +46,7 @@ then
 fi
 sudo -u root fgaptitudeinstallvim01c.sh
 
-fgaptitudeupgrade01.sh
+fgaptitudeupgrade-preseed.sh
 fgaptitudeinstallpython.sh
 if [ ! -e /var/log/fg/fgaptitudeinstallpythonfabric-fabric.log ]
 then

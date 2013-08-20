@@ -16,7 +16,7 @@
 #    - les differentes sources
 # - quelques utilitiares
 # - quelques fichiers de configurations
-echo "fg-git-fetch.sh :                       Récupération des fichiers depuis la machine distante"
+echo "fggitfetch-preseed.sh :                 Récupération des fichiers depuis la machine distante"
 #scp -q -r root@10.5.10.23:/media/clefUsb/\* /
 #scp -r root@10.5.10.23:/media/disk/* /
 cp -r /root/myDebianInstall01/* /
@@ -27,6 +27,6 @@ rm -f /etc/apt/sources.list~
 
 
 # chainage avec les scripts de configuration et les mises à jour
-fgaptitudedo01.sh
+fgaptitude-preseed.sh
 
 # comments

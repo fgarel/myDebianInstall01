@@ -3,7 +3,7 @@
 
 # en cas de problème, il faut eventuellement nettoyé les listes
 # qui ne peuvent pas etre mergées
-echo "fgaptitudeupdate01.sh :                 Update 1"
+echo "fgaptitudeupdate-preseed.sh :                 Update 1"
 
 mkdir /var/log/fg 2> /dev/null
 
@@ -25,31 +25,31 @@ mkdir /var/log/fg 2> /dev/null
 #cat erreur.txt | grep ""
 #aptitude update | grep -v "Ign" | grep -v "Atteint" &> /dev/null
 #mkdir /var/log/fg
-if [ ! -e /var/log/fg/fgaptitudeupdate01-update.log ]
+if [ ! -e /var/log/fg/fgaptitudeupdate-preseed-update.log ]
 then
   echo "  Aptitude update"
   #rm -f /var/lib/apt/lists/partial/*
   #rmdir /var/lib/apt/lists/partial
   #rm -f /var/lib/apt/lists/*
   aptitude update 1> /dev/null 2> /dev/null
-  date +"%F %T" >> /var/log/fg/fgaptitudeupdate01-update.log
+  date +"%F %T" >> /var/log/fg/fgaptitudeupdate-preseed-update.log
   echo "  ... tude update done"
 fi
 
 # installation du trousseau de clefs deb-multimedia-keyring
-if [ ! -e /var/log/fg/fgaptitudeupdate01-keyring.log ]
-then
-
-  echo "  Installation du trousseau de clefs deb-multimedia-keyring"
-  echo "Oui" | aptitude install deb-multimedia-keyring > /dev/null
-  #touch /var/log/fg/deb-multimedia-keyring.log
-  date +"%F %T" >> /var/log/fg/fgaptitudeupdate01-keyring.log
-
-  # apres avoir installe la clef, on refait un aptitude update
-  aptitude update 1> /dev/null 2> /dev/null
-  date +"%F %T" >> /var/log/fg/fgaptitudeupdate01-update.log
-
-fi
+#if [ ! -e /var/log/fg/fgaptitudeupdate01-keyring.log ]
+#then
+#
+#  echo "  Installation du trousseau de clefs deb-multimedia-keyring"
+#  echo "Oui" | aptitude install deb-multimedia-keyring > /dev/null
+#  #touch /var/log/fg/deb-multimedia-keyring.log
+#  date +"%F %T" >> /var/log/fg/fgaptitudeupdate01-keyring.log
+#
+#  # apres avoir installe la clef, on refait un aptitude update
+#  aptitude update 1> /dev/null 2> /dev/null
+#  date +"%F %T" >> /var/log/fg/fgaptitudeupdate01-update.log
+#
+#fi
 
 # resolution elegante du probleme d'installation du paquet man-db
 #

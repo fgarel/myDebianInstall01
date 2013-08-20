@@ -1,6 +1,6 @@
 #!/bin/sh
 
-echo "fgaptitudeupgrade01.sh :                Mise à jour"
+echo "fgaptitudeupgrade-preseed.sh :                Mise à jour"
 if [ ! -e /var/log/fg/fgaptitudeupgrade-upgrade.log ]
 then
   echo "  Aptitude full-upgrade"
