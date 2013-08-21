@@ -306,7 +306,7 @@ then
   mv /etc/zsh/zprofile /etc/zsh/zprofile_sav 2> /dev/null
   mv /etc/zsh/zshenv /etc/zsh/zshenv_sav 2> /dev/null
   mv /etc/zsh/zshrc /etc/zsh/zshrc_sav 2> /dev/null
-#  echo y | aptitude install zsh 1> /dev/null
+  echo y | aptitude install zsh 1> /dev/null
   echo "  Sauvegarde des fichiers de configuration zsh du responsable du paquet"
   mv /etc/zsh/zprofile /etc/zsh/zprofile_mainteneur_debian 2> /dev/null
   mv /etc/zsh/zshrc /etc/zsh/zshrc_mainteneur_debian 2> /dev/null
@@ -317,8 +317,8 @@ then
   # pour changer le shell de l'utilisateur en cours
   # https://wiki.archlinux.org/index.php/Zsh
   #echo "/usr/bin/zsh" | chsh
-#  chsh -s /bin/zsh root
-#  chsh -s /bin/zsh blueflamingo
+  chsh -s /bin/zsh root
+  chsh -s /bin/zsh blueflamingo
 
   echo "  Création d'un fichier zshrc pour l'utilisateur blueflamingo"
   echo "# Created by newuser" > /home/blueflamingo/.zshrc
@@ -383,7 +383,7 @@ then
   echo "  Source de /etc/zsh/zshrc"
   #source /etc/zsh/zshrc
   #`/etc/zsh/zshrc`
-#  /bin/zsh /etc/zsh/zshrc
+  /bin/zsh /etc/zsh/zshrc
 
   date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun-preseed-zsh.log
 fi

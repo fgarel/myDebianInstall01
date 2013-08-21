@@ -246,7 +246,7 @@ Pin-Priority: 600
 #----------------------------------------------------------------------450-990-
 Package: *
 Pin: release o=Debian,l=Debian-Security,a=testing
-Pin-Priority: 450
+Pin-Priority: 990
 
 #------------------------------------------------------------------------------
 #deb http://ftp.fr.debian.org/debian-security/ testing/updates main contrib non-free
@@ -277,7 +277,7 @@ Pin-Priority: 450
 #----------------------------------------------------------------------400-970-
 Package: *
 Pin: release o=Debian,l=Debian-Security,a=testing
-Pin-Priority: 400
+Pin-Priority: 970
 
 #------------------------------------------------------------------------------
 #deb http://security.debian.org/ testing/updates main contrib non-free
@@ -308,7 +308,7 @@ Pin-Priority: 400
 #----------------------------------------------------------------------300-950-
 Package: *
 Pin: release o=Debian,l=Debian,a=testing-proposed-updates
-Pin-Priority: 300
+Pin-Priority: 950
 
 #------------------------------------------------------------------------------
 #deb http://ftp.fr.debian.org/debian/ testing-proposed-updates main contrib non-free
@@ -371,7 +371,7 @@ Pin-Priority: 300
 #----------------------------------------------------------------------150-910-
 Package: *
 Pin: release o=Debian,l=Debian,a=testing
-Pin-Priority: 150
+Pin-Priority: 910
 
 #------------------------------------------------------------------------------
 #deb http://ftp.fr.debian.org/debian/ testing main contrib non-free

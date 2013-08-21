@@ -48,6 +48,9 @@ Utilisation de ce projet
          http_proxy=http://10.2.10.6:3128/
          url=fgarel.ovh.org
   sinon
+    auto interface=eth1
+         url=fgarel.ovh.org
+  ou bien encore
     auto url=fgarel.ovh.org
 5 Patientez pendant l'installation de votre machine
 6 Au redémarrage, vous pouvez vous logguer en tant que blueflamingo,
