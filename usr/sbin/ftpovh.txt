@@ -1,0 +1,9 @@
+open ftp.free.ovh.org
+user fgarel
+pwd
+cd www/d-i/wheezy/
+pwd
+lcd ../../home/blueflamingo/public_html/d-i/wheezy/
+mput preseed.cfg
+bye
+

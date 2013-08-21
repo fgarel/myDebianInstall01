@@ -1,0 +1,69 @@
+010;apache2.2-bin apache2 apache2-mpm-worker
+020;libapache2-mod-ldap-userdir
+030;imagemagick
+040;libmagickcore5-extra
+050;unixodbc
+060;mysql-common
+070;
+080;
+090;
+100;
+110;
+120;
+130;
+140;
+150;
+160;postgresql-9.1 postgresql-common postgresql-client-9.1 postgresql-client-common
+170;postgresql-server-dev-9.1
+180;libxml2-utils
+190;xsltproc
+200;libjson0-dev
+210;dblatex texlive
+220;docbook-xsl
+230;
+240;
+250;
+260;
+270;
+280;
+290;
+300;
+330;
+340;
+350;
+360;
+370;
+510;
+520;
+530;trac trac-git
+540;cups cups-pdf
+550;sudo
+560;ack-grep
+570;hwinfo
+580;ncurses-term
+590;ncdu
+600;bzip2
+610;p7zip-full
+620;unzip
+630;make
+640;build-essential
+650;devscripts
+660;fakeroot
+670;flex
+680;bison
+690;libreadline-dev
+700;autoconf
+710;automake
+720;libtool
+730;lsb-release
+740;mlocate
+750;tmux
+760;openssh-server
+770;git-core
+780;subversion subversion-tools
+790;curl
+800;etckeeper
+810;elinks
+820;zsh
+
+

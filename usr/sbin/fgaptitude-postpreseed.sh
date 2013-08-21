@@ -4,7 +4,7 @@ export https_proxy=$http_proxy
 export LANG=fr_FR.UTF-8
 
 #
-echo "fgaptitude-gisuser.sh :                     Actions manuelles"
+echo "fgaptitude-postpreseed.sh :                     Actions manuelles"
 
 mkdir /var/log/fg 2> /dev/null
 
