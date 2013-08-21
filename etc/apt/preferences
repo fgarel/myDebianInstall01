@@ -148,8 +148,11 @@ Pin-Priority: 750
 #       => http://ftp.fr.debian.org/debian-backports/ squeeze-backports
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 #------------------------------------------------------------------------------
+#Package: *
+#Pin: release o=Debian Backports,l=Debian Backports,a=squeeze-backports
+#Pin-Priority: 700
 Package: *
-Pin: release o=Debian Backports,l=Debian Backports,a=squeeze-backports
+Pin: release o=Debian Backports,l=Debian Backports,a=wheezy-backports
 Pin-Priority: 700
 
 #------------------------------------------------------------------------------
