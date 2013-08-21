@@ -3,7 +3,7 @@
 
 # en cas de problème, il faut eventuellement nettoyé les listes
 # qui ne peuvent pas etre mergées
-echo "fgaptitudeupdate02.sh :                 Update 2"
+echo "fgaptitudeupdate.sh :                 Update 2"
 
 mkdir /var/log/fg 2> /dev/null
 

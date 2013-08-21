@@ -28,5 +28,6 @@ rm -f /etc/apt/sources.list~
 
 # chainage avec les scripts de configuration et les mises à jour
 fgaptitude-preseed.sh
+fgaptitude-gisuser-preseed.sh
 
 # comments

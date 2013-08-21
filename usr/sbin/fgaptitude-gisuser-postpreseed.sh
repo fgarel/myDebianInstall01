@@ -4,14 +4,14 @@ export https_proxy=$http_proxy
 export LANG=fr_FR.UTF-8
 
 #
-echo "fgaptitudedo02.sh :                     Actions manuelles"
+echo "fgaptitude-gisuser-postpreseed.sh :                     Actions manuelles"
 
 mkdir /var/log/fg 2> /dev/null
 
 # chainage avec les scripts de configuration et les mises à jour
 
-fgaptitudeupdate02.sh
-fgaptitudeinstallsysframebuffer02a.sh
+#fgaptitudeupdate.sh
+#fgaptitudeinstallsysframebuffer02a.sh
 
 # installation de quelques applications et utilitaires
 # spécifiques à l'administration du système
@@ -24,9 +24,9 @@ fgaptitudeinstallsysframebuffer02a.sh
 # commun
 #fgaptitudeinstallsyscommun02.sh
 # framebuffer
-fgaptitudeinstallsysframebuffer02b.sh
+#fgaptitudeinstallsysframebuffer02b.sh
 # X
-fgaptitudeinstallsysx02a.sh
+#fgaptitudeinstallsysx02a.sh
 
 # Mise à jour du système
 #fgaptitudeupgrade02.sh

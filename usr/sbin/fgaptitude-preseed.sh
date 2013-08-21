@@ -47,43 +47,43 @@ fi
 sudo -u root fgaptitudeinstallvim01c.sh
 
 fgaptitudeupgrade-preseed.sh
-fgaptitudeinstallpython.sh
-if [ ! -e /var/log/fg/fgaptitudeinstallpythonfabric-fabric.log ]
-then
-  echo "  python fabric"
-  sudo -u blueflamingo fgaptitudeinstallpythonfabric.sh ; cd $OLDPWD
-  date +"%F %T" >> /var/log/fg/fgaptitudeinstallpythonfabric-fabric.log
-fi
-if [ ! -e /var/log/fg/fgaptitudeinstallpythonpyramid-pyramid.log ]
-then
-  echo "  python pyramid"
-  sudo -u blueflamingo fgaptitudeinstallpythonpyramid.sh ; cd $OLDPWD
-  date +"%F %T" >> /var/log/fg/fgaptitudeinstallpythonpyramid-pyramid.log
-fi
-if [ ! -e /var/log/fg/fgaptitudeinstallpythonmapnik-mapnik.log ]
-then
-  echo "  python mapnik"
-  sudo -u blueflamingo fgaptitudeinstallpythonmapnik.sh ; cd $OLDPWD
-  date +"%F %T" >> /var/log/fg/fgaptitudeinstallpythonmapnik-mapnik.log
-fi
-if [ ! -e /var/log/fg/fgaptitudeinstallpythongeonode-geonode.log ]
-then
-  echo "  python geonode"
-  sudo -u blueflamingo fgaptitudeinstallpythongeonode.sh ; cd $OLDPWD
-  date +"%F %T" >> /var/log/fg/fgaptitudeinstallpythongeonode-geonode.log
-fi
-if [ ! -e /var/log/fg/fgaptitudeinstallpythonckan-ckan.log ]
-then
-  echo "  python ckan"
-  sudo -u blueflamingo fgaptitudeinstallpythonckan.sh ; cd $OLDPWD
-  date +"%F %T" >> /var/log/fg/fgaptitudeinstallpythonckan-ckan.log
-fi
-if [ ! -e /var/log/fg/fgaptitudeinstallpythongeopy-geopy.log ]
-then
-  echo "  python geopy"
-  sudo -u blueflamingo fgaptitudeinstallpythongeopy.sh ; cd $OLDPWD
-  date +"%F %T" >> /var/log/fg/fgaptitudeinstallpythongeopy-geopy.log
-fi
+#fgaptitudeinstallpython.sh
+#if [ ! -e /var/log/fg/fgaptitudeinstallpythonfabric-fabric.log ]
+#then
+#  echo "  python fabric"
+#  sudo -u blueflamingo fgaptitudeinstallpythonfabric.sh ; cd $OLDPWD
+#  date +"%F %T" >> /var/log/fg/fgaptitudeinstallpythonfabric-fabric.log
+#fi
+#if [ ! -e /var/log/fg/fgaptitudeinstallpythonpyramid-pyramid.log ]
+#then
+#  echo "  python pyramid"
+#  sudo -u blueflamingo fgaptitudeinstallpythonpyramid.sh ; cd $OLDPWD
+#  date +"%F %T" >> /var/log/fg/fgaptitudeinstallpythonpyramid-pyramid.log
+#fi
+#if [ ! -e /var/log/fg/fgaptitudeinstallpythonmapnik-mapnik.log ]
+#then
+#  echo "  python mapnik"
+#  sudo -u blueflamingo fgaptitudeinstallpythonmapnik.sh ; cd $OLDPWD
+#  date +"%F %T" >> /var/log/fg/fgaptitudeinstallpythonmapnik-mapnik.log
+#fi
+#if [ ! -e /var/log/fg/fgaptitudeinstallpythongeonode-geonode.log ]
+#then
+#  echo "  python geonode"
+#  sudo -u blueflamingo fgaptitudeinstallpythongeonode.sh ; cd $OLDPWD
+#  date +"%F %T" >> /var/log/fg/fgaptitudeinstallpythongeonode-geonode.log
+#fi
+#if [ ! -e /var/log/fg/fgaptitudeinstallpythonckan-ckan.log ]
+#then
+#  echo "  python ckan"
+#  sudo -u blueflamingo fgaptitudeinstallpythonckan.sh ; cd $OLDPWD
+#  date +"%F %T" >> /var/log/fg/fgaptitudeinstallpythonckan-ckan.log
+#fi
+#if [ ! -e /var/log/fg/fgaptitudeinstallpythongeopy-geopy.log ]
+#then
+#  echo "  python geopy"
+#  sudo -u blueflamingo fgaptitudeinstallpythongeopy.sh ; cd $OLDPWD
+#  date +"%F %T" >> /var/log/fg/fgaptitudeinstallpythongeopy-geopy.log
+#fi
 
 # installation de quelques applications et utilitaires
 # spécifiques au domaine du sig
@@ -97,7 +97,7 @@ fi
 #    - les differentes sources
 # - quelques utilitiares
 # - quelques fichiers de configurations
-echo "fgaptitudedo01 : Récupération des fichiers du projet 'myDebianInstall02'"
+echo "fgaptitude-preseed : Récupération des fichiers du projet 'myDebianInstall02'"
 git clone --progress --verbose http://github.com/fgarel/myDebianInstall02.git /root/myDebianInstall02 2> /dev/null
 cd /root/myDebianInstall02
 git fetch --progress --verbose
