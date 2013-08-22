@@ -18,9 +18,12 @@ mkdir /var/log/fg 2> /dev/null
 if [ ! -e /var/log/fg/fgaptitudeinstallsysframebuffer02b-fbterm.log ]
 then
   echo "  Installation de fbterm"
-  echo y | aptitude install fontconfig-config/testing 1> /dev/null
-  echo y | aptitude install libfontconfig1/testing 1> /dev/null
-  echo y | aptitude install fbterm/testing 1> /dev/null
+#  echo y | aptitude install fontconfig-config/testing 1> /dev/null
+#  echo y | aptitude install libfontconfig1/testing 1> /dev/null
+#  echo y | aptitude install fbterm/testing 1> /dev/null
+  echo y | aptitude install fontconfig-config 1> /dev/null
+  echo y | aptitude install libfontconfig1 1> /dev/null
+  echo y | aptitude install fbterm 1> /dev/null
   date +"%F %T" >> /var/log/fg/fgaptitudeinstallsysframebuffer02b-fbterm.log
 fi
 
