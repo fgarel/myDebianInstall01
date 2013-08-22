@@ -23,7 +23,9 @@ echo 'source ~/.vimrc.local.d/functions.vim' >> ~/.vimrc.local
 mkdir ~/.vimrc.local.d 2> /dev/null
 # theme.vim
 echo '" chargment du theme molokai' > ~/.vimrc.local.d/theme.vim
-echo colorscheme molokai >> ~/.vimrc.local.d/theme.vim
+echo 'colorscheme molokai' >> ~/.vimrc.local.d/theme.vim
+echo '" chargment du theme solarized' > ~/.vimrc.local.d/theme.vim
+echo 'colorscheme solarized' >> ~/.vimrc.local.d/theme.vim
 # functions.vim
 echo '" chargement des fonctions' > ~/.vimrc.local.d/functions.vim
 
