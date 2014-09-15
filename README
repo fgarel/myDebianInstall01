@@ -172,3 +172,30 @@ du site impacté :
 
      Recuperation, cad, mise à jour du depot local à partir du dépot distant
      git clone --progress --verbose http://github.com/fgarel/myDebianInstall01.git /root/myDebianInstall01
+
+
+Installation
+============
+
+Install blueflamingo and friends by running:
+
+.. code::
+
+  $ curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | bash
+
+Updating
+========
+
+To update blueflamingo and friends by running:
+
+.. code::
+
+  $ pyenv update
+
+Uninstallation
+==============
+
+Everything of blueflamingo are installed within $BLUEFLAMINGO_ROOT (default: ~/.blueflamingo). To uninstall, just removing it.
+.. code::
+
+  $ rm -fr ~/.blueflamingo
