@@ -81,3 +81,8 @@ if ! command -v blueflamingo 1>/dev/null; then
     esac
   } >&2
 fi
+
+
+echo "${BLUEFLAMINGO_ROOT}"
+#cp "${BLUEFLAMINGO_ROOT}"/etc/apt/preferences /etc/apt/preferences
+#cp "${BLUEFLAMINGO_ROOT}"/etc/apt/sources.list.d/all.list /etc/apt/sources.list.d/all.list
