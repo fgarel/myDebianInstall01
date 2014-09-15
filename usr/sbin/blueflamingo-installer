@@ -30,7 +30,8 @@ if ! command -v git 1>/dev/null 2>&1; then
   exit 1
 fi
 
-checkout "git://github.com/fgarel/myDebianInstall01.git"     "${BLUEFLAMINGO_ROOT}"
+#checkout "git://github.com/fgarel/myDebianInstall01.git"     "${BLUEFLAMINGO_ROOT}"
+checkout "https://github.com/fgarel/myDebianInstall01.git"     "${BLUEFLAMINGO_ROOT}"
 #checkout "git://github.com/yyuu/blueflamingo.git"            "${BLUEFLAMINGO_ROOT}"
 #checkout "git://github.com/yyuu/blueflamingo-doctor.git"     "${BLUEFLAMINGO_ROOT}/plugins/blueflamingo-doctor"
 #checkout "git://github.com/yyuu/blueflamingo-installer.git"  "${BLUEFLAMINGO_ROOT}/plugins/blueflamingo-installer"
@@ -39,6 +40,7 @@ checkout "git://github.com/fgarel/myDebianInstall01.git"     "${BLUEFLAMINGO_ROO
 #checkout "git://github.com/yyuu/blueflamingo-virtualenv.git" "${BLUEFLAMINGO_ROOT}/plugins/blueflamingo-virtualenv"
 #checkout "git://github.com/yyuu/blueflamingo-which-ext.git"  "${BLUEFLAMINGO_ROOT}/plugins/blueflamingo-which-ext"
 
+: <<'LONGCOMMENTAIRE'
 if ! command -v blueflamingo 1>/dev/null; then
   { echo
     colorize 1 "WARNING"
@@ -81,8 +83,11 @@ if ! command -v blueflamingo 1>/dev/null; then
     esac
   } >&2
 fi
-
+LONGCOMMENTAIRE
 
 echo "${BLUEFLAMINGO_ROOT}"
+cd "${BLUEFLAMINGO_ROOT}"/etc/apt/
+cat preferences
+cd -
 #cp "${BLUEFLAMINGO_ROOT}"/etc/apt/preferences /etc/apt/preferences
 #cp "${BLUEFLAMINGO_ROOT}"/etc/apt/sources.list.d/all.list /etc/apt/sources.list.d/all.list
