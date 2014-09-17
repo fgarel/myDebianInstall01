@@ -91,7 +91,7 @@ echo "OS = "$OS
 if [ $OS='Debian' ]
 then
     cd "${BLUEFLAMINGO_ROOT}"/etc/apt/
-    cat preferences
+    cat preferences | head -n 5
     cd -
 elif [ $OS='Ubuntu' ]
 then
