@@ -86,8 +86,10 @@ fi
 LONGCOMMENTAIRE
 
 echo "${BLUEFLAMINGO_ROOT}"
+cat /etc/issue
+cat /etc/debian_version
 cd "${BLUEFLAMINGO_ROOT}"/etc/apt/
-cat preferences
+#cat preferences
 cd -
 #cp "${BLUEFLAMINGO_ROOT}"/etc/apt/preferences /etc/apt/preferences
 #cp "${BLUEFLAMINGO_ROOT}"/etc/apt/sources.list.d/all.list /etc/apt/sources.list.d/all.list
