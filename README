@@ -181,7 +181,7 @@ Install blueflamingo and friends by running:
 
 .. code::
 
-  $ curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | bash
+  curl -L https://raw.githubusercontent.com/fgarel/myDebianInstall01/master/usr/sbin/blueflamingo-installer | bash
 
 Updating
 ========
@@ -190,7 +190,7 @@ To update blueflamingo and friends by running:
 
 .. code::
 
-  $ pyenv update
+  $ blueflamingo update
 
 Uninstallation
 ==============
