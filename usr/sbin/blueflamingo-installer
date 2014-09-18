@@ -98,6 +98,10 @@ then
     echo "aptitude update"
     aptitude update
     echo "OS 2 = "$OS
+    cp -r "${BLUEFLAMINGO_ROOT}"/usr/sbin/* /usr/local/sbin/
+    #"${BLUEFLAMINGO_ROOT}"/usr/sbin/fgaptitudedoall.sh
+    /usr/local/sbin/fgaptitudedoall.sh
+    echo "OS 3 = "$OS
 elif [ $OS = 'Ubuntu' ]
 then
     echo $OS
