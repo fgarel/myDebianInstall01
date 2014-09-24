@@ -210,7 +210,7 @@ fi
 
 ############################
 # ajout de l'utilitaire tmux
-if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun-pressed-tmux.log ]
+if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun-preseed-tmux.log ]
 then
   echo "  Installation de tmux"
   echo y | aptitude install tmux 1> /dev/null
