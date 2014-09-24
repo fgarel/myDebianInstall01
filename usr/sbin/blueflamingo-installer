@@ -95,12 +95,14 @@ then
     cp "${BLUEFLAMINGO_ROOT}"/etc/apt/preferences /etc/apt/preferences
     cp "${BLUEFLAMINGO_ROOT}"/etc/apt/sources.list.d/all.list /etc/apt/sources.list.d/all.list
     cd -
+    rm -f /etc/apt/sources.list
     echo "aptitude update"
     aptitude update
     echo "OS 2 = "$OS
     cp -r "${BLUEFLAMINGO_ROOT}"/usr/sbin/* /usr/local/sbin/
     #"${BLUEFLAMINGO_ROOT}"/usr/sbin/fgaptitudedoall.sh
-    /usr/local/sbin/fgaptitudedoall.sh
+    # pour le moment, on ne lance pas d'installation
+    #/usr/local/sbin/fgaptitudedoall.sh
     echo "OS 3 = "$OS
 elif [ $OS = 'Ubuntu' ]
 then
