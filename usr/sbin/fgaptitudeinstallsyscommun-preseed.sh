@@ -199,6 +199,15 @@ then
   date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun-preseed-mlocate.log
 fi
 
+###############################
+# ajout de l'utilitaire net-tools
+if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun-preseed-nettools.log ]
+then
+  echo "  Installation de net-tools"
+  echo y | aptitude install net-tools 1> /dev/null
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallsyscommun-preseed-nettools.log
+fi
+
 ############################
 # ajout de l'utilitaire tmux
 if [ ! -e /var/log/fg/fgaptitudeinstallsyscommun-pressed-tmux.log ]
