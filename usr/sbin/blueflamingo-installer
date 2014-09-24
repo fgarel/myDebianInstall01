@@ -90,11 +90,11 @@ OS=`cat /etc/issue.net | cut -f 1 -d ' '`
 echo "OS 1 = "$OS
 if [ $OS = 'Debian' ]
 then
-    cd "${BLUEFLAMINGO_ROOT}"/etc/apt/
-    cat preferences | head -n 5
+    #cd "${BLUEFLAMINGO_ROOT}"/etc/apt/
+    #cat preferences | head -n 5
     cp "${BLUEFLAMINGO_ROOT}"/etc/apt/preferences /etc/apt/preferences
     cp "${BLUEFLAMINGO_ROOT}"/etc/apt/sources.list.d/all.list /etc/apt/sources.list.d/all.list
-    cd -
+    #cd -
     rm -f /etc/apt/sources.list
     #echo "aptitude update"
     #aptitude update
