@@ -36,6 +36,11 @@ then
   echo "  ... tude update done"
 fi
 
+
+locale-gen en_US en_US.UTF-8 fr_FR fr_FR.UTF-8
+dpkg-reconfigure locales
+
+
 # installation du trousseau de clefs deb-multimedia-keyring
 #if [ ! -e /var/log/fg/fgaptitudeupdate01-keyring.log ]
 #then
