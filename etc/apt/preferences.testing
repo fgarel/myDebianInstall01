@@ -1,20 +1,206 @@
 ###############################################################################
+#http://ftp.fr.debian.org/debian-security/dists/testing/updates/Release
+#http://ftp.fr.debian.org/debian-security/dists/jessie/updates/Release
+###############################################################################
+#Origin: Debian
+#Label: Debian-Security
+#Suite: testing
+#Version:
+#Codename: jessie
+#Components: updates/main updates/contrib updates/non-free
+#Description: Debian x.y Security Updates
+###############################################################################
+#==============================================================================
+# Origin: Debian
+# Label: Debian-Security
+# Suite: testing
+# Codename: jessie
+#==============================================================================
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# /etc/apt/sources.list.d/testing.list
+#       => http://ftp.fr.debian.org/debian-security/ testing/updates
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#------------------------------------------------------------------------------
+Package: *
+Pin: release o=Debian,l=Debian-Security,a=testing
+Pin-Priority: 950
+
+#------------------------------------------------------------------------------
+#deb http://ftp.fr.debian.org/debian-security/ testing/updates main contrib non-free
+#deb-src http://ftp.fr.debian.org/debian-security/ testing/updates main contrib non-free
+
+
+###############################################################################
+#http://ftp.fr.debian.org/debian/dists/testing-updates/Release
+#http://ftp.fr.debian.org/debian/dists/wheezy-updates/Release
+###############################################################################
+#Origin: Debian
+#Label: Debian
+#Suite: testing-updates
+#Codename: jessie-updates
+#Components: main contrib non-free
+#Description: Updated packages for Debian 8.0
+###############################################################################
+#==============================================================================
+# Origin: Debian
+# Label: Debian
+# Suite: testing-updates
+# Codename: jessie-updates
+#==============================================================================
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# /etc/apt/sources.list.d/testing.list
+#       => http://ftp.fr.debian.org/debian/ testing-updates
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#----------------------------------------------------------------------300-950-
+Package: *
+Pin: release o=Debian,l=Debian,a=testing-updates
+Pin-Priority: 900
+
+#------------------------------------------------------------------------------
+#deb http://ftp.fr.debian.org/debian/ testing-updates main contrib non-free
+#deb-src http://ftp.fr.debian.org/debian/ testing-updates main contrib non-free
+
+
+###############################################################################
+#http://ftp.fr.debian.org/debian/dists/testing-proposed-updates/Release
+#http://ftp.fr.debian.org/debian/dists/jessie-proposed-updates/Release
+###############################################################################
+#Origin: Debian
+#Label: Debian
+#Suite: testing-proposed-updates
+#Codename: jessie-proposed-updates
+#Components: main contrib non-free
+#Description: Debian x.y Testing distribution Proposed Updates - Not Released
+###############################################################################
+#==============================================================================
+# Origin: Debian
+# Label: Debian
+# Suite: testing-proposed-updates
+# Codename: jessie-proposed-updates
+#==============================================================================
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# /etc/apt/sources.list.d/testing.list
+#       => http://ftp.fr.debian.org/debian/ testing-proposed-updates
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#----------------------------------------------------------------------300-850-
+Package: *
+Pin: release o=Debian,l=Debian,a=testing-proposed-updates
+Pin-Priority: 850
+
+#------------------------------------------------------------------------------
+#deb http://ftp.fr.debian.org/debian/ testing-proposed-updates main contrib non-free
+#deb-src http://ftp.fr.debian.org/debian/ testing-proposed-updates main contrib non-free
+
+
+###############################################################################
+#http://ftp.fr.debian.org/debian-backports/dists/jessie-backports/Release
+###############################################################################
+#Origin: Debian Backports
+#Label: Debian Backports
+#Suite: jessie-backports
+#Codename: jessie-backports
+#Components: main contrib non-free
+#Description: Backports for the Jessie Distribution
+###############################################################################
+#==============================================================================
+# Origin: "Debian Backports"
+# Label: "Debian Backports"
+# Suite: jessie-backports
+# Codename: jessie-backports
+#==============================================================================
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# /etc/apt/sources.list.d/stable.list
+#       => http://ftp.fr.debian.org/debian-backports/ jessie-backports
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#------------------------------------------------------------------------------
+Package: *
+Pin: release o=Debian Backports,l=Debian Backports,a=jessie-backports
+Pin-Priority: 800
+
+#------------------------------------------------------------------------------
+#deb http://backports.debian.org/debian-backports/ jessie-backports main contrib non-free
+#deb-src http://backports.debian.org/debian-backports/ jessie-backports main contrib non-free
+
+
+###############################################################################
+#http://ftp.fr.debian.org/debian/dists/testing/Release
+#http://ftp.fr.debian.org/debian/dists/jessie/Release
+###############################################################################
+#Origin: Debian
+#Label: Debian
+#Suite: testing
+#Codename: jessie
+#Components: main contrib non-free
+#Description: Debian x.y Testing distribution - Not Released
+###############################################################################
+#==============================================================================
+# Origin: Debian
+# Label: Debian
+# Suite: testing
+# Codename: jessie
+#==============================================================================
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# /etc/apt/sources.list.d/testing.list
+#       => http://ftp.fr.debian.org/debian/ testing
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#----------------------------------------------------------------------150-910-
+Package: *
+Pin: release o=Debian,l=Debian,a=testing
+Pin-Priority: 750
+
+#------------------------------------------------------------------------------
+#deb http://ftp.fr.debian.org/debian/ testing main contrib non-free
+#deb-src http://ftp.fr.debian.org/debian/ testing main contrib non-free
+
+
+###############################################################################
+#http://qgis.org/debian/dists/testing/Release
+#http://qgis.org/debian/dists/jessie/Release
+###############################################################################
+#Origin: QGIS project
+#Label: QGIS repository
+#Suite: testing
+#Version: None
+#Codename: jessie
+#Components: main
+#Description: QGIS project Debian repository
+###############################################################################
+#==============================================================================
+# Origin: "QGIS project"
+# Label: "QGIS repository"
+# Suite: testing
+# Codename: jessie
+#==============================================================================
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# /etc/apt/sources.list.d/testing.list
+#       => http://qgis.org/debian/ testing
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#------------------------------------------------------------------------------
+Package: *
+Pin: release o=QGIS project,l=QGIS repository,a=testing
+Pin-Priority: 700
+
+#------------------------------------------------------------------------------
+#deb http://qgis.org/debian/ jessie main
+#deb-src http://qgis.org/debian/ jessie main
+
+###############################################################################
 #http://ftp.fr.debian.org/debian-security/dists/stable/updates/Release
-#http://ftp.fr.debian.org/debian-security/dists/squeeze/updates/Release
+#http://ftp.fr.debian.org/debian-security/dists/wheezy/updates/Release
 ###############################################################################
 #Origin: Debian
 #Label: Debian-Security
 #Suite: stable
-#Version: 6.0
-#Codename: squeeze
+#Version: 7.0
+#Codename: wheezy
 #Components: updates/main updates/contrib updates/non-free
-#Description: Debian 6.0 Security Updates
+#Description: Debian 7.0 Security Updates
 ###############################################################################
 #==============================================================================
 # Origin: Debian
 # Label: Debian-Security
 # Suite: stable
-# Codename: squeeze
+# Codename: wheezy
 #==============================================================================
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # /etc/apt/sources.list.d/stable.list
@@ -23,7 +209,7 @@
 #------------------------------------------------------------------------------
 Package: *
 Pin: release o=Debian,l=Debian-Security,a=stable
-Pin-Priority: 900
+Pin-Priority: 450
 
 #------------------------------------------------------------------------------
 #deb http://ftp.fr.debian.org/debian-security/ stable/updates main contrib non-free
@@ -31,62 +217,30 @@ Pin-Priority: 900
 
 
 ###############################################################################
-#http://security.debian.org/dists/stable/updates/Release
-#http://security.debian.org/dists/squeeze/updates/Release
-###############################################################################
-#Origin: Debian
-#Label: Debian-Security
-#Suite: stable
-#Version: 6.0
-#Codename: squeeze
-#Components: updates/main updates/contrib updates/non-free
-#Description: Debian 6.0 Security Updates
-###############################################################################
-#==============================================================================
-# Origin: Debian
-# Label: Debian-Security
-# Suite: stable
-# Codename: squeeze
-#==============================================================================
-#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-# /etc/apt/sources.list.d/stable.list
-#       => http://security.debian.org/ stable/updates
-#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-#------------------------------------------------------------------------------
-Package: *
-Pin: release o=Debian,l=Debian-Security,a=stable
-Pin-Priority: 850
-
-#------------------------------------------------------------------------------
-#deb http://security.debian.org/ stable/updates main contrib non-free
-#deb-src http://security.debian.org/ stable/updates main contrib non-free
-
-
-###############################################################################
 #http://ftp.fr.debian.org/debian/dists/stable-updates/Release
-#http://ftp.fr.debian.org/debian/dists/squeeze-updates/Release
+#http://ftp.fr.debian.org/debian/dists/wheezy-updates/Release
 ###############################################################################
 #Origin: Debian
 #Label: Debian
 #Suite: stable-updates
-#Codename: squeeze-updates
+#Codename: wheezy-updates
 #Components: main contrib non-free
-#Description: Updated packages for Debian 6.0
+#Description: Updated packages for Debian 7.0
 ###############################################################################
 #==============================================================================
 # Origin: Debian
 # Label: Debian
 # Suite: stable-updates
-# Codename: squeeze-updates
+# Codename: wheezy-updates
 #==============================================================================
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # /etc/apt/sources.list.d/stable.list
-#       => http://ftp.fr.debian.org/debian/ squeeze-updates
+#       => http://ftp.fr.debian.org/debian/ wheezy-updates
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 #------------------------------------------------------------------------------
 Package: *
 Pin: release o=Debian,l=Debian,a=stable-updates
-Pin-Priority: 800
+Pin-Priority: 400
 
 #------------------------------------------------------------------------------
 #deb http://ftp.fr.debian.org/debian/ stable-updates main contrib non-free
@@ -96,21 +250,21 @@ Pin-Priority: 800
 ###############################################################################
 #http://ftp.fr.debian.org/debian/dists/proposed-updates/Release
 #http://ftp.fr.debian.org/debian/dists/stable-proposed-updates/Release
-#http://ftp.fr.debian.org/debian/dists/squeeze-proposed-updates/Release
+#http://ftp.fr.debian.org/debian/dists/wheezy-proposed-updates/Release
 ###############################################################################
 #Origin: Debian
 #Label: Debian
 #Suite: proposed-updates
-#Version: 6.0-updates
-#Codename: squeeze-proposed-updates
+#Version: 7.0-updates
+#Codename: wheezy-proposed-updates
 #Components: main contrib non-free
-#Description: Proposed Updates for Debian 6.0 - Not Released
+#Description: Proposed Updates for Debian 7.0 - Not Released
 ###############################################################################
 #==============================================================================
 # Origin: Debian
 # Label: Debian
 # Suite: proposed-updates
-# Codename: squeeze-proposed-updates
+# Codename: wheezy-proposed-updates
 #==============================================================================
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # /etc/apt/sources.list.d/stable.list
@@ -119,7 +273,7 @@ Pin-Priority: 800
 #------------------------------------------------------------------------------
 Package: *
 Pin: release o=Debian,l=Debian,a=proposed-updates
-Pin-Priority: 750
+Pin-Priority: 350
 
 #------------------------------------------------------------------------------
 #deb http://ftp.fr.debian.org/debian/ proposed-updates main contrib non-free
@@ -127,86 +281,53 @@ Pin-Priority: 750
 
 
 ###############################################################################
-#http://ftp.fr.debian.org/debian-backports/dists/squeeze-backports/Release
+#http://ftp.fr.debian.org/debian-backports/dists/wheezy-backports/Release
 ###############################################################################
 #Origin: Debian Backports
 #Label: Debian Backports
-#Suite: squeeze-backports
-#Version: label=Debian Backports
-#Codename: squeeze-backports
+#Suite: wheezy-backports
+#Codename: wheezy-backports
 #Components: main contrib non-free
-#Description: Backports for the Squeeze Distribution
+#Description: Backports for the wheezy Distribution
 ###############################################################################
 #==============================================================================
 # Origin: "Debian Backports"
 # Label: "Debian Backports"
-# Suite: squeeze-backports
-# Codename: squeeze-backports
+# Suite: wheezy-backports
+# Codename: wheezy-backports
 #==============================================================================
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # /etc/apt/sources.list.d/stable.list
-#       => http://ftp.fr.debian.org/debian-backports/ squeeze-backports
+#       => http://ftp.fr.debian.org/debian-backports/ wheezy-backports
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 #------------------------------------------------------------------------------
 Package: *
-Pin: release o=Debian Backports,l=Debian Backports,a=squeeze-backports
-Pin-Priority: 700
+Pin: release o=Debian Backports,l=Debian Backports,a=wheezy-backports
+Pin-Priority: 300
 
 #------------------------------------------------------------------------------
-#deb http://backports.debian.org/debian-backports/ squeeze-backports main contrib non-free
-#deb-src http://backports.debian.org/debian-backports/ squeeze-backports main contrib non-free
-
-
-###############################################################################
-#http://deb-multimedia.org/dists/stable/Release
-#http://deb-multimedia.org/dists/squeeze/Release
-###############################################################################
-#Origin: Unofficial Multimedia Packages
-#Label: Unofficial Multimedia Packages
-#Suite: stable
-#Version: 6.0
-#Codename: squeeze
-#Components: main non-free
-#Description: This repository is mostly non-free
-###############################################################################
-#==============================================================================
-# Origin: "Unofficial Multimedia Packages"
-# Label: "Unofficial Multimedia Packages"
-# Suite: stable
-# Codename: squeeze
-#==============================================================================
-#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-# /etc/apt/sources.list.d/stable.list
-#       => http://www.deb-multimedia.org/ stable
-#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-#------------------------------------------------------------------------------
-#Package: *
-#Pin: release o=Unofficial Multimedia Packages,l=Unofficial Multimedia Packages,a=stable
-#Pin-Priority: 650
-
-#------------------------------------------------------------------------------
-#deb http://www.deb-multimedia.org/ stable main non-free
-#deb-src http://www.deb-multimedia.org/ stable main non-free
+#deb http://backports.debian.org/debian-backports/ wheezy-backports main contrib non-free
+#deb-src http://backports.debian.org/debian-backports/ wheezy-backports main contrib non-free
 
 
 ###############################################################################
 #http://ftp.fr.debian.org/debian/dists/stable/Release
-#http://ftp.fr.debian.org/debian/dists/squeeze/Release
-#http://ftp.fr.debian.org/debian/dists/Debian6.0.2/Release
+#http://ftp.fr.debian.org/debian/dists/wheezy/Release
+#http://ftp.fr.debian.org/debian/dists/Debian7.6/Release
 ###############################################################################
 #Origin: Debian
 #Label: Debian
 #Suite: stable
-#Version: 6.0.2.1
-#Codename: squeeze
+#Version: 7.6
+#Codename: wheezy
 #Components: main contrib non-free
-#Description: Debian 6.0.2.1 Released 26 June 2011
+#Description: Debian 7.6 Released 12 July 2014
 ###############################################################################
 #==============================================================================
 # Origin: Debian
 # Label: Debian
 # Suite: stable
-# Codename: squeeze
+# Codename: wheezy
 #==============================================================================
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # /etc/apt/sources.list.d/stable.list
@@ -215,7 +336,7 @@ Pin-Priority: 700
 #------------------------------------------------------------------------------
 Package: *
 Pin: release o=Debian,l=Debian,a=stable
-Pin-Priority: 600
+Pin-Priority: 250
 
 #------------------------------------------------------------------------------
 #deb http://ftp.fr.debian.org/debian/ stable main contrib non-free
@@ -223,191 +344,67 @@ Pin-Priority: 600
 
 
 ###############################################################################
-#http://ftp.fr.debian.org/debian-security/dists/testing/updates/Release
-#http://ftp.fr.debian.org/debian-security/dists/wheezy/updates/Release
+#http://qgis.org/debian/dists/stable/Release
+#http://qgis.org/debian/dists/wheezy/Release
 ###############################################################################
-#Origin: Debian
-#Label: Debian-Security
-#Suite: testing
-#Codename: wheezy
-#Components: updates/main updates/contrib updates/non-free
-#Description: Debian testing Security Updates
-###############################################################################
-#==============================================================================
-# Origin: Debian
-# Label: Debian-Security
-# Suite: testing
-# Codename: wheezy
-#==============================================================================
-#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-# /etc/apt/sources.list.d/testing.list
-#       => http://ftp.fr.debian.org/debian-security/ testing/updates
-#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-#----------------------------------------------------------------------450-990-
-Package: *
-Pin: release o=Debian,l=Debian-Security,a=testing
-Pin-Priority: 990
-
-#------------------------------------------------------------------------------
-#deb http://ftp.fr.debian.org/debian-security/ testing/updates main contrib non-free
-#deb-src http://ftp.fr.debian.org/debian-security/ testing/updates main contrib non-free
-
-
-###############################################################################
-#http://security.debian.org/dists/testing/updates/Release
-#http://security.debian.org/dists/wheezy/updates/Release
-###############################################################################
-#Origin: Debian
-#Label: Debian-Security
-#Suite: testing
-#Codename: wheezy
-#Components: updates/main updates/contrib updates/non-free
-#Description: Debian testing Security Updates
-###############################################################################
-#==============================================================================
-# Origin: Debian
-# Label: Debian-Security
-# Suite: testing
-# Codename: wheezy
-#==============================================================================
-#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-# /etc/apt/sources.list.d/testing.list
-#       => http://security.debian.org/ testing/updates
-#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-#----------------------------------------------------------------------400-970-
-Package: *
-Pin: release o=Debian,l=Debian-Security,a=testing
-Pin-Priority: 970
-
-#------------------------------------------------------------------------------
-#deb http://security.debian.org/ testing/updates main contrib non-free
-#deb-src http://security.debian.org/ testing/updates main contrib non-free
-
-
-###############################################################################
-#http://ftp.fr.debian.org/debian/dists/testing-proposed-updates/Release
-#http://ftp.fr.debian.org/debian/dists/wheezy-proposed-updates/Release
-###############################################################################
-#Origin: Debian
-#Label: Debian
-#Suite: testing-proposed-updates
-#Codename: wheezy-proposed-updates
-#Components: main contrib non-free
-#Description: Debian x.y Testing distribution Proposed Updates - Not Released
-###############################################################################
-#==============================================================================
-# Origin: Debian
-# Label: Debian
-# Suite: testing-proposed-updates
-# Codename: wheezy-proposed-updates
-#==============================================================================
-#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-# /etc/apt/sources.list.d/testing.list
-#       => http://ftp.fr.debian.org/debian/ testing-proposed-updates
-#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-#----------------------------------------------------------------------300-950-
-Package: *
-Pin: release o=Debian,l=Debian,a=testing-proposed-updates
-Pin-Priority: 950
-
-#------------------------------------------------------------------------------
-#deb http://ftp.fr.debian.org/debian/ testing-proposed-updates main contrib non-free
-#deb-src http://ftp.fr.debian.org/debian/ testing-proposed-updates main contrib non-free
-
-
-###############################################################################
-#http://deb-multimedia.org/dists/testing/Release
-#http://deb-multimedia.org/dists/wheezy/Release
-###############################################################################
-#Origin: Unofficial Multimedia Packages
-#Label: Unofficial Multimedia Packages
-#Suite: testing
+#Origin: QGIS project
+#Label: QGIS repository
+#Suite: stable
 #Version: None
 #Codename: wheezy
-#Components: main non-free
-#Description: This repository is mostly non-free
+#Components: main
+#Description: QGIS project Debian repository
 ###############################################################################
 #==============================================================================
-# Origin: "Unofficial Multimedia Packages"
-# Label: "Unofficial Multimedia Packages"
-# Suite: testing
+# Origin: "QGIS project"
+# Label: "QGIS repository"
+# Suite: stable
 # Codename: wheezy
 #==============================================================================
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-# /etc/apt/sources.list.d/testing.list
-#       => http://www.deb-multimedia.org/ testing
+# /etc/apt/sources.list.d/stable.list
+#       => http://qgis.org/debian/ stable
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-#----------------------------------------------------------------------200-930-
-#Package: *
-#Pin: release o=Unofficial Multimedia Packages,l=Unofficial Multimedia Packages,a=testing
-#Pin-Priority: 930
-
 #------------------------------------------------------------------------------
-#deb http://www.deb-multimedia.org/ testing main non-free
-#deb-src http://www.deb-multimedia.org/ testing main non-free
-
-
-###############################################################################
-#http://ftp.fr.debian.org/debian/dists/testing/Release
-#http://ftp.fr.debian.org/debian/dists/wheezy/Release
-###############################################################################
-#Origin: Debian
-#Label: Debian
-#Suite: testing
-#Codename: wheezy
-#Components: main contrib non-free
-#Description: Debian x.y Testing distribution - Not Released
-###############################################################################
-#==============================================================================
-# Origin: Debian
-# Label: Debian
-# Suite: testing
-# Codename: wheezy
-#==============================================================================
-#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-# /etc/apt/sources.list.d/testing.list
-#       => http://ftp.fr.debian.org/debian/ testing
-#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-#----------------------------------------------------------------------150-910-
 Package: *
-Pin: release o=Debian,l=Debian,a=testing
-Pin-Priority: 910
+Pin: release o=QGIS project,l=QGIS repository,a=stable
+Pin-Priority: 200
 
 #------------------------------------------------------------------------------
-#deb http://ftp.fr.debian.org/debian/ testing main contrib non-free
-#deb-src http://ftp.fr.debian.org/debian/ testing main contrib non-free
+#deb http://qgis.org/debian/ wheezy main
+#deb-src http://qgis.org/debian/ wheezy main
 
 
 ###############################################################################
-#http://deb-multimedia.org/dists/unstable/Release
-#http://deb-multimedia.org/dists/sid/Release
+#http://apt.postgresql.org/pub/repos/apt/dists/stable-pgdg/Release
+#http://apt.postgresql.org/pub/repos/apt/dists/wheezy-pgdg/Release
 ###############################################################################
-#Origin: Unofficial Multimedia Packages
-#Label: Unofficial Multimedia Packages
-#Suite: unstable
+#Origin: apt.postgresql.org
+#Label: PostreSQL for Debian/Ubuntu repository
+#Suite: wheezy-pgdg
 #Version: None
-#Codename: sid
-#Components: main non-free
-#Description: This repository is mostly non-free
+#Codename: wheezy-pgdg
+#Components: main 8.2 8.3 8.4 9.0 9.1 9.2 9.3 9.4
+#Description:
 ###############################################################################
 #==============================================================================
-# Origin: "Unofficial Multimedia Packages"
-# Label: "Unofficial Multimedia Packages"
-# Suite: unstable
-# Codename: sid
+# Origin: apt.postgresql.org
+# Label: "PostreSQL for Debian/Ubuntu repository"
+# Suite: wheezy-pgdg
+# Codename: wheezy-pgdg
 #==============================================================================
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-# /etc/apt/sources.list.d/unstable.list
-#       => http://www.deb-multimedia.org/ unstable
+# /etc/apt/sources.list.d/stable.list
+#       => http://apt.postgresql.org/pub/repos/apt/ wheezy-pgdg
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 #------------------------------------------------------------------------------
 #Package: *
-#Pin: release o=Unofficial Multimedia Packages,l=Unofficial Multimedia Packages,a=unstable
-#Pin-Priority: 23
+#Pin: release o=apt.postgresql.org,l=PostreSQL for Debian/Ubuntu repository,a=experimental
+#Pin-Priority: 150
 
 #------------------------------------------------------------------------------
-#deb http://www.deb-multimedia.org/ unstable main non-free
-#deb-src http://www.deb-multimedia.org/ unstable main non-free
+#deb http://apt.postgresql.org/pub/repos/apt/ wheezy-pgdg main 8.2 8.3 8.4 9.0 9.1 9.2 9.3 9.4
+#deb-src http://apt.postgresql.org/pub/repos/apt/ wheezy-pgdg main 8.2 8.3 8.4 9.0 9.1 9.2 9.3 9.4
 
 
 ###############################################################################
@@ -434,11 +431,43 @@ Pin-Priority: 910
 #------------------------------------------------------------------------------
 Package: *
 Pin: release o=Debian,l=Debian,a=unstable
-Pin-Priority: 21
+Pin-Priority: 80
 
 #------------------------------------------------------------------------------
 #deb http://ftp.fr.debian.org/debian/ unstable main contrib non-free
 #deb-src http://ftp.fr.debian.org/debian/ unstable main contrib non-free
+
+
+###############################################################################
+#http://qgis.org/debian/dists/unstable/Release
+#http://qgis.org/debian/dists/sid/Release
+###############################################################################
+#Origin: QGIS project
+#Label: QGIS repository
+#Suite: unstable
+#Version: None
+#Codename: sid
+#Components: main
+#Description: QGIS project Debian repository
+###############################################################################
+#==============================================================================
+# Origin: "QGIS project"
+# Label: "QGIS repository"
+# Suite: unstable
+# Codename: sid
+#==============================================================================
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# /etc/apt/sources.list.d/unstable.list
+#       => http://qgis.org/debian/ unstable
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#------------------------------------------------------------------------------
+Package: *
+Pin: release o=QGIS project,l=QGIS repository,a=unstable
+Pin-Priority: 60
+
+#------------------------------------------------------------------------------
+#deb http://qgis.org/debian/ unstable main
+#deb-src http://qgis.org/debian/ unstable main
 
 
 ###############################################################################
@@ -659,4 +688,37 @@ Pin-Priority: 5
 #------------------------------------------------------------------------------
 #deb http://ftp.fr.debian.org/debian-backports/ lenny-backports-sloppy main contrib non-free
 #deb-src http://ftp.fr.debian.org/debian-backports/ lenny-backports-sloppy main contrib non-free
+
+
+###############################################################################
+#http://deb-multimedia.org/dists/stable/Release
+#http://deb-multimedia.org/dists/wheezy/Release
+###############################################################################
+#Origin: Unofficial Multimedia Packages
+#Label: Unofficial Multimedia Packages
+#Suite: stable
+#Version: 6.0
+#Codename: wheezy
+#Components: main non-free
+#Description: This repository is mostly non-free
+###############################################################################
+#==============================================================================
+# Origin: "Unofficial Multimedia Packages"
+# Label: "Unofficial Multimedia Packages"
+# Suite: stable
+# Codename: wheezy
+#==============================================================================
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# /etc/apt/sources.list.d/stable.list
+#       => http://www.deb-multimedia.org/ stable
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#------------------------------------------------------------------------------
+#Package: *
+#Pin: release o=Unofficial Multimedia Packages,l=Unofficial Multimedia Packages,a=stable
+#Pin-Priority: 650
+
+#------------------------------------------------------------------------------
+#deb http://www.deb-multimedia.org/ stable main non-free
+#deb-src http://www.deb-multimedia.org/ stable main non-free
+
 
