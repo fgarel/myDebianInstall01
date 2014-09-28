@@ -376,8 +376,8 @@ deb-src http://qgis.org/debian/ wheezy main
 
 
 ###############################################################################
-#http://apt.postgresql.og/pub/repos/apt/dists/stable-pgdg/Release
-#http://apt.postgresql.og/pub/repos/apt/dists/wheezy-pgdg/Release
+#http://apt.postgresql.org/pub/repos/apt/dists/stable-pgdg/Release
+#http://apt.postgresql.org/pub/repos/apt/dists/wheezy-pgdg/Release
 ###############################################################################
 #Origin: apt.postgresql.org
 #Label: PostgreSQL for Debian/Ubuntu repository
@@ -399,12 +399,43 @@ deb-src http://qgis.org/debian/ wheezy main
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 #------------------------------------------------------------------------------
 #Package: *
-#Pin: release o=apt.postgresql.org,l=PostgreSQL for Debian/Ubuntu repository,a=unstable
+#Pin: release o=apt.postgresql.org,l=PostgreSQL for Debian/Ubuntu repository,a=wheezy-pgdg
 #Pin-Priority: 150
 #
 #------------------------------------------------------------------------------
 deb http://apt.postgresql.org/pub/repos/apt/ wheezy-pgdg main 8.2 8.3 8.4 9.0 9.1 9.2 9.3 9.4
 deb-src http://apt.postgresql.org/pub/repos/apt/ wheezy-pgdg main 8.2 8.3 8.4 9.0 9.1 9.2 9.3 9.4
+
+
+###############################################################################
+#http://download.virtualbox.org/virtualbox/debian/dists/wheezy/Release
+###############################################################################
+#Origin: Oracle Corporation
+#Label: Oracle Corporation
+#Suite: None
+#Version: None
+#Codename: wheezy
+#Components: non-free contrib
+#Description:
+###############################################################################
+#==============================================================================
+# Origin: "Oracle Corporation"
+# Label: "Oracle Corporation"
+# Suite: None
+# Codename: wheezy
+#==============================================================================
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# /etc/apt/sources.list.d/stable.list
+#       => http://download.virtualbox.org/virtualbox/debian/ wheezy
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#------------------------------------------------------------------------------
+#Package: *
+#Pin: release o=Oracle Corporation,l=Orcale Corporation,n=wheezy
+#Pin-Priority: 140
+#
+#------------------------------------------------------------------------------
+deb http://download.virtualbox.org/virtualbox/debian/ wheezy non-free contrib
+deb-src http://download.virtualbox.org/virtualbox/debian/ wheezy non-free contrib
 
 
 ###############################################################################
@@ -471,34 +502,35 @@ deb-src http://qgis.org/debian/ unstable main
 
 
 ###############################################################################
-#http://deb-multimedia.org/dists/experimental/Release
+#http://apt.postgresql.org/pub/repos/apt/dists/unstable-pgdg/Release
+#http://apt.postgresql.org/pub/repos/apt/dists/sid-pgdg/Release
 ###############################################################################
-#Origin: Unofficial Multimedia Packages
-#Label: Unofficial Multimedia Packages
-#Suite: experimental
+#Origin: apt.postgresql.org
+#Label: PostgreSQL for Debian/Ubuntu repository
+#Suite: sid-pgdg
 #Version: None
-#Codename: experimental
-#Components: main non-free
-#Description: Experimental packages - not released; use at your own risk.
+#Codename: sid-pgdg
+#Components: main 8.2 8.3 8.4 9.0 9.1 9.2 9.3 9.4 9.5
+#Description:
 ###############################################################################
 #==============================================================================
-# Origin: "Unofficial Multimedia Packages"
-# Label: "Unofficial Multimedia Packages"
-# Suite: experimental
-# Codename: experimental
+# Origin: apt.postgresql.org
+# Label: "PostgreSQL for Debian/Ubuntu repository"
+# Suite: sid-pgdg
+# Codename: sid-pgdg
 #==============================================================================
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-# /etc/apt/sources.list.d/experimental.list
-#       => http://www.deb-multimedia.org/ experimental
+# /etc/apt/sources.list.d/stable.list
+#       => http://apt.postgresql.org/pub/repos/apt/ sid-pgdg
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 #------------------------------------------------------------------------------
 #Package: *
-#Pin: release o=Unofficial Multimedia Packages,l=Unofficial Multimedia Packages,a=experimental
-#Pin-Priority: 13
+#Pin: release o=apt.postgresql.org,l=PostgreSQL for Debian/Ubuntu repository,a=sid-pgdg
+#Pin-Priority: 40
 #
 #------------------------------------------------------------------------------
-#deb http://www.deb-multimedia.org/ experimental main
-#deb-src http://www.deb-multimedia.org/ experimental main
+deb http://apt.postgresql.org/pub/repos/apt/ sid-pgdg main 8.2 8.3 8.4 9.0 9.1 9.2 9.3 9.4 9.5
+deb-src http://apt.postgresql.org/pub/repos/apt/ sid-pgdg main 8.2 8.3 8.4 9.0 9.1 9.2 9.3 9.4 9.5
 
 
 ###############################################################################
@@ -525,295 +557,10 @@ deb-src http://qgis.org/debian/ unstable main
 #------------------------------------------------------------------------------
 #Package: *
 #Pin: release o=Debian,l=Debian,a=experimental
-#Pin-Priority: 11
+#Pin-Priority: 20
 #
 #------------------------------------------------------------------------------
 deb http://ftp.fr.debian.org/debian/ experimental main contrib non-free
 deb-src http://ftp.fr.debian.org/debian/ experimental main contrib non-free
-
-
-###############################################################################
-#http://ftp.fr.debian.org/debian-security/dists/oldstable/updates/Release
-#http://ftp.fr.debian.org/debian-security/dists/lenny/updates/Release
-###############################################################################
-#Origin: Debian
-#Label: Debian-Security
-#Suite: oldstable
-#Version: 5.0
-#Codename: lenny
-#Components: updates/main updates/contrib updates/non-free
-#Description: Debian 5.0 Security Updates
-###############################################################################
-#==============================================================================
-# Origin: Debian
-# Label: Debian-Security
-# Suite: oldstable
-# Codename: lenny
-#==============================================================================
-#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-# /etc/apt/sources.list.d/oldstable.list
-#       => http://ftp.fr.debian.org/debian-security/ oldstable/updates
-#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-#------------------------------------------------------------------------------
-#Package: *
-#Pin: release o=Debian,l=Debian-Security,a=oldstable
-#Pin-Priority: 9
-#
-#------------------------------------------------------------------------------
-#deb http://ftp.fr.debian.org/debian-security/ oldstable/updates main contrib non-free
-#deb-src http://ftp.fr.debian.org/debian-security/ oldstable/updates main contrib non-free
-
-
-###############################################################################
-#http://ftp.fr.debian.org/debian-volatile/dists/oldstable-proposed-updates/volatile/Release
-#http://ftp.fr.debian.org/debian-volatile/dists/lenny-proposed-updates/volatile/Release
-###############################################################################
-#Origin: volatile.debian.org
-#Label: debian-volatile
-#Suite: oldstable-proposed-updates
-#Codename: lenny-proposed-updates
-#Components: volatile/main volatile/contrib volatile/non-free
-#Description: volatile.debian.org
-###############################################################################
-#==============================================================================
-# Origin: volatile.debian.org
-# Label: debian-volatile
-# Suite: oldstable-proposed-updates
-# Codename: lenny-proposed-updates
-#==============================================================================
-#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-# /etc/apt/sources.list.d/oldstable.list
-#       => http://ftp.fr.debian.org/debian-volatile/ oldstable-proposed-updates
-#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-#------------------------------------------------------------------------------
-#Package: *
-#Pin: release o=volatile.debian.org,l=debian-volatile,a=oldstable-proposed-updates
-#Pin-Priority: 8
-#
-#------------------------------------------------------------------------------
-#deb http://ftp.fr.debian.org/debian-volatile/ oldstable-proposed-updates/volatile main contrib non-free
-#deb-src http://ftp.fr.debian.org/debian-volatile/ oldstable-proposed-updates/volatile main contrib non-free
-
-
-###############################################################################
-#http://ftp.fr.debian.org/debian-volatile/dists/oldstable/volatile/Release
-#http://ftp.fr.debian.org/debian-volatile/dists/lenny/volatile/Release
-#http://ftp.fr.debian.org/debian-volatile/dists/oldstable/volatile-sloppy/Release
-#http://ftp.fr.debian.org/debian-volatile/dists/lenny/volatile-sloppy/Release
-###############################################################################
-#Origin: volatile.debian.org
-#Label: debian-volatile
-#Suite: oldstable
-#Codename: lenny
-#Components: volatile/main volatile/contrib volatile/non-free
-#Description: volatile.debian.org
-###############################################################################
-#==============================================================================
-# Origin: volatile.debian.org
-# Label: debian-volatile
-# Suite: oldstable
-# Codename: lenny
-#==============================================================================
-#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-# /etc/apt/sources.list.d/oldstable.list
-#       => http://ftp.fr.debian.org/debian-volatile/ oldstable
-#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-#------------------------------------------------------------------------------
-#Package: *
-#Pin: release o=volatile.debian.org,l=debian-volatile,a=oldstable
-#Pin-Priority: 7
-#
-#------------------------------------------------------------------------------
-#deb http://ftp.fr.debian.org/debian-volatile/ oldstable/volatile main contrib non-free
-#deb-src http://ftp.fr.debian.org/debian-volatile/ oldstable/volatile main contrib non-free
-
-
-###############################################################################
-#http://ftp.fr.debian.org/debian/dists/oldstable-proposed-updates/Release
-#http://ftp.fr.debian.org/debian/dists/lenny-proposed-updates/Release
-###############################################################################
-#Origin: Debian
-#Label: Debian
-#Suite: oldstable-proposed-updates
-#Version: 5.0-updates
-#Codename: lenny-proposed-updates
-#Components: main contrib non-free
-#Description: Proposed Updates for Debian 5.0 - Not Released
-###############################################################################
-#==============================================================================
-# Origin: Debian
-# Label: Debian
-# Suite: oldstable-proposed-updates
-# Codename: lenny-proposed-updates
-#==============================================================================
-#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-# /etc/apt/sources.list.d/oldstable.list
-#       => http://ftp.fr.debian.org/debian/ oldstable-proposed-updates
-#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-#------------------------------------------------------------------------------
-#Package: *
-#Pin: release o=Debian,l=Debian,a=oldstable-proposed-updates
-#Pin-Priority: 6
-#
-#------------------------------------------------------------------------------
-#deb http://ftp.fr.debian.org/debian/ oldstable-proposed-updates main contrib non-free
-#deb-src http://ftp.fr.debian.org/debian/ oldstable-proposed-updates main contrib non-free
-
-
-###############################################################################
-#http://ftp.fr.debian.org/debian-backports/dists/lenny-backports-sloppy/Release
-###############################################################################
-#Origin: Debian Backports
-#Label: Debian Backports
-#Suite: lenny-backports-sloppy
-#Codename: lenny-backports-sloppy
-#Components: main contrib non-free
-#Description: Backports for the Lenny Distribution (Sloppy)
-###############################################################################
-#==============================================================================
-# Origin: "Debian Backports"
-# Label: "Debian Backports"
-# Suite: lenny-backports-sloppy
-# Codename: lenny-backports-sloppy
-#==============================================================================
-#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-# /etc/apt/sources.list.d/lenny-backports-sloppy.list
-#       => http://ftp.fr.debian.org/debian-backports/ lenny-backports-sloppy
-#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-#------------------------------------------------------------------------------
-#Package: *
-#Pin: release o=Debian Backports,l=Debian Backports,a=lenny-backports-sloppy
-#Pin-Priority: 5
-#
-#------------------------------------------------------------------------------
-#deb http://ftp.fr.debian.org/debian-backports/ lenny-backports-sloppy main contrib non-free
-#deb-src http://ftp.fr.debian.org/debian-backports/ lenny-backports-sloppy main contrib non-free
-
-
-###############################################################################
-#http://ftp.fr.debian.org/debian-backports/dists/lenny-backports/Release
-###############################################################################
-#Origin: Debian Backports
-#Label: Debian Backports
-#Suite: lenny-backports
-#Codename: lenny-backports
-#Components: main contrib non-free
-#Description: Backports for the Lenny Distribution
-###############################################################################
-#==============================================================================
-# Origin: "Debian Backports"
-# Label: "Debian Backports"
-# Suite: lenny-backports
-# Codename: lenny-backports
-#==============================================================================
-#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-# /etc/apt/sources.list.d/lenny-backports.list
-#       => http://ftp.fr.debian.org/debian-backports/ lenny-backports
-#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-#------------------------------------------------------------------------------
-#Package: *
-#Pin: release o="Debian Backports",l="Debian Backports",a=lenny-backports
-#Pin-Priority: 4
-#
-#------------------------------------------------------------------------------
-#deb http://ftp.fr.debian.org/debian-backports/ lenny-backports main contrib non-free
-#deb-src http://ftp.fr.debian.org/debian-backports/ lenny-backports main contrib non-free
-
-
-###############################################################################
-#http://debian-multimedia.org/dists/oldstable/Release
-#http://debian-multimedia.org/dists/lenny/Release
-###############################################################################
-#Origin: Unofficial Multimedia Packages
-#Label: Unofficial Multimedia Packages
-#Suite: oldstable
-#Version: 5.0
-#Codename: lenny
-#Components: main non-free
-#Description: This repository is mostly non-free
-###############################################################################
-#==============================================================================
-# Origin: "Unofficial Multimedia Packages"
-# Label: "Unofficial Multimedia Packages"
-# Suite: oldstable
-# Codename: lenny
-#==============================================================================
-#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-# /etc/apt/sources.list.d/oldstable.list
-#       => http://www.debian-multimedia.org/ oldstable
-#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-#------------------------------------------------------------------------------
-#Package: *
-#Pin: release o="Unofficial Multimedia Packages",l="Unofficial Multimedia Packages",a=lenny
-#Pin-Priority: 3
-#
-#------------------------------------------------------------------------------
-#deb http://www.debian-multimedia.org/ lenny main non-free
-#deb-src http://www.debian-multimedia.org/ lenny main non-free
-
-
-###############################################################################
-#http://ftp.fr.debian.org/debian/dists/oldstable/Release
-#http://ftp.fr.debian.org/debian/dists/lenny/Release
-#http://ftp.fr.debian.org/debian/dists/Debian5.0.8/Release
-###############################################################################
-#Origin: Debian
-#Label: Debian
-#Suite: oldstable
-#Version: 5.0.8
-#Codename: lenny
-#Components: main contrib non-free
-#Description: Debian 5.0.8 Released 22 January 2011
-###############################################################################
-#==============================================================================
-# Origin: Debian
-# Label: Debian
-# Suite: oldstable
-# Codename: lenny
-#==============================================================================
-#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-# /etc/apt/sources.list.d/oldstable.list
-#       => http://ftp.fr.debian.org/debian/ oldstable
-#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-#------------------------------------------------------------------------------
-#Package: *
-#Pin: release o=Debian,l=Debian,a=oldstable
-#Pin-Priority: 1
-#
-#------------------------------------------------------------------------------
-#deb http://ftp.fr.debian.org/debian/ oldstable main contrib non-free
-#deb-src http://ftp.fr.debian.org/debian/ oldstable main contrib non-free
-
-
-###############################################################################
-#http://deb-multimedia.org/dists/stable/Release
-#http://deb-multimedia.org/dists/wheezy/Release
-###############################################################################
-#Origin: Unofficial Multimedia Packages
-#Label: Unofficial Multimedia Packages
-#Suite: stable
-#Version: 6.0
-#Codename: wheezy
-#Components: main non-free
-#Description: This repository is mostly non-free
-###############################################################################
-#==============================================================================
-# Origin: "Unofficial Multimedia Packages"
-# Label: "Unofficial Multimedia Packages"
-# Suite: stable
-# Codename: wheezy
-#==============================================================================
-#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-# /etc/apt/sources.list.d/stable.list
-#       => http://www.deb-multimedia.org/ stable
-#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-#------------------------------------------------------------------------------
-#Package: *
-#Pin: release o=Unofficial Multimedia Packages,l=Unofficial Multimedia Packages,a=stable
-#Pin-Priority: 650
-#
-#------------------------------------------------------------------------------
-#deb http://www.deb-multimedia.org/ stable main non-free
-#deb-src http://www.deb-multimedia.org/ stable main non-free
 
 
