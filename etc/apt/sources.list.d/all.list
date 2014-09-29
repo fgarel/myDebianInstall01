@@ -434,8 +434,8 @@ deb-src http://apt.postgresql.org/pub/repos/apt/ wheezy-pgdg main 8.2 8.3 8.4 9.
 #Pin-Priority: 140
 #
 #------------------------------------------------------------------------------
-deb http://download.virtualbox.org/virtualbox/debian/ wheezy non-free contrib
-deb-src http://download.virtualbox.org/virtualbox/debian/ wheezy non-free contrib
+#deb http://download.virtualbox.org/virtualbox/debian/ wheezy non-free contrib
+#deb-src http://download.virtualbox.org/virtualbox/debian/ wheezy non-free contrib
 
 
 ###############################################################################

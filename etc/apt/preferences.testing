@@ -429,9 +429,9 @@ Pin-Priority: 150
 #       => http://download.virtualbox.org/virtualbox/debian/ wheezy
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 #------------------------------------------------------------------------------
-Package: *
-Pin: release o=Oracle Corporation,l=Oracle Corporation,n=wheezy
-Pin-Priority: 140
+#Package: *
+#Pin: release o=Oracle Corporation,l=Oracle Corporation,n=wheezy
+#Pin-Priority: 140
 
 #------------------------------------------------------------------------------
 #deb http://download.virtualbox.org/virtualbox/debian/ wheezy non-free contrib
