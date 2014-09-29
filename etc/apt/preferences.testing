@@ -113,9 +113,9 @@ Pin-Priority: 850
 #       => http://ftp.fr.debian.org/debian-backports/ jessie-backports
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 #------------------------------------------------------------------------------
-Package: *
-Pin: release o=Debian Backports,l=Debian Backports,a=jessie-backports
-Pin-Priority: 800
+#Package: *
+#Pin: release o=Debian Backports,l=Debian Backports,a=jessie-backports
+#Pin-Priority: 800
 
 #------------------------------------------------------------------------------
 #deb http://backports.debian.org/debian-backports/ jessie-backports main contrib non-free
@@ -301,9 +301,9 @@ Pin-Priority: 350
 #       => http://ftp.fr.debian.org/debian-backports/ wheezy-backports
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 #------------------------------------------------------------------------------
-Package: *
-Pin: release o=Debian Backports,l=Debian Backports,a=wheezy-backports
-Pin-Priority: 300
+#Package: *
+#Pin: release o=Debian Backports,l=Debian Backports,a=wheezy-backports
+#Pin-Priority: 300
 
 #------------------------------------------------------------------------------
 #deb http://backports.debian.org/debian-backports/ wheezy-backports main contrib non-free

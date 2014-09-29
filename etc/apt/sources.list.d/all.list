@@ -118,8 +118,8 @@ deb-src http://ftp.fr.debian.org/debian/ testing-proposed-updates main contrib n
 #Pin-Priority: 800
 #
 #------------------------------------------------------------------------------
-deb http://backports.debian.org/debian-backports/ jessie-backports main contrib non-free
-deb-src http://backports.debian.org/debian-backports/ jessie-backports main contrib non-free
+#deb http://backports.debian.org/debian-backports/ jessie-backports main contrib non-free
+#deb-src http://backports.debian.org/debian-backports/ jessie-backports main contrib non-free
 
 
 ###############################################################################
@@ -306,8 +306,8 @@ deb-src http://ftp.fr.debian.org/debian/ proposed-updates main contrib non-free
 #Pin-Priority: 300
 #
 #------------------------------------------------------------------------------
-deb http://backports.debian.org/debian-backports/ wheezy-backports main contrib non-free
-deb-src http://backports.debian.org/debian-backports/ wheezy-backports main contrib non-free
+#deb http://backports.debian.org/debian-backports/ wheezy-backports main contrib non-free
+#deb-src http://backports.debian.org/debian-backports/ wheezy-backports main contrib non-free
 
 
 ###############################################################################
