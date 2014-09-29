@@ -104,7 +104,7 @@ then
     # pour le moment, on ne lance pas d'installation
     #/usr/local/sbin/fgaptitudedoall.sh
     # ajout de la clef pour le depot postgresql
-    sudo apt-get install wget ca-certificates
+    apt-get install -y wget ca-certificates
     wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add -
     /usr/local/sbin/apt.postgresql.org.sh
     # ajout de la clef pour le depot qgis
