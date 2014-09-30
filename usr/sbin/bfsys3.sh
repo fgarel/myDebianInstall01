@@ -17,7 +17,7 @@ export PATH="/usr/local/bin/.pyenv/bin:$PATH"
 # installation de pyvenv-virtualenvwrapper
 git clone https://github.com/yyuu/pyenv-virtualenvwrapper.git /usr/local/bin/.pyenv/plugins/pyenv-virtualenvwrapper
 eval "$(pyenv init -)"
-eval "$(penv virtualenv-init -)"
+eval "$(pyenv virtualenv-init -)"
 
 #fgaptitude-preseed.sh
 #bfsys-preseed.sh
