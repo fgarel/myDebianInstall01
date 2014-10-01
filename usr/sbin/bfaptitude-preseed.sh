@@ -4,14 +4,14 @@ export https_proxy=$http_proxy
 export LANG=fr_FR.UTF-8
 
 #
-echo "bfsys-preseed.sh :                 Actions commencées lors de l'installation automatique"
+echo "fgaptitude-preseed.sh :                 Actions commencées lors de l'installation automatique"
 
 mkdir /var/log/fg 2> /dev/null
 
 # chainage avec les scripts de configuration et les mises à jour
 
-bfaptitudeupdate-preseed.sh
-bfaptitudeclean-preseed.sh
+fgaptitudeupdate-preseed.sh
+fgaptitudeclean-preseed.sh
 # installation de quelques applications et utilitaires
 # spécifiques à l'administration du système
 # ces applications systèmes sont divisés en trois groupes
@@ -23,30 +23,30 @@ bfaptitudeclean-preseed.sh
 # sauvegarde
 #fgaptitudeinstallsys.sh
 # commun
-#bfaptitudeinstallsyscommun-preseed.sh
+fgaptitudeinstallsyscommun-preseed.sh
 # framebuffer
-#####fgaptitudeinstallsysframebuffer-preseed.sh
+fgaptitudeinstallsysframebuffer-preseed.sh
 # X
 #fgaptitudeinstallsysx01.sh
 
 # installation de vim
-#####fgaptitudeinstallvim01a.sh
+fgaptitudeinstallvim01a.sh
 #fgaptitudeinstallvim01b.sh
-#####if [ ! -e /var/log/fg/fgaptitudeinstallvim01b-root.log ]
-#####then
-#####  echo "  vim pour root"
-#####  sudo -u root fgaptitudeinstallvim01b.sh
-#####  date +"%F %T" >> /var/log/fg/fgaptitudeinstallvim01b-root.log
-#####fi
-#####if [ ! -e /var/log/fg/fgaptitudeinstallvim01b-user.log ]
-#####then
-#####  echo "  vim pour user"
-#####  sudo -u blueflamingo fgaptitudeinstallvim01b.sh
-#####  date +"%F %T" >> /var/log/fg/fgaptitudeinstallvim01b-user.log
-#####fi
-#####sudo -u root fgaptitudeinstallvim01c.sh
+if [ ! -e /var/log/fg/fgaptitudeinstallvim01b-root.log ]
+then
+  echo "  vim pour root"
+  sudo -u root fgaptitudeinstallvim01b.sh
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallvim01b-root.log
+fi
+if [ ! -e /var/log/fg/fgaptitudeinstallvim01b-user.log ]
+then
+  echo "  vim pour user"
+  sudo -u blueflamingo fgaptitudeinstallvim01b.sh
+  date +"%F %T" >> /var/log/fg/fgaptitudeinstallvim01b-user.log
+fi
+sudo -u root fgaptitudeinstallvim01c.sh
 
-#####fgaptitudeupgrade-preseed.sh
+fgaptitudeupgrade-preseed.sh
 #fgaptitudeinstallpython.sh
 #if [ ! -e /var/log/fg/fgaptitudeinstallpythonfabric-fabric.log ]
 #then
@@ -97,12 +97,12 @@ bfaptitudeclean-preseed.sh
 #    - les differentes sources
 # - quelques utilitiares
 # - quelques fichiers de configurations
-echo "bfsys-preseed : Récupération des fichiers du projet 'myDebianInstall02'"
-#####git clone --progress --verbose http://github.com/fgarel/myDebianInstall02.git /root/myDebianInstall02 2> /dev/null
-#####cd /root/myDebianInstall02
-#####git fetch --progress --verbose
-#####cd $OLDPWD
-#####yes | cp -r -f /root/myDebianInstall02/* / 2> /dev/null
+echo "fgaptitude-preseed : Récupération des fichiers du projet 'myDebianInstall02'"
+git clone --progress --verbose http://github.com/fgarel/myDebianInstall02.git /root/myDebianInstall02 2> /dev/null
+cd /root/myDebianInstall02
+git fetch --progress --verbose
+cd $OLDPWD
+yes | cp -r -f /root/myDebianInstall02/* / 2> /dev/null
 ###scp -q -r root@10.5.10.23:/media/clefUsb2/\* /
-#####chown -R blueflamingo:blueflamingo /home/blueflamingo/
+chown -R blueflamingo:blueflamingo /home/blueflamingo/
 #sudo -u garel fgaptitudeinstallgis03.sh ; cd $OLDPWD
