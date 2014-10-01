@@ -37,6 +37,7 @@ then
   update-alternatives --remove fakeroot /usr/bin/fakeroot-tcp 1> /dev/null
   update-alternatives --remove pager /usr/bin/pg 1> /dev/null
   update-alternatives --remove pager /bin/more 1> /dev/null
+  update-alternatives --remove rename /usr/bin/prename 1> /dev/null
   update-alternatives --remove vi /usr/bin/vim.tiny 1> /dev/null
   update-alternatives --remove view /usr/bin/see 1> /dev/null
   update-alternatives --remove view /usr/bin/vim.tiny 1> /dev/null

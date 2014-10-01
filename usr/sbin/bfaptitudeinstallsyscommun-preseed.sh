@@ -5,13 +5,22 @@
 ###########################################
 echo "bfaptitudeinstallsyscommun-preseed.sh :       Installation d'outils systeme communs au mode console et au mode graphique (Partie 01)"
 
-##############################################
-# ajout de l'utilisateur blueflamingo au groupe staff
-if [ ! -e /var/log/bf/bfaptitudeinstallsyscommun-preseed-addgroup.log ]
+################################
+# ajout de l'utilitaire apt-utils
+if [ ! -e /var/log/bf/bfaptitudeinstallsyscommun-preseed-aptutils.log ]
 then
-  echo "  Ajout de l'utilisateur blueflamingo au groupe staff"
-  addgroup blueflamingo staff 1> /dev/null
-  date +"%F %T" >> /var/log/bf/bfaptitudeinstallsyscommun-preseed-addgroup.log
+  echo "  Installation de apt-utils"
+  echo y | aptitude install apt-utils 1> /dev/null
+  date +"%F %T" >> /var/log/bf/bfaptitudeinstallsyscommun-preseed-aptutils.log
+fi
+
+################################
+# ajout de l'utilitaire apt-file
+if [ ! -e /var/log/bf/bfaptitudeinstallsyscommun-preseed-aptfile.log ]
+then
+  echo "  Installation de apt-file"
+  echo y | aptitude install apt-file 1> /dev/null
+  date +"%F %T" >> /var/log/bf/bfaptitudeinstallsyscommun-preseed-aptfile.log
 fi
 
 ############################
@@ -20,10 +29,41 @@ if [ ! -e /var/log/bf/bfaptitudeinstallsyscommun-preseed-sudo.log ]
 then
   echo "  Installation de sudo"
   aptitude install sudo 1> /dev/null
-  echo "  Ajout de l'utilisateur blueflamingo au groupe sudo"
-  addgroup blueflamingo sudo 1> /dev/null
   date +"%F %T" >> /var/log/bf/bfaptitudeinstallsyscommun-preseed-sudo.log
 fi
+
+##############################################
+# ajout de l'utilisateur blueflamingo
+if [ ! -e /var/log/bf/bfaptitudeinstallsyscommun-preseed-useradd.log ]
+then
+  echo "  Ajout de l'utilisateur blueflamingo"
+  # whois contient l'utilitaire mkpasswd
+  echo y | aptitude install whois 1> /dev/null
+  # A la creation de l'utilisateur,
+  # on en profite pour l'ajouter aux groupes staff et sudo
+  useradd --password ${mkpasswd blueflamingo} --groups staff,sudo blueflamingo
+  date +"%F %T" >> /var/log/bf/bfaptitudeinstallsyscommun-preseed-useradd.log
+fi
+
+##############################################
+# ajout de l'utilisateur blueflamingo au groupe staff
+#if [ ! -e /var/log/bf/bfaptitudeinstallsyscommun-preseed-addgroup.log ]
+#then
+#  echo "  Ajout de l'utilisateur blueflamingo au groupe staff"
+#  addgroup blueflamingo staff 1> /dev/null
+#  date +"%F %T" >> /var/log/bf/bfaptitudeinstallsyscommun-preseed-addgroup.log
+#fi
+
+############################
+# ajout de l'utilitaire sudo
+#if [ ! -e /var/log/bf/bfaptitudeinstallsyscommun-preseed-sudo.log ]
+#then
+#  echo "  Installation de sudo"
+#  aptitude install sudo 1> /dev/null
+#  echo "  Ajout de l'utilisateur blueflamingo au groupe sudo"
+#  addgroup blueflamingo sudo 1> /dev/null
+#  date +"%F %T" >> /var/log/bf/bfaptitudeinstallsyscommun-preseed-sudo.log
+#fi
 
 ################################
 # ajout de l'utilitaire ack-grep
