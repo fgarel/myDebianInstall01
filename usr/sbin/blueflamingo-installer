@@ -99,7 +99,7 @@ then
     #echo "aptitude update"
     #aptitude update
     echo "OS 2 = "$OS
-    cp -r "${BLUEFLAMINGO_ROOT}"/usr/sbin/* /usr/local/sbin/
+    #cp -r "${BLUEFLAMINGO_ROOT}"/usr/sbin/* /usr/local/sbin/
     #"${BLUEFLAMINGO_ROOT}"/usr/sbin/fgaptitudedoall.sh
     # pour le moment, on ne lance pas d'installation
     #/usr/local/sbin/fgaptitudedoall.sh
