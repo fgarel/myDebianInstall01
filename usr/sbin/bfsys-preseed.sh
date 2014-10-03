@@ -6,7 +6,7 @@ export LANG=fr_FR.UTF-8
 #
 echo "bfsys-preseed.sh :                 Actions commencées lors de l'installation automatique"
 
-mkdir /var/log/fg 2> /dev/null
+mkdir /var/log/bf 2> /dev/null
 
 # chainage avec les scripts de configuration et les mises à jour
 
@@ -23,7 +23,7 @@ bfaptitudeclean-preseed.sh
 # sauvegarde
 #fgaptitudeinstallsys.sh
 # commun
-#bfaptitudeinstallsyscommun-preseed.sh
+bfaptitudeinstallsyscommun-preseed.sh
 # framebuffer
 #####fgaptitudeinstallsysframebuffer-preseed.sh
 # X
