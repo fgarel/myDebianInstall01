@@ -36,16 +36,19 @@ bfaptitudeinstallvim01a.sh
 if [ ! -e /var/log/bf/bfaptitudeinstallvim01b-root.log ]
 then
   echo "  vim pour root"
-  sudo -u root bfaptitudeinstallvim01b.sh
+  #sudo -u root bfaptitudeinstallvim01b.sh
+  sudo -u root /opt/.blueflamingo/usr/sbin/bfaptitudeinstallvim01b.sh
   date +"%F %T" >> /var/log/bf/bfaptitudeinstallvim01b-root.log
 fi
 if [ ! -e /var/log/bf/bfaptitudeinstallvim01b-user.log ]
 then
   echo "  vim pour user"
-  sudo -u blueflamingo bfaptitudeinstallvim01b.sh
+  #sudo -u blueflamingo bfaptitudeinstallvim01b.sh
+  sudo -u blueflamingo /opt/.blueflamingo/usr/sbin/bfaptitudeinstallvim01b.sh
   date +"%F %T" >> /var/log/bf/bfaptitudeinstallvim01b-user.log
 fi
-sudo -u root bfaptitudeinstallvim01c.sh
+#sudo -u root bfaptitudeinstallvim01c.sh
+sudo -u root /opt/.blueflamingo/usr/sbin/bfaptitudeinstallvim01c.sh
 
 bfaptitudeupgrade-preseed.sh
 #fgaptitudeinstallpython.sh
