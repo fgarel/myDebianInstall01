@@ -24,14 +24,14 @@ bfaptitudeclean-preseed.sh
 #fgaptitudeinstallsys.sh
 # commun
 bfaptitudeinstallsyscommun-preseed.sh
-#bfaptitudeinstallsyscommun-zsh.sh
+bfaptitudeinstallsyscommun-zsh.sh
 # framebuffer
 #####fgaptitudeinstallsysframebuffer-preseed.sh
 # X
 #fgaptitudeinstallsysx01.sh
 
 # installation de vim
-#####fgaptitudeinstallvim01a.sh
+bfaptitudeinstallvim01a.sh
 #fgaptitudeinstallvim01b.sh
 #####if [ ! -e /var/log/fg/fgaptitudeinstallvim01b-root.log ]
 #####then

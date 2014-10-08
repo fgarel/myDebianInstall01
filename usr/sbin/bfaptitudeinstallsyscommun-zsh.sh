@@ -90,6 +90,7 @@ then
   chsh -s /bin/zsh blueflamingo
 
   echo "  Création d'un fichier zshrc pour l'utilisateur blueflamingo"
+  mkdir /home/blueflamingo
   echo "# Created by newuser" > /home/blueflamingo/.zshrc
 
   echo "  Changement du shell par defaut pour les futurs utilisateurs"
@@ -133,7 +134,8 @@ then
   sed -i -e 's/ZSH_THEME=\"robbyrussell\"/ZSH_THEME=\"sporty_256\"/g' /etc/zsh/zshrc
   # pour consulter la liste des plugins disponibles, il faut se rendre sur la page
   # https://github.com/robbyrussel/oh-my-ssh/wiki/Plugins
-  sed -i -e 's/plugins=(git)/plugins=(deb debian git github perl pip vi-mode virtualenvwrapper)/g' /etc/zsh/zshrc
+  #sed -i -e 's/plugins=(git)/plugins=(deb debian git github perl pip vi-mode virtualenvwrapper)/g' /etc/zsh/zshrc
+  sed -i -e 's/plugins=(git)/plugins=(deb debian git github perl pip vi-mode)/g' /etc/zsh/zshrc
   sed -i -e 's/export PAGER=less/export PAGER=vimpager/g' /etc/zsh/oh-my-zsh/lib/misc.zsh
   sed -i -e 's/export LC_CTYPE=en_US.UTF-8/export LC_CTYPE="fr_FR.UTF-8"/g' /etc/zsh/oh-my-zsh/lib/misc.zsh
   sed -i -e '/LC_ALL/ d' /etc/zsh/oh-my-zsh/lib/misc.zsh
