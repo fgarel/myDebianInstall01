@@ -110,7 +110,7 @@ then
   cd $OLDPWD
 
   cd /etc/
-  wget -nv -N http://formation-debian.via.ecp.fr/fichiers-config/dir_colors
+  wget -nv -q -N http://formation-debian.via.ecp.fr/fichiers-config/dir_colors
   cd $OLDPWD
 
   echo "  Récupération des fichiers de configuration zsh de grml"

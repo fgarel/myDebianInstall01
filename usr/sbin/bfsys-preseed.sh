@@ -33,21 +33,21 @@ bfaptitudeinstallsyscommun-zsh.sh
 # installation de vim
 bfaptitudeinstallvim01a.sh
 #fgaptitudeinstallvim01b.sh
-#####if [ ! -e /var/log/fg/fgaptitudeinstallvim01b-root.log ]
-#####then
-#####  echo "  vim pour root"
-#####  sudo -u root fgaptitudeinstallvim01b.sh
-#####  date +"%F %T" >> /var/log/fg/fgaptitudeinstallvim01b-root.log
-#####fi
-#####if [ ! -e /var/log/fg/fgaptitudeinstallvim01b-user.log ]
-#####then
-#####  echo "  vim pour user"
-#####  sudo -u blueflamingo fgaptitudeinstallvim01b.sh
-#####  date +"%F %T" >> /var/log/fg/fgaptitudeinstallvim01b-user.log
-#####fi
-#####sudo -u root fgaptitudeinstallvim01c.sh
+if [ ! -e /var/log/bf/bfaptitudeinstallvim01b-root.log ]
+then
+  echo "  vim pour root"
+  sudo -u root bfaptitudeinstallvim01b.sh
+  date +"%F %T" >> /var/log/bf/bfaptitudeinstallvim01b-root.log
+fi
+if [ ! -e /var/log/bf/bfaptitudeinstallvim01b-user.log ]
+then
+  echo "  vim pour user"
+  sudo -u blueflamingo bfaptitudeinstallvim01b.sh
+  date +"%F %T" >> /var/log/bf/bfaptitudeinstallvim01b-user.log
+fi
+sudo -u root bfaptitudeinstallvim01c.sh
 
-#####fgaptitudeupgrade-preseed.sh
+fgaptitudeupgrade-preseed.sh
 #fgaptitudeinstallpython.sh
 #if [ ! -e /var/log/fg/fgaptitudeinstallpythonfabric-fabric.log ]
 #then

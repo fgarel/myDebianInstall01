@@ -78,6 +78,7 @@ fi
 if [ ! -e /var/log/bf/bfaptitudeinstallvim01-colorscheme.log ]
 then
   echo "  Installation des color scheme"
+  mkdir -p /etc/vim/colors
   cd /etc/vim/colors
   wget -nv -q -N http://vimcolorschemetest.googlecode.com/svn/colors/BlackSea.vim -O BlackSea.vim
   wget -nv -q -N http://vimcolorschemetest.googlecode.com/svn/colors/doriath.vim -O doriath.vim
