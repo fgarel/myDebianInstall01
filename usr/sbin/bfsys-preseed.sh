@@ -24,6 +24,7 @@ bfaptitudeclean-preseed.sh
 #fgaptitudeinstallsys.sh
 # commun
 bfaptitudeinstallsyscommun-preseed.sh
+#bfaptitudeinstallsyscommun-zsh.sh
 # framebuffer
 #####fgaptitudeinstallsysframebuffer-preseed.sh
 # X

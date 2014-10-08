@@ -41,7 +41,8 @@ then
   echo y | aptitude install whois 1> /dev/null
   # A la creation de l'utilisateur,
   # on en profite pour l'ajouter aux groupes staff et sudo
-  useradd --password ${mkpasswd blueflamingo} --groups staff,sudo blueflamingo
+  #useradd --password ${mkpasswd blueflamingo} --groups staff,sudo blueflamingo
+  useradd --password `mkpasswd blueflamingo}` --groups staff,sudo blueflamingo
   date +"%F %T" >> /var/log/bf/bfaptitudeinstallsyscommun-preseed-useradd.log
 fi
 
