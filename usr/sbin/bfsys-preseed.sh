@@ -24,7 +24,7 @@ bfaptitudeclean-preseed.sh
 #fgaptitudeinstallsys.sh
 # commun
 bfaptitudeinstallsyscommun-preseed.sh
-bfaptitudeinstallsyscommun-zsh.sh
+bfaptitudeinstallsyscommun-zshohmyzsh.sh
 # framebuffer
 #####fgaptitudeinstallsysframebuffer-preseed.sh
 # X
@@ -47,7 +47,7 @@ then
 fi
 sudo -u root bfaptitudeinstallvim01c.sh
 
-fgaptitudeupgrade-preseed.sh
+bfaptitudeupgrade-preseed.sh
 #fgaptitudeinstallpython.sh
 #if [ ! -e /var/log/fg/fgaptitudeinstallpythonfabric-fabric.log ]
 #then
