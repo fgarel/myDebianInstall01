@@ -3,7 +3,7 @@
 # 1ère partie des applications "système"
 
 ###########################################
-echo "bfaptitudeinstallsyscommun-zsh.sh :       Installation de zsh"
+echo "bfaptitudeinstallsyscommun-zshprezto.sh :       Installation de zsh"
 
 
 ######################
@@ -118,33 +118,36 @@ then
   wget -nv -q -N http://git.grml.org/f/grml-etc-core/etc/zsh/zshrc -O zshrc_grml
   cd $OLDPWD
 
-  echo "  Récupération des fichiers de configurations de Oh my zshell"
+  echo "  Récupération des fichiers de configurations de prezto"
   #git checkout /etc/zsh/oh-my-zsh
   #git clean
   #git clone git://github.com/robbyrussell/oh-my-zsh.git /etc/zsh/oh-my-zsh
   #git clone --progress --verbose https://github.com/robbyrussell/oh-my-zsh.git /etc/zsh/oh-my-zsh
-  git clone --progress --verbose http://github.com/robbyrussell/oh-my-zsh.git /etc/zsh/oh-my-zsh 2> /dev/null
-  cd /etc/zsh/oh-my-zsh
+  #git clone --progress --verbose http://github.com/robbyrussell/oh-my-zsh.git /etc/zsh/oh-my-zsh 2> /dev/null
+  zsh
+  git clone --progress --verbose --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR}:-$HOME/.zprezto" 2> /dev/null
+  cd "${ZDOTDIR}:-$HOME/.zprezto"
   git fetch --progress --verbose
   cd $OLDPWD
-  cp /etc/zsh/oh-my-zsh/templates/zshrc.zsh-template /etc/zsh/zshrc
-  sed -i -e 's/export PATH=$HOME\/bin:\/usr\/local\/bin:$PATH/export PATH=$HOME\/bin:\/usr\/local\/bin:$PATH:\/opt\/.blueflamingo\/usr\/sbin/g' /etc/zsh/zshrc
-  #sed -i -e 's/export ZSH=$HOME\/.oh-my-zsh/export ZSH=\/etc\/zsh\/oh-my-zsh/g' /etc/zsh/zshrc
-  sed -i -e 's/ZSH=$HOME\/.oh-my-zsh/ZSH=\/etc\/zsh\/oh-my-zsh/g' /etc/zsh/zshrc
-  #sed -i -e 's/ZSH_THEME=\"robbyrussell\"/ZSH_THEME=\"jtriley\"/g' /etc/zsh/zshrc
-  sed -i -e 's/ZSH_THEME=\"robbyrussell\"/ZSH_THEME=\"sporty_256\"/g' /etc/zsh/zshrc
+
+  #cp /etc/zsh/oh-my-zsh/templates/zshrc.zsh-template /etc/zsh/zshrc
+  #sed -i -e 's/export PATH=$HOME\/bin:\/usr\/local\/bin:$PATH/export PATH=$HOME\/bin:\/usr\/local\/bin:$PATH:\/opt\/.blueflamingo\/usr\/sbin/g' /etc/zsh/zshrc
+  ##sed -i -e 's/export ZSH=$HOME\/.oh-my-zsh/export ZSH=\/etc\/zsh\/oh-my-zsh/g' /etc/zsh/zshrc
+  #sed -i -e 's/ZSH=$HOME\/.oh-my-zsh/ZSH=\/etc\/zsh\/oh-my-zsh/g' /etc/zsh/zshrc
+  ##sed -i -e 's/ZSH_THEME=\"robbyrussell\"/ZSH_THEME=\"jtriley\"/g' /etc/zsh/zshrc
+  #sed -i -e 's/ZSH_THEME=\"robbyrussell\"/ZSH_THEME=\"sporty_256\"/g' /etc/zsh/zshrc
   # pour consulter la liste des plugins disponibles, il faut se rendre sur la page
   # https://github.com/robbyrussel/oh-my-ssh/wiki/Plugins
-  #sed -i -e 's/plugins=(git)/plugins=(deb debian git github perl pip vi-mode virtualenvwrapper)/g' /etc/zsh/zshrc
-  sed -i -e 's/plugins=(git)/plugins=(deb debian git github perl pip vi-mode)/g' /etc/zsh/zshrc
-  sed -i -e 's/export PAGER=less/export PAGER=vimpager/g' /etc/zsh/oh-my-zsh/lib/misc.zsh
-  sed -i -e 's/export LC_CTYPE=en_US.UTF-8/export LC_CTYPE="fr_FR.UTF-8"/g' /etc/zsh/oh-my-zsh/lib/misc.zsh
-  sed -i -e '/LC_ALL/ d' /etc/zsh/oh-my-zsh/lib/misc.zsh
-  sed -i -e '/LANG/ d' /etc/zsh/oh-my-zsh/lib/misc.zsh
-  sed -i -e '/LANGUAGE/ d' /etc/zsh/oh-my-zsh/lib/misc.zsh
-  echo 'export LC_ALL="fr_FR.UTF-8"' >> /etc/zsh/oh-my-zsh/lib/misc.zsh
-  echo 'export LANG="fr_FR.UTF-8"' >> /etc/zsh/oh-my-zsh/lib/misc.zsh
-  echo 'export LANGUAGE="fr_FR.UTF-8"' >> /etc/zsh/oh-my-zsh/lib/misc.zsh
+  ##sed -i -e 's/plugins=(git)/plugins=(deb debian git github perl pip vi-mode virtualenvwrapper)/g' /etc/zsh/zshrc
+  #sed -i -e 's/plugins=(git)/plugins=(deb debian git github perl pip vi-mode)/g' /etc/zsh/zshrc
+  #sed -i -e 's/export PAGER=less/export PAGER=vimpager/g' /etc/zsh/oh-my-zsh/lib/misc.zsh
+  #sed -i -e 's/export LC_CTYPE=en_US.UTF-8/export LC_CTYPE="fr_FR.UTF-8"/g' /etc/zsh/oh-my-zsh/lib/misc.zsh
+  #sed -i -e '/LC_ALL/ d' /etc/zsh/oh-my-zsh/lib/misc.zsh
+  #sed -i -e '/LANG/ d' /etc/zsh/oh-my-zsh/lib/misc.zsh
+  #sed -i -e '/LANGUAGE/ d' /etc/zsh/oh-my-zsh/lib/misc.zsh
+  #echo 'export LC_ALL="fr_FR.UTF-8"' >> /etc/zsh/oh-my-zsh/lib/misc.zsh
+  #echo 'export LANG="fr_FR.UTF-8"' >> /etc/zsh/oh-my-zsh/lib/misc.zsh
+  #echo 'export LANGUAGE="fr_FR.UTF-8"' >> /etc/zsh/oh-my-zsh/lib/misc.zsh
   cp /etc/zsh/zshrc_formation_debian /etc/zsh/oh-my-zsh/custom/zshrc_formation_debian.zsh 2> /dev/null
   cp /etc/zsh/zshrc_grml /etc/zsh/oh-my-zsh/custom/zshrc_grml.zsh 2> /dev/null
 
