@@ -3,7 +3,7 @@
 # 1ère partie des applications "système"
 
 ###########################################
-echo "bfaptitudeinstallsyscommun-zsh.sh :       Installation de zsh"
+echo "bfaptitudeinstallsyscommun-zshohmyzsh.sh :       Installation de zsh"
 
 
 ######################

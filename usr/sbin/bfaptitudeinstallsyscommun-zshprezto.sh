@@ -118,7 +118,7 @@ then
   wget -nv -q -N http://git.grml.org/f/grml-etc-core/etc/zsh/zshrc -O zshrc_grml
   cd $OLDPWD
 
-  echo "  Récupération des fichiers de configurations de prezto"
+  echo "  Récupération des fichiers de configuration de prezto"
   #git checkout /etc/zsh/oh-my-zsh
   #git clean
   #git clone git://github.com/robbyrussell/oh-my-zsh.git /etc/zsh/oh-my-zsh
@@ -129,6 +129,11 @@ then
   cd "${ZDOTDIR}:-$HOME/.zprezto"
   git fetch --progress --verbose
   cd $OLDPWD
+
+  setopt EXTENDED_GLOB
+  for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
+        ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+  done
 
   #cp /etc/zsh/oh-my-zsh/templates/zshrc.zsh-template /etc/zsh/zshrc
   #sed -i -e 's/export PATH=$HOME\/bin:\/usr\/local\/bin:$PATH/export PATH=$HOME\/bin:\/usr\/local\/bin:$PATH:\/opt\/.blueflamingo\/usr\/sbin/g' /etc/zsh/zshrc
@@ -148,8 +153,8 @@ then
   #echo 'export LC_ALL="fr_FR.UTF-8"' >> /etc/zsh/oh-my-zsh/lib/misc.zsh
   #echo 'export LANG="fr_FR.UTF-8"' >> /etc/zsh/oh-my-zsh/lib/misc.zsh
   #echo 'export LANGUAGE="fr_FR.UTF-8"' >> /etc/zsh/oh-my-zsh/lib/misc.zsh
-  cp /etc/zsh/zshrc_formation_debian /etc/zsh/oh-my-zsh/custom/zshrc_formation_debian.zsh 2> /dev/null
-  cp /etc/zsh/zshrc_grml /etc/zsh/oh-my-zsh/custom/zshrc_grml.zsh 2> /dev/null
+  #cp /etc/zsh/zshrc_formation_debian /etc/zsh/oh-my-zsh/custom/zshrc_formation_debian.zsh 2> /dev/null
+  #cp /etc/zsh/zshrc_grml /etc/zsh/oh-my-zsh/custom/zshrc_grml.zsh 2> /dev/null
 
   cp /etc/zsh/zlogin_formation_debian /etc/zsh/zlogin 2> /dev/null
   cp /etc/zsh/zlogout_formation_debian /etc/zsh/zlogout 2> /dev/null
