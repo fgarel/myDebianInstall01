@@ -124,17 +124,31 @@ then
   #git clone git://github.com/robbyrussell/oh-my-zsh.git /etc/zsh/oh-my-zsh
   #git clone --progress --verbose https://github.com/robbyrussell/oh-my-zsh.git /etc/zsh/oh-my-zsh
   #git clone --progress --verbose http://github.com/robbyrussell/oh-my-zsh.git /etc/zsh/oh-my-zsh 2> /dev/null
-  zsh
-  git clone --progress --verbose --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR}:-$HOME/.zprezto" 2> /dev/null
-  cd "${ZDOTDIR}:-$HOME/.zprezto"
+  ##zsh
+  ##git clone --progress --verbose --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR}:-$HOME/.zprezto" 2> /dev/null
+  git clone --progress --verbose --recursive https://github.com/sorin-ionescu/prezto.git "${BLUEFLAMINGO_ROOT}/../.zprezto" 2> /dev/null
+  cd "${BLUEFLAMINGO_ROOT}/../.zprezto"
   git fetch --progress --verbose
   cd $OLDPWD
 
-  setopt EXTENDED_GLOB
+  ln -s ${BLUEFLAMINGO_ROOT}/../.zprezto/runcoms/zlogin /etc/zsh/zlogin
+  ln -s ${BLUEFLAMINGO_ROOT}/../.zprezto/runcoms/zlogout /etc/zsh/zlogout
+  ln -s ${BLUEFLAMINGO_ROOT}/../.zprezto/runcoms/zpreztorc /etc/zsh/zpreztorc
+  ln -s ${BLUEFLAMINGO_ROOT}/../.zprezto/runcoms/zprofile /etc/zsh/zprofile
+  ln -s ${BLUEFLAMINGO_ROOT}/../.zprezto/runcoms/zshenv /etc/zsh/zshenv
+  ln -s ${BLUEFLAMINGO_ROOT}/../.zprezto/runcoms/zshrc /etc/zsh/zshrc
+
+  ##setopt EXTENDED_GLOB
   #for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
-  for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md; do
-        ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
-  done
+  ##for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md; do
+  ##      ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+  ##done
+
+  # pour changer le shell de l'utilisateur en cours
+  # https://wiki.archlinux.org/index.php/Zsh
+  #echo "/usr/bin/zsh" | chsh
+  chsh -s /bin/zsh root
+  chsh -s /bin/zsh blueflamingo
 
   #cp /etc/zsh/oh-my-zsh/templates/zshrc.zsh-template /etc/zsh/zshrc
   #sed -i -e 's/export PATH=$HOME\/bin:\/usr\/local\/bin:$PATH/export PATH=$HOME\/bin:\/usr\/local\/bin:$PATH:\/opt\/.blueflamingo\/usr\/sbin/g' /etc/zsh/zshrc
@@ -157,14 +171,14 @@ then
   #cp /etc/zsh/zshrc_formation_debian /etc/zsh/oh-my-zsh/custom/zshrc_formation_debian.zsh 2> /dev/null
   #cp /etc/zsh/zshrc_grml /etc/zsh/oh-my-zsh/custom/zshrc_grml.zsh 2> /dev/null
 
-  cp /etc/zsh/zlogin_formation_debian /etc/zsh/zlogin 2> /dev/null
-  cp /etc/zsh/zlogout_formation_debian /etc/zsh/zlogout 2> /dev/null
-  cp /etc/zsh/zshenv_formation_debian /etc/zsh/zshenv 2> /dev/null
+  #cp /etc/zsh/zlogin_formation_debian /etc/zsh/zlogin 2> /dev/null
+  #cp /etc/zsh/zlogout_formation_debian /etc/zsh/zlogout 2> /dev/null
+  #cp /etc/zsh/zshenv_formation_debian /etc/zsh/zshenv 2> /dev/null
 
   echo "  Source de /etc/zsh/zshrc"
   #source /etc/zsh/zshrc
   #`/etc/zsh/zshrc`
-  /bin/zsh /etc/zsh/zshrc
+  #/bin/zsh /etc/zsh/zshrc
 
   date +"%F %T" >> /var/log/bf/bfaptitudeinstallsyscommun-zsh-zsh.log
 fi
