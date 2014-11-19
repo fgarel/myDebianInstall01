@@ -164,6 +164,7 @@ if [ ! -e /var/log/bf/bfaptitudeinstallsyscommun-preseed-fakeroot.log ]
 then
   echo "  Installation de fakeroot"
   echo y | aptitude install fakeroot 1> /dev/null
+  update-alternatives --remove fakeroot /usr/bin/fakeroot-tcp 1> /dev/null
   date +"%F %T" >> /var/log/bf/bfaptitudeinstallsyscommun-preseed-fakeroot.log
 fi
 
@@ -287,6 +288,15 @@ then
   echo y | aptitude install curl \
                             libcurl3 1> /dev/null
   date +"%F %T" >> /var/log/bf/bfaptitudeinstallsyscommun-preseed-curl.log
+fi
+
+########################
+# installation de man-db
+if [ ! -e /var/log/bf/bfaptitudeinstallsyscommun-preseed-mandb.log ]
+then
+  echo "  Installation de man-db"
+  echo y | aptitude install man-db 1> /dev/null
+  date +"%F %T" >> /var/log/bf/bfaptitudeinstallsyscommun-preseed-mandb.log
 fi
 
 ######################

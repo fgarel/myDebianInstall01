@@ -76,6 +76,8 @@ then
   mv /etc/zsh/zshenv /etc/zsh/zshenv_sav 2> /dev/null
   mv /etc/zsh/zshrc /etc/zsh/zshrc_sav 2> /dev/null
   echo y | aptitude install zsh 1> /dev/null
+  echo "  Installation de zsh-antigen"
+  echo y | aptitude install zsh-antigen 1> /dev/null
   echo "  Sauvegarde des fichiers de configuration zsh du responsable du paquet"
   mv /etc/zsh/zprofile /etc/zsh/zprofile_mainteneur_debian 2> /dev/null
   mv /etc/zsh/zshrc /etc/zsh/zshrc_mainteneur_debian 2> /dev/null
@@ -90,8 +92,11 @@ then
   chsh -s /bin/zsh blueflamingo
 
   echo "  Création d'un fichier zshrc pour l'utilisateur blueflamingo"
-  mkdir /home/blueflamingo
-  echo "# Created by newuser" > /home/blueflamingo/.zshrc
+  cp ${BLUEFLAMINGO_ROOT}/etc/zsh/zshrc_prezto /home/blueflamingo/.zshrc 2> /dev/null
+  #mkdir /home/blueflamingo
+  #echo "# Created by newuser" > /home/blueflamingo/.zshrc
+  #echo "source /usr/share/zsh-antigen/antigen.zsh"
+  chown -R blueflamingo:blueflamingo /home/blueflamingo
 
   echo "  Changement du shell par defaut pour les futurs utilisateurs"
   # pour changer le shell des futurs utilisateurs
@@ -137,6 +142,7 @@ then
   ln -s ${BLUEFLAMINGO_ROOT}/../.zprezto/runcoms/zprofile /etc/zsh/zprofile
   ln -s ${BLUEFLAMINGO_ROOT}/../.zprezto/runcoms/zshenv /etc/zsh/zshenv
   ln -s ${BLUEFLAMINGO_ROOT}/../.zprezto/runcoms/zshrc /etc/zsh/zshrc
+
 
   ##setopt EXTENDED_GLOB
   #for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
