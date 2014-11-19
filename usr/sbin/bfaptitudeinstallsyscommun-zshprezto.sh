@@ -92,7 +92,7 @@ then
   chsh -s /bin/zsh blueflamingo
 
   echo "  Création d'un fichier zshrc pour l'utilisateur blueflamingo"
-  cp ${BLUEFLAMINGO_ROOT}/etc/zsh/zshrc_prezto /home/blueflamingo/.zshrc 2> /dev/null
+  cp ${BLUEFLAMINGO_ROOT}/etc/zsh/zshrc_antigen /home/blueflamingo/.zshrc 2> /dev/null
   #mkdir /home/blueflamingo
   #echo "# Created by newuser" > /home/blueflamingo/.zshrc
   #echo "source /usr/share/zsh-antigen/antigen.zsh"

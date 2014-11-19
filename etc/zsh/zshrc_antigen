@@ -2,7 +2,8 @@
 source /usr/share/zsh-antigen/antigen.zsh
 
 # Load the oh-my-zsh's library
-antigen use oh-m-zsh
+#antigen use oh-my-zsh
+antigen use prezto
 
 # Load the prezto library
 antigen bundle sorin-ionescu/prezto
@@ -11,6 +12,8 @@ antigen bundle sorin-ionescu/prezto
 # Antigen Theme
 #
 antigen theme agnoster
+#antigen theme bureau
+#antigen theme blinks
 
 #
 # Antigen Bundles
