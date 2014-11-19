@@ -2,8 +2,7 @@
 source /usr/share/zsh-antigen/antigen.zsh
 
 # Load the oh-my-zsh's library
-#antigen use oh-m-zsh
-#antigen bundle robbyrussell/oh-my-zsh lib/
+antigen use oh-m-zsh
 
 # Load the prezto library
 antigen bundle sorin-ionescu/prezto
@@ -11,13 +10,11 @@ antigen bundle sorin-ionescu/prezto
 #
 # Antigen Theme
 #
-
-antigen theme jdavis/zsh-files themes/jdavis
+antigen theme agnoster
 
 #
 # Antigen Bundles
 #
-
 antigen bundle docker
 antigen bundle git
 antigen bundle git-flow
@@ -40,12 +37,13 @@ antigen bundle ssh-agent
 antigen bundle pip
 antigen bundle python
 antigen bundle virtualenv
+#antigen bundle virtualenvwrapper
 
 # OS specific plugins
 antigen bundle debian
 
 
-antigen bundle jdavis/zsh-files
+#antigen bundle jdavis/zsh-files
 
 # Secret info
-antigen bundle git@github.com:jdavis/secret.git
+#antigen bundle git@github.com:jdavis/secret.git
