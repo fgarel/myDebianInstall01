@@ -77,6 +77,7 @@ then
   echo "  Recopie du fichier zshrc special antigen"
   cp ${BLUEFLAMINGO_ROOT}/etc/zsh/zshrc_antigen /etc/zsh/zshrc 2> /dev/null
   cp ${BLUEFLAMINGO_ROOT}/etc/zsh/zshrc_antigen /home/blueflamingo/.zshrc 2> /dev/null
+  cp ${BLUEFLAMINGO_ROOT}/etc/zsh/zshrc_antigen /root/.zshrc 2> /dev/null
   chown -R blueflamingo:blueflamingo /home/blueflamingo
 
   echo "  Changement du shell par defaut pour les futurs utilisateurs"
@@ -92,6 +93,7 @@ then
 
   echo "  Source de /etc/zsh/zshrc"
   source /etc/zsh/zshrc
+  . /etc/zsh/zshrc
   #`/etc/zsh/zshrc`
   #/bin/zsh /etc/zsh/zshrc
 

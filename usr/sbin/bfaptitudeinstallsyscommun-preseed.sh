@@ -10,7 +10,7 @@ echo "bfaptitudeinstallsyscommun-preseed.sh :       Installation d'outils system
 if [ ! -e /var/log/bf/bfaptitudeinstallsyscommun-preseed-aptutils.log ]
 then
   echo "  Installation de apt-utils"
-  echo y | aptitude install apt-utils 1> /dev/null
+  echo y | aptitude install -t testing apt-utils 1> /dev/null
   date +"%F %T" >> /var/log/bf/bfaptitudeinstallsyscommun-preseed-aptutils.log
 fi
 
@@ -19,7 +19,7 @@ fi
 if [ ! -e /var/log/bf/bfaptitudeinstallsyscommun-preseed-aptfile.log ]
 then
   echo "  Installation de apt-file"
-  echo y | aptitude install apt-file 1> /dev/null
+  echo y | aptitude install -t testing apt-file 1> /dev/null
   date +"%F %T" >> /var/log/bf/bfaptitudeinstallsyscommun-preseed-aptfile.log
 fi
 
@@ -84,6 +84,15 @@ then
   echo "  Installation de hwinfo"
   echo y | aptitude install hwinfo 1> /dev/null
   date +"%F %T" >> /var/log/bf/bfaptitudeinstallsyscommun-preseed-hwinfo.log
+fi
+
+##############################
+# ajout de l'utilitaire dialog
+if [ ! -e /var/log/bf/bfaptitudeinstallsyscommun-preseed-dialog.log ]
+then
+  echo "  Installation de dialog"
+  echo y | aptitude install -t testing dialog 1> /dev/null
+  date +"%F %T" >> /var/log/bf/bfaptitudeinstallsyscommun-preseed-dialog.log
 fi
 
 ####################################
@@ -324,8 +333,13 @@ fi
 
 ########################
 # installation de elinks
-#echo "  Installation de elinks"
-#echo y | aptitude install elinks 1> /dev/null
+if [ ! -e /var/log/bf/bfaptitudeinstallsyscommun-preseed-elinks.log ]
+then
+  echo "  Installation de elinks"
+  echo y | aptitude install -t testing elinks 1> /dev/null
+  date +"%F %T" >> /var/log/bf/bfaptitudeinstallsyscommun-preseed-elinks.log
+fi
+
 
 #echo 'set mime.extension.jpg="image/jpeg"' >> /etc/elinks/elinks.conf
 #echo 'set mime.extension.jpeg="image/jpeg"' >> /etc/elinks/elinks.conf
@@ -347,3 +361,20 @@ fi
 #echo 'set mime.type.image.bmp = "image_viewer"' >> /etc/elinks/elinks.conf
 
 
+########################
+# installation de links2
+if [ ! -e /var/log/bf/bfaptitudeinstallsyscommun-preseed-links2.log ]
+then
+  echo "  Installation de links2"
+  echo y | aptitude install links2 1> /dev/null
+  date +"%F %T" >> /var/log/bf/bfaptitudeinstallsyscommun-preseed-links2.log
+fi
+
+#################################
+# installation de fonts-powerline
+if [ ! -e /var/log/bf/bfaptitudeinstallsyscommun-preseed-fontspowerline.log ]
+then
+  echo "  Installation de fonts-powerline"
+  echo y | aptitude install fonts-powerline 1> /dev/null
+  date +"%F %T" >> /var/log/bf/bfaptitudeinstallsyscommun-preseed-fontspowerline.log
+fi
