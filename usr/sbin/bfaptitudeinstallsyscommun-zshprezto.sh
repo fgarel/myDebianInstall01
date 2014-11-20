@@ -73,8 +73,10 @@ then
   ln -s ${BLUEFLAMINGO_ROOT}/../.zprezto/runcoms/zprofile /etc/zsh/zprofile
   ln -s ${BLUEFLAMINGO_ROOT}/../.zprezto/runcoms/zshenv /etc/zsh/zshenv
   ln -s ${BLUEFLAMINGO_ROOT}/../.zprezto/runcoms/zshrc /etc/zsh/zshrc
+  ln -s ${BLUEFLAMINGO_ROOT}/../.zprezto/runcoms/zshrc /etc/zsh/zshrc_zprezto
 
   echo "  Recopie du fichier zshrc special antigen"
+  rm /etc/zsh/zshrc
   cp ${BLUEFLAMINGO_ROOT}/etc/zsh/zshrc_antigen /etc/zsh/zshrc 2> /dev/null
   cp ${BLUEFLAMINGO_ROOT}/etc/zsh/zshrc_antigen /home/blueflamingo/.zshrc 2> /dev/null
   cp ${BLUEFLAMINGO_ROOT}/etc/zsh/zshrc_antigen /root/.zshrc 2> /dev/null

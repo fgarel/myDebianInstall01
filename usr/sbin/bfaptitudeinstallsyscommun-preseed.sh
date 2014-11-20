@@ -333,12 +333,12 @@ fi
 
 ########################
 # installation de elinks
-if [ ! -e /var/log/bf/bfaptitudeinstallsyscommun-preseed-elinks.log ]
-then
-  echo "  Installation de elinks"
-  echo y | aptitude install -t testing elinks 1> /dev/null
-  date +"%F %T" >> /var/log/bf/bfaptitudeinstallsyscommun-preseed-elinks.log
-fi
+#if [ ! -e /var/log/bf/bfaptitudeinstallsyscommun-preseed-elinks.log ]
+#then
+#  echo "  Installation de elinks"
+#  echo y | aptitude install -t testing elinks 1> /dev/null
+#  date +"%F %T" >> /var/log/bf/bfaptitudeinstallsyscommun-preseed-elinks.log
+#fi
 
 
 #echo 'set mime.extension.jpg="image/jpeg"' >> /etc/elinks/elinks.conf
