@@ -2,11 +2,11 @@
 source /usr/share/zsh-antigen/antigen.zsh
 
 # Load the oh-my-zsh's library
-#antigen use oh-my-zsh
+antigen use oh-my-zsh
 antigen use prezto
 
 # Load the prezto library
-antigen bundle sorin-ionescu/prezto
+#antigen bundle sorin-ionescu/prezto
 
 #
 # Antigen Theme
@@ -29,7 +29,7 @@ antigen bundle rupa/z
 antigen bundle sharat87/autoenv
 
 # For SSH, starting ssh-agent is annoying
-antigen bundle ssh-agent
+#antigen bundle ssh-agent
 
 # Node Plugins
 # antigen bundle coffee
