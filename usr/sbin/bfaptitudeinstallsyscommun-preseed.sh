@@ -20,6 +20,9 @@ if [ ! -e /var/log/bf/bfaptitudeinstallsyscommun-preseed-aptfile.log ]
 then
   echo "  Installation de apt-file"
   echo y | aptitude install -t testing apt-file 1> /dev/null
+  echo "  Début de l'indexation"
+  apt-file update &
+  #echo "  ...Fin de l'indexation"
   date +"%F %T" >> /var/log/bf/bfaptitudeinstallsyscommun-preseed-aptfile.log
 fi
 
@@ -388,4 +391,12 @@ then
   date +"%F %T" >> /var/log/bf/bfaptitudeinstallsyscommun-preseed-kbd.log
 fi
 
+########################
+# installation de fbterm
+if [ ! -e /var/log/bf/bfaptitudeinstallsyscommun-preseed-fbterm.log ]
+then
+  echo "  Installation de fbterm"
+  echo y | aptitude install fbterm 1> /dev/null
+  date +"%F %T" >> /var/log/bf/bfaptitudeinstallsyscommun-preseed-fbterm.log
+fi
 

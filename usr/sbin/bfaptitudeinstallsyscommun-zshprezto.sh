@@ -96,6 +96,12 @@ then
   echo "  Source de /etc/zsh/zshrc"
   source /etc/zsh/zshrc
   . /etc/zsh/zshrc
+  cd /home/blueflamingo
+  . /etc/zsh/zshrc
+  cd $OLDPWD
+  cd /root
+  . /etc/zsh/zshrc
+  cd $OLDPWD
   #`/etc/zsh/zshrc`
   #/bin/zsh /etc/zsh/zshrc
 
