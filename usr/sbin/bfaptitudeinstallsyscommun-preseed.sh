@@ -400,3 +400,12 @@ then
   date +"%F %T" >> /var/log/bf/bfaptitudeinstallsyscommun-preseed-fbterm.log
 fi
 
+##########################
+# installation de fonty-rg
+if [ ! -e /var/log/bf/bfaptitudeinstallsyscommun-preseed-fontyrg.log ]
+then
+  echo "  Installation de fonty-rg"
+  echo y | aptitude install fonty-rg 1> /dev/null
+  date +"%F %T" >> /var/log/bf/bfaptitudeinstallsyscommun-preseed-fontyrg.log
+fi
+
