@@ -409,3 +409,21 @@ then
   date +"%F %T" >> /var/log/bf/bfaptitudeinstallsyscommun-preseed-fontyrg.log
 fi
 
+########################
+# installation de python
+if [ ! -e /var/log/bf/bfaptitudeinstallsyscommun-preseed-python.log ]
+then
+  echo "  Installation de python"
+  echo y | aptitude install -t testing python 1> /dev/null
+  date +"%F %T" >> /var/log/bf/bfaptitudeinstallsyscommun-preseed-python.log
+fi
+
+###########################
+# installation de powerline
+if [ ! -e /var/log/bf/bfaptitudeinstallsyscommun-preseed-powerline.log ]
+then
+  echo "  Installation de powerline"
+  echo y | aptitude install powerline 1> /dev/null
+  date +"%F %T" >> /var/log/bf/bfaptitudeinstallsyscommun-preseed-powerline.log
+fi
+
