@@ -378,3 +378,14 @@ then
   echo y | aptitude install fonts-powerline 1> /dev/null
   date +"%F %T" >> /var/log/bf/bfaptitudeinstallsyscommun-preseed-fontspowerline.log
 fi
+
+#####################
+# installation de kbd
+if [ ! -e /var/log/bf/bfaptitudeinstallsyscommun-preseed-kbd.log ]
+then
+  echo "  Installation de kbd"
+  echo y | aptitude install kbd 1> /dev/null
+  date +"%F %T" >> /var/log/bf/bfaptitudeinstallsyscommun-preseed-kbd.log
+fi
+
+
