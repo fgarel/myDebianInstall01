@@ -61,19 +61,19 @@ then
   wget -nv -q -N http://git.grml.org/f/grml-etc-core/etc/zsh/zshrc -O zshrc_grml
   cd $OLDPWD
 
-  echo "  RÃ©cupÃation et installation de prezto"
-  git clone --progress --verbose --recursive https://github.com/sorin-ionescu/prezto.git "${BLUEFLAMINGO_ROOT}/../.zprezto" 2> /dev/null
-  cd "${BLUEFLAMINGO_ROOT}/../.zprezto"
-  git fetch --progress --verbose
-  cd $OLDPWD
-  # creation des liens
-  ln -s ${BLUEFLAMINGO_ROOT}/../.zprezto/runcoms/zlogin /etc/zsh/zlogin
-  ln -s ${BLUEFLAMINGO_ROOT}/../.zprezto/runcoms/zlogout /etc/zsh/zlogout
-  ln -s ${BLUEFLAMINGO_ROOT}/../.zprezto/runcoms/zpreztorc /etc/zsh/zpreztorc
-  ln -s ${BLUEFLAMINGO_ROOT}/../.zprezto/runcoms/zprofile /etc/zsh/zprofile
-  ln -s ${BLUEFLAMINGO_ROOT}/../.zprezto/runcoms/zshenv /etc/zsh/zshenv
-  ln -s ${BLUEFLAMINGO_ROOT}/../.zprezto/runcoms/zshrc /etc/zsh/zshrc
-  ln -s ${BLUEFLAMINGO_ROOT}/../.zprezto/runcoms/zshrc /etc/zsh/zshrc_zprezto
+  ##echo "  RÃ©cupÃation et installation de prezto"
+  ##git clone --progress --verbose --recursive https://github.com/sorin-ionescu/prezto.git "${BLUEFLAMINGO_ROOT}/../.zprezto" 2> /dev/null
+  ##cd "${BLUEFLAMINGO_ROOT}/../.zprezto"
+  ##git fetch --progress --verbose
+  ##cd $OLDPWD
+  ### creation des liens
+  ##ln -s ${BLUEFLAMINGO_ROOT}/../.zprezto/runcoms/zlogin /etc/zsh/zlogin
+  ##ln -s ${BLUEFLAMINGO_ROOT}/../.zprezto/runcoms/zlogout /etc/zsh/zlogout
+  ##ln -s ${BLUEFLAMINGO_ROOT}/../.zprezto/runcoms/zpreztorc /etc/zsh/zpreztorc
+  ##ln -s ${BLUEFLAMINGO_ROOT}/../.zprezto/runcoms/zprofile /etc/zsh/zprofile
+  ##ln -s ${BLUEFLAMINGO_ROOT}/../.zprezto/runcoms/zshenv /etc/zsh/zshenv
+  ##ln -s ${BLUEFLAMINGO_ROOT}/../.zprezto/runcoms/zshrc /etc/zsh/zshrc
+  ##ln -s ${BLUEFLAMINGO_ROOT}/../.zprezto/runcoms/zshrc /etc/zsh/zshrc_zprezto
 
   echo "  Recopie du fichier zshrc special antigen"
   rm /etc/zsh/zshrc
