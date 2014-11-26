@@ -1,6 +1,9 @@
 # Load Antigen
+echo "zshrc : avant source"
 source /usr/share/zsh-antigen/antigen.zsh
+echo "zshrc : après source ; avant ."
 . /usr/share/zsh-antigen/antigen.zsh
+echo "zshrc : après ."
 
 # Load the oh-my-zsh's library
 antigen use oh-my-zsh
@@ -12,7 +15,8 @@ antigen use prezto
 #
 # Antigen Theme
 #
-antigen theme agnoster
+antigen theme obraun
+#antigen theme agnoster
 #antigen theme bureau
 #antigen theme blinks
 
@@ -23,6 +27,7 @@ antigen bundle docker
 antigen bundle git
 antigen bundle git-flow
 antigen bundle git-extras
+antigen bundle tmux
 antigen bundle tmuxinator
 antigen bundle vi-mode
 antigen bundle zsh-users/zsh-syntax-highlighting

@@ -270,6 +270,7 @@ if [ ! -e /var/log/bf/bfaptitudeinstallsyscommun-preseed-tmux.log ]
 then
   echo "  Installation de tmux"
   echo y | aptitude install tmux 1> /dev/null
+  cp ${BLUEFLAMINGO_ROOT}/etc/tmux.conf /etc/tmux.conf
   date +"%F %T" >> /var/log/bf/bfaptitudeinstallsyscommun-preseed-tmux.log
 fi
 
@@ -279,6 +280,7 @@ if [ ! -e /var/log/bf/bfaptitudeinstallsyscommun-preseed-git.log ]
 then
   echo "  Installation de git"
   echo y | aptitude install git 1> /dev/null
+  cp ${BLUEFLAMINGO_ROOT}/etc/gitconfig /etc/gitconfig
   date +"%F %T" >> /var/log/bf/bfaptitudeinstallsyscommun-preseed-git.log
 fi
 
