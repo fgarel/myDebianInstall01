@@ -53,6 +53,7 @@ sudo -u root /opt/.blueflamingo/usr/sbin/bfaptitudeinstallvim01c.sh
 
 bfaptitudeupgrade-preseed.sh
 #fgaptitudeinstallpython.sh
+bfaptitudeinstallpython.sh
 #if [ ! -e /var/log/fg/fgaptitudeinstallpythonfabric-fabric.log ]
 #then
 #  echo "  python fabric"

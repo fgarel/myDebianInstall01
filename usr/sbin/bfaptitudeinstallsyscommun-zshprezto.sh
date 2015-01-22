@@ -45,7 +45,7 @@ then
   wget -nv -q -N http://formation-debian.via.ecp.fr/fichiers-config/dir_colors
   cd $OLDPWD
 
-  echo "  Récupération des fichiers de configuration zsh de la formation debian"
+  echo "  Recuperation des fichiers de configuration zsh de la formation debian"
   # recuperation des fichiers de configuration de la formation Debian
   # http://formation-debian.via.ecp.fr/shell.html
   cd /etc/zsh
@@ -56,7 +56,11 @@ then
   #cp /etc/zsh/zshrc /etc/zsh/zshrc_formation_debian
   cd $OLDPWD
 
-  echo "  Récupération des fichiers de configuration zsh de grml"
+  echo "  Recopie du fichier zshenv special path blueflamingo et pyenv"
+  rm /etc/zsh/zshenv
+  cp ${BLUEFLAMINGO_ROOT}/etc/zsh/zshenv /etc/zsh/zshenv 2> /dev/null
+
+  echo "  Recuperation des fichiers de configuration zsh de grml"
   cd /etc/zsh
   wget -nv -q -N http://git.grml.org/f/grml-etc-core/etc/zsh/zshrc -O zshrc_grml
   cd $OLDPWD
