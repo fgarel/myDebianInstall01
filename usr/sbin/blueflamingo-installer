@@ -4,7 +4,8 @@ set -e
 [ -n "$BLUEFLAMINGO_DEBUG" ] && set -x
 
 if [ -z "$BLUEFLAMINGO_ROOT" ]; then
-  BLUEFLAMINGO_ROOT="${HOME}/.blueflamingo"
+  #BLUEFLAMINGO_ROOT="${HOME}/.blueflamingo"
+  BLUEFLAMINGO_ROOT="/opt/blueflamingo"
 fi
 
 shell="$1"
