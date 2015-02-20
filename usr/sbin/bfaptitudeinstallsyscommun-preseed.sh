@@ -143,6 +143,15 @@ then
   date +"%F %T" >> /var/log/bf/bfaptitudeinstallsyscommun-preseed-unzip.log
 fi
 
+###########################
+# ajout de l'utilitaire gcc
+if [ ! -e /var/log/bf/bfaptitudeinstallsyscommun-preseed-gcc.log ]
+then
+  echo "  Installation de gcc (testing)"
+  echo y | aptitude install -t testing gcc 1> /dev/null
+  date +"%F %T" >> /var/log/bf/bfaptitudeinstallsyscommun-preseed-gcc.log
+fi
+
 ############################
 # ajout de l'utilitaire make
 if [ ! -e /var/log/bf/bfaptitudeinstallsyscommun-preseed-make.log ]

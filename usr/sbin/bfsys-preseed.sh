@@ -8,6 +8,12 @@ echo "bfsys-preseed.sh :                 Actions commencées lors de l'installat
 
 mkdir /var/log/bf 2> /dev/null
 
+# faire en sorte que le repertoire /opt soit accessible au groupe staff
+# sans avoir besoin d'etre root
+chown :staff /opt -R
+chmod g+rw /opt -R
+chmod g+s /opt
+
 # chainage avec les scripts de configuration et les mises à jour
 
 bfaptitudeupdate-preseed.sh
